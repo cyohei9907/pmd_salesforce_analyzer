@@ -1,0 +1,547 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ApexFile DefiningType='TestPropertyController' Image='' RealLoc='true'>
+    <UserClass DefiningType='TestPropertyController' Image='TestPropertyController' InterfaceNames='[]' Nested='false' RealLoc='true' SimpleName='TestPropertyController' SuperClassName=''>
+        <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='2' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='false' Test='true' TestOrTestSetup='true' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+            <Annotation DefiningType='TestPropertyController' Image='IsTest' Name='IsTest' RawName='isTest' RealLoc='true' Resolved='true' />
+        </ModifierNode>
+        <Field DefiningType='TestPropertyController' Image='MOCK_PICTURE_NAME' Name='MOCK_PICTURE_NAME' RealLoc='true' Type='String' Value='MockPictureName'>
+            <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+        </Field>
+        <FieldDeclarationStatements DefiningType='TestPropertyController' Image='' RealLoc='true' TypeArguments='[]' TypeName='String'>
+            <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <FieldDeclaration DefiningType='TestPropertyController' Image='MOCK_PICTURE_NAME' Name='MOCK_PICTURE_NAME' RealLoc='true'>
+                <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='MockPictureName' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                <VariableExpression DefiningType='TestPropertyController' Image='MOCK_PICTURE_NAME' RealLoc='true'>
+                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                </VariableExpression>
+            </FieldDeclaration>
+        </FieldDeclarationStatements>
+        <Method Arity='1' CanonicalName='createProperties' Constructor='false' DefiningType='TestPropertyController' Image='createProperties' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='9' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <Parameter DefiningType='TestPropertyController' Image='amount' RealLoc='true' Type='Integer'>
+                <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            </Parameter>
+            <BlockStatement CurlyBrace='true' DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='TestPropertyController' Image='properties' RealLoc='true' Type='List&amp;lt;Property__c>'>
+                        <NewListInitExpression DefiningType='TestPropertyController' Image='' RealLoc='true' />
+                        <VariableExpression DefiningType='TestPropertyController' Image='properties' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ForLoopStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <VariableDeclarationStatements DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                        <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                        <VariableDeclaration DefiningType='TestPropertyController' Image='i' RealLoc='true' Type='Integer'>
+                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                            <VariableExpression DefiningType='TestPropertyController' Image='i' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                        </VariableDeclaration>
+                    </VariableDeclarationStatements>
+                    <StandardCondition DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                        <BooleanExpression DefiningType='TestPropertyController' Image='' Op='&amp;lt;' RealLoc='true'>
+                            <VariableExpression DefiningType='TestPropertyController' Image='i' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                            <VariableExpression DefiningType='TestPropertyController' Image='amount' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                        </BooleanExpression>
+                    </StandardCondition>
+                    <BlockStatement CurlyBrace='true' DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                        <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                            <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='properties.add' Image='' InputParametersSize='1' MethodName='add' RealLoc='true'>
+                                <ReferenceExpression DefiningType='TestPropertyController' Image='properties' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                <NewKeyValueObjectExpression DefiningType='TestPropertyController' Image='' ParameterCount='4' RealLoc='true' Type='Property__c'>
+                                    <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                                        <VariableExpression DefiningType='TestPropertyController' Image='Name' RealLoc='true'>
+                                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                        </VariableExpression>
+                                        <BinaryExpression DefiningType='TestPropertyController' Image='' Op='+' RealLoc='true'>
+                                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='Name ' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                            <VariableExpression DefiningType='TestPropertyController' Image='i' RealLoc='true'>
+                                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                            </VariableExpression>
+                                        </BinaryExpression>
+                                    </AssignmentExpression>
+                                    <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                                        <VariableExpression DefiningType='TestPropertyController' Image='Price__c' RealLoc='true'>
+                                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                        </VariableExpression>
+                                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='20000' Integer='true' LiteralType='INTEGER' Long='false' Name='Price__c' Null='false' RealLoc='true' String='false' />
+                                    </AssignmentExpression>
+                                    <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                                        <VariableExpression DefiningType='TestPropertyController' Image='Beds__c' RealLoc='true'>
+                                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                        </VariableExpression>
+                                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='3' Integer='true' LiteralType='INTEGER' Long='false' Name='Beds__c' Null='false' RealLoc='true' String='false' />
+                                    </AssignmentExpression>
+                                    <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                                        <VariableExpression DefiningType='TestPropertyController' Image='Baths__c' RealLoc='true'>
+                                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                        </VariableExpression>
+                                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='3' Integer='true' LiteralType='INTEGER' Long='false' Name='Baths__c' Null='false' RealLoc='true' String='false' />
+                                    </AssignmentExpression>
+                                </NewKeyValueObjectExpression>
+                            </MethodCallExpression>
+                        </ExpressionStatement>
+                    </BlockStatement>
+                    <PostfixExpression DefiningType='TestPropertyController' Image='' Op='++' RealLoc='true'>
+                        <VariableExpression DefiningType='TestPropertyController' Image='i' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </PostfixExpression>
+                </ForLoopStatement>
+                <DmlInsertStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <VariableExpression DefiningType='TestPropertyController' Image='properties' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </DmlInsertStatement>
+            </BlockStatement>
+        </Method>
+        <Method Arity='0' CanonicalName='testGetPagedPropertyList' Constructor='false' DefiningType='TestPropertyController' Image='testGetPagedPropertyList' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='8' Override='false' Private='false' Protected='false' Public='false' RealLoc='true' Static='true' Test='true' TestOrTestSetup='true' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='TestPropertyController' Image='IsTest' Name='IsTest' RawName='isTest' RealLoc='true' Resolved='true' />
+            </ModifierNode>
+            <BlockStatement CurlyBrace='true' DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='TestPropertyController' Image='standardUserProfile' RealLoc='true' Type='Profile'>
+                        <SoqlExpression CanonicalQuery='SELECT Name, Id
+            FROM Profile
+            WHERE
+                UserType = &apos;Standard&apos;
+                AND PermissionsPrivacyDataAccess = FALSE
+                AND PermissionsSubmitMacrosAllowed = TRUE
+                AND PermissionsMassInlineEdit = TRUE
+            LIMIT 1' DefiningType='TestPropertyController' Image='' Query='SELECT Name, Id
+            FROM Profile
+            WHERE
+                UserType = &apos;Standard&apos;
+                AND PermissionsPrivacyDataAccess = FALSE
+                AND PermissionsSubmitMacrosAllowed = TRUE
+                AND PermissionsMassInlineEdit = TRUE
+            LIMIT 1' RealLoc='true' />
+                        <VariableExpression DefiningType='TestPropertyController' Image='standardUserProfile' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='TestPropertyController' Image='testUser' RealLoc='true' Type='User'>
+                        <NewKeyValueObjectExpression DefiningType='TestPropertyController' Image='' ParameterCount='9' RealLoc='true' Type='User'>
+                            <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='TestPropertyController' Image='Alias' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='standt' Integer='false' LiteralType='STRING' Long='false' Name='Alias' Null='false' RealLoc='true' String='true' />
+                            </AssignmentExpression>
+                            <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='TestPropertyController' Image='Email' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='standarduser@testorg.com' Integer='false' LiteralType='STRING' Long='false' Name='Email' Null='false' RealLoc='true' String='true' />
+                            </AssignmentExpression>
+                            <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='TestPropertyController' Image='EmailEncodingKey' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='UTF-8' Integer='false' LiteralType='STRING' Long='false' Name='EmailEncodingKey' Null='false' RealLoc='true' String='true' />
+                            </AssignmentExpression>
+                            <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='TestPropertyController' Image='LastName' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='Testing' Integer='false' LiteralType='STRING' Long='false' Name='LastName' Null='false' RealLoc='true' String='true' />
+                            </AssignmentExpression>
+                            <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='TestPropertyController' Image='LanguageLocaleKey' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='en_US' Integer='false' LiteralType='STRING' Long='false' Name='LanguageLocaleKey' Null='false' RealLoc='true' String='true' />
+                            </AssignmentExpression>
+                            <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='TestPropertyController' Image='LocaleSidKey' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='en_US' Integer='false' LiteralType='STRING' Long='false' Name='LocaleSidKey' Null='false' RealLoc='true' String='true' />
+                            </AssignmentExpression>
+                            <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='TestPropertyController' Image='ProfileId' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <VariableExpression DefiningType='TestPropertyController' Image='Id' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='TestPropertyController' Image='standardUserProfile' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                                </VariableExpression>
+                            </AssignmentExpression>
+                            <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='TestPropertyController' Image='TimeZoneSidKey' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='America/Los_Angeles' Integer='false' LiteralType='STRING' Long='false' Name='TimeZoneSidKey' Null='false' RealLoc='true' String='true' />
+                            </AssignmentExpression>
+                            <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='TestPropertyController' Image='UserName' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='standarduser@dreamhouse-testorg.com' Integer='false' LiteralType='STRING' Long='false' Name='UserName' Null='false' RealLoc='true' String='true' />
+                            </AssignmentExpression>
+                        </NewKeyValueObjectExpression>
+                        <VariableExpression DefiningType='TestPropertyController' Image='testUser' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <DmlInsertStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <VariableExpression DefiningType='TestPropertyController' Image='testUser' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </DmlInsertStatement>
+                <VariableDeclarationStatements DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='TestPropertyController' Image='ps' RealLoc='true' Type='PermissionSet'>
+                        <SoqlExpression CanonicalQuery='SELECT Id
+            FROM PermissionSet
+            WHERE Name = &apos;dreamhouse&apos;' DefiningType='TestPropertyController' Image='' Query='SELECT Id
+            FROM PermissionSet
+            WHERE Name = &apos;dreamhouse&apos;' RealLoc='true' />
+                        <VariableExpression DefiningType='TestPropertyController' Image='ps' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <DmlInsertStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <NewKeyValueObjectExpression DefiningType='TestPropertyController' Image='' ParameterCount='2' RealLoc='true' Type='PermissionSetAssignment'>
+                        <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                            <VariableExpression DefiningType='TestPropertyController' Image='AssigneeId' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                            <VariableExpression DefiningType='TestPropertyController' Image='Id' RealLoc='true'>
+                                <ReferenceExpression DefiningType='TestPropertyController' Image='testUser' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                            </VariableExpression>
+                        </AssignmentExpression>
+                        <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                            <VariableExpression DefiningType='TestPropertyController' Image='PermissionSetId' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                            <VariableExpression DefiningType='TestPropertyController' Image='Id' RealLoc='true'>
+                                <ReferenceExpression DefiningType='TestPropertyController' Image='ps' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                            </VariableExpression>
+                        </AssignmentExpression>
+                    </NewKeyValueObjectExpression>
+                </DmlInsertStatement>
+                <RunAsBlockStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <NewKeyValueObjectExpression DefiningType='TestPropertyController' Image='' ParameterCount='1' RealLoc='true' Type='User'>
+                        <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                            <VariableExpression DefiningType='TestPropertyController' Image='Id' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                            <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='UserInfo.getUserId' Image='' InputParametersSize='0' MethodName='getUserId' RealLoc='true'>
+                                <ReferenceExpression DefiningType='TestPropertyController' Image='UserInfo' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            </MethodCallExpression>
+                        </AssignmentExpression>
+                    </NewKeyValueObjectExpression>
+                    <BlockStatement CurlyBrace='true' DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                        <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                            <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='TestPropertyController.createProperties' Image='' InputParametersSize='1' MethodName='createProperties' RealLoc='true'>
+                                <ReferenceExpression DefiningType='TestPropertyController' Image='TestPropertyController' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='5' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                            </MethodCallExpression>
+                        </ExpressionStatement>
+                    </BlockStatement>
+                </RunAsBlockStatement>
+                <RunAsBlockStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <VariableExpression DefiningType='TestPropertyController' Image='testUser' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                    <BlockStatement CurlyBrace='true' DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                        <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                            <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='Test.startTest' Image='' InputParametersSize='0' MethodName='startTest' RealLoc='true'>
+                                <ReferenceExpression DefiningType='TestPropertyController' Image='Test' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            </MethodCallExpression>
+                        </ExpressionStatement>
+                        <VariableDeclarationStatements DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                            <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                            <VariableDeclaration DefiningType='TestPropertyController' Image='result' RealLoc='true' Type='PagedResult'>
+                                <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='PropertyController.getPagedPropertyList' Image='' InputParametersSize='6' MethodName='getPagedPropertyList' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='TestPropertyController' Image='PropertyController' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='999999' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='10' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='1' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                </MethodCallExpression>
+                                <VariableExpression DefiningType='TestPropertyController' Image='result' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </VariableDeclaration>
+                        </VariableDeclarationStatements>
+                        <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                            <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='Test.stopTest' Image='' InputParametersSize='0' MethodName='stopTest' RealLoc='true'>
+                                <ReferenceExpression DefiningType='TestPropertyController' Image='Test' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            </MethodCallExpression>
+                        </ExpressionStatement>
+                        <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                            <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='Assert.areEqual' Image='' InputParametersSize='2' MethodName='areEqual' RealLoc='true'>
+                                <ReferenceExpression DefiningType='TestPropertyController' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='5' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='result.records.size' Image='' InputParametersSize='0' MethodName='size' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='TestPropertyController' Image='result' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                </MethodCallExpression>
+                            </MethodCallExpression>
+                        </ExpressionStatement>
+                    </BlockStatement>
+                </RunAsBlockStatement>
+            </BlockStatement>
+        </Method>
+        <Method Arity='0' CanonicalName='testGetPicturesNoResults' Constructor='false' DefiningType='TestPropertyController' Image='testGetPicturesNoResults' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='8' Override='false' Private='false' Protected='false' Public='false' RealLoc='true' Static='true' Test='true' TestOrTestSetup='true' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='TestPropertyController' Image='IsTest' Name='IsTest' RawName='isTest' RealLoc='true' Resolved='true' />
+            </ModifierNode>
+            <BlockStatement CurlyBrace='true' DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='TestPropertyController' Image='property' RealLoc='true' Type='Property__c'>
+                        <NewKeyValueObjectExpression DefiningType='TestPropertyController' Image='' ParameterCount='1' RealLoc='true' Type='Property__c'>
+                            <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='TestPropertyController' Image='Name' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='Name' Integer='false' LiteralType='STRING' Long='false' Name='Name' Null='false' RealLoc='true' String='true' />
+                            </AssignmentExpression>
+                        </NewKeyValueObjectExpression>
+                        <VariableExpression DefiningType='TestPropertyController' Image='property' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <DmlInsertStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <VariableExpression DefiningType='TestPropertyController' Image='property' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </DmlInsertStatement>
+                <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='Test.startTest' Image='' InputParametersSize='0' MethodName='startTest' RealLoc='true'>
+                        <ReferenceExpression DefiningType='TestPropertyController' Image='Test' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <VariableDeclarationStatements DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='TestPropertyController' Image='items' RealLoc='true' Type='List&amp;lt;ContentVersion>'>
+                        <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='PropertyController.getPictures' Image='' InputParametersSize='1' MethodName='getPictures' RealLoc='true'>
+                            <ReferenceExpression DefiningType='TestPropertyController' Image='PropertyController' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            <VariableExpression DefiningType='TestPropertyController' Image='Id' RealLoc='true'>
+                                <ReferenceExpression DefiningType='TestPropertyController' Image='property' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                            </VariableExpression>
+                        </MethodCallExpression>
+                        <VariableExpression DefiningType='TestPropertyController' Image='items' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='Test.stopTest' Image='' InputParametersSize='0' MethodName='stopTest' RealLoc='true'>
+                        <ReferenceExpression DefiningType='TestPropertyController' Image='Test' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='Assert.isNull' Image='' InputParametersSize='1' MethodName='isNull' RealLoc='true'>
+                        <ReferenceExpression DefiningType='TestPropertyController' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <VariableExpression DefiningType='TestPropertyController' Image='items' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </MethodCallExpression>
+                </ExpressionStatement>
+            </BlockStatement>
+        </Method>
+        <Method Arity='0' CanonicalName='testGetPicturesWithResults' Constructor='false' DefiningType='TestPropertyController' Image='testGetPicturesWithResults' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='8' Override='false' Private='false' Protected='false' Public='false' RealLoc='true' Static='true' Test='true' TestOrTestSetup='true' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='TestPropertyController' Image='IsTest' Name='IsTest' RawName='isTest' RealLoc='true' Resolved='true' />
+            </ModifierNode>
+            <BlockStatement CurlyBrace='true' DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='TestPropertyController' Image='property' RealLoc='true' Type='Property__c'>
+                        <NewKeyValueObjectExpression DefiningType='TestPropertyController' Image='' ParameterCount='1' RealLoc='true' Type='Property__c'>
+                            <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='TestPropertyController' Image='Name' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='Name' Integer='false' LiteralType='STRING' Long='false' Name='Name' Null='false' RealLoc='true' String='true' />
+                            </AssignmentExpression>
+                        </NewKeyValueObjectExpression>
+                        <VariableExpression DefiningType='TestPropertyController' Image='property' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <DmlInsertStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <VariableExpression DefiningType='TestPropertyController' Image='property' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </DmlInsertStatement>
+                <VariableDeclarationStatements DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='TestPropertyController' Image='picture' RealLoc='true' Type='ContentVersion'>
+                        <NewObjectExpression DefiningType='TestPropertyController' Image='' RealLoc='true' Type='Contentversion' />
+                        <VariableExpression DefiningType='TestPropertyController' Image='picture' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='TestPropertyController' Image='Title' RealLoc='true'>
+                            <ReferenceExpression DefiningType='TestPropertyController' Image='picture' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='TestPropertyController' Image='MOCK_PICTURE_NAME' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='TestPropertyController' Image='PathOnClient' RealLoc='true'>
+                            <ReferenceExpression DefiningType='TestPropertyController' Image='picture' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='picture.png' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='TestPropertyController' Image='Versiondata' RealLoc='true'>
+                            <ReferenceExpression DefiningType='TestPropertyController' Image='picture' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='EncodingUtil.base64Decode' Image='' InputParametersSize='1' MethodName='base64Decode' RealLoc='true'>
+                            <ReferenceExpression DefiningType='TestPropertyController' Image='EncodingUtil' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='MockValue' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                        </MethodCallExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <DmlInsertStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <VariableExpression DefiningType='TestPropertyController' Image='picture' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </DmlInsertStatement>
+                <VariableDeclarationStatements DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='TestPropertyController' Image='documents' RealLoc='true' Type='List&amp;lt;ContentDocument>'>
+                        <SoqlExpression CanonicalQuery='SELECT Id, Title, LatestPublishedVersionId
+            FROM ContentDocument
+            LIMIT 1' DefiningType='TestPropertyController' Image='' Query='SELECT Id, Title, LatestPublishedVersionId
+            FROM ContentDocument
+            LIMIT 1' RealLoc='true' />
+                        <VariableExpression DefiningType='TestPropertyController' Image='documents' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='TestPropertyController' Image='link' RealLoc='true' Type='ContentDocumentLink'>
+                        <NewObjectExpression DefiningType='TestPropertyController' Image='' RealLoc='true' Type='ContentDocumentLink' />
+                        <VariableExpression DefiningType='TestPropertyController' Image='link' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='TestPropertyController' Image='LinkedEntityId' RealLoc='true'>
+                            <ReferenceExpression DefiningType='TestPropertyController' Image='link' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='TestPropertyController' Image='Id' RealLoc='true'>
+                            <ReferenceExpression DefiningType='TestPropertyController' Image='property' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='TestPropertyController' Image='ContentDocumentId' RealLoc='true'>
+                            <ReferenceExpression DefiningType='TestPropertyController' Image='link' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='TestPropertyController' Image='Id' RealLoc='true'>
+                            <ReferenceExpression DefiningType='TestPropertyController' Image='' RealLoc='false' ReferenceType='LOAD' SObjectType='false' SafeNav='false'>
+                                <ArrayLoadExpression DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                                    <VariableExpression DefiningType='TestPropertyController' Image='documents' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                </ArrayLoadExpression>
+                            </ReferenceExpression>
+                        </VariableExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='TestPropertyController' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='TestPropertyController' Image='shareType' RealLoc='true'>
+                            <ReferenceExpression DefiningType='TestPropertyController' Image='link' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='V' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <DmlInsertStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <VariableExpression DefiningType='TestPropertyController' Image='link' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </DmlInsertStatement>
+                <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='Test.startTest' Image='' InputParametersSize='0' MethodName='startTest' RealLoc='true'>
+                        <ReferenceExpression DefiningType='TestPropertyController' Image='Test' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <VariableDeclarationStatements DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='TestPropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='TestPropertyController' Image='items' RealLoc='true' Type='List&amp;lt;ContentVersion>'>
+                        <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='PropertyController.getPictures' Image='' InputParametersSize='1' MethodName='getPictures' RealLoc='true'>
+                            <ReferenceExpression DefiningType='TestPropertyController' Image='PropertyController' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            <VariableExpression DefiningType='TestPropertyController' Image='Id' RealLoc='true'>
+                                <ReferenceExpression DefiningType='TestPropertyController' Image='property' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                            </VariableExpression>
+                        </MethodCallExpression>
+                        <VariableExpression DefiningType='TestPropertyController' Image='items' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='Test.stopTest' Image='' InputParametersSize='0' MethodName='stopTest' RealLoc='true'>
+                        <ReferenceExpression DefiningType='TestPropertyController' Image='Test' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='Assert.areEqual' Image='' InputParametersSize='2' MethodName='areEqual' RealLoc='true'>
+                        <ReferenceExpression DefiningType='TestPropertyController' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='1' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                        <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='items.size' Image='' InputParametersSize='0' MethodName='size' RealLoc='true'>
+                            <ReferenceExpression DefiningType='TestPropertyController' Image='items' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        </MethodCallExpression>
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='TestPropertyController' FullMethodName='Assert.areEqual' Image='' InputParametersSize='2' MethodName='areEqual' RealLoc='true'>
+                        <ReferenceExpression DefiningType='TestPropertyController' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <VariableExpression DefiningType='TestPropertyController' Image='MOCK_PICTURE_NAME' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='TestPropertyController' Image='Title' RealLoc='true'>
+                            <ReferenceExpression DefiningType='TestPropertyController' Image='' RealLoc='false' ReferenceType='LOAD' SObjectType='false' SafeNav='false'>
+                                <ArrayLoadExpression DefiningType='TestPropertyController' Image='' RealLoc='true'>
+                                    <VariableExpression DefiningType='TestPropertyController' Image='items' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestPropertyController' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                </ArrayLoadExpression>
+                            </ReferenceExpression>
+                        </VariableExpression>
+                    </MethodCallExpression>
+                </ExpressionStatement>
+            </BlockStatement>
+        </Method>
+    </UserClass>
+</ApexFile>

@@ -1,0 +1,593 @@
+[
+  {
+    "file": "FileUtilities_ast.txt",
+    "class_name": "FileUtilities",
+    "public": false,
+    "with_sharing": false,
+    "method_count": 1,
+    "methods": [
+      {
+        "name": "createFile",
+        "return_type": "String",
+        "parameters": 3,
+        "static": true,
+        "public": true,
+        "annotations": [
+          "AuraEnabled"
+        ]
+      }
+    ],
+    "soql_count": 1,
+    "soql_queries": [
+      "SELECT ContentDocumentId                 FROM ContentVersion                 WHERE Id = :contentVersion.Id                 WITH USER_MODE"
+    ],
+    "dml_operations": {
+      "insert": 2,
+      "update": 0,
+      "delete": 0,
+      "upsert": 0,
+      "merge": 0,
+      "undelete": 0
+    },
+    "total_dml": 2,
+    "variable_count": 2,
+    "method_call_count": 1,
+    "top_method_calls": [
+      "base64Decode"
+    ],
+    "success": true
+  },
+  {
+    "file": "FileUtilitiesTest_ast.txt",
+    "class_name": "FileUtilitiesTest",
+    "public": false,
+    "with_sharing": true,
+    "method_count": 4,
+    "methods": [
+      {
+        "name": "createFileSucceedsWhenCorrectInput",
+        "return_type": "void",
+        "parameters": 0,
+        "static": true,
+        "public": false,
+        "annotations": [
+          "IsTest"
+        ]
+      },
+      {
+        "name": "createFileFailsWhenIncorrectRecordId",
+        "return_type": "void",
+        "parameters": 0,
+        "static": true,
+        "public": false,
+        "annotations": [
+          "IsTest"
+        ]
+      },
+      {
+        "name": "createFileFailsWhenIncorrectBase64Data",
+        "return_type": "void",
+        "parameters": 0,
+        "static": true,
+        "public": false,
+        "annotations": [
+          "IsTest"
+        ]
+      },
+      {
+        "name": "createFileFailsWhenIncorrectFilename",
+        "return_type": "void",
+        "parameters": 0,
+        "static": true,
+        "public": false,
+        "annotations": [
+          "IsTest"
+        ]
+      }
+    ],
+    "soql_count": 0,
+    "soql_queries": [],
+    "dml_operations": {
+      "insert": 3,
+      "update": 0,
+      "delete": 0,
+      "upsert": 0,
+      "merge": 0,
+      "undelete": 0
+    },
+    "total_dml": 3,
+    "variable_count": 19,
+    "method_call_count": 11,
+    "top_method_calls": [
+      "fail",
+      "isNotNull",
+      "isInstanceOfType",
+      "createFile"
+    ],
+    "success": true
+  },
+  {
+    "file": "GeocodingService_ast.txt",
+    "class_name": "GeocodingService",
+    "public": false,
+    "with_sharing": false,
+    "method_count": 1,
+    "methods": [
+      {
+        "name": "geocodeAddresses",
+        "return_type": "List&lt;Coordinates>",
+        "parameters": 1,
+        "static": true,
+        "public": true,
+        "annotations": [
+          "InvocableMethod"
+        ]
+      }
+    ],
+    "soql_count": 0,
+    "soql_queries": [],
+    "dml_operations": {
+      "insert": 0,
+      "update": 0,
+      "delete": 0,
+      "upsert": 0,
+      "merge": 0,
+      "undelete": 0
+    },
+    "total_dml": 0,
+    "variable_count": 8,
+    "method_call_count": 15,
+    "top_method_calls": [
+      "setHeader",
+      "isNotBlank",
+      "deserialize",
+      "toExternalForm",
+      "send",
+      "add",
+      "setMethod",
+      "getOrgDomainUrl",
+      "getBody",
+      "setEndpoint"
+    ],
+    "success": true
+  },
+  {
+    "file": "GeocodingServiceTest_ast.txt",
+    "class_name": "GeocodingServiceTest",
+    "public": false,
+    "with_sharing": true,
+    "method_count": 5,
+    "methods": [
+      {
+        "name": "respond",
+        "return_type": "HTTPResponse",
+        "parameters": 1,
+        "static": false,
+        "public": false,
+        "annotations": []
+      },
+      {
+        "name": "respond",
+        "return_type": "HTTPResponse",
+        "parameters": 1,
+        "static": false,
+        "public": false,
+        "annotations": []
+      },
+      {
+        "name": "successResponse",
+        "return_type": "void",
+        "parameters": 0,
+        "static": true,
+        "public": false,
+        "annotations": [
+          "IsTest"
+        ]
+      },
+      {
+        "name": "blankAddress",
+        "return_type": "void",
+        "parameters": 0,
+        "static": true,
+        "public": false,
+        "annotations": [
+          "IsTest"
+        ]
+      },
+      {
+        "name": "errorResponse",
+        "return_type": "void",
+        "parameters": 0,
+        "static": true,
+        "public": false,
+        "annotations": [
+          "IsTest"
+        ]
+      }
+    ],
+    "soql_count": 0,
+    "soql_queries": [],
+    "dml_operations": {
+      "insert": 0,
+      "update": 0,
+      "delete": 0,
+      "upsert": 0,
+      "merge": 0,
+      "undelete": 0
+    },
+    "total_dml": 0,
+    "variable_count": 8,
+    "method_call_count": 23,
+    "top_method_calls": [
+      "setHeader",
+      "geocodeAddresses",
+      "areEqual",
+      "setBody",
+      "setStatusCode",
+      "isNull",
+      "size",
+      "setMock"
+    ],
+    "success": true
+  },
+  {
+    "file": "PagedResult_ast.txt",
+    "class_name": "PagedResult",
+    "public": false,
+    "with_sharing": false,
+    "method_count": 8,
+    "methods": [
+      {
+        "name": "__sfdc_pageSize",
+        "return_type": "Integer",
+        "parameters": 0,
+        "static": false,
+        "public": true,
+        "annotations": [
+          "AuraEnabled"
+        ]
+      },
+      {
+        "name": "__sfdc_pageSize",
+        "return_type": "void",
+        "parameters": 1,
+        "static": false,
+        "public": true,
+        "annotations": [
+          "AuraEnabled"
+        ]
+      },
+      {
+        "name": "__sfdc_pageNumber",
+        "return_type": "Integer",
+        "parameters": 0,
+        "static": false,
+        "public": true,
+        "annotations": [
+          "AuraEnabled"
+        ]
+      },
+      {
+        "name": "__sfdc_pageNumber",
+        "return_type": "void",
+        "parameters": 1,
+        "static": false,
+        "public": true,
+        "annotations": [
+          "AuraEnabled"
+        ]
+      },
+      {
+        "name": "__sfdc_totalItemCount",
+        "return_type": "Integer",
+        "parameters": 0,
+        "static": false,
+        "public": true,
+        "annotations": [
+          "AuraEnabled"
+        ]
+      },
+      {
+        "name": "__sfdc_totalItemCount",
+        "return_type": "void",
+        "parameters": 1,
+        "static": false,
+        "public": true,
+        "annotations": [
+          "AuraEnabled"
+        ]
+      },
+      {
+        "name": "__sfdc_records",
+        "return_type": "Object[]",
+        "parameters": 0,
+        "static": false,
+        "public": true,
+        "annotations": [
+          "AuraEnabled"
+        ]
+      },
+      {
+        "name": "__sfdc_records",
+        "return_type": "void",
+        "parameters": 1,
+        "static": false,
+        "public": true,
+        "annotations": [
+          "AuraEnabled"
+        ]
+      }
+    ],
+    "soql_count": 0,
+    "soql_queries": [],
+    "dml_operations": {
+      "insert": 0,
+      "update": 0,
+      "delete": 0,
+      "upsert": 0,
+      "merge": 0,
+      "undelete": 0
+    },
+    "total_dml": 0,
+    "variable_count": 0,
+    "method_call_count": 0,
+    "top_method_calls": [],
+    "success": true
+  },
+  {
+    "file": "PropertyController_ast.txt",
+    "class_name": "PropertyController",
+    "public": false,
+    "with_sharing": false,
+    "method_count": 2,
+    "methods": [
+      {
+        "name": "getPagedPropertyList",
+        "return_type": "PagedResult",
+        "parameters": 6,
+        "static": true,
+        "public": true,
+        "annotations": [
+          "AuraEnabled"
+        ]
+      },
+      {
+        "name": "getPictures",
+        "return_type": "List&lt;ContentVersion>",
+        "parameters": 1,
+        "static": true,
+        "public": true,
+        "annotations": [
+          "AuraEnabled"
+        ]
+      }
+    ],
+    "soql_count": 4,
+    "soql_queries": [
+      "SELECT COUNT()             FROM Property__c             WHERE                 (Name LIKE :searchPattern                 OR City__c LIKE :searchPattern                 OR Tags__c LIKE :searchPattern)                 AND Price__c &lt;= :safeMaxPrice                 AND Beds__c >= :safeMinBedrooms                 AND Baths__c >= :safeMinBathrooms",
+      "SELECT                 Id,                 Name,                 Address__c,                 City__c,                 State__c,                 Description__c,                 Price__c,                 Baths__c,                 Beds__c,                 Thumbnail__c,                 Location__Latitude__s,                 Location__Longitude__s             FROM Property__c             WHERE                 (Name LIKE :searchPattern                 OR City__c LIKE :searchPattern                 OR Tags__c LIKE :searchPattern)                 AND Price__c &lt;= :safeMaxPrice                 AND Beds__c >= :safeMinBedrooms                 AND Baths__c >= :safeMinBathrooms             WITH USER_MODE             ORDER BY Price__c             LIMIT :safePageSize             OFFSET :offset",
+      "SELECT Id, LinkedEntityId, ContentDocument.Title             FROM ContentDocumentLink             WHERE                 LinkedEntityId = :propertyId                 AND ContentDocument.FileType IN ('PNG', 'JPG', 'GIF')             WITH USER_MODE",
+      "SELECT Id, Title             FROM ContentVersion             WHERE ContentDocumentId IN :contentIds AND IsLatest = TRUE             WITH USER_MODE             ORDER BY CreatedDate"
+    ],
+    "dml_operations": {
+      "insert": 0,
+      "update": 0,
+      "delete": 0,
+      "upsert": 0,
+      "merge": 0,
+      "undelete": 0
+    },
+    "total_dml": 0,
+    "variable_count": 11,
+    "method_call_count": 2,
+    "top_method_calls": [
+      "isEmpty",
+      "add"
+    ],
+    "success": true
+  },
+  {
+    "file": "SampleDataController_ast.txt",
+    "class_name": "SampleDataController",
+    "public": false,
+    "with_sharing": false,
+    "method_count": 5,
+    "methods": [
+      {
+        "name": "importSampleData",
+        "return_type": "void",
+        "parameters": 0,
+        "static": true,
+        "public": true,
+        "annotations": [
+          "AuraEnabled"
+        ]
+      },
+      {
+        "name": "insertBrokers",
+        "return_type": "void",
+        "parameters": 0,
+        "static": false,
+        "public": false,
+        "annotations": []
+      },
+      {
+        "name": "insertProperties",
+        "return_type": "void",
+        "parameters": 0,
+        "static": false,
+        "public": false,
+        "annotations": []
+      },
+      {
+        "name": "insertContacts",
+        "return_type": "void",
+        "parameters": 0,
+        "static": false,
+        "public": false,
+        "annotations": []
+      },
+      {
+        "name": "randomizeDateListed",
+        "return_type": "void",
+        "parameters": 1,
+        "static": false,
+        "public": false,
+        "annotations": []
+      }
+    ],
+    "soql_count": 7,
+    "soql_queries": [
+      "SELECT Id FROM Case",
+      "SELECT Id FROM Property__c",
+      "SELECT Id FROM Broker__c",
+      "SELECT Id FROM Contact",
+      "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_brokers'",
+      "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_properties'",
+      "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_contacts'"
+    ],
+    "dml_operations": {
+      "insert": 3,
+      "update": 0,
+      "delete": 4,
+      "upsert": 0,
+      "merge": 0,
+      "undelete": 0
+    },
+    "total_dml": 7,
+    "variable_count": 10,
+    "method_call_count": 13,
+    "top_method_calls": [
+      "toString",
+      "randomizeDateListed",
+      "deserialize",
+      "today",
+      "valueof",
+      "insertProperties",
+      "insertContacts",
+      "insertBrokers",
+      "random"
+    ],
+    "success": true
+  },
+  {
+    "file": "TestPropertyController_ast.txt",
+    "class_name": "TestPropertyController",
+    "public": false,
+    "with_sharing": false,
+    "method_count": 4,
+    "methods": [
+      {
+        "name": "createProperties",
+        "return_type": "void",
+        "parameters": 1,
+        "static": false,
+        "public": false,
+        "annotations": []
+      },
+      {
+        "name": "testGetPagedPropertyList",
+        "return_type": "void",
+        "parameters": 0,
+        "static": true,
+        "public": false,
+        "annotations": [
+          "IsTest"
+        ]
+      },
+      {
+        "name": "testGetPicturesNoResults",
+        "return_type": "void",
+        "parameters": 0,
+        "static": true,
+        "public": false,
+        "annotations": [
+          "IsTest"
+        ]
+      },
+      {
+        "name": "testGetPicturesWithResults",
+        "return_type": "void",
+        "parameters": 0,
+        "static": true,
+        "public": false,
+        "annotations": [
+          "IsTest"
+        ]
+      }
+    ],
+    "soql_count": 3,
+    "soql_queries": [
+      "SELECT Name, Id             FROM Profile             WHERE                 UserType = 'Standard'                 AND PermissionsPrivacyDataAccess = FALSE                 AND PermissionsSubmitMacrosAllowed = TRUE                 AND PermissionsMassInlineEdit = TRUE             LIMIT 1",
+      "SELECT Id             FROM PermissionSet             WHERE Name = 'dreamhouse'",
+      "SELECT Id, Title, LatestPublishedVersionId             FROM ContentDocument             LIMIT 1"
+    ],
+    "dml_operations": {
+      "insert": 7,
+      "update": 0,
+      "delete": 0,
+      "upsert": 0,
+      "merge": 0,
+      "undelete": 0
+    },
+    "total_dml": 7,
+    "variable_count": 13,
+    "method_call_count": 19,
+    "top_method_calls": [
+      "getPagedPropertyList",
+      "add",
+      "areEqual",
+      "getPictures",
+      "getUserId",
+      "startTest",
+      "isNull",
+      "createProperties",
+      "base64Decode",
+      "size"
+    ],
+    "success": true
+  },
+  {
+    "file": "TestSampleDataController_ast.txt",
+    "class_name": "TestSampleDataController",
+    "public": false,
+    "with_sharing": false,
+    "method_count": 1,
+    "methods": [
+      {
+        "name": "importSampleData",
+        "return_type": "void",
+        "parameters": 0,
+        "static": true,
+        "public": false,
+        "annotations": [
+          "IsTest"
+        ]
+      }
+    ],
+    "soql_count": 3,
+    "soql_queries": [
+      "SELECT COUNT() FROM Property__c",
+      "SELECT COUNT() FROM Broker__c",
+      "SELECT COUNT() FROM Contact"
+    ],
+    "dml_operations": {
+      "insert": 0,
+      "update": 0,
+      "delete": 0,
+      "upsert": 0,
+      "merge": 0,
+      "undelete": 0
+    },
+    "total_dml": 0,
+    "variable_count": 3,
+    "method_call_count": 6,
+    "top_method_calls": [
+      "stopTest",
+      "startTest",
+      "isTrue",
+      "importSampleData"
+    ],
+    "success": true
+  }
+]

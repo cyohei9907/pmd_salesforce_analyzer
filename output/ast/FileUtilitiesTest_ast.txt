@@ -1,0 +1,349 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ApexFile DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+    <UserClass DefiningType='FileUtilitiesTest' Image='FileUtilitiesTest' InterfaceNames='[]' Nested='false' RealLoc='true' SimpleName='FileUtilitiesTest' SuperClassName=''>
+        <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='2' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='false' Test='true' TestOrTestSetup='true' Transient='false' Virtual='false' WebService='false' WithSharing='true' WithoutSharing='false'>
+            <Annotation DefiningType='FileUtilitiesTest' Image='IsTest' Name='IsTest' RawName='isTest' RealLoc='true' Resolved='true' />
+        </ModifierNode>
+        <Method Arity='0' CanonicalName='createFileSucceedsWhenCorrectInput' Constructor='false' DefiningType='FileUtilitiesTest' Image='createFileSucceedsWhenCorrectInput' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='8' Override='false' Private='false' Protected='false' Public='false' RealLoc='true' Static='true' Test='true' TestOrTestSetup='true' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='FileUtilitiesTest' Image='IsTest' Name='IsTest' RawName='isTest' RealLoc='true' Resolved='true' />
+            </ModifierNode>
+            <BlockStatement CurlyBrace='true' DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='property' RealLoc='true' Type='Property__c'>
+                        <NewObjectExpression DefiningType='FileUtilitiesTest' Image='' RealLoc='true' Type='Property__c' />
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='property' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <DmlInsertStatement DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <VariableExpression DefiningType='FileUtilitiesTest' Image='property' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </DmlInsertStatement>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='base64Data' RealLoc='true' Type='String'>
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='FileUtilitiesTest' Double='false' Image='/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='base64Data' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='fileName' RealLoc='true' Type='String'>
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='FileUtilitiesTest' Double='false' Image='file.png' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='fileName' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='recordId' RealLoc='true' Type='String'>
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='Id' RealLoc='true'>
+                            <ReferenceExpression DefiningType='FileUtilitiesTest' Image='property' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='recordId' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='contentDocumentLinkId' RealLoc='true' Type='String'>
+                        <MethodCallExpression DefiningType='FileUtilitiesTest' FullMethodName='FileUtilities.createFile' Image='' InputParametersSize='3' MethodName='createFile' RealLoc='true'>
+                            <ReferenceExpression DefiningType='FileUtilitiesTest' Image='FileUtilities' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            <VariableExpression DefiningType='FileUtilitiesTest' Image='base64Data' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                            <VariableExpression DefiningType='FileUtilitiesTest' Image='fileName' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                            <VariableExpression DefiningType='FileUtilitiesTest' Image='recordId' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                        </MethodCallExpression>
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='contentDocumentLinkId' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ExpressionStatement DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='FileUtilitiesTest' FullMethodName='Assert.isNotNull' Image='' InputParametersSize='1' MethodName='isNotNull' RealLoc='true'>
+                        <ReferenceExpression DefiningType='FileUtilitiesTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='contentDocumentLinkId' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </MethodCallExpression>
+                </ExpressionStatement>
+            </BlockStatement>
+        </Method>
+        <Method Arity='0' CanonicalName='createFileFailsWhenIncorrectRecordId' Constructor='false' DefiningType='FileUtilitiesTest' Image='createFileFailsWhenIncorrectRecordId' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='8' Override='false' Private='false' Protected='false' Public='false' RealLoc='true' Static='true' Test='true' TestOrTestSetup='true' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='FileUtilitiesTest' Image='IsTest' Name='IsTest' RawName='isTest' RealLoc='true' Resolved='true' />
+            </ModifierNode>
+            <BlockStatement CurlyBrace='true' DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='base64Data' RealLoc='true' Type='String'>
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='FileUtilitiesTest' Double='false' Image='/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='base64Data' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='fileName' RealLoc='true' Type='String'>
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='FileUtilitiesTest' Double='false' Image='file.png' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='fileName' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='recordId' RealLoc='true' Type='String'>
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='FileUtilitiesTest' Double='false' Image='INVALID_ID' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='recordId' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <TryCatchFinallyBlockStatement DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <BlockStatement CurlyBrace='true' DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                        <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                            <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                            <VariableDeclaration DefiningType='FileUtilitiesTest' Image='contentDocumentLinkId' RealLoc='true' Type='String'>
+                                <MethodCallExpression DefiningType='FileUtilitiesTest' FullMethodName='FileUtilities.createFile' Image='' InputParametersSize='3' MethodName='createFile' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='FileUtilitiesTest' Image='FileUtilities' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                    <VariableExpression DefiningType='FileUtilitiesTest' Image='base64Data' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <VariableExpression DefiningType='FileUtilitiesTest' Image='fileName' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <VariableExpression DefiningType='FileUtilitiesTest' Image='recordId' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                </MethodCallExpression>
+                                <VariableExpression DefiningType='FileUtilitiesTest' Image='contentDocumentLinkId' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </VariableDeclaration>
+                        </VariableDeclarationStatements>
+                        <ExpressionStatement DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                            <MethodCallExpression DefiningType='FileUtilitiesTest' FullMethodName='Assert.fail' Image='' InputParametersSize='1' MethodName='fail' RealLoc='true'>
+                                <ReferenceExpression DefiningType='FileUtilitiesTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='FileUtilitiesTest' Double='false' Image='Expected an AuraHandledException' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                            </MethodCallExpression>
+                        </ExpressionStatement>
+                    </BlockStatement>
+                    <CatchBlockStatement ContainsComment='true' DefiningType='FileUtilitiesTest' ExceptionType='Exception' Image='' RealLoc='true' VariableName='e'>
+                        <BlockStatement CurlyBrace='true' DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                            <ExpressionStatement DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                                <MethodCallExpression DefiningType='FileUtilitiesTest' FullMethodName='Assert.isInstanceOfType' Image='' InputParametersSize='2' MethodName='isInstanceOfType' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='FileUtilitiesTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                    <VariableExpression DefiningType='FileUtilitiesTest' Image='e' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <ClassRefExpression DefiningType='FileUtilitiesTest' Image='' RealLoc='true' />
+                                </MethodCallExpression>
+                            </ExpressionStatement>
+                        </BlockStatement>
+                    </CatchBlockStatement>
+                </TryCatchFinallyBlockStatement>
+            </BlockStatement>
+        </Method>
+        <Method Arity='0' CanonicalName='createFileFailsWhenIncorrectBase64Data' Constructor='false' DefiningType='FileUtilitiesTest' Image='createFileFailsWhenIncorrectBase64Data' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='8' Override='false' Private='false' Protected='false' Public='false' RealLoc='true' Static='true' Test='true' TestOrTestSetup='true' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='FileUtilitiesTest' Image='IsTest' Name='IsTest' RawName='isTest' RealLoc='true' Resolved='true' />
+            </ModifierNode>
+            <BlockStatement CurlyBrace='true' DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='property' RealLoc='true' Type='Property__c'>
+                        <NewObjectExpression DefiningType='FileUtilitiesTest' Image='' RealLoc='true' Type='Property__c' />
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='property' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <DmlInsertStatement DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <VariableExpression DefiningType='FileUtilitiesTest' Image='property' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </DmlInsertStatement>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='base64Data' RealLoc='true' Type='String'>
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='FileUtilitiesTest' Double='false' Image='' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='base64Data' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='fileName' RealLoc='true' Type='String'>
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='FileUtilitiesTest' Double='false' Image='file.png' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='fileName' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='recordId' RealLoc='true' Type='String'>
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='Id' RealLoc='true'>
+                            <ReferenceExpression DefiningType='FileUtilitiesTest' Image='property' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='recordId' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <TryCatchFinallyBlockStatement DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <BlockStatement CurlyBrace='true' DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                        <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                            <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                            <VariableDeclaration DefiningType='FileUtilitiesTest' Image='contentDocumentLinkId' RealLoc='true' Type='String'>
+                                <MethodCallExpression DefiningType='FileUtilitiesTest' FullMethodName='FileUtilities.createFile' Image='' InputParametersSize='3' MethodName='createFile' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='FileUtilitiesTest' Image='FileUtilities' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                    <VariableExpression DefiningType='FileUtilitiesTest' Image='base64Data' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <VariableExpression DefiningType='FileUtilitiesTest' Image='fileName' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <VariableExpression DefiningType='FileUtilitiesTest' Image='recordId' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                </MethodCallExpression>
+                                <VariableExpression DefiningType='FileUtilitiesTest' Image='contentDocumentLinkId' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </VariableDeclaration>
+                        </VariableDeclarationStatements>
+                        <ExpressionStatement DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                            <MethodCallExpression DefiningType='FileUtilitiesTest' FullMethodName='Assert.fail' Image='' InputParametersSize='1' MethodName='fail' RealLoc='true'>
+                                <ReferenceExpression DefiningType='FileUtilitiesTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='FileUtilitiesTest' Double='false' Image='Expected an AuraHandledException' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                            </MethodCallExpression>
+                        </ExpressionStatement>
+                    </BlockStatement>
+                    <CatchBlockStatement ContainsComment='true' DefiningType='FileUtilitiesTest' ExceptionType='Exception' Image='' RealLoc='true' VariableName='e'>
+                        <BlockStatement CurlyBrace='true' DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                            <ExpressionStatement DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                                <MethodCallExpression DefiningType='FileUtilitiesTest' FullMethodName='Assert.isInstanceOfType' Image='' InputParametersSize='2' MethodName='isInstanceOfType' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='FileUtilitiesTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                    <VariableExpression DefiningType='FileUtilitiesTest' Image='e' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <ClassRefExpression DefiningType='FileUtilitiesTest' Image='' RealLoc='true' />
+                                </MethodCallExpression>
+                            </ExpressionStatement>
+                        </BlockStatement>
+                    </CatchBlockStatement>
+                </TryCatchFinallyBlockStatement>
+            </BlockStatement>
+        </Method>
+        <Method Arity='0' CanonicalName='createFileFailsWhenIncorrectFilename' Constructor='false' DefiningType='FileUtilitiesTest' Image='createFileFailsWhenIncorrectFilename' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='8' Override='false' Private='false' Protected='false' Public='false' RealLoc='true' Static='true' Test='true' TestOrTestSetup='true' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='FileUtilitiesTest' Image='IsTest' Name='IsTest' RawName='isTest' RealLoc='true' Resolved='true' />
+            </ModifierNode>
+            <BlockStatement CurlyBrace='true' DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='property' RealLoc='true' Type='Property__c'>
+                        <NewObjectExpression DefiningType='FileUtilitiesTest' Image='' RealLoc='true' Type='Property__c' />
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='property' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <DmlInsertStatement DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <VariableExpression DefiningType='FileUtilitiesTest' Image='property' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </DmlInsertStatement>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='base64Data' RealLoc='true' Type='String'>
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='FileUtilitiesTest' Double='false' Image='/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='base64Data' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='fileName' RealLoc='true' Type='String'>
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='FileUtilitiesTest' Double='false' Image='' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='fileName' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='FileUtilitiesTest' Image='recordId' RealLoc='true' Type='String'>
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='Id' RealLoc='true'>
+                            <ReferenceExpression DefiningType='FileUtilitiesTest' Image='property' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='FileUtilitiesTest' Image='recordId' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <TryCatchFinallyBlockStatement DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                    <BlockStatement CurlyBrace='true' DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                        <VariableDeclarationStatements DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                            <ModifierNode Abstract='false' DefiningType='FileUtilitiesTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                            <VariableDeclaration DefiningType='FileUtilitiesTest' Image='contentDocumentLinkId' RealLoc='true' Type='String'>
+                                <MethodCallExpression DefiningType='FileUtilitiesTest' FullMethodName='FileUtilities.createFile' Image='' InputParametersSize='3' MethodName='createFile' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='FileUtilitiesTest' Image='FileUtilities' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                    <VariableExpression DefiningType='FileUtilitiesTest' Image='base64Data' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <VariableExpression DefiningType='FileUtilitiesTest' Image='fileName' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <VariableExpression DefiningType='FileUtilitiesTest' Image='recordId' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                </MethodCallExpression>
+                                <VariableExpression DefiningType='FileUtilitiesTest' Image='contentDocumentLinkId' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </VariableDeclaration>
+                        </VariableDeclarationStatements>
+                        <ExpressionStatement DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                            <MethodCallExpression DefiningType='FileUtilitiesTest' FullMethodName='Assert.fail' Image='' InputParametersSize='1' MethodName='fail' RealLoc='true'>
+                                <ReferenceExpression DefiningType='FileUtilitiesTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='FileUtilitiesTest' Double='false' Image='Expected an AuraHandledException' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                            </MethodCallExpression>
+                        </ExpressionStatement>
+                    </BlockStatement>
+                    <CatchBlockStatement ContainsComment='true' DefiningType='FileUtilitiesTest' ExceptionType='Exception' Image='' RealLoc='true' VariableName='e'>
+                        <BlockStatement CurlyBrace='true' DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                            <ExpressionStatement DefiningType='FileUtilitiesTest' Image='' RealLoc='true'>
+                                <MethodCallExpression DefiningType='FileUtilitiesTest' FullMethodName='Assert.isInstanceOfType' Image='' InputParametersSize='2' MethodName='isInstanceOfType' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='FileUtilitiesTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                    <VariableExpression DefiningType='FileUtilitiesTest' Image='e' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <ClassRefExpression DefiningType='FileUtilitiesTest' Image='' RealLoc='true' />
+                                </MethodCallExpression>
+                            </ExpressionStatement>
+                        </BlockStatement>
+                    </CatchBlockStatement>
+                </TryCatchFinallyBlockStatement>
+            </BlockStatement>
+        </Method>
+    </UserClass>
+</ApexFile>

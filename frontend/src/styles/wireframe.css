@@ -1,0 +1,535 @@
+.el-menu-item.is-active .el-icon svg,
+.el-button.is-active .el-icon svg,
+.el-menu-item.is-active .el-icon,
+.el-button.is-active .el-icon {
+  color: #fff !important;
+  fill: #fff !important;
+  stroke: #fff !important;
+}
+.el-icon svg {
+  color: #111 !important;
+  fill: #111 !important;
+  stroke: #111 !important;
+}
+/* el-tag success 风格切换为 wireframe 风格 */
+.el-tag.el-tag--success {
+  background: var(--wireframe-bg) !important;
+  border: 2px solid var(--wireframe-border) !important;
+  color: var(--wireframe-text) !important;
+}
+/* 成功消息内容颜色改为黑色 */
+.el-message--success .el-message__content {
+  color: #111 !important;
+}
+/* 全局将 message/notification/alert 的青色替换为蓝色 */
+.el-message,
+.el-message--info,
+.el-message--success,
+.el-notification,
+.el-notification--info,
+.el-notification--success,
+.el-alert,
+.el-alert--info,
+.el-alert--success {
+  background: #e6f0ff !important;
+  border-color: #409eff !important;
+  color: #1a237e !important;
+}
+.el-message__icon,
+.el-notification__icon,
+.el-alert__icon {
+  color: #409eff !important;
+}
+/* el-descriptions 组件线加粗 */
+.el-descriptions__cell.is-bordered-label,
+.el-descriptions__cell.is-bordered-content,
+.el-descriptions__label.is-bordered-label,
+.el-descriptions__content.is-bordered-content {
+  border-width: 2px !important;
+  border-color: var(--wireframe-border) !important;
+}
+/* 表格内部线加粗，外框细线 */
+.el-table,
+.el-table th,
+.el-table td {
+  border-width: 1px !important;
+  border-color: var(--wireframe-border) !important;
+}
+.el-table__cell {
+  border-right-width: 2px !important;
+  border-bottom-width: 2px !important;
+  border-color: var(--wireframe-border) !important;
+}
+.el-table--border {
+  border-width: 1px !important;
+  border-color: var(--wireframe-border) !important;
+}
+/* 全局加粗所有数字和文字 */
+body, html, .el-menu, .el-menu-item, .el-submenu__title, .el-tabs__item, .el-card, .el-table, .el-form, .el-form-item, .el-input__inner, .el-button, .el-tag, .el-alert, .el-message, .el-notification, .el-popover, .el-tooltip__popper, .el-dropdown-menu, .context-menu, .context-menu-item, input, textarea, select, button {
+  font-weight: bold !important;
+}
+/* 侧边栏菜单icon居中 */
+.el-menu-item .el-icon,
+.el-submenu__title .el-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 24px;
+  margin-right: 8px;
+  margin-left: 0;
+  padding: 0;
+}
+/* tab内部文字与边缘线框分开 */
+.el-tabs__item {
+  margin-left: 0 !important;
+  padding-left: 16px !important;
+}
+.el-input-group__append .el-button,
+.el-input-group__append button {
+  height: 100% !important;
+  min-height: 38px !important;
+  box-sizing: border-box;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  border-radius: 0 !important;
+}
+.el-input-group__append {
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+  border-left: none !important;
+  height: 100% !important;
+  display: flex;
+  align-items: stretch;
+}
+/* ディレクトリパス输入框不换行，内容溢出时省略 */
+.el-input__inner[type="text"],
+.el-input__wrapper input[type="text"] {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+/* tab文字前部增加margin-left */
+.el-tabs__item {
+  margin-left: 12px !important;
+}
+
+/* 线框风格主题 - Wireframe Style Theme */
+
+/* 全局字体和颜色设置 */
+:root {
+  --wireframe-border: #333;
+  --wireframe-bg: #fff;
+  --wireframe-text: #333;
+  --wireframe-gray: #999;
+  --wireframe-light-gray: #f5f5f5;
+  --wireframe-primary: #333;
+  --wireframe-font: 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', 'monospace';
+body, html, .el-menu, .el-menu-item, .el-submenu__title, .el-tabs__item, .el-card, .el-table, .el-form, .el-form-item, .el-input__inner, .el-button, .el-tag, .el-alert, .el-message, .el-notification, .el-popover, .el-tooltip__popper, .el-dropdown-menu, .context-menu, .context-menu-item, input, textarea, select, button {
+  font-family: var(--wireframe-font) !important;
+}
+}
+
+/* 侧边栏展开/收起按钮图标加粗 */
+.toggle-sidebar-btn .el-icon {
+  font-weight: bold !important;
+  stroke-width: 3 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-sidebar-btn .el-icon svg {
+  stroke-width: 3 !important;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 重置 Element Plus 的圆角和阴影 */
+.el-card,
+.el-button,
+.el-input__wrapper,
+.el-select,
+.el-table,
+.el-dialog,
+.el-drawer,
+.el-menu,
+.el-menu-item,
+.el-submenu__title,
+.el-pagination button,
+.el-tabs__item,
+.el-tag,
+.el-alert,
+.el-message,
+.el-notification,
+.el-popover,
+.el-tooltip__popper,
+.el-dropdown-menu,
+.context-menu {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* 卡片线框风格 */
+.el-card {
+  border: 2px solid var(--wireframe-border) !important;
+  background: var(--wireframe-bg) !important;
+}
+
+.el-card__header {
+  border-bottom: 2px solid var(--wireframe-border) !important;
+  background: var(--wireframe-light-gray) !important;
+  color: var(--wireframe-text) !important;
+  font-weight: bold !important;
+}
+
+/* 按钮线框风格 */
+.el-button {
+  border: 2px solid var(--wireframe-border) !important;
+  background: var(--wireframe-bg) !important;
+  color: var(--wireframe-text) !important;
+  font-weight: 500 !important;
+}
+
+.el-button:hover {
+  background: var(--wireframe-light-gray) !important;
+  border-color: var(--wireframe-border) !important;
+}
+
+.el-button--primary {
+  background: var(--wireframe-text) !important;
+  color: var(--wireframe-bg) !important;
+}
+
+.el-button--primary:hover {
+  background: #555 !important;
+}
+
+.el-button.is-circle {
+  border: 2px solid var(--wireframe-border) !important;
+}
+
+/* 输入框线框风格 */
+.el-input__wrapper {
+  border: 2px solid var(--wireframe-border) !important;
+  background: var(--wireframe-bg) !important;
+  box-shadow: none !important;
+}
+
+.el-input__wrapper:hover,
+.el-input__wrapper.is-focus {
+  border-color: var(--wireframe-border) !important;
+  box-shadow: none !important;
+}
+
+.el-textarea__inner {
+  border: 2px solid var(--wireframe-border) !important;
+  border-radius: 0 !important;
+}
+
+/* 选择框线框风格 */
+.el-select .el-input__wrapper,
+.el-select .el-input__inner,
+.el-select__wrapper,
+.wireframe-select .el-input__wrapper {
+  border: 2px solid var(--wireframe-border) !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* 让右侧按钮（如reset）高度与输入框保持一致 */
+.el-input-group__append .el-button,
+.el-input-group__append button,
+.el-input-group__append {
+.el-input-group__append .el-button,
+.el-input-group__append button,
+.el-input-group__append {
+  height: 100% !important;
+  min-height: 38px !important;
+  box-sizing: border-box;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+/* 让reset按钮紧贴输入框右侧，无多余空白 */
+.el-input-group__append {
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+  border-left: none !important;
+}
+}
+
+.el-select .el-input__wrapper.is-focus,
+.el-select .el-input__wrapper:hover,
+.el-select .el-input__wrapper:focus,
+.el-select:hover .el-input__wrapper,
+.el-select.is-focus .el-input__wrapper,
+.wireframe-select .el-input__wrapper.is-focus,
+.wireframe-select:hover .el-input__wrapper,
+.wireframe-select .el-input__wrapper:hover {
+  border: 2px solid var(--wireframe-border) !important;
+  border-color: var(--wireframe-border) !important;
+  box-shadow: none !important;
+}
+
+/* 移除所有 el-select 相关的阴影和蓝色边框 */
+.el-select .el-input__wrapper:focus,
+.el-select .el-input__wrapper.is-focus,
+.wireframe-select .el-input__wrapper:focus {
+  border-color: var(--wireframe-border) !important;
+  box-shadow: 0 0 0 0 transparent !important;
+}
+
+.el-select-dropdown {
+  border: 2px solid var(--wireframe-border) !important;
+  border-radius: 0 !important;
+}
+
+.el-select-dropdown__item.is-hovering {
+  background-color: var(--wireframe-light-gray) !important;
+}
+
+.el-select-dropdown__item.is-selected {
+  background-color: var(--wireframe-text) !important;
+  color: var(--wireframe-bg) !important;
+}
+
+/* 表格线框风格 */
+.el-table {
+  border: 2px solid var(--wireframe-border) !important;
+}
+
+.el-table th.el-table__cell {
+  background: var(--wireframe-light-gray) !important;
+  border-bottom: 2px solid var(--wireframe-border) !important;
+  font-weight: bold !important;
+  color: var(--wireframe-text) !important;
+}
+
+.el-table td.el-table__cell {
+  border-bottom: 1px solid var(--wireframe-gray) !important;
+}
+
+.el-table__row:hover > td {
+  background-color: var(--wireframe-light-gray) !important;
+}
+
+.el-table--border .el-table__cell {
+  border-right: 1px solid var(--wireframe-gray) !important;
+}
+
+/* 菜单线框风格 */
+.el-menu {
+  border: none !important;
+}
+
+.el-menu-item,
+.el-submenu__title {
+  border-left: 3px solid transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.el-menu-item.is-active {
+  border-left-color: var(--wireframe-text) !important;
+  background-color: var(--wireframe-text) !important;
+  color: var(--wireframe-bg) !important;
+}
+
+.el-menu-item.is-active .el-icon,
+.el-menu-item.is-active span {
+  color: var(--wireframe-bg) !important;
+}
+
+/* 悬停效果 - 仅对未选中的项生效 */
+.el-menu-item:not(.is-active):hover,
+.el-submenu__title:hover {
+  background-color: var(--wireframe-light-gray) !important;
+}
+
+/* 选中项的悬停效果 - 保持黑底白字 */
+.el-menu-item.is-active:hover {
+  background-color: var(--wireframe-text) !important;
+}
+
+/* 标签页线框风格 */
+.el-tabs__header {
+  border-bottom: 2px solid var(--wireframe-border) !important;
+}
+
+/* 移除 el-tabs 下方的蓝色边框/残留 */
+.el-tabs__nav-wrap::after,
+.el-tabs__active-bar {
+  border: none !important;
+  background: none !important;
+  height: 0 !important;
+  box-shadow: none !important;
+}
+
+.el-tabs__item {
+  border: 2px solid transparent !important;
+  border-bottom: none !important;
+  color: var(--wireframe-gray) !important;
+}
+
+.el-tabs__item.is-active {
+  border-color: var(--wireframe-border) !important;
+  border-bottom-color: var(--wireframe-bg) !important;
+  color: var(--wireframe-text) !important;
+  font-weight: bold !important;
+}
+
+.el-tabs__item:hover {
+  color: var(--wireframe-text) !important;
+}
+
+/* 对话框线框风格 */
+.el-dialog,
+.el-drawer {
+  border: 3px solid var(--wireframe-border) !important;
+}
+
+.el-dialog__header,
+.el-drawer__header {
+  border-bottom: 2px solid var(--wireframe-border) !important;
+  background: var(--wireframe-light-gray) !important;
+  color: var(--wireframe-text) !important;
+  font-weight: bold !important;
+}
+
+.el-dialog__title,
+.el-drawer__title {
+  color: var(--wireframe-text) !important;
+  font-weight: bold !important;
+}
+
+.el-dialog__body,
+.el-drawer__body {
+  color: var(--wireframe-text) !important;
+}
+
+.el-dialog__body *:not(.el-tag):not(.el-button),
+.el-drawer__body *:not(.el-tag):not(.el-button) {
+  color: var(--wireframe-text) !important;
+}
+
+.el-drawer__body {
+  border-top: 2px solid var(--wireframe-border) !important;
+}
+
+/* 描述列表线框风格 */
+.el-descriptions {
+  border: 2px solid var(--wireframe-border) !important;
+}
+
+.el-descriptions__label {
+  background: var(--wireframe-light-gray) !important;
+  color: var(--wireframe-text) !important;
+  font-weight: bold !important;
+}
+
+.el-descriptions__content {
+  color: var(--wireframe-text) !important;
+}
+
+.el-descriptions__cell {
+  border: 1px solid var(--wireframe-gray) !important;
+}
+
+/* 消息提示线框风格 */
+.el-message,
+.el-notification {
+  border: 2px solid var(--wireframe-border) !important;
+  background: var(--wireframe-bg) !important;
+}
+
+.el-message--success,
+.el-notification--success {
+  border-color: #333 !important;
+}
+
+.el-message--warning,
+.el-notification--warning {
+  border-color: #333 !important;
+}
+
+.el-message--error,
+.el-notification--error {
+  border-color: #333 !important;
+}
+
+/* 右键菜单线框风格 */
+.context-menu {
+  border: 2px solid var(--wireframe-border) !important;
+  background: var(--wireframe-bg) !important;
+}
+
+.context-menu-item {
+  border-bottom: 1px solid var(--wireframe-gray) !important;
+}
+
+.context-menu-item:last-child {
+  border-bottom: none !important;
+}
+
+.context-menu-item:hover {
+  background: var(--wireframe-light-gray) !important;
+}
+
+/* 统计卡片线框风格 */
+.stat-card {
+  border: 2px solid var(--wireframe-border) !important;
+  background: var(--wireframe-bg) !important;
+}
+
+/* Header 线框风格 */
+.el-header {
+  border-bottom: 2px solid var(--wireframe-border) !important;
+}
+
+/* Aside 线框风格 */
+.el-aside {
+  border-right: 2px solid var(--wireframe-border) !important;
+}
+
+/* 图例线框风格 */
+.legend {
+  border: 2px solid var(--wireframe-border) !important;
+  background: var(--wireframe-bg) !important;
+}
+
+.legend-item {
+  border: 1px solid transparent !important;
+}
+
+.legend-item:hover {
+  border-color: var(--wireframe-border) !important;
+  background: var(--wireframe-light-gray) !important;
+}
+
+.legend-item.inactive {
+  opacity: 0.3 !important;
+}
+
+/* 禁用所有过渡动画,增强线框感 */
+* {
+  transition: none !important;
+}
+
+/* 允许某些必要的过渡 */
+.el-aside,
+.el-menu-item,
+.el-button,
+.context-menu-item {
+  transition: background-color 0.1s ease, border-color 0.1s ease !important;
+}

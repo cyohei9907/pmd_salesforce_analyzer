@@ -1,0 +1,1089 @@
+<template>
+  <div class="graph-view" :style="{ left: sidebarWidth + 'px' }">
+    <!-- 顶部控制栏 -->
+    
+    <!-- 图表容器 -->
+    <div class="graph-container">
+      <div ref="networkContainer" class="network"></div>
+      
+      <div class="legend">
+        <h4 style="margin: 0 0 8px 0;">图例（点击过滤）</h4>
+        <div 
+          class="legend-item" 
+          :class="{ active: isTypeActive('ApexClass'), inactive: !isTypeActive('ApexClass') && hasActiveFilter }"
+          @click="toggleNodeType('ApexClass')"
+        >
+          <span class="legend-color" style="background: #409eff"></span>
+          <span>Apex类</span>
+          <span v-if="nodeTypeCounts.ApexClass" class="count">({{ nodeTypeCounts.ApexClass }})</span>
+        </div>
+        <div 
+          class="legend-item" 
+          :class="{ active: isTypeActive('Method'), inactive: !isTypeActive('Method') && hasActiveFilter }"
+          @click="toggleNodeType('Method')"
+        >
+          <span class="legend-color" style="background: #67c23a"></span>
+          <span>方法</span>
+          <span v-if="nodeTypeCounts.Method" class="count">({{ nodeTypeCounts.Method }})</span>
+        </div>
+        <div 
+          class="legend-item" 
+          :class="{ active: isTypeActive('SOQLQuery'), inactive: !isTypeActive('SOQLQuery') && hasActiveFilter }"
+          @click="toggleNodeType('SOQLQuery')"
+        >
+          <span class="legend-color" style="background: #e6a23c"></span>
+          <span>SOQL查询</span>
+          <span v-if="nodeTypeCounts.SOQLQuery" class="count">({{ nodeTypeCounts.SOQLQuery }})</span>
+        </div>
+        <div 
+          class="legend-item" 
+          :class="{ active: isTypeActive('DMLOperation'), inactive: !isTypeActive('DMLOperation') && hasActiveFilter }"
+          @click="toggleNodeType('DMLOperation')"
+        >
+          <span class="legend-color" style="background: #f56c6c"></span>
+          <span>DML操作</span>
+          <span v-if="nodeTypeCounts.DMLOperation" class="count">({{ nodeTypeCounts.DMLOperation }})</span>
+        </div>
+        <el-divider style="margin: 10px 0" />
+        <el-button 
+          v-if="hasActiveFilter" 
+          size="small" 
+          type="info" 
+          @click="clearFilter"
+          style="width: 100%"
+        >
+          清除过滤
+        </el-button>
+      </div>
+      
+      <!-- 悬浮按钮组：图右上角，仿legend节点样式 -->
+      <div class="graph-float-btns">
+        <el-button @click="loadGraph" :icon="Refresh" :loading="loading" circle size="large" title="刷新" />
+        <el-button @click="fitView" :icon="FullScreen" circle size="large" title="适应窗口" style="margin-left: 8px;" />
+      </div>
+
+      <!-- 右键菜单 -->
+      <div 
+        v-if="contextMenu.visible" 
+        class="context-menu" 
+        :style="{ left: contextMenu.x + 'px', top: contextMenu.y + 'px' }"
+      >
+        <div class="context-menu-item" @click="showNodePath">
+          <el-icon><Share /></el-icon>
+          <span>显示节点路径</span>
+        </div>
+        <div class="context-menu-item" @click="focusNode">
+          <el-icon><Aim /></el-icon>
+          <span>聚焦节点</span>
+        </div>
+        <div class="context-menu-item" @click="showNodeDetails">
+          <el-icon><InfoFilled /></el-icon>
+          <span>查看详情</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右侧抽屉面板 -->
+    <el-drawer
+      v-model="drawerVisible"
+      title="节点详情"
+      :size="400"
+      direction="rtl"
+    >
+      <div v-if="selectedNode" class="node-detail">
+        <!-- 类节点 -->
+        <div v-if="selectedNode.type === 'ApexClass'" class="detail-section">
+          <el-descriptions :column="1" border>
+            <el-descriptions-item label="类型">
+              <el-tag type="primary">Apex类</el-tag>
+            </el-descriptions-item>
+            <el-descriptions-item label="类名">
+              <strong>{{ selectedNode.properties.name }}</strong>
+            </el-descriptions-item>
+            <el-descriptions-item label="简单名称">
+              {{ selectedNode.properties.simpleName }}
+            </el-descriptions-item>
+            <el-descriptions-item label="访问修饰符">
+              <el-tag :type="selectedNode.properties.public ? 'success' : 'info'">
+                {{ selectedNode.properties.public ? 'public' : 'private' }}
+              </el-tag>
+            </el-descriptions-item>
+            <el-descriptions-item label="共享设置">
+              <el-tag :type="selectedNode.properties.withSharing ? 'success' : 'warning'">
+                {{ selectedNode.properties.withSharing ? 'with sharing' : 'without sharing' }}
+              </el-tag>
+            </el-descriptions-item>
+            <el-descriptions-item label="文件名">
+              {{ selectedNode.properties.fileName }}
+            </el-descriptions-item>
+          </el-descriptions>
+        </div>
+
+        <!-- 方法节点 -->
+        <div v-else-if="selectedNode.type === 'Method'" class="detail-section">
+          <el-descriptions :column="1" border>
+            <el-descriptions-item label="类型">
+              <el-tag type="success">方法</el-tag>
+            </el-descriptions-item>
+            <el-descriptions-item label="方法名">
+              <strong>{{ selectedNode.properties.name }}</strong>
+            </el-descriptions-item>
+            <el-descriptions-item label="所属类">
+              {{ selectedNode.properties.className }}
+            </el-descriptions-item>
+            <el-descriptions-item label="返回类型">
+              <el-tag size="small">{{ selectedNode.properties.returnType }}</el-tag>
+            </el-descriptions-item>
+            <el-descriptions-item label="参数数量">
+              {{ selectedNode.properties.arity }}
+            </el-descriptions-item>
+            <el-descriptions-item label="修饰符">
+              <el-tag v-if="selectedNode.properties.public" type="success" size="small">public</el-tag>
+              <el-tag v-if="selectedNode.properties.static" type="info" size="small" style="margin-left: 5px">static</el-tag>
+              <el-tag v-if="selectedNode.properties.constructor" type="warning" size="small" style="margin-left: 5px">constructor</el-tag>
+            </el-descriptions-item>
+            <el-descriptions-item label="规范名称">
+              <code>{{ selectedNode.properties.canonicalName }}</code>
+            </el-descriptions-item>
+          </el-descriptions>
+        </div>
+
+        <!-- SOQL查询节点 -->
+        <div v-else-if="selectedNode.type === 'SOQLQuery'" class="detail-section">
+          <el-descriptions :column="1" border>
+            <el-descriptions-item label="类型">
+              <el-tag type="warning">SOQL查询</el-tag>
+            </el-descriptions-item>
+            <el-descriptions-item label="所属类">
+              {{ selectedNode.properties.className }}
+            </el-descriptions-item>
+            <el-descriptions-item label="所属方法">
+              {{ selectedNode.properties.methodName }}
+            </el-descriptions-item>
+            <el-descriptions-item label="查询语句" :span="2">
+              <el-input
+                :model-value="selectedNode.properties.query"
+                type="textarea"
+                :rows="4"
+                readonly
+              />
+            </el-descriptions-item>
+            <el-descriptions-item label="规范查询" :span="2">
+              <el-input
+                :model-value="selectedNode.properties.canonicalQuery"
+                type="textarea"
+                :rows="3"
+                readonly
+              />
+            </el-descriptions-item>
+          </el-descriptions>
+        </div>
+
+        <!-- DML操作节点 -->
+        <div v-else-if="selectedNode.type === 'DMLOperation'" class="detail-section">
+          <el-descriptions :column="1" border>
+            <el-descriptions-item label="类型">
+              <el-tag type="danger">DML操作</el-tag>
+            </el-descriptions-item>
+            <el-descriptions-item label="操作类型">
+              <el-tag :type="getDMLTypeTag(selectedNode.properties.operationType)">
+                {{ selectedNode.properties.operationType }}
+              </el-tag>
+            </el-descriptions-item>
+            <el-descriptions-item label="所属类">
+              {{ selectedNode.properties.className }}
+            </el-descriptions-item>
+            <el-descriptions-item label="所属方法">
+              {{ selectedNode.properties.methodName }}
+            </el-descriptions-item>
+            <el-descriptions-item label="类型标识">
+              {{ selectedNode.properties.type }}
+            </el-descriptions-item>
+          </el-descriptions>
+        </div>
+
+        <!-- 原始数据 -->
+        <el-divider>原始数据</el-divider>
+        <el-input
+          :model-value="JSON.stringify(selectedNode.properties, null, 2)"
+          type="textarea"
+          :rows="10"
+          readonly
+        />
+      </div>
+    </el-drawer>
+
+    <!-- 链路展示对话框 -->
+    <el-dialog
+      v-model="pathDialogVisible"
+      title="节点链路分析"
+      width="80%"
+      top="5vh"
+    >
+      <div v-if="nodePath" class="path-container">
+        <el-alert 
+          :title="`从节点 '${nodePath.rootNode.name}' 出发的所有连接`" 
+          type="info" 
+          :closable="false"
+          style="margin-bottom: 20px"
+        />
+        
+        <el-tabs type="border-card">
+          <!-- 直接连接 -->
+          <el-tab-pane label="直接连接">
+            <template #label>
+              <span><el-icon><Link /></el-icon> 直接连接 ({{ nodePath.directConnections.length }})</span>
+            </template>
+            <div v-if="nodePath.directConnections.length > 0">
+              <el-table :data="nodePath.directConnections" stripe style="width: 100%">
+                <el-table-column label="目标节点" width="200">
+                  <template #default="{ row }">
+                    <el-tag :type="getNodeTypeTagColor(row.type)">{{ row.name }}</el-tag>
+                  </template>
+                </el-table-column>
+                <el-table-column prop="type" label="类型" width="120">
+                  <template #default="{ row }">
+                    <el-tag size="small">{{ row.type }}</el-tag>
+                  </template>
+                </el-table-column>
+                <el-table-column prop="relationship" label="关系" width="150">
+                  <template #default="{ row }">
+                    <el-tag type="success" size="small">{{ row.relationship }}</el-tag>
+                  </template>
+                </el-table-column>
+                <el-table-column label="属性">
+                  <template #default="{ row }">
+                    <el-scrollbar max-height="100px">
+                      <pre style="font-size: 12px; margin: 0;">{{ JSON.stringify(row.properties, null, 2) }}</pre>
+                    </el-scrollbar>
+                  </template>
+                </el-table-column>
+              </el-table>
+            </div>
+            <el-empty v-else description="没有直接连接的节点" />
+          </el-tab-pane>
+
+          <!-- 所有路径 -->
+          <el-tab-pane label="完整路径">
+            <template #label>
+              <span><el-icon><Connection /></el-icon> 完整路径 ({{ nodePath.allPaths.length }})</span>
+            </template>
+            <div v-if="nodePath.allPaths.length > 0">
+              <el-collapse accordion>
+                <el-collapse-item 
+                  v-for="(path, index) in nodePath.allPaths" 
+                  :key="index"
+                  :name="index"
+                >
+                  <template #title>
+                    <div class="path-title">
+                      <el-tag size="small" type="info">路径 {{ index + 1 }}</el-tag>
+                      <span style="margin-left: 10px">深度: {{ path.length }}</span>
+                    </div>
+                  </template>
+                  <div class="path-flow">
+                    <div v-for="(step, stepIndex) in path" :key="stepIndex" class="path-step">
+                      <div class="step-node">
+                        <el-tag :type="getNodeTypeTagColor(step.type)">
+                          {{ step.name }}
+                        </el-tag>
+                        <div class="step-type">{{ step.type }}</div>
+                      </div>
+                      <div v-if="stepIndex < path.length - 1" class="step-arrow">
+                        <el-icon><Right /></el-icon>
+                        <span class="step-relation">{{ step.relationshipToNext }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </el-collapse-item>
+              </el-collapse>
+            </div>
+            <el-empty v-else description="没有找到连接路径" />
+          </el-tab-pane>
+
+          <!-- 统计信息 -->
+          <el-tab-pane label="统计">
+            <template #label>
+              <span><el-icon><DataAnalysis /></el-icon> 统计</span>
+            </template>
+            <el-row :gutter="20">
+              <el-col :span="6">
+                <el-statistic title="直接连接数" :value="nodePath.directConnections.length" />
+              </el-col>
+              <el-col :span="6">
+                <el-statistic title="所有路径数" :value="nodePath.allPaths.length" />
+              </el-col>
+              <el-col :span="6">
+                <el-statistic title="最长路径深度" :value="nodePath.maxDepth" />
+              </el-col>
+              <el-col :span="6">
+                <el-statistic title="涉及节点数" :value="nodePath.uniqueNodes" />
+              </el-col>
+            </el-row>
+          </el-tab-pane>
+        </el-tabs>
+      </div>
+      </el-dialog>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted, onBeforeUnmount, computed, nextTick, inject, watch } from 'vue'
+import * as G6 from '@antv/g6'
+import api from '@/api'
+import { ElMessage } from 'element-plus'
+import { 
+  Refresh, 
+  FullScreen, 
+  Share, 
+  Aim, 
+  InfoFilled,
+  Link,
+  Connection,
+  Right,
+  DataAnalysis
+} from '@element-plus/icons-vue'
+
+// 获取sidebar的折叠状态
+const sidebarCollapsed = inject('sidebarCollapsed', ref(true))
+
+// 计算sidebar的宽度
+const sidebarWidth = computed(() => sidebarCollapsed.value ? 64 : 250)
+
+// 监听sidebar宽度变化，调整图视图
+watch(sidebarWidth, () => {
+  if (graph) {
+    // 延迟调整以等待CSS过渡完成
+    setTimeout(() => {
+      requestAnimationFrame(() => {
+        // 更新画布大小并居中显示
+        const container = networkContainer.value
+        if (container) {
+          const width = container.offsetWidth
+          const height = container.offsetHeight
+          graph.changeSize(width, height)
+          graph.fitView(20) // 20px padding
+        }
+      })
+    }, 400)
+  }
+})
+
+const networkContainer = ref(null)
+const loading = ref(false)
+const selectedNode = ref(null)
+const drawerVisible = ref(false)
+const activeNodeTypes = ref(new Set())
+const allNodes = ref([])
+const allEdges = ref([])
+const nodeTypeCounts = ref({
+  ApexClass: 0,
+  Method: 0,
+  SOQLQuery: 0,
+  DMLOperation: 0
+})
+const contextMenu = ref({
+  visible: false,
+  x: 0,
+  y: 0,
+  nodeId: null
+})
+const pathDialogVisible = ref(false)
+const nodePath = ref(null)
+let graph = null
+
+const hasActiveFilter = computed(() => activeNodeTypes.value.size > 0)
+
+const isTypeActive = (type) => {
+  if (activeNodeTypes.value.size === 0) return true
+  return activeNodeTypes.value.has(type)
+}
+
+const getNodeColor = (type) => {
+  const colors = {
+    'ApexClass': '#409eff',
+    'Method': '#67c23a',
+    'SOQLQuery': '#e6a23c',
+    'DMLOperation': '#f56c6c',
+  }
+  return colors[type] || '#909399'
+}
+
+const getDMLTypeTag = (type) => {
+  const tags = {
+    'INSERT': 'success',
+    'UPDATE': 'warning',
+    'DELETE': 'danger',
+    'UPSERT': 'info'
+  }
+  return tags[type] || 'info'
+}
+
+const getNodeTypeTagColor = (type) => {
+  const colors = {
+    'ApexClass': 'primary',
+    'Method': 'success',
+    'SOQLQuery': 'warning',
+    'DMLOperation': 'danger'
+  }
+  return colors[type] || 'info'
+}
+
+const toggleNodeType = (type) => {
+  if (activeNodeTypes.value.has(type)) {
+    activeNodeTypes.value.delete(type)
+  } else {
+    activeNodeTypes.value.add(type)
+  }
+  filterGraph()
+}
+
+const clearFilter = () => {
+  activeNodeTypes.value.clear()
+  filterGraph()
+}
+
+const filterGraph = () => {
+  if (!graph) return
+  
+  // 使用保存的原始数据进行过滤
+  const filteredNodes = activeNodeTypes.value.size === 0 
+    ? allNodes.value 
+    : allNodes.value.filter(node => activeNodeTypes.value.has(node.data.nodeType))
+  
+  const filteredNodeIds = new Set(filteredNodes.map(n => String(n.id)))
+  
+  const filteredEdges = allEdges.value.filter(edge => 
+    filteredNodeIds.has(String(edge.source)) && filteredNodeIds.has(String(edge.target))
+  )
+  
+  // 清空并重新加载数据
+  graph.clear()
+  
+  // 创建新的specification
+  const newSpec = {
+    data: { 
+      nodes: filteredNodes, 
+      edges: filteredEdges 
+    }
+  }
+  
+  // 更新graph数据
+  filteredNodes.forEach(node => {
+    graph.addData('node', node)
+  })
+  
+  filteredEdges.forEach(edge => {
+    graph.addData('edge', edge)
+  })
+  
+  // 重新渲染
+  graph.render()
+  
+  // 更新视图以适应新的布局
+  setTimeout(() => {
+    if (graph) {
+      graph.fitView()
+    }
+  }, 100)
+}
+
+const loadGraph = async () => {
+  loading.value = true
+  try {
+    const data = await api.getGraphData()
+    
+    // 转换节点数据 - G6 5.x格式
+    const nodes = data.nodes.map(node => ({
+      id: String(node.id),
+      data: {
+        label: node.name,
+        fill: getNodeColor(node.type),
+        nodeType: node.type,
+        originalData: node
+      }
+    }))
+    
+    console.log('Loaded nodes:', nodes.length)
+    
+    // 转换边数据 - G6 5.x格式
+    // 首先收集所有有效的节点ID
+    const validNodeIds = new Set(nodes.map(n => n.id))
+    
+    const edges = data.edges
+      .filter(edge => {
+        const source = String(edge.source)
+        const target = String(edge.target)
+        const isValid = validNodeIds.has(source) && validNodeIds.has(target)
+        if (!isValid) {
+          console.warn('过滤无效边:', { source, target, edge })
+        }
+        return isValid
+      })
+      .map((edge, index) => ({
+        id: `edge-${index}`,
+        source: String(edge.source),
+        target: String(edge.target),
+        data: {
+          label: edge.label
+        }
+      }))
+    
+    console.log('Loaded edges:', edges.length, '(原始:', data.edges.length, ')')
+    
+    // 保存原始数据
+    allNodes.value = nodes
+    allEdges.value = edges
+    
+    // 统计各类型节点数量
+    nodeTypeCounts.value = {
+      ApexClass: 0,
+      Method: 0,
+      SOQLQuery: 0,
+      DMLOperation: 0
+    }
+    nodes.forEach(node => {
+      if (nodeTypeCounts.value.hasOwnProperty(node.nodeType)) {
+        nodeTypeCounts.value[node.nodeType]++
+      }
+    })
+    
+    // 创建或更新图
+    if (graph) {
+      console.log('Updating existing graph')
+      graph.clear()
+      graph.data({ nodes, edges })
+    } else {
+      const container = networkContainer.value
+      const width = container.offsetWidth
+      const height = container.offsetHeight
+      
+      console.log('Creating graph with size:', width, height)
+      console.log('Nodes:', nodes.length, 'Edges:', edges.length)
+      
+      // G6 5.x 使用Specification配置
+      const specification = {
+        data: { nodes, edges },
+        node: (model) => {
+          return {
+            id: model.id,
+            data: {
+              ...model.data,
+              type: 'circle',
+              keyShape: {
+                r: 20,
+                fill: model.data.fill || '#5B8FF9',
+                stroke: 'transparent'
+              },
+              labelShape: {
+                text: model.data.label || '',
+                position: 'bottom',
+                fill: '#333',
+                fontSize: 14,
+                maxWidth: '200%',
+                offsetY: 8
+              }
+            }
+          }
+        },
+        edge: (model) => {
+          return {
+            id: model.id,
+            source: model.source,
+            target: model.target,
+            data: {
+              type: 'line',
+              keyShape: {
+                stroke: '#848484',
+                lineWidth: 2,
+                endArrow: {
+                  type: 'vee',
+                  fill: '#848484'
+                }
+              },
+              labelShape: model.data?.label ? {
+                text: model.data.label,
+                fill: '#666',
+                fontSize: 12
+              } : undefined
+            }
+          }
+        },
+        layout: {
+          type: 'force',
+          animated: true,
+          preventOverlap: true,
+          nodeStrength: -50,
+          edgeStrength: 0.5,
+          linkDistance: 100
+        },
+        modes: {
+          default: [
+            'drag-node',        // ノードをドラッグ可能にする
+            'drag-canvas',      // キャンバス全体をドラッグ可能にする
+            'zoom-canvas',      // マウスホイールでズーム
+            'click-select'      // クリックで選択
+          ]
+        },
+        autoFit: 'view',
+        padding: 20
+      }
+      
+      // 创建Graph实例
+      graph = new G6.Graph({
+        container: container,
+        width,
+        height,
+        ...specification
+      })
+      
+      // 手动渲染
+      graph.render()
+      
+      console.log('Graph instance created:', graph)
+      console.log('Graph rendered')
+      
+      // 监听节点点击事件
+      graph.on('node:click', (evt) => {
+        const { itemId } = evt
+        const nodeData = allNodes.value.find(n => String(n.id) === String(itemId))
+        if (nodeData && nodeData.data.originalData) {
+          selectedNode.value = nodeData.data.originalData
+          drawerVisible.value = true
+        }
+        contextMenu.value.visible = false
+      })
+      
+      // 监听画布点击事件
+      graph.on('canvas:click', () => {
+        drawerVisible.value = false
+        contextMenu.value.visible = false
+      })
+      
+      // 监听节点右键事件
+      graph.on('node:contextmenu', (evt) => {
+        evt.preventDefault()
+        const { itemId, canvas } = evt
+        const nodeData = allNodes.value.find(n => String(n.id) === String(itemId))
+        
+        if (nodeData && nodeData.data.originalData) {
+          selectedNode.value = nodeData.data.originalData
+          nextTick(() => {
+            contextMenu.value = {
+              visible: true,
+              x: canvas.x,
+              y: canvas.y,
+              nodeId: itemId
+            }
+          })
+        }
+      })
+      
+      // 适应视图
+      setTimeout(() => {
+        graph.fitView({ padding: 20 })
+      }, 500)
+    }
+    
+    ElMessage.success(`图数据加载成功 (${nodes.length} 个节点, ${edges.length} 条边)`)
+  } catch (error) {
+    console.error('Load graph error:', error)
+    ElMessage.error('加载图数据失败: ' + (error.message || '未知错误'))
+  } finally {
+    loading.value = false
+  }
+}
+
+const fitView = () => {
+  if (graph) {
+    graph.fitView({ padding: 20, easing: 'ease-in-out', duration: 400 })
+  }
+}
+
+const showNodePath = () => {
+  contextMenu.value.visible = false
+  
+  if (!contextMenu.value.nodeId || !selectedNode.value) {
+    ElMessage.warning('请先选择一个节点')
+    return
+  }
+  
+  // 分析节点路径
+  analyzeNodePath(contextMenu.value.nodeId)
+  pathDialogVisible.value = true
+}
+
+const focusNode = () => {
+  contextMenu.value.visible = false
+  
+  if (!contextMenu.value.nodeId || !graph) return
+  
+  // G6 5.x: 使用focusItem聚焦节点
+  try {
+    graph.focusItem(contextMenu.value.nodeId, {
+      easing: 'ease-in-out',
+      duration: 400
+    })
+  } catch (e) {
+    console.warn('Focus node failed:', e)
+    // 如果focusItem不存在，尝试其他方法
+    ElMessage.info('聚焦功能在当前版本中不可用')
+  }
+}
+
+const showNodeDetails = () => {
+  contextMenu.value.visible = false
+  drawerVisible.value = true
+}
+
+const analyzeNodePath = (nodeId) => {
+  const node = allNodes.value.find(n => n.id === nodeId)
+  if (!node) return
+  
+  // 找出直接连接
+  const directConnections = []
+  const outgoingEdges = allEdges.value.filter(e => e.from === nodeId)
+  const incomingEdges = allEdges.value.filter(e => e.to === nodeId)
+  
+  outgoingEdges.forEach(edge => {
+    const targetNode = allNodes.value.find(n => n.id === edge.to)
+    if (targetNode) {
+      directConnections.push({
+        ...targetNode.data,
+        relationship: edge.label || 'CONNECTED_TO',
+        direction: 'outgoing'
+      })
+    }
+  })
+  
+  incomingEdges.forEach(edge => {
+    const sourceNode = allNodes.value.find(n => n.id === edge.from)
+    if (sourceNode) {
+      directConnections.push({
+        ...sourceNode.data,
+        relationship: edge.label || 'CONNECTED_FROM',
+        direction: 'incoming'
+      })
+    }
+  })
+  
+  // 找出所有路径（使用BFS，限制深度）
+  const allPaths = findAllPaths(nodeId, 3) // 最大深度3
+  
+  // 计算统计信息
+  const uniqueNodesSet = new Set()
+  allPaths.forEach(path => {
+    path.forEach(step => uniqueNodesSet.add(step.id))
+  })
+  
+  const maxDepth = allPaths.reduce((max, path) => Math.max(max, path.length), 0)
+  
+  nodePath.value = {
+    rootNode: node.data,
+    directConnections,
+    allPaths,
+    maxDepth,
+    uniqueNodes: uniqueNodesSet.size
+  }
+}
+
+const findAllPaths = (startNodeId, maxDepth) => {
+  const paths = []
+  const visited = new Set()
+  
+  const dfs = (currentId, currentPath, depth) => {
+    if (depth > maxDepth) return
+    
+    const currentNode = allNodes.value.find(n => n.id === currentId)
+    if (!currentNode) return
+    
+    visited.add(currentId)
+    
+    const outgoingEdges = allEdges.value.filter(e => e.from === currentId)
+    
+    if (outgoingEdges.length === 0 && currentPath.length > 0) {
+      // 到达叶子节点，保存路径
+      paths.push([...currentPath])
+    } else {
+      outgoingEdges.forEach(edge => {
+        if (!visited.has(edge.to)) {
+          const nextNode = allNodes.value.find(n => n.id === edge.to)
+          if (nextNode) {
+            const stepWithRelation = {
+              ...currentNode.data,
+              id: currentId,
+              relationshipToNext: edge.label || 'CONNECTED_TO'
+            }
+            
+            currentPath.push(stepWithRelation)
+            dfs(edge.to, currentPath, depth + 1)
+            currentPath.pop()
+          }
+        }
+      })
+    }
+    
+    visited.delete(currentId)
+  }
+  
+  dfs(startNodeId, [], 0)
+  
+  // 如果没有路径，至少返回起始节点
+  if (paths.length === 0) {
+    const startNode = allNodes.value.find(n => n.id === startNodeId)
+    if (startNode) {
+      paths.push([{ ...startNode.data, id: startNodeId }])
+    }
+  } else {
+    // 为每条路径添加最后一个节点
+    paths.forEach(path => {
+      if (path.length > 0) {
+        const lastStep = path[path.length - 1]
+        const lastEdge = allEdges.value.find(e => 
+          e.from === lastStep.id
+        )
+        if (lastEdge) {
+          const lastNode = allNodes.value.find(n => n.id === lastEdge.to)
+          if (lastNode) {
+            path.push({ ...lastNode.data, id: lastEdge.to })
+          }
+        }
+      }
+    })
+  }
+  
+  return paths
+}
+
+// 全局点击关闭右键菜单
+const handleGlobalClick = (event) => {
+  contextMenu.value.visible = false
+}
+
+onMounted(() => {
+  loadGraph()
+  // 延迟添加全局点击监听,避免与右键事件冲突
+  setTimeout(() => {
+    document.addEventListener('click', handleGlobalClick)
+  }, 100)
+})
+
+onBeforeUnmount(() => {
+  if (graph) {
+    graph.destroy()
+  }
+  // 清理全局事件监听
+  document.removeEventListener('click', handleGlobalClick)
+})
+</script>
+
+<style scoped>
+.graph-view {
+  position: fixed;
+  top: 60px; /* header高度，根据实际调整 */
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: left;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.graph-container {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.graph-float-btns {
+  position: absolute;
+  top: 18px;
+  right: 220px;
+  z-index: 20;
+  display: flex;
+  gap: 8px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  padding: 6px 10px;
+  align-items: center;
+  will-change: transform;
+}
+
+.network {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.legend {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.legend h4 {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: all 0.3s;
+  user-select: none;
+}
+
+.legend-item:hover {
+  background: #f5f7fa;
+}
+
+.legend-item.active {
+  background: #e3f2fd;
+  font-weight: 600;
+}
+
+.legend-item.inactive {
+  opacity: 0.3;
+}
+
+.legend-item .count {
+  margin-left: auto;
+  font-size: 12px;
+  color: #909399;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.node-detail {
+  padding: 10px;
+}
+
+.detail-section {
+  margin-bottom: 20px;
+}
+
+.detail-section code {
+  font-size: 12px;
+  background: #f5f7fa;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+:deep(.el-descriptions__label) {
+  font-weight: 600;
+  width: 100px;
+}
+
+:deep(.el-descriptions__content) {
+  word-break: break-word;
+}
+
+.context-menu {
+  position: fixed;
+  background: white;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  min-width: 200px;
+  padding: 5px 0;
+}
+
+.context-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 14px;
+}
+
+.context-menu-item:hover {
+  background: #f5f7fa;
+}
+
+.context-menu-item .el-icon {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.path-container {
+  padding: 10px;
+}
+
+.path-title {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.path-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: #f5f7fa;
+  border-radius: 4px;
+}
+
+.path-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.step-type {
+  font-size: 12px;
+  color: #909399;
+}
+
+.step-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #409eff;
+}
+
+.step-relation {
+  font-size: 11px;
+  color: #67c23a;
+  font-weight: 600;
+}
+</style>

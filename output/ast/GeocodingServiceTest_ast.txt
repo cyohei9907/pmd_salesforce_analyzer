@@ -1,0 +1,530 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ApexFile DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+    <UserClass DefiningType='GeocodingServiceTest' Image='GeocodingServiceTest' InterfaceNames='[]' Nested='false' RealLoc='true' SimpleName='GeocodingServiceTest' SuperClassName=''>
+        <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='2' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='false' Test='true' TestOrTestSetup='true' Transient='false' Virtual='false' WebService='false' WithSharing='true' WithoutSharing='false'>
+            <Annotation DefiningType='GeocodingServiceTest' Image='IsTest' Name='IsTest' RawName='isTest' RealLoc='true' Resolved='true' />
+        </ModifierNode>
+        <Field DefiningType='GeocodingServiceTest' Image='STREET' Name='STREET' RealLoc='true' Type='String' Value='Camino del Jueves 26'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+        </Field>
+        <Field DefiningType='GeocodingServiceTest' Image='CITY' Name='CITY' RealLoc='true' Type='String' Value='Armilla'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+        </Field>
+        <Field DefiningType='GeocodingServiceTest' Image='POSTAL_CODE' Name='POSTAL_CODE' RealLoc='true' Type='String' Value='18100'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+        </Field>
+        <Field DefiningType='GeocodingServiceTest' Image='STATE' Name='STATE' RealLoc='true' Type='String' Value='Granada'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+        </Field>
+        <Field DefiningType='GeocodingServiceTest' Image='COUNTRY' Name='COUNTRY' RealLoc='true' Type='String' Value='Spain'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+        </Field>
+        <Field DefiningType='GeocodingServiceTest' Image='LATITUDE' Name='LATITUDE' RealLoc='true' Type='Decimal' Value='3.123'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+        </Field>
+        <Field DefiningType='GeocodingServiceTest' Image='LONGITUDE' Name='LONGITUDE' RealLoc='true' Type='Decimal' Value='31.333'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+        </Field>
+        <UserClass DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='OpenStreetMapHttpCalloutMockImpl' InterfaceNames='[HttpCalloutMock]' Nested='true' RealLoc='true' SimpleName='OpenStreetMapHttpCalloutMockImpl' SuperClassName=''>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <Method Arity='1' CanonicalName='respond' Constructor='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='respond' RealLoc='true' ReturnType='HTTPResponse' StaticInitializer='false'>
+                <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                <Parameter DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='req' RealLoc='true' Type='HTTPRequest'>
+                    <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                </Parameter>
+                <BlockStatement CurlyBrace='true' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='' RealLoc='true'>
+                    <VariableDeclarationStatements DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='' RealLoc='true'>
+                        <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                        <VariableDeclaration DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='res' RealLoc='true' Type='HttpResponse'>
+                            <NewObjectExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='' RealLoc='true' Type='HttpResponse' />
+                            <VariableExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='res' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                        </VariableDeclaration>
+                    </VariableDeclarationStatements>
+                    <ExpressionStatement DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='' RealLoc='true'>
+                        <MethodCallExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' FullMethodName='res.setHeader' Image='' InputParametersSize='2' MethodName='setHeader' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='res' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Double='false' Image='Content-Type' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Double='false' Image='application/json' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                        </MethodCallExpression>
+                    </ExpressionStatement>
+                    <ExpressionStatement DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='' RealLoc='true'>
+                        <MethodCallExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' FullMethodName='res.setBody' Image='' InputParametersSize='1' MethodName='setBody' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='res' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            <BinaryExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='' Op='+' RealLoc='true'>
+                                <BinaryExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='' Op='+' RealLoc='true'>
+                                    <BinaryExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='' Op='+' RealLoc='true'>
+                                        <BinaryExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='' Op='+' RealLoc='true'>
+                                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Double='false' Image='[{"lat": ' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                            <VariableExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='LATITUDE' RealLoc='true'>
+                                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                            </VariableExpression>
+                                        </BinaryExpression>
+                                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Double='false' Image=',"lon": ' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                    </BinaryExpression>
+                                    <VariableExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='LONGITUDE' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                </BinaryExpression>
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Double='false' Image='}]' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                            </BinaryExpression>
+                        </MethodCallExpression>
+                    </ExpressionStatement>
+                    <ExpressionStatement DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='' RealLoc='true'>
+                        <MethodCallExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' FullMethodName='res.setStatusCode' Image='' InputParametersSize='1' MethodName='setStatusCode' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='res' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Double='false' Image='200' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                        </MethodCallExpression>
+                    </ExpressionStatement>
+                    <ReturnStatement DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='' RealLoc='true'>
+                        <VariableExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImpl' Image='res' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </ReturnStatement>
+                </BlockStatement>
+            </Method>
+        </UserClass>
+        <UserClass DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Image='OpenStreetMapHttpCalloutMockImplError' InterfaceNames='[HttpCalloutMock]' Nested='true' RealLoc='true' SimpleName='OpenStreetMapHttpCalloutMockImplError' SuperClassName=''>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <Method Arity='1' CanonicalName='respond' Constructor='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Image='respond' RealLoc='true' ReturnType='HTTPResponse' StaticInitializer='false'>
+                <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                <Parameter DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Image='req' RealLoc='true' Type='HTTPRequest'>
+                    <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                </Parameter>
+                <BlockStatement CurlyBrace='true' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Image='' RealLoc='true'>
+                    <VariableDeclarationStatements DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Image='' RealLoc='true'>
+                        <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                        <VariableDeclaration DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Image='res' RealLoc='true' Type='HttpResponse'>
+                            <NewObjectExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Image='' RealLoc='true' Type='HttpResponse' />
+                            <VariableExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Image='res' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                        </VariableDeclaration>
+                    </VariableDeclarationStatements>
+                    <ExpressionStatement DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Image='' RealLoc='true'>
+                        <MethodCallExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' FullMethodName='res.setHeader' Image='' InputParametersSize='2' MethodName='setHeader' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Image='res' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Double='false' Image='Content-Type' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Double='false' Image='application/json' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                        </MethodCallExpression>
+                    </ExpressionStatement>
+                    <ExpressionStatement DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Image='' RealLoc='true'>
+                        <MethodCallExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' FullMethodName='res.setStatusCode' Image='' InputParametersSize='1' MethodName='setStatusCode' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Image='res' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Double='false' Image='400' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                        </MethodCallExpression>
+                    </ExpressionStatement>
+                    <ReturnStatement DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Image='' RealLoc='true'>
+                        <VariableExpression DefiningType='GeocodingServiceTest.OpenStreetMapHttpCalloutMockImplError' Image='res' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </ReturnStatement>
+                </BlockStatement>
+            </Method>
+        </UserClass>
+        <FieldDeclarationStatements DefiningType='GeocodingServiceTest' Image='' RealLoc='true' TypeArguments='[]' TypeName='String'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <FieldDeclaration DefiningType='GeocodingServiceTest' Image='STREET' Name='STREET' RealLoc='true'>
+                <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest' Double='false' Image='Camino del Jueves 26' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                <VariableExpression DefiningType='GeocodingServiceTest' Image='STREET' RealLoc='true'>
+                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                </VariableExpression>
+            </FieldDeclaration>
+        </FieldDeclarationStatements>
+        <FieldDeclarationStatements DefiningType='GeocodingServiceTest' Image='' RealLoc='true' TypeArguments='[]' TypeName='String'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <FieldDeclaration DefiningType='GeocodingServiceTest' Image='CITY' Name='CITY' RealLoc='true'>
+                <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest' Double='false' Image='Armilla' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                <VariableExpression DefiningType='GeocodingServiceTest' Image='CITY' RealLoc='true'>
+                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                </VariableExpression>
+            </FieldDeclaration>
+        </FieldDeclarationStatements>
+        <FieldDeclarationStatements DefiningType='GeocodingServiceTest' Image='' RealLoc='true' TypeArguments='[]' TypeName='String'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <FieldDeclaration DefiningType='GeocodingServiceTest' Image='POSTAL_CODE' Name='POSTAL_CODE' RealLoc='true'>
+                <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest' Double='false' Image='18100' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                <VariableExpression DefiningType='GeocodingServiceTest' Image='POSTAL_CODE' RealLoc='true'>
+                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                </VariableExpression>
+            </FieldDeclaration>
+        </FieldDeclarationStatements>
+        <FieldDeclarationStatements DefiningType='GeocodingServiceTest' Image='' RealLoc='true' TypeArguments='[]' TypeName='String'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <FieldDeclaration DefiningType='GeocodingServiceTest' Image='STATE' Name='STATE' RealLoc='true'>
+                <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest' Double='false' Image='Granada' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                <VariableExpression DefiningType='GeocodingServiceTest' Image='STATE' RealLoc='true'>
+                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                </VariableExpression>
+            </FieldDeclaration>
+        </FieldDeclarationStatements>
+        <FieldDeclarationStatements DefiningType='GeocodingServiceTest' Image='' RealLoc='true' TypeArguments='[]' TypeName='String'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <FieldDeclaration DefiningType='GeocodingServiceTest' Image='COUNTRY' Name='COUNTRY' RealLoc='true'>
+                <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest' Double='false' Image='Spain' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                <VariableExpression DefiningType='GeocodingServiceTest' Image='COUNTRY' RealLoc='true'>
+                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                </VariableExpression>
+            </FieldDeclaration>
+        </FieldDeclarationStatements>
+        <FieldDeclarationStatements DefiningType='GeocodingServiceTest' Image='' RealLoc='true' TypeArguments='[]' TypeName='Decimal'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <FieldDeclaration DefiningType='GeocodingServiceTest' Image='LATITUDE' Name='LATITUDE' RealLoc='true'>
+                <LiteralExpression Boolean='false' Decimal='true' DefiningType='GeocodingServiceTest' Double='false' Image='3.123' Integer='false' LiteralType='DECIMAL' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                <VariableExpression DefiningType='GeocodingServiceTest' Image='LATITUDE' RealLoc='true'>
+                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                </VariableExpression>
+            </FieldDeclaration>
+        </FieldDeclarationStatements>
+        <FieldDeclarationStatements DefiningType='GeocodingServiceTest' Image='' RealLoc='true' TypeArguments='[]' TypeName='Decimal'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <FieldDeclaration DefiningType='GeocodingServiceTest' Image='LONGITUDE' Name='LONGITUDE' RealLoc='true'>
+                <LiteralExpression Boolean='false' Decimal='true' DefiningType='GeocodingServiceTest' Double='false' Image='31.333' Integer='false' LiteralType='DECIMAL' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                <VariableExpression DefiningType='GeocodingServiceTest' Image='LONGITUDE' RealLoc='true'>
+                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                </VariableExpression>
+            </FieldDeclaration>
+        </FieldDeclarationStatements>
+        <Method Arity='0' CanonicalName='successResponse' Constructor='false' DefiningType='GeocodingServiceTest' Image='successResponse' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='8' Override='false' Private='false' Protected='false' Public='false' RealLoc='true' Static='true' Test='true' TestOrTestSetup='true' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='GeocodingServiceTest' Image='IsTest' Name='IsTest' RawName='isTest' RealLoc='true' Resolved='true' />
+            </ModifierNode>
+            <BlockStatement CurlyBrace='true' DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='GeocodingServiceTest' Image='address' RealLoc='true' Type='GeocodingService.GeocodingAddress'>
+                        <NewObjectExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true' Type='GeocodingService.GeocodingAddress' />
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='GeocodingServiceTest' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='street' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='STREET' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='GeocodingServiceTest' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='city' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='CITY' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='GeocodingServiceTest' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='postalcode' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='POSTAL_CODE' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='GeocodingServiceTest' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='state' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='STATE' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='GeocodingServiceTest' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='country' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='COUNTRY' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='Test.setMock' Image='' InputParametersSize='2' MethodName='setMock' RealLoc='true'>
+                        <ReferenceExpression DefiningType='GeocodingServiceTest' Image='Test' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <ClassRefExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true' />
+                        <NewObjectExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true' Type='OpenStreetMapHttpCalloutMockImpl' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <VariableDeclarationStatements DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='GeocodingServiceTest' Image='computedCoordinates' RealLoc='true' Type='List&amp;lt;GeocodingService.Coordinates>'>
+                        <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='GeocodingService.geocodeAddresses' Image='' InputParametersSize='1' MethodName='geocodeAddresses' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='GeocodingService' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            <NewListLiteralExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </NewListLiteralExpression>
+                        </MethodCallExpression>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='computedCoordinates' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='Assert.areEqual' Image='' InputParametersSize='2' MethodName='areEqual' RealLoc='true'>
+                        <ReferenceExpression DefiningType='GeocodingServiceTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest' Double='false' Image='1' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                        <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='computedCoordinates.size' Image='' InputParametersSize='0' MethodName='size' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='computedCoordinates' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        </MethodCallExpression>
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='Assert.areEqual' Image='' InputParametersSize='2' MethodName='areEqual' RealLoc='true'>
+                        <ReferenceExpression DefiningType='GeocodingServiceTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='LATITUDE' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='lat' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='false' ReferenceType='LOAD' SObjectType='false' SafeNav='false'>
+                                <ArrayLoadExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                                    <VariableExpression DefiningType='GeocodingServiceTest' Image='computedCoordinates' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                </ArrayLoadExpression>
+                            </ReferenceExpression>
+                        </VariableExpression>
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='Assert.areEqual' Image='' InputParametersSize='2' MethodName='areEqual' RealLoc='true'>
+                        <ReferenceExpression DefiningType='GeocodingServiceTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='LONGITUDE' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='lon' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='false' ReferenceType='LOAD' SObjectType='false' SafeNav='false'>
+                                <ArrayLoadExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                                    <VariableExpression DefiningType='GeocodingServiceTest' Image='computedCoordinates' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                </ArrayLoadExpression>
+                            </ReferenceExpression>
+                        </VariableExpression>
+                    </MethodCallExpression>
+                </ExpressionStatement>
+            </BlockStatement>
+        </Method>
+        <Method Arity='0' CanonicalName='blankAddress' Constructor='false' DefiningType='GeocodingServiceTest' Image='blankAddress' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='8' Override='false' Private='false' Protected='false' Public='false' RealLoc='true' Static='true' Test='true' TestOrTestSetup='true' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='GeocodingServiceTest' Image='IsTest' Name='IsTest' RawName='isTest' RealLoc='true' Resolved='true' />
+            </ModifierNode>
+            <BlockStatement CurlyBrace='true' DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='GeocodingServiceTest' Image='address' RealLoc='true' Type='GeocodingService.GeocodingAddress'>
+                        <NewObjectExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true' Type='GeocodingService.GeocodingAddress' />
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='Test.setMock' Image='' InputParametersSize='2' MethodName='setMock' RealLoc='true'>
+                        <ReferenceExpression DefiningType='GeocodingServiceTest' Image='Test' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <ClassRefExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true' />
+                        <NewObjectExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true' Type='OpenStreetMapHttpCalloutMockImpl' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <VariableDeclarationStatements DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='GeocodingServiceTest' Image='computedCoordinates' RealLoc='true' Type='List&amp;lt;GeocodingService.Coordinates>'>
+                        <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='GeocodingService.geocodeAddresses' Image='' InputParametersSize='1' MethodName='geocodeAddresses' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='GeocodingService' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            <NewListLiteralExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </NewListLiteralExpression>
+                        </MethodCallExpression>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='computedCoordinates' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='Assert.areEqual' Image='' InputParametersSize='2' MethodName='areEqual' RealLoc='true'>
+                        <ReferenceExpression DefiningType='GeocodingServiceTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest' Double='false' Image='1' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                        <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='computedCoordinates.size' Image='' InputParametersSize='0' MethodName='size' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='computedCoordinates' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        </MethodCallExpression>
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='Assert.isNull' Image='' InputParametersSize='1' MethodName='isNull' RealLoc='true'>
+                        <ReferenceExpression DefiningType='GeocodingServiceTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='lat' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='false' ReferenceType='LOAD' SObjectType='false' SafeNav='false'>
+                                <ArrayLoadExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                                    <VariableExpression DefiningType='GeocodingServiceTest' Image='computedCoordinates' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                </ArrayLoadExpression>
+                            </ReferenceExpression>
+                        </VariableExpression>
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='Assert.isNull' Image='' InputParametersSize='1' MethodName='isNull' RealLoc='true'>
+                        <ReferenceExpression DefiningType='GeocodingServiceTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='lon' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='false' ReferenceType='LOAD' SObjectType='false' SafeNav='false'>
+                                <ArrayLoadExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                                    <VariableExpression DefiningType='GeocodingServiceTest' Image='computedCoordinates' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                </ArrayLoadExpression>
+                            </ReferenceExpression>
+                        </VariableExpression>
+                    </MethodCallExpression>
+                </ExpressionStatement>
+            </BlockStatement>
+        </Method>
+        <Method Arity='0' CanonicalName='errorResponse' Constructor='false' DefiningType='GeocodingServiceTest' Image='errorResponse' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='8' Override='false' Private='false' Protected='false' Public='false' RealLoc='true' Static='true' Test='true' TestOrTestSetup='true' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='GeocodingServiceTest' Image='IsTest' Name='IsTest' RawName='isTest' RealLoc='true' Resolved='true' />
+            </ModifierNode>
+            <BlockStatement CurlyBrace='true' DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='GeocodingServiceTest' Image='address' RealLoc='true' Type='GeocodingService.GeocodingAddress'>
+                        <NewObjectExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true' Type='GeocodingService.GeocodingAddress' />
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='GeocodingServiceTest' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='street' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='STREET' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='GeocodingServiceTest' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='city' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='CITY' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='GeocodingServiceTest' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='postalcode' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='POSTAL_CODE' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='GeocodingServiceTest' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='state' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='STATE' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='GeocodingServiceTest' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='country' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='COUNTRY' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='Test.setMock' Image='' InputParametersSize='2' MethodName='setMock' RealLoc='true'>
+                        <ReferenceExpression DefiningType='GeocodingServiceTest' Image='Test' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <ClassRefExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true' />
+                        <NewObjectExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true' Type='OpenStreetMapHttpCalloutMockImplError' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <VariableDeclarationStatements DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='GeocodingServiceTest' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='GeocodingServiceTest' Image='computedCoordinates' RealLoc='true' Type='List&amp;lt;GeocodingService.Coordinates>'>
+                        <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='GeocodingService.geocodeAddresses' Image='' InputParametersSize='1' MethodName='geocodeAddresses' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='GeocodingService' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            <NewListLiteralExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='GeocodingServiceTest' Image='address' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </NewListLiteralExpression>
+                        </MethodCallExpression>
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='computedCoordinates' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='Assert.areEqual' Image='' InputParametersSize='2' MethodName='areEqual' RealLoc='true'>
+                        <ReferenceExpression DefiningType='GeocodingServiceTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest' Double='false' Image='1' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                        <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='computedCoordinates.size' Image='' InputParametersSize='0' MethodName='size' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='computedCoordinates' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        </MethodCallExpression>
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='Assert.isNull' Image='' InputParametersSize='1' MethodName='isNull' RealLoc='true'>
+                        <ReferenceExpression DefiningType='GeocodingServiceTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='lat' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='false' ReferenceType='LOAD' SObjectType='false' SafeNav='false'>
+                                <ArrayLoadExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                                    <VariableExpression DefiningType='GeocodingServiceTest' Image='computedCoordinates' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                </ArrayLoadExpression>
+                            </ReferenceExpression>
+                        </VariableExpression>
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='GeocodingServiceTest' FullMethodName='Assert.isNull' Image='' InputParametersSize='1' MethodName='isNull' RealLoc='true'>
+                        <ReferenceExpression DefiningType='GeocodingServiceTest' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <VariableExpression DefiningType='GeocodingServiceTest' Image='lon' RealLoc='true'>
+                            <ReferenceExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='false' ReferenceType='LOAD' SObjectType='false' SafeNav='false'>
+                                <ArrayLoadExpression DefiningType='GeocodingServiceTest' Image='' RealLoc='true'>
+                                    <VariableExpression DefiningType='GeocodingServiceTest' Image='computedCoordinates' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingServiceTest' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                </ArrayLoadExpression>
+                            </ReferenceExpression>
+                        </VariableExpression>
+                    </MethodCallExpression>
+                </ExpressionStatement>
+            </BlockStatement>
+        </Method>
+    </UserClass>
+</ApexFile>

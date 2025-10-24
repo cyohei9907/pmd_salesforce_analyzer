@@ -1,0 +1,13 @@
+# Django后端依赖
+Django==4.2.7
+djangorestframework==3.14.0
+django-cors-headers==4.3.0
+
+# 图数据库
+neo4j==5.14.1
+
+# XML解析
+lxml==4.9.3
+
+# 工具
+python-dotenv==1.0.0

@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ApexFile DefiningType='TestSampleDataController' Image='' RealLoc='true'>
+    <UserClass DefiningType='TestSampleDataController' Image='TestSampleDataController' InterfaceNames='[]' Nested='false' RealLoc='true' SimpleName='TestSampleDataController' SuperClassName=''>
+        <ModifierNode Abstract='false' DefiningType='TestSampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='2' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='false' Test='true' TestOrTestSetup='true' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+            <Annotation DefiningType='TestSampleDataController' Image='IsTest' Name='IsTest' RawName='isTest' RealLoc='true' Resolved='true' />
+        </ModifierNode>
+        <Method Arity='0' CanonicalName='importSampleData' Constructor='false' DefiningType='TestSampleDataController' Image='importSampleData' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='TestSampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='8' Override='false' Private='false' Protected='false' Public='false' RealLoc='true' Static='true' Test='true' TestOrTestSetup='true' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='TestSampleDataController' Image='IsTest' Name='IsTest' RawName='isTest' RealLoc='true' Resolved='true' />
+            </ModifierNode>
+            <BlockStatement CurlyBrace='true' DefiningType='TestSampleDataController' Image='' RealLoc='true'>
+                <ExpressionStatement DefiningType='TestSampleDataController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='TestSampleDataController' FullMethodName='Test.startTest' Image='' InputParametersSize='0' MethodName='startTest' RealLoc='true'>
+                        <ReferenceExpression DefiningType='TestSampleDataController' Image='Test' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='TestSampleDataController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='TestSampleDataController' FullMethodName='SampleDataController.importSampleData' Image='' InputParametersSize='0' MethodName='importSampleData' RealLoc='true'>
+                        <ReferenceExpression DefiningType='TestSampleDataController' Image='SampleDataController' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='TestSampleDataController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='TestSampleDataController' FullMethodName='Test.stopTest' Image='' InputParametersSize='0' MethodName='stopTest' RealLoc='true'>
+                        <ReferenceExpression DefiningType='TestSampleDataController' Image='Test' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <VariableDeclarationStatements DefiningType='TestSampleDataController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='TestSampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='TestSampleDataController' Image='propertyNumber' RealLoc='true' Type='Integer'>
+                        <SoqlExpression CanonicalQuery='SELECT COUNT() FROM Property__c' DefiningType='TestSampleDataController' Image='' Query='SELECT COUNT() FROM Property__c' RealLoc='true' />
+                        <VariableExpression DefiningType='TestSampleDataController' Image='propertyNumber' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='TestSampleDataController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='TestSampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='TestSampleDataController' Image='brokerNumber' RealLoc='true' Type='Integer'>
+                        <SoqlExpression CanonicalQuery='SELECT COUNT() FROM Broker__c' DefiningType='TestSampleDataController' Image='' Query='SELECT COUNT() FROM Broker__c' RealLoc='true' />
+                        <VariableExpression DefiningType='TestSampleDataController' Image='brokerNumber' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='TestSampleDataController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='TestSampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='TestSampleDataController' Image='contactNumber' RealLoc='true' Type='Integer'>
+                        <SoqlExpression CanonicalQuery='SELECT COUNT() FROM Contact' DefiningType='TestSampleDataController' Image='' Query='SELECT COUNT() FROM Contact' RealLoc='true' />
+                        <VariableExpression DefiningType='TestSampleDataController' Image='contactNumber' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ExpressionStatement DefiningType='TestSampleDataController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='TestSampleDataController' FullMethodName='Assert.isTrue' Image='' InputParametersSize='2' MethodName='isTrue' RealLoc='true'>
+                        <ReferenceExpression DefiningType='TestSampleDataController' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <BooleanExpression DefiningType='TestSampleDataController' Image='' Op='>' RealLoc='true'>
+                            <VariableExpression DefiningType='TestSampleDataController' Image='propertyNumber' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestSampleDataController' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                        </BooleanExpression>
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestSampleDataController' Double='false' Image='Expected properties were created.' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='TestSampleDataController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='TestSampleDataController' FullMethodName='Assert.isTrue' Image='' InputParametersSize='2' MethodName='isTrue' RealLoc='true'>
+                        <ReferenceExpression DefiningType='TestSampleDataController' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <BooleanExpression DefiningType='TestSampleDataController' Image='' Op='>' RealLoc='true'>
+                            <VariableExpression DefiningType='TestSampleDataController' Image='brokerNumber' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestSampleDataController' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                        </BooleanExpression>
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestSampleDataController' Double='false' Image='Expected brokers were created.' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='TestSampleDataController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='TestSampleDataController' FullMethodName='Assert.isTrue' Image='' InputParametersSize='2' MethodName='isTrue' RealLoc='true'>
+                        <ReferenceExpression DefiningType='TestSampleDataController' Image='Assert' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        <BooleanExpression DefiningType='TestSampleDataController' Image='' Op='>' RealLoc='true'>
+                            <VariableExpression DefiningType='TestSampleDataController' Image='contactNumber' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestSampleDataController' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                        </BooleanExpression>
+                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='TestSampleDataController' Double='false' Image='Expected contacts were created.' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+            </BlockStatement>
+        </Method>
+    </UserClass>
+</ApexFile>

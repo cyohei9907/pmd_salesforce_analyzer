@@ -1,0 +1,473 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ApexFile DefiningType='PropertyController' Image='' RealLoc='true'>
+    <UserClass DefiningType='PropertyController' Image='PropertyController' InterfaceNames='[]' Nested='false' RealLoc='true' SimpleName='PropertyController' SuperClassName=''>
+        <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='true' WithoutSharing='false' />
+        <Field DefiningType='PropertyController' Image='DEFAULT_MAX_PRICE' Name='DEFAULT_MAX_PRICE' RealLoc='true' Type='Decimal' Value='9999999'>
+            <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+        </Field>
+        <Field DefiningType='PropertyController' Image='DEFAULT_PAGE_SIZE' Name='DEFAULT_PAGE_SIZE' RealLoc='true' Type='Integer' Value='9'>
+            <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+        </Field>
+        <FieldDeclarationStatements DefiningType='PropertyController' Image='' RealLoc='true' TypeArguments='[]' TypeName='Decimal'>
+            <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <FieldDeclaration DefiningType='PropertyController' Image='DEFAULT_MAX_PRICE' Name='DEFAULT_MAX_PRICE' RealLoc='true'>
+                <LiteralExpression Boolean='false' Decimal='false' DefiningType='PropertyController' Double='false' Image='9999999' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                <VariableExpression DefiningType='PropertyController' Image='DEFAULT_MAX_PRICE' RealLoc='true'>
+                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                </VariableExpression>
+            </FieldDeclaration>
+        </FieldDeclarationStatements>
+        <FieldDeclarationStatements DefiningType='PropertyController' Image='' RealLoc='true' TypeArguments='[]' TypeName='Integer'>
+            <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <FieldDeclaration DefiningType='PropertyController' Image='DEFAULT_PAGE_SIZE' Name='DEFAULT_PAGE_SIZE' RealLoc='true'>
+                <LiteralExpression Boolean='false' Decimal='false' DefiningType='PropertyController' Double='false' Image='9' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                <VariableExpression DefiningType='PropertyController' Image='DEFAULT_PAGE_SIZE' RealLoc='true'>
+                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                </VariableExpression>
+            </FieldDeclaration>
+        </FieldDeclarationStatements>
+        <Method Arity='6' CanonicalName='getPagedPropertyList' Constructor='false' DefiningType='PropertyController' Image='getPagedPropertyList' RealLoc='true' ReturnType='PagedResult' StaticInitializer='false'>
+            <FormalComment DefiningType='PropertyController' Image='/**
+     * Endpoint that retrieves a paged and filtered list of properties
+     * @param searchKey String used for searching on property title, city and tags
+     * @param maxPrice Maximum price
+     * @param minBedrooms Minimum number of bedrooms
+     * @param minBathrooms Minimum number of bathrooms
+     * @param pageSize Number of properties per page
+     * @param pageNumber Page number
+     * @return PagedResult object holding the paged and filtered list of properties
+     */' RealLoc='false' />
+            <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='9' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='PropertyController' Image='AuraEnabled' Name='AuraEnabled' RawName='AuraEnabled' RealLoc='true' Resolved='true'>
+                    <AnnotationParameter DefiningType='PropertyController' Image='true' Name='cacheable' RealLoc='true' Value='true' />
+                    <AnnotationParameter DefiningType='PropertyController' Image='global' Name='scope' RealLoc='true' Value='global' />
+                </Annotation>
+            </ModifierNode>
+            <Parameter DefiningType='PropertyController' Image='searchKey' RealLoc='true' Type='String'>
+                <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            </Parameter>
+            <Parameter DefiningType='PropertyController' Image='maxPrice' RealLoc='true' Type='Decimal'>
+                <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            </Parameter>
+            <Parameter DefiningType='PropertyController' Image='minBedrooms' RealLoc='true' Type='Integer'>
+                <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            </Parameter>
+            <Parameter DefiningType='PropertyController' Image='minBathrooms' RealLoc='true' Type='Integer'>
+                <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            </Parameter>
+            <Parameter DefiningType='PropertyController' Image='pageSize' RealLoc='true' Type='Integer'>
+                <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            </Parameter>
+            <Parameter DefiningType='PropertyController' Image='pageNumber' RealLoc='true' Type='Integer'>
+                <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            </Parameter>
+            <BlockStatement CurlyBrace='true' DefiningType='PropertyController' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='PropertyController' Image='safeMaxPrice' RealLoc='true' Type='Decimal'>
+                        <BinaryExpression DefiningType='PropertyController' Image='' Op='??' RealLoc='true'>
+                            <VariableExpression DefiningType='PropertyController' Image='maxPrice' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                            <VariableExpression DefiningType='PropertyController' Image='DEFAULT_MAX_PRICE' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                        </BinaryExpression>
+                        <VariableExpression DefiningType='PropertyController' Image='safeMaxPrice' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='PropertyController' Image='safeMinBedrooms' RealLoc='true' Type='Integer'>
+                        <BinaryExpression DefiningType='PropertyController' Image='' Op='??' RealLoc='true'>
+                            <VariableExpression DefiningType='PropertyController' Image='minBedrooms' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='PropertyController' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                        </BinaryExpression>
+                        <VariableExpression DefiningType='PropertyController' Image='safeMinBedrooms' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='PropertyController' Image='safeMinBathrooms' RealLoc='true' Type='Integer'>
+                        <BinaryExpression DefiningType='PropertyController' Image='' Op='??' RealLoc='true'>
+                            <VariableExpression DefiningType='PropertyController' Image='minBathrooms' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='PropertyController' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                        </BinaryExpression>
+                        <VariableExpression DefiningType='PropertyController' Image='safeMinBathrooms' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='PropertyController' Image='safePageSize' RealLoc='true' Type='Integer'>
+                        <BinaryExpression DefiningType='PropertyController' Image='' Op='??' RealLoc='true'>
+                            <VariableExpression DefiningType='PropertyController' Image='pageSize' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                            <VariableExpression DefiningType='PropertyController' Image='DEFAULT_PAGE_SIZE' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                        </BinaryExpression>
+                        <VariableExpression DefiningType='PropertyController' Image='safePageSize' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='PropertyController' Image='safePageNumber' RealLoc='true' Type='Integer'>
+                        <BinaryExpression DefiningType='PropertyController' Image='' Op='??' RealLoc='true'>
+                            <VariableExpression DefiningType='PropertyController' Image='pageNumber' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='PropertyController' Double='false' Image='1' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                        </BinaryExpression>
+                        <VariableExpression DefiningType='PropertyController' Image='safePageNumber' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='PropertyController' Image='searchPattern' RealLoc='true' Type='String'>
+                        <BinaryExpression DefiningType='PropertyController' Image='' Op='+' RealLoc='true'>
+                            <BinaryExpression DefiningType='PropertyController' Image='' Op='+' RealLoc='true'>
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='PropertyController' Double='false' Image='%' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                <VariableExpression DefiningType='PropertyController' Image='searchKey' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BinaryExpression>
+                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='PropertyController' Double='false' Image='%' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                        </BinaryExpression>
+                        <VariableExpression DefiningType='PropertyController' Image='searchPattern' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='PropertyController' Image='offset' RealLoc='true' Type='Integer'>
+                        <BinaryExpression DefiningType='PropertyController' Image='' Op='*' RealLoc='true'>
+                            <BinaryExpression DefiningType='PropertyController' Image='' Op='-' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='safePageNumber' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='PropertyController' Double='false' Image='1' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                            </BinaryExpression>
+                            <VariableExpression DefiningType='PropertyController' Image='safePageSize' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                        </BinaryExpression>
+                        <VariableExpression DefiningType='PropertyController' Image='offset' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='PropertyController' Image='result' RealLoc='true' Type='PagedResult'>
+                        <NewObjectExpression DefiningType='PropertyController' Image='' RealLoc='true' Type='PagedResult' />
+                        <VariableExpression DefiningType='PropertyController' Image='result' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ExpressionStatement DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='PropertyController' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='PropertyController' Image='pageSize' RealLoc='true'>
+                            <ReferenceExpression DefiningType='PropertyController' Image='result' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='PropertyController' Image='safePageSize' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='PropertyController' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='PropertyController' Image='pageNumber' RealLoc='true'>
+                            <ReferenceExpression DefiningType='PropertyController' Image='result' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <VariableExpression DefiningType='PropertyController' Image='safePageNumber' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='PropertyController' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='PropertyController' Image='totalItemCount' RealLoc='true'>
+                            <ReferenceExpression DefiningType='PropertyController' Image='result' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <SoqlExpression CanonicalQuery='SELECT COUNT()
+            FROM Property__c
+            WHERE
+                (Name LIKE :tmpVar1
+                OR City__c LIKE :tmpVar2
+                OR Tags__c LIKE :tmpVar3)
+                AND Price__c &amp;lt;= :tmpVar4
+                AND Beds__c >= :tmpVar5
+                AND Baths__c >= :tmpVar6' DefiningType='PropertyController' Image='' Query='SELECT COUNT()
+            FROM Property__c
+            WHERE
+                (Name LIKE :searchPattern
+                OR City__c LIKE :searchPattern
+                OR Tags__c LIKE :searchPattern)
+                AND Price__c &amp;lt;= :safeMaxPrice
+                AND Beds__c >= :safeMinBedrooms
+                AND Baths__c >= :safeMinBathrooms' RealLoc='true'>
+                            <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='searchPattern' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BindExpressions>
+                            <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='searchPattern' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BindExpressions>
+                            <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='searchPattern' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BindExpressions>
+                            <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='safeMaxPrice' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BindExpressions>
+                            <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='safeMinBedrooms' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BindExpressions>
+                            <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='safeMinBathrooms' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BindExpressions>
+                        </SoqlExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <AssignmentExpression DefiningType='PropertyController' Image='' Op='=' RealLoc='true'>
+                        <VariableExpression DefiningType='PropertyController' Image='records' RealLoc='true'>
+                            <ReferenceExpression DefiningType='PropertyController' Image='result' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                        </VariableExpression>
+                        <SoqlExpression CanonicalQuery='SELECT
+                Id,
+                Name,
+                Address__c,
+                City__c,
+                State__c,
+                Description__c,
+                Price__c,
+                Baths__c,
+                Beds__c,
+                Thumbnail__c,
+                Location__Latitude__s,
+                Location__Longitude__s
+            FROM Property__c
+            WHERE
+                (Name LIKE :tmpVar1
+                OR City__c LIKE :tmpVar2
+                OR Tags__c LIKE :tmpVar3)
+                AND Price__c &amp;lt;= :tmpVar4
+                AND Beds__c >= :tmpVar5
+                AND Baths__c >= :tmpVar6
+            WITH USER_MODE
+            ORDER BY Price__c
+            LIMIT :tmpVar7
+            OFFSET :tmpVar8' DefiningType='PropertyController' Image='' Query='SELECT
+                Id,
+                Name,
+                Address__c,
+                City__c,
+                State__c,
+                Description__c,
+                Price__c,
+                Baths__c,
+                Beds__c,
+                Thumbnail__c,
+                Location__Latitude__s,
+                Location__Longitude__s
+            FROM Property__c
+            WHERE
+                (Name LIKE :searchPattern
+                OR City__c LIKE :searchPattern
+                OR Tags__c LIKE :searchPattern)
+                AND Price__c &amp;lt;= :safeMaxPrice
+                AND Beds__c >= :safeMinBedrooms
+                AND Baths__c >= :safeMinBathrooms
+            WITH USER_MODE
+            ORDER BY Price__c
+            LIMIT :safePageSize
+            OFFSET :offset' RealLoc='true'>
+                            <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='searchPattern' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BindExpressions>
+                            <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='searchPattern' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BindExpressions>
+                            <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='searchPattern' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BindExpressions>
+                            <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='safeMaxPrice' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BindExpressions>
+                            <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='safeMinBedrooms' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BindExpressions>
+                            <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='safeMinBathrooms' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BindExpressions>
+                            <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='safePageSize' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BindExpressions>
+                            <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='offset' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BindExpressions>
+                        </SoqlExpression>
+                    </AssignmentExpression>
+                </ExpressionStatement>
+                <ReturnStatement DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <VariableExpression DefiningType='PropertyController' Image='result' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </ReturnStatement>
+            </BlockStatement>
+        </Method>
+        <Method Arity='1' CanonicalName='getPictures' Constructor='false' DefiningType='PropertyController' Image='getPictures' RealLoc='true' ReturnType='List&amp;lt;ContentVersion>' StaticInitializer='false'>
+            <FormalComment DefiningType='PropertyController' Image='/**
+     * Endpoint that retrieves pictures associated with a property
+     * @param propertyId Property Id
+     * @return List of ContentVersion holding the pictures
+     */' RealLoc='false' />
+            <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='9' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='PropertyController' Image='AuraEnabled' Name='AuraEnabled' RawName='AuraEnabled' RealLoc='true' Resolved='true'>
+                    <AnnotationParameter DefiningType='PropertyController' Image='true' Name='cacheable' RealLoc='true' Value='true' />
+                    <AnnotationParameter DefiningType='PropertyController' Image='global' Name='scope' RealLoc='true' Value='global' />
+                </Annotation>
+            </ModifierNode>
+            <Parameter DefiningType='PropertyController' Image='propertyId' RealLoc='true' Type='Id'>
+                <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            </Parameter>
+            <BlockStatement CurlyBrace='true' DefiningType='PropertyController' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='PropertyController' Image='links' RealLoc='true' Type='List&amp;lt;ContentDocumentLink>'>
+                        <SoqlExpression CanonicalQuery='SELECT Id, LinkedEntityId, ContentDocument.Title
+            FROM ContentDocumentLink
+            WHERE
+                LinkedEntityId = :tmpVar1
+                AND ContentDocument.FileType IN (&apos;PNG&apos;, &apos;JPG&apos;, &apos;GIF&apos;)
+            WITH USER_MODE' DefiningType='PropertyController' Image='' Query='SELECT Id, LinkedEntityId, ContentDocument.Title
+            FROM ContentDocumentLink
+            WHERE
+                LinkedEntityId = :propertyId
+                AND ContentDocument.FileType IN (&apos;PNG&apos;, &apos;JPG&apos;, &apos;GIF&apos;)
+            WITH USER_MODE' RealLoc='true'>
+                            <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <VariableExpression DefiningType='PropertyController' Image='propertyId' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </BindExpressions>
+                        </SoqlExpression>
+                        <VariableExpression DefiningType='PropertyController' Image='links' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <IfElseBlockStatement DefiningType='PropertyController' ElseStatement='false' Image='' RealLoc='true'>
+                    <IfBlockStatement DefiningType='PropertyController' Image='' RealLoc='true'>
+                        <StandardCondition DefiningType='PropertyController' Image='' RealLoc='true'>
+                            <MethodCallExpression DefiningType='PropertyController' FullMethodName='links.isEmpty' Image='' InputParametersSize='0' MethodName='isEmpty' RealLoc='true'>
+                                <ReferenceExpression DefiningType='PropertyController' Image='links' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                            </MethodCallExpression>
+                        </StandardCondition>
+                        <BlockStatement CurlyBrace='true' DefiningType='PropertyController' Image='' RealLoc='true'>
+                            <ReturnStatement DefiningType='PropertyController' Image='' RealLoc='true'>
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='PropertyController' Double='false' Image='' Integer='false' LiteralType='NULL' Long='false' Name='' Null='true' RealLoc='true' String='false' />
+                            </ReturnStatement>
+                        </BlockStatement>
+                    </IfBlockStatement>
+                </IfElseBlockStatement>
+                <VariableDeclarationStatements DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='PropertyController' Image='contentIds' RealLoc='true' Type='Set&amp;lt;Id>'>
+                        <NewSetInitExpression DefiningType='PropertyController' Image='' RealLoc='true' />
+                        <VariableExpression DefiningType='PropertyController' Image='contentIds' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ForEachStatement DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <VariableDeclarationStatements DefiningType='PropertyController' Image='' RealLoc='true'>
+                        <ModifierNode Abstract='false' DefiningType='PropertyController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                        <VariableDeclaration DefiningType='PropertyController' Image='link' RealLoc='true' Type='ContentDocumentLink'>
+                            <VariableExpression DefiningType='PropertyController' Image='link' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                        </VariableDeclaration>
+                    </VariableDeclarationStatements>
+                    <VariableExpression DefiningType='PropertyController' Image='link' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                    <BlockStatement CurlyBrace='true' DefiningType='PropertyController' Image='' RealLoc='true'>
+                        <ExpressionStatement DefiningType='PropertyController' Image='' RealLoc='true'>
+                            <MethodCallExpression DefiningType='PropertyController' FullMethodName='contentIds.add' Image='' InputParametersSize='1' MethodName='add' RealLoc='true'>
+                                <ReferenceExpression DefiningType='PropertyController' Image='contentIds' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                <VariableExpression DefiningType='PropertyController' Image='ContentDocumentId' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='PropertyController' Image='link' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                                </VariableExpression>
+                            </MethodCallExpression>
+                        </ExpressionStatement>
+                    </BlockStatement>
+                    <VariableExpression DefiningType='PropertyController' Image='links' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </ForEachStatement>
+                <ReturnStatement DefiningType='PropertyController' Image='' RealLoc='true'>
+                    <SoqlExpression CanonicalQuery='SELECT Id, Title
+            FROM ContentVersion
+            WHERE ContentDocumentId IN :tmpVar1 AND IsLatest = TRUE
+            WITH USER_MODE
+            ORDER BY CreatedDate' DefiningType='PropertyController' Image='' Query='SELECT Id, Title
+            FROM ContentVersion
+            WHERE ContentDocumentId IN :contentIds AND IsLatest = TRUE
+            WITH USER_MODE
+            ORDER BY CreatedDate' RealLoc='true'>
+                        <BindExpressions DefiningType='PropertyController' Image='' RealLoc='true'>
+                            <VariableExpression DefiningType='PropertyController' Image='contentIds' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                        </BindExpressions>
+                    </SoqlExpression>
+                </ReturnStatement>
+            </BlockStatement>
+        </Method>
+    </UserClass>
+</ApexFile>

@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ApexFile DefiningType='SampleDataController' Image='' RealLoc='true'>
+    <UserClass DefiningType='SampleDataController' Image='SampleDataController' InterfaceNames='[]' Nested='false' RealLoc='true' SimpleName='SampleDataController' SuperClassName=''>
+        <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='true' WithoutSharing='false' />
+        <Method Arity='0' CanonicalName='importSampleData' Constructor='false' DefiningType='SampleDataController' Image='importSampleData' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='9' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='SampleDataController' Image='AuraEnabled' Name='AuraEnabled' RawName='AuraEnabled' RealLoc='true' Resolved='true' />
+            </ModifierNode>
+            <BlockStatement CurlyBrace='true' DefiningType='SampleDataController' Image='' RealLoc='true'>
+                <DmlDeleteStatement DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <SoqlExpression CanonicalQuery='SELECT Id FROM Case' DefiningType='SampleDataController' Image='' Query='SELECT Id FROM Case' RealLoc='true' />
+                </DmlDeleteStatement>
+                <DmlDeleteStatement DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <SoqlExpression CanonicalQuery='SELECT Id FROM Property__c' DefiningType='SampleDataController' Image='' Query='SELECT Id FROM Property__c' RealLoc='true' />
+                </DmlDeleteStatement>
+                <DmlDeleteStatement DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <SoqlExpression CanonicalQuery='SELECT Id FROM Broker__c' DefiningType='SampleDataController' Image='' Query='SELECT Id FROM Broker__c' RealLoc='true' />
+                </DmlDeleteStatement>
+                <DmlDeleteStatement DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <SoqlExpression CanonicalQuery='SELECT Id FROM Contact' DefiningType='SampleDataController' Image='' Query='SELECT Id FROM Contact' RealLoc='true' />
+                </DmlDeleteStatement>
+                <ExpressionStatement DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='SampleDataController' FullMethodName='insertBrokers' Image='' InputParametersSize='0' MethodName='insertBrokers' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='SampleDataController' FullMethodName='insertProperties' Image='' InputParametersSize='0' MethodName='insertProperties' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <ExpressionStatement DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='SampleDataController' FullMethodName='insertContacts' Image='' InputParametersSize='0' MethodName='insertContacts' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </MethodCallExpression>
+                </ExpressionStatement>
+            </BlockStatement>
+        </Method>
+        <Method Arity='0' CanonicalName='insertBrokers' Constructor='false' DefiningType='SampleDataController' Image='insertBrokers' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='10' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <BlockStatement CurlyBrace='true' DefiningType='SampleDataController' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='SampleDataController' Image='brokersResource' RealLoc='true' Type='StaticResource'>
+                        <SoqlExpression CanonicalQuery='SELECT Id, Body
+            FROM StaticResource
+            WHERE Name = &apos;sample_data_brokers&apos;' DefiningType='SampleDataController' Image='' Query='SELECT Id, Body
+            FROM StaticResource
+            WHERE Name = &apos;sample_data_brokers&apos;' RealLoc='true' />
+                        <VariableExpression DefiningType='SampleDataController' Image='brokersResource' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='SampleDataController' Image='brokersJSON' RealLoc='true' Type='String'>
+                        <MethodCallExpression DefiningType='SampleDataController' FullMethodName='brokersResource.body.toString' Image='' InputParametersSize='0' MethodName='toString' RealLoc='true'>
+                            <ReferenceExpression DefiningType='SampleDataController' Image='brokersResource' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        </MethodCallExpression>
+                        <VariableExpression DefiningType='SampleDataController' Image='brokersJSON' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='SampleDataController' Image='brokers' RealLoc='true' Type='List&amp;lt;Broker__c>'>
+                        <CastExpression DefiningType='SampleDataController' Image='' RealLoc='true' Type='List&amp;lt;Broker__c>'>
+                            <MethodCallExpression DefiningType='SampleDataController' FullMethodName='JSON.deserialize' Image='' InputParametersSize='2' MethodName='deserialize' RealLoc='true'>
+                                <ReferenceExpression DefiningType='SampleDataController' Image='JSON' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                <VariableExpression DefiningType='SampleDataController' Image='brokersJSON' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <ClassRefExpression DefiningType='SampleDataController' Image='' RealLoc='true' />
+                            </MethodCallExpression>
+                        </CastExpression>
+                        <VariableExpression DefiningType='SampleDataController' Image='brokers' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <DmlInsertStatement DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <VariableExpression DefiningType='SampleDataController' Image='brokers' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </DmlInsertStatement>
+            </BlockStatement>
+        </Method>
+        <Method Arity='0' CanonicalName='insertProperties' Constructor='false' DefiningType='SampleDataController' Image='insertProperties' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='10' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <BlockStatement CurlyBrace='true' DefiningType='SampleDataController' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='SampleDataController' Image='propertiesResource' RealLoc='true' Type='StaticResource'>
+                        <SoqlExpression CanonicalQuery='SELECT Id, Body
+            FROM StaticResource
+            WHERE Name = &apos;sample_data_properties&apos;' DefiningType='SampleDataController' Image='' Query='SELECT Id, Body
+            FROM StaticResource
+            WHERE Name = &apos;sample_data_properties&apos;' RealLoc='true' />
+                        <VariableExpression DefiningType='SampleDataController' Image='propertiesResource' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='SampleDataController' Image='propertiesJSON' RealLoc='true' Type='String'>
+                        <MethodCallExpression DefiningType='SampleDataController' FullMethodName='propertiesResource.body.toString' Image='' InputParametersSize='0' MethodName='toString' RealLoc='true'>
+                            <ReferenceExpression DefiningType='SampleDataController' Image='propertiesResource' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        </MethodCallExpression>
+                        <VariableExpression DefiningType='SampleDataController' Image='propertiesJSON' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='SampleDataController' Image='properties' RealLoc='true' Type='List&amp;lt;Property__c>'>
+                        <CastExpression DefiningType='SampleDataController' Image='' RealLoc='true' Type='List&amp;lt;Property__c>'>
+                            <MethodCallExpression DefiningType='SampleDataController' FullMethodName='JSON.deserialize' Image='' InputParametersSize='2' MethodName='deserialize' RealLoc='true'>
+                                <ReferenceExpression DefiningType='SampleDataController' Image='JSON' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                <VariableExpression DefiningType='SampleDataController' Image='propertiesJSON' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <ClassRefExpression DefiningType='SampleDataController' Image='' RealLoc='true' />
+                            </MethodCallExpression>
+                        </CastExpression>
+                        <VariableExpression DefiningType='SampleDataController' Image='properties' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ExpressionStatement DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <MethodCallExpression DefiningType='SampleDataController' FullMethodName='randomizeDateListed' Image='' InputParametersSize='1' MethodName='randomizeDateListed' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        <VariableExpression DefiningType='SampleDataController' Image='properties' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </MethodCallExpression>
+                </ExpressionStatement>
+                <DmlInsertStatement DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <VariableExpression DefiningType='SampleDataController' Image='properties' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </DmlInsertStatement>
+            </BlockStatement>
+        </Method>
+        <Method Arity='0' CanonicalName='insertContacts' Constructor='false' DefiningType='SampleDataController' Image='insertContacts' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='10' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <BlockStatement CurlyBrace='true' DefiningType='SampleDataController' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='SampleDataController' Image='contactsResource' RealLoc='true' Type='StaticResource'>
+                        <SoqlExpression CanonicalQuery='SELECT Id, Body
+            FROM StaticResource
+            WHERE Name = &apos;sample_data_contacts&apos;' DefiningType='SampleDataController' Image='' Query='SELECT Id, Body
+            FROM StaticResource
+            WHERE Name = &apos;sample_data_contacts&apos;' RealLoc='true' />
+                        <VariableExpression DefiningType='SampleDataController' Image='contactsResource' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='SampleDataController' Image='contactsJSON' RealLoc='true' Type='String'>
+                        <MethodCallExpression DefiningType='SampleDataController' FullMethodName='contactsResource.body.toString' Image='' InputParametersSize='0' MethodName='toString' RealLoc='true'>
+                            <ReferenceExpression DefiningType='SampleDataController' Image='contactsResource' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                        </MethodCallExpression>
+                        <VariableExpression DefiningType='SampleDataController' Image='contactsJSON' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <VariableDeclarationStatements DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='SampleDataController' Image='contacts' RealLoc='true' Type='List&amp;lt;Contact>'>
+                        <CastExpression DefiningType='SampleDataController' Image='' RealLoc='true' Type='List&amp;lt;Contact>'>
+                            <MethodCallExpression DefiningType='SampleDataController' FullMethodName='JSON.deserialize' Image='' InputParametersSize='2' MethodName='deserialize' RealLoc='true'>
+                                <ReferenceExpression DefiningType='SampleDataController' Image='JSON' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                <VariableExpression DefiningType='SampleDataController' Image='contactsJSON' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <ClassRefExpression DefiningType='SampleDataController' Image='' RealLoc='true' />
+                            </MethodCallExpression>
+                        </CastExpression>
+                        <VariableExpression DefiningType='SampleDataController' Image='contacts' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <DmlInsertStatement DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <VariableExpression DefiningType='SampleDataController' Image='contacts' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </DmlInsertStatement>
+            </BlockStatement>
+        </Method>
+        <Method Arity='1' CanonicalName='randomizeDateListed' Constructor='false' DefiningType='SampleDataController' Image='randomizeDateListed' RealLoc='true' ReturnType='void' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='10' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <Parameter DefiningType='SampleDataController' Image='properties' RealLoc='true' Type='List&amp;lt;Property__c>'>
+                <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            </Parameter>
+            <BlockStatement CurlyBrace='true' DefiningType='SampleDataController' Image='' RealLoc='true'>
+                <ForEachStatement DefiningType='SampleDataController' Image='' RealLoc='true'>
+                    <VariableDeclarationStatements DefiningType='SampleDataController' Image='' RealLoc='true'>
+                        <ModifierNode Abstract='false' DefiningType='SampleDataController' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                        <VariableDeclaration DefiningType='SampleDataController' Image='property' RealLoc='true' Type='Property__c'>
+                            <VariableExpression DefiningType='SampleDataController' Image='property' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                        </VariableDeclaration>
+                    </VariableDeclarationStatements>
+                    <VariableExpression DefiningType='SampleDataController' Image='property' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                    <BlockStatement CurlyBrace='true' DefiningType='SampleDataController' Image='' RealLoc='true'>
+                        <ExpressionStatement DefiningType='SampleDataController' Image='' RealLoc='true'>
+                            <AssignmentExpression DefiningType='SampleDataController' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='SampleDataController' Image='Date_Listed__c' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='SampleDataController' Image='property' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                                </VariableExpression>
+                                <BinaryExpression DefiningType='SampleDataController' Image='' Op='-' RealLoc='true'>
+                                    <MethodCallExpression DefiningType='SampleDataController' FullMethodName='System.today' Image='' InputParametersSize='0' MethodName='today' RealLoc='true'>
+                                        <ReferenceExpression DefiningType='SampleDataController' Image='System' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                    </MethodCallExpression>
+                                    <MethodCallExpression DefiningType='SampleDataController' FullMethodName='Integer.valueof' Image='' InputParametersSize='1' MethodName='valueof' RealLoc='true'>
+                                        <ReferenceExpression DefiningType='SampleDataController' Image='Integer' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                        <BinaryExpression DefiningType='SampleDataController' Image='' Op='*' RealLoc='true'>
+                                            <MethodCallExpression DefiningType='SampleDataController' FullMethodName='Math.random' Image='' InputParametersSize='0' MethodName='random' RealLoc='true'>
+                                                <ReferenceExpression DefiningType='SampleDataController' Image='Math' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                            </MethodCallExpression>
+                                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='SampleDataController' Double='false' Image='90' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                        </BinaryExpression>
+                                    </MethodCallExpression>
+                                </BinaryExpression>
+                            </AssignmentExpression>
+                        </ExpressionStatement>
+                    </BlockStatement>
+                    <VariableExpression DefiningType='SampleDataController' Image='properties' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </ForEachStatement>
+            </BlockStatement>
+        </Method>
+    </UserClass>
+</ApexFile>

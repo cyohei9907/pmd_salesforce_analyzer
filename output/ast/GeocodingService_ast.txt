@@ -1,0 +1,441 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ApexFile DefiningType='GeocodingService' Image='' RealLoc='true'>
+    <UserClass DefiningType='GeocodingService' Image='GeocodingService' InterfaceNames='[]' Nested='false' RealLoc='true' SimpleName='GeocodingService' SuperClassName=''>
+        <ModifierNode Abstract='false' DefiningType='GeocodingService' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='true' WithoutSharing='false' />
+        <Field DefiningType='GeocodingService' Image='BASE_URL' Name='BASE_URL' RealLoc='true' Type='String' Value='https://nominatim.openstreetmap.org/search?format=json'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingService' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+        </Field>
+        <UserClass DefiningType='GeocodingService.GeocodingAddress' Image='GeocodingAddress' InterfaceNames='[]' Nested='true' RealLoc='true' SimpleName='GeocodingAddress' SuperClassName=''>
+            <ModifierNode Abstract='false' DefiningType='GeocodingService.GeocodingAddress' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <Field DefiningType='GeocodingService.GeocodingAddress' Image='street' Name='street' RealLoc='true' Type='String' Value=''>
+                <ModifierNode Abstract='false' DefiningType='GeocodingService.GeocodingAddress' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                    <Annotation DefiningType='GeocodingService.GeocodingAddress' Image='InvocableVariable' Name='InvocableVariable' RawName='InvocableVariable' RealLoc='true' Resolved='true' />
+                </ModifierNode>
+            </Field>
+            <Field DefiningType='GeocodingService.GeocodingAddress' Image='city' Name='city' RealLoc='true' Type='String' Value=''>
+                <ModifierNode Abstract='false' DefiningType='GeocodingService.GeocodingAddress' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                    <Annotation DefiningType='GeocodingService.GeocodingAddress' Image='InvocableVariable' Name='InvocableVariable' RawName='InvocableVariable' RealLoc='true' Resolved='true' />
+                </ModifierNode>
+            </Field>
+            <Field DefiningType='GeocodingService.GeocodingAddress' Image='state' Name='state' RealLoc='true' Type='String' Value=''>
+                <ModifierNode Abstract='false' DefiningType='GeocodingService.GeocodingAddress' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                    <Annotation DefiningType='GeocodingService.GeocodingAddress' Image='InvocableVariable' Name='InvocableVariable' RawName='InvocableVariable' RealLoc='true' Resolved='true' />
+                </ModifierNode>
+            </Field>
+            <Field DefiningType='GeocodingService.GeocodingAddress' Image='country' Name='country' RealLoc='true' Type='String' Value=''>
+                <ModifierNode Abstract='false' DefiningType='GeocodingService.GeocodingAddress' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                    <Annotation DefiningType='GeocodingService.GeocodingAddress' Image='InvocableVariable' Name='InvocableVariable' RawName='InvocableVariable' RealLoc='true' Resolved='true' />
+                </ModifierNode>
+            </Field>
+            <Field DefiningType='GeocodingService.GeocodingAddress' Image='postalcode' Name='postalcode' RealLoc='true' Type='String' Value=''>
+                <ModifierNode Abstract='false' DefiningType='GeocodingService.GeocodingAddress' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                    <Annotation DefiningType='GeocodingService.GeocodingAddress' Image='InvocableVariable' Name='InvocableVariable' RawName='InvocableVariable' RealLoc='true' Resolved='true' />
+                </ModifierNode>
+            </Field>
+            <FieldDeclarationStatements DefiningType='GeocodingService.GeocodingAddress' Image='' RealLoc='true' TypeArguments='[]' TypeName='String'>
+                <ModifierNode Abstract='false' DefiningType='GeocodingService.GeocodingAddress' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                    <Annotation DefiningType='GeocodingService.GeocodingAddress' Image='InvocableVariable' Name='InvocableVariable' RawName='InvocableVariable' RealLoc='true' Resolved='true' />
+                </ModifierNode>
+                <FieldDeclaration DefiningType='GeocodingService.GeocodingAddress' Image='street' Name='street' RealLoc='true'>
+                    <VariableExpression DefiningType='GeocodingService.GeocodingAddress' Image='street' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </FieldDeclaration>
+            </FieldDeclarationStatements>
+            <FieldDeclarationStatements DefiningType='GeocodingService.GeocodingAddress' Image='' RealLoc='true' TypeArguments='[]' TypeName='String'>
+                <ModifierNode Abstract='false' DefiningType='GeocodingService.GeocodingAddress' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                    <Annotation DefiningType='GeocodingService.GeocodingAddress' Image='InvocableVariable' Name='InvocableVariable' RawName='InvocableVariable' RealLoc='true' Resolved='true' />
+                </ModifierNode>
+                <FieldDeclaration DefiningType='GeocodingService.GeocodingAddress' Image='city' Name='city' RealLoc='true'>
+                    <VariableExpression DefiningType='GeocodingService.GeocodingAddress' Image='city' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </FieldDeclaration>
+            </FieldDeclarationStatements>
+            <FieldDeclarationStatements DefiningType='GeocodingService.GeocodingAddress' Image='' RealLoc='true' TypeArguments='[]' TypeName='String'>
+                <ModifierNode Abstract='false' DefiningType='GeocodingService.GeocodingAddress' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                    <Annotation DefiningType='GeocodingService.GeocodingAddress' Image='InvocableVariable' Name='InvocableVariable' RawName='InvocableVariable' RealLoc='true' Resolved='true' />
+                </ModifierNode>
+                <FieldDeclaration DefiningType='GeocodingService.GeocodingAddress' Image='state' Name='state' RealLoc='true'>
+                    <VariableExpression DefiningType='GeocodingService.GeocodingAddress' Image='state' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </FieldDeclaration>
+            </FieldDeclarationStatements>
+            <FieldDeclarationStatements DefiningType='GeocodingService.GeocodingAddress' Image='' RealLoc='true' TypeArguments='[]' TypeName='String'>
+                <ModifierNode Abstract='false' DefiningType='GeocodingService.GeocodingAddress' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                    <Annotation DefiningType='GeocodingService.GeocodingAddress' Image='InvocableVariable' Name='InvocableVariable' RawName='InvocableVariable' RealLoc='true' Resolved='true' />
+                </ModifierNode>
+                <FieldDeclaration DefiningType='GeocodingService.GeocodingAddress' Image='country' Name='country' RealLoc='true'>
+                    <VariableExpression DefiningType='GeocodingService.GeocodingAddress' Image='country' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </FieldDeclaration>
+            </FieldDeclarationStatements>
+            <FieldDeclarationStatements DefiningType='GeocodingService.GeocodingAddress' Image='' RealLoc='true' TypeArguments='[]' TypeName='String'>
+                <ModifierNode Abstract='false' DefiningType='GeocodingService.GeocodingAddress' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                    <Annotation DefiningType='GeocodingService.GeocodingAddress' Image='InvocableVariable' Name='InvocableVariable' RawName='InvocableVariable' RealLoc='true' Resolved='true' />
+                </ModifierNode>
+                <FieldDeclaration DefiningType='GeocodingService.GeocodingAddress' Image='postalcode' Name='postalcode' RealLoc='true'>
+                    <VariableExpression DefiningType='GeocodingService.GeocodingAddress' Image='postalcode' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </FieldDeclaration>
+            </FieldDeclarationStatements>
+        </UserClass>
+        <UserClass DefiningType='GeocodingService.Coordinates' Image='Coordinates' InterfaceNames='[]' Nested='true' RealLoc='true' SimpleName='Coordinates' SuperClassName=''>
+            <ModifierNode Abstract='false' DefiningType='GeocodingService.Coordinates' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <Field DefiningType='GeocodingService.Coordinates' Image='lat' Name='lat' RealLoc='true' Type='Decimal' Value=''>
+                <ModifierNode Abstract='false' DefiningType='GeocodingService.Coordinates' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                    <Annotation DefiningType='GeocodingService.Coordinates' Image='InvocableVariable' Name='InvocableVariable' RawName='InvocableVariable' RealLoc='true' Resolved='true' />
+                </ModifierNode>
+            </Field>
+            <Field DefiningType='GeocodingService.Coordinates' Image='lon' Name='lon' RealLoc='true' Type='Decimal' Value=''>
+                <ModifierNode Abstract='false' DefiningType='GeocodingService.Coordinates' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                    <Annotation DefiningType='GeocodingService.Coordinates' Image='InvocableVariable' Name='InvocableVariable' RawName='InvocableVariable' RealLoc='true' Resolved='true' />
+                </ModifierNode>
+            </Field>
+            <FieldDeclarationStatements DefiningType='GeocodingService.Coordinates' Image='' RealLoc='true' TypeArguments='[]' TypeName='Decimal'>
+                <ModifierNode Abstract='false' DefiningType='GeocodingService.Coordinates' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                    <Annotation DefiningType='GeocodingService.Coordinates' Image='InvocableVariable' Name='InvocableVariable' RawName='InvocableVariable' RealLoc='true' Resolved='true' />
+                </ModifierNode>
+                <FieldDeclaration DefiningType='GeocodingService.Coordinates' Image='lat' Name='lat' RealLoc='true'>
+                    <VariableExpression DefiningType='GeocodingService.Coordinates' Image='lat' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </FieldDeclaration>
+            </FieldDeclarationStatements>
+            <FieldDeclarationStatements DefiningType='GeocodingService.Coordinates' Image='' RealLoc='true' TypeArguments='[]' TypeName='Decimal'>
+                <ModifierNode Abstract='false' DefiningType='GeocodingService.Coordinates' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                    <Annotation DefiningType='GeocodingService.Coordinates' Image='InvocableVariable' Name='InvocableVariable' RawName='InvocableVariable' RealLoc='true' Resolved='true' />
+                </ModifierNode>
+                <FieldDeclaration DefiningType='GeocodingService.Coordinates' Image='lon' Name='lon' RealLoc='true'>
+                    <VariableExpression DefiningType='GeocodingService.Coordinates' Image='lon' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </FieldDeclaration>
+            </FieldDeclarationStatements>
+        </UserClass>
+        <FieldDeclarationStatements DefiningType='GeocodingService' Image='' RealLoc='true' TypeArguments='[]' TypeName='String'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingService' DeprecatedTestMethod='false' Final='true' Global='false' Image='' InheritedSharing='false' Modifiers='26' Override='false' Private='true' Protected='false' Public='false' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            <FieldDeclaration DefiningType='GeocodingService' Image='BASE_URL' Name='BASE_URL' RealLoc='true'>
+                <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingService' Double='false' Image='https://nominatim.openstreetmap.org/search?format=json' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                <VariableExpression DefiningType='GeocodingService' Image='BASE_URL' RealLoc='true'>
+                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                </VariableExpression>
+            </FieldDeclaration>
+        </FieldDeclarationStatements>
+        <Method Arity='1' CanonicalName='geocodeAddresses' Constructor='false' DefiningType='GeocodingService' Image='geocodeAddresses' RealLoc='true' ReturnType='List&amp;lt;Coordinates>' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='GeocodingService' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='9' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='GeocodingService' Image='InvocableMethod' Name='InvocableMethod' RawName='InvocableMethod' RealLoc='true' Resolved='true'>
+                    <AnnotationParameter DefiningType='GeocodingService' Image='true' Name='callout' RealLoc='true' Value='true' />
+                    <AnnotationParameter DefiningType='GeocodingService' Image='Geocode address' Name='label' RealLoc='true' Value='Geocode address' />
+                </Annotation>
+            </ModifierNode>
+            <Parameter DefiningType='GeocodingService' Image='addresses' RealLoc='true' Type='List&amp;lt;GeocodingAddress>'>
+                <ModifierNode Abstract='false' DefiningType='GeocodingService' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            </Parameter>
+            <BlockStatement CurlyBrace='true' DefiningType='GeocodingService' Image='' RealLoc='true'>
+                <VariableDeclarationStatements DefiningType='GeocodingService' Image='' RealLoc='true'>
+                    <ModifierNode Abstract='false' DefiningType='GeocodingService' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                    <VariableDeclaration DefiningType='GeocodingService' Image='computedCoordinates' RealLoc='true' Type='List&amp;lt;Coordinates>'>
+                        <NewListInitExpression DefiningType='GeocodingService' Image='' RealLoc='true' />
+                        <VariableExpression DefiningType='GeocodingService' Image='computedCoordinates' RealLoc='true'>
+                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                        </VariableExpression>
+                    </VariableDeclaration>
+                </VariableDeclarationStatements>
+                <ForEachStatement DefiningType='GeocodingService' Image='' RealLoc='true'>
+                    <VariableDeclarationStatements DefiningType='GeocodingService' Image='' RealLoc='true'>
+                        <ModifierNode Abstract='false' DefiningType='GeocodingService' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                        <VariableDeclaration DefiningType='GeocodingService' Image='address' RealLoc='true' Type='GeocodingAddress'>
+                            <VariableExpression DefiningType='GeocodingService' Image='address' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                        </VariableDeclaration>
+                    </VariableDeclarationStatements>
+                    <VariableExpression DefiningType='GeocodingService' Image='address' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                    <BlockStatement CurlyBrace='true' DefiningType='GeocodingService' Image='' RealLoc='true'>
+                        <VariableDeclarationStatements DefiningType='GeocodingService' Image='' RealLoc='true'>
+                            <ModifierNode Abstract='false' DefiningType='GeocodingService' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                            <VariableDeclaration DefiningType='GeocodingService' Image='geocodingUrl' RealLoc='true' Type='String'>
+                                <VariableExpression DefiningType='GeocodingService' Image='BASE_URL' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <VariableExpression DefiningType='GeocodingService' Image='geocodingUrl' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </VariableDeclaration>
+                        </VariableDeclarationStatements>
+                        <ExpressionStatement DefiningType='GeocodingService' Image='' RealLoc='true'>
+                            <AssignmentExpression DefiningType='GeocodingService' Image='' Op='+=' RealLoc='true'>
+                                <VariableExpression DefiningType='GeocodingService' Image='geocodingUrl' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <TernaryExpression DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                    <StandardCondition DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                        <MethodCallExpression DefiningType='GeocodingService' FullMethodName='String.isNotBlank' Image='' InputParametersSize='1' MethodName='isNotBlank' RealLoc='true'>
+                                            <ReferenceExpression DefiningType='GeocodingService' Image='String' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                            <VariableExpression DefiningType='GeocodingService' Image='street' RealLoc='true'>
+                                                <ReferenceExpression DefiningType='GeocodingService' Image='address' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                                            </VariableExpression>
+                                        </MethodCallExpression>
+                                    </StandardCondition>
+                                    <BinaryExpression DefiningType='GeocodingService' Image='' Op='+' RealLoc='true'>
+                                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingService' Double='false' Image='&amp;street=' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                        <VariableExpression DefiningType='GeocodingService' Image='street' RealLoc='true'>
+                                            <ReferenceExpression DefiningType='GeocodingService' Image='address' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                                        </VariableExpression>
+                                    </BinaryExpression>
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingService' Double='false' Image='' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                </TernaryExpression>
+                            </AssignmentExpression>
+                        </ExpressionStatement>
+                        <ExpressionStatement DefiningType='GeocodingService' Image='' RealLoc='true'>
+                            <AssignmentExpression DefiningType='GeocodingService' Image='' Op='+=' RealLoc='true'>
+                                <VariableExpression DefiningType='GeocodingService' Image='geocodingUrl' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <TernaryExpression DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                    <StandardCondition DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                        <MethodCallExpression DefiningType='GeocodingService' FullMethodName='String.isNotBlank' Image='' InputParametersSize='1' MethodName='isNotBlank' RealLoc='true'>
+                                            <ReferenceExpression DefiningType='GeocodingService' Image='String' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                            <VariableExpression DefiningType='GeocodingService' Image='city' RealLoc='true'>
+                                                <ReferenceExpression DefiningType='GeocodingService' Image='address' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                                            </VariableExpression>
+                                        </MethodCallExpression>
+                                    </StandardCondition>
+                                    <BinaryExpression DefiningType='GeocodingService' Image='' Op='+' RealLoc='true'>
+                                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingService' Double='false' Image='&amp;city=' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                        <VariableExpression DefiningType='GeocodingService' Image='city' RealLoc='true'>
+                                            <ReferenceExpression DefiningType='GeocodingService' Image='address' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                                        </VariableExpression>
+                                    </BinaryExpression>
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingService' Double='false' Image='' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                </TernaryExpression>
+                            </AssignmentExpression>
+                        </ExpressionStatement>
+                        <ExpressionStatement DefiningType='GeocodingService' Image='' RealLoc='true'>
+                            <AssignmentExpression DefiningType='GeocodingService' Image='' Op='+=' RealLoc='true'>
+                                <VariableExpression DefiningType='GeocodingService' Image='geocodingUrl' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <TernaryExpression DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                    <StandardCondition DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                        <MethodCallExpression DefiningType='GeocodingService' FullMethodName='String.isNotBlank' Image='' InputParametersSize='1' MethodName='isNotBlank' RealLoc='true'>
+                                            <ReferenceExpression DefiningType='GeocodingService' Image='String' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                            <VariableExpression DefiningType='GeocodingService' Image='state' RealLoc='true'>
+                                                <ReferenceExpression DefiningType='GeocodingService' Image='address' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                                            </VariableExpression>
+                                        </MethodCallExpression>
+                                    </StandardCondition>
+                                    <BinaryExpression DefiningType='GeocodingService' Image='' Op='+' RealLoc='true'>
+                                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingService' Double='false' Image='&amp;state=' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                        <VariableExpression DefiningType='GeocodingService' Image='state' RealLoc='true'>
+                                            <ReferenceExpression DefiningType='GeocodingService' Image='address' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                                        </VariableExpression>
+                                    </BinaryExpression>
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingService' Double='false' Image='' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                </TernaryExpression>
+                            </AssignmentExpression>
+                        </ExpressionStatement>
+                        <ExpressionStatement DefiningType='GeocodingService' Image='' RealLoc='true'>
+                            <AssignmentExpression DefiningType='GeocodingService' Image='' Op='+=' RealLoc='true'>
+                                <VariableExpression DefiningType='GeocodingService' Image='geocodingUrl' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <TernaryExpression DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                    <StandardCondition DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                        <MethodCallExpression DefiningType='GeocodingService' FullMethodName='String.isNotBlank' Image='' InputParametersSize='1' MethodName='isNotBlank' RealLoc='true'>
+                                            <ReferenceExpression DefiningType='GeocodingService' Image='String' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                            <VariableExpression DefiningType='GeocodingService' Image='country' RealLoc='true'>
+                                                <ReferenceExpression DefiningType='GeocodingService' Image='address' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                                            </VariableExpression>
+                                        </MethodCallExpression>
+                                    </StandardCondition>
+                                    <BinaryExpression DefiningType='GeocodingService' Image='' Op='+' RealLoc='true'>
+                                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingService' Double='false' Image='&amp;country=' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                        <VariableExpression DefiningType='GeocodingService' Image='country' RealLoc='true'>
+                                            <ReferenceExpression DefiningType='GeocodingService' Image='address' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                                        </VariableExpression>
+                                    </BinaryExpression>
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingService' Double='false' Image='' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                </TernaryExpression>
+                            </AssignmentExpression>
+                        </ExpressionStatement>
+                        <ExpressionStatement DefiningType='GeocodingService' Image='' RealLoc='true'>
+                            <AssignmentExpression DefiningType='GeocodingService' Image='' Op='+=' RealLoc='true'>
+                                <VariableExpression DefiningType='GeocodingService' Image='geocodingUrl' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <TernaryExpression DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                    <StandardCondition DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                        <MethodCallExpression DefiningType='GeocodingService' FullMethodName='String.isNotBlank' Image='' InputParametersSize='1' MethodName='isNotBlank' RealLoc='true'>
+                                            <ReferenceExpression DefiningType='GeocodingService' Image='String' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                            <VariableExpression DefiningType='GeocodingService' Image='postalcode' RealLoc='true'>
+                                                <ReferenceExpression DefiningType='GeocodingService' Image='address' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                                            </VariableExpression>
+                                        </MethodCallExpression>
+                                    </StandardCondition>
+                                    <BinaryExpression DefiningType='GeocodingService' Image='' Op='+' RealLoc='true'>
+                                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingService' Double='false' Image='&amp;postalcode=' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                        <VariableExpression DefiningType='GeocodingService' Image='postalcode' RealLoc='true'>
+                                            <ReferenceExpression DefiningType='GeocodingService' Image='address' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                                        </VariableExpression>
+                                    </BinaryExpression>
+                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingService' Double='false' Image='' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                </TernaryExpression>
+                            </AssignmentExpression>
+                        </ExpressionStatement>
+                        <VariableDeclarationStatements DefiningType='GeocodingService' Image='' RealLoc='true'>
+                            <ModifierNode Abstract='false' DefiningType='GeocodingService' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                            <VariableDeclaration DefiningType='GeocodingService' Image='coords' RealLoc='true' Type='Coordinates'>
+                                <NewObjectExpression DefiningType='GeocodingService' Image='' RealLoc='true' Type='Coordinates' />
+                                <VariableExpression DefiningType='GeocodingService' Image='coords' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </VariableDeclaration>
+                        </VariableDeclarationStatements>
+                        <IfElseBlockStatement DefiningType='GeocodingService' ElseStatement='false' Image='' RealLoc='true'>
+                            <IfBlockStatement DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                <StandardCondition DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                    <BooleanExpression DefiningType='GeocodingService' Image='' Op='!=' RealLoc='true'>
+                                        <VariableExpression DefiningType='GeocodingService' Image='geocodingUrl' RealLoc='true'>
+                                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                        </VariableExpression>
+                                        <VariableExpression DefiningType='GeocodingService' Image='BASE_URL' RealLoc='true'>
+                                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                        </VariableExpression>
+                                    </BooleanExpression>
+                                </StandardCondition>
+                                <BlockStatement CurlyBrace='true' DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                    <VariableDeclarationStatements DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                        <ModifierNode Abstract='false' DefiningType='GeocodingService' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                                        <VariableDeclaration DefiningType='GeocodingService' Image='http' RealLoc='true' Type='Http'>
+                                            <NewObjectExpression DefiningType='GeocodingService' Image='' RealLoc='true' Type='Http' />
+                                            <VariableExpression DefiningType='GeocodingService' Image='http' RealLoc='true'>
+                                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                            </VariableExpression>
+                                        </VariableDeclaration>
+                                    </VariableDeclarationStatements>
+                                    <VariableDeclarationStatements DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                        <ModifierNode Abstract='false' DefiningType='GeocodingService' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                                        <VariableDeclaration DefiningType='GeocodingService' Image='request' RealLoc='true' Type='HttpRequest'>
+                                            <NewObjectExpression DefiningType='GeocodingService' Image='' RealLoc='true' Type='HttpRequest' />
+                                            <VariableExpression DefiningType='GeocodingService' Image='request' RealLoc='true'>
+                                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                            </VariableExpression>
+                                        </VariableDeclaration>
+                                    </VariableDeclarationStatements>
+                                    <ExpressionStatement DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                        <MethodCallExpression DefiningType='GeocodingService' FullMethodName='request.setEndpoint' Image='' InputParametersSize='1' MethodName='setEndpoint' RealLoc='true'>
+                                            <ReferenceExpression DefiningType='GeocodingService' Image='request' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                            <VariableExpression DefiningType='GeocodingService' Image='geocodingUrl' RealLoc='true'>
+                                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                            </VariableExpression>
+                                        </MethodCallExpression>
+                                    </ExpressionStatement>
+                                    <ExpressionStatement DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                        <MethodCallExpression DefiningType='GeocodingService' FullMethodName='request.setMethod' Image='' InputParametersSize='1' MethodName='setMethod' RealLoc='true'>
+                                            <ReferenceExpression DefiningType='GeocodingService' Image='request' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingService' Double='false' Image='GET' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                        </MethodCallExpression>
+                                    </ExpressionStatement>
+                                    <ExpressionStatement DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                        <MethodCallExpression DefiningType='GeocodingService' FullMethodName='request.setHeader' Image='' InputParametersSize='2' MethodName='setHeader' RealLoc='true'>
+                                            <ReferenceExpression DefiningType='GeocodingService' Image='request' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingService' Double='false' Image='http-referer' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                            <MethodCallExpression DefiningType='GeocodingService' FullMethodName='toExternalForm' Image='' InputParametersSize='0' MethodName='toExternalForm' RealLoc='true'>
+                                                <ReferenceExpression DefiningType='GeocodingService' Image='' RealLoc='false' ReferenceType='METHOD' SObjectType='false' SafeNav='false'>
+                                                    <MethodCallExpression DefiningType='GeocodingService' FullMethodName='URL.getOrgDomainUrl' Image='' InputParametersSize='0' MethodName='getOrgDomainUrl' RealLoc='true'>
+                                                        <ReferenceExpression DefiningType='GeocodingService' Image='URL' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                                    </MethodCallExpression>
+                                                </ReferenceExpression>
+                                            </MethodCallExpression>
+                                        </MethodCallExpression>
+                                    </ExpressionStatement>
+                                    <VariableDeclarationStatements DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                        <ModifierNode Abstract='false' DefiningType='GeocodingService' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                                        <VariableDeclaration DefiningType='GeocodingService' Image='response' RealLoc='true' Type='HttpResponse'>
+                                            <MethodCallExpression DefiningType='GeocodingService' FullMethodName='http.send' Image='' InputParametersSize='1' MethodName='send' RealLoc='true'>
+                                                <ReferenceExpression DefiningType='GeocodingService' Image='http' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                                <VariableExpression DefiningType='GeocodingService' Image='request' RealLoc='true'>
+                                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                                </VariableExpression>
+                                            </MethodCallExpression>
+                                            <VariableExpression DefiningType='GeocodingService' Image='response' RealLoc='true'>
+                                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                            </VariableExpression>
+                                        </VariableDeclaration>
+                                    </VariableDeclarationStatements>
+                                    <IfElseBlockStatement DefiningType='GeocodingService' ElseStatement='false' Image='' RealLoc='true'>
+                                        <IfBlockStatement DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                            <StandardCondition DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                                <BooleanExpression DefiningType='GeocodingService' Image='' Op='==' RealLoc='true'>
+                                                    <MethodCallExpression DefiningType='GeocodingService' FullMethodName='response.getStatusCode' Image='' InputParametersSize='0' MethodName='getStatusCode' RealLoc='true'>
+                                                        <ReferenceExpression DefiningType='GeocodingService' Image='response' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                                    </MethodCallExpression>
+                                                    <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingService' Double='false' Image='200' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                                </BooleanExpression>
+                                            </StandardCondition>
+                                            <BlockStatement CurlyBrace='true' DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                                <VariableDeclarationStatements DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                                    <ModifierNode Abstract='false' DefiningType='GeocodingService' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                                                    <VariableDeclaration DefiningType='GeocodingService' Image='deserializedCoords' RealLoc='true' Type='List&amp;lt;Coordinates>'>
+                                                        <CastExpression DefiningType='GeocodingService' Image='' RealLoc='true' Type='List&amp;lt;Coordinates>'>
+                                                            <MethodCallExpression DefiningType='GeocodingService' FullMethodName='JSON.deserialize' Image='' InputParametersSize='2' MethodName='deserialize' RealLoc='true'>
+                                                                <ReferenceExpression DefiningType='GeocodingService' Image='JSON' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                                                <MethodCallExpression DefiningType='GeocodingService' FullMethodName='response.getBody' Image='' InputParametersSize='0' MethodName='getBody' RealLoc='true'>
+                                                                    <ReferenceExpression DefiningType='GeocodingService' Image='response' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                                                </MethodCallExpression>
+                                                                <ClassRefExpression DefiningType='GeocodingService' Image='' RealLoc='true' />
+                                                            </MethodCallExpression>
+                                                        </CastExpression>
+                                                        <VariableExpression DefiningType='GeocodingService' Image='deserializedCoords' RealLoc='true'>
+                                                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                                        </VariableExpression>
+                                                    </VariableDeclaration>
+                                                </VariableDeclarationStatements>
+                                                <ExpressionStatement DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                                    <AssignmentExpression DefiningType='GeocodingService' Image='' Op='=' RealLoc='true'>
+                                                        <VariableExpression DefiningType='GeocodingService' Image='coords' RealLoc='true'>
+                                                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                                        </VariableExpression>
+                                                        <ArrayLoadExpression DefiningType='GeocodingService' Image='' RealLoc='true'>
+                                                            <VariableExpression DefiningType='GeocodingService' Image='deserializedCoords' RealLoc='true'>
+                                                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                                            </VariableExpression>
+                                                            <LiteralExpression Boolean='false' Decimal='false' DefiningType='GeocodingService' Double='false' Image='0' Integer='true' LiteralType='INTEGER' Long='false' Name='' Null='false' RealLoc='true' String='false' />
+                                                        </ArrayLoadExpression>
+                                                    </AssignmentExpression>
+                                                </ExpressionStatement>
+                                            </BlockStatement>
+                                        </IfBlockStatement>
+                                    </IfElseBlockStatement>
+                                </BlockStatement>
+                            </IfBlockStatement>
+                        </IfElseBlockStatement>
+                        <ExpressionStatement DefiningType='GeocodingService' Image='' RealLoc='true'>
+                            <MethodCallExpression DefiningType='GeocodingService' FullMethodName='computedCoordinates.add' Image='' InputParametersSize='1' MethodName='add' RealLoc='true'>
+                                <ReferenceExpression DefiningType='GeocodingService' Image='computedCoordinates' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                <VariableExpression DefiningType='GeocodingService' Image='coords' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </MethodCallExpression>
+                        </ExpressionStatement>
+                    </BlockStatement>
+                    <VariableExpression DefiningType='GeocodingService' Image='addresses' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </ForEachStatement>
+                <ReturnStatement DefiningType='GeocodingService' Image='' RealLoc='true'>
+                    <VariableExpression DefiningType='GeocodingService' Image='computedCoordinates' RealLoc='true'>
+                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                    </VariableExpression>
+                </ReturnStatement>
+            </BlockStatement>
+        </Method>
+    </UserClass>
+</ApexFile>
