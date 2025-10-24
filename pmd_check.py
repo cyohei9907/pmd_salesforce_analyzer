@@ -6,6 +6,60 @@ from pathlib import Path
 from typing import List, Dict, Optional
 
 
+def check_neo4j_connection(uri='bolt://localhost:7687', user='neo4j', password='password'):
+    """
+    Neo4jデータベース接続をチェックする関数
+    
+    Args:
+        uri: Neo4jデータベースURI
+        user: ユーザー名
+        password: パスワード
+        
+    Returns:
+        dict: Neo4j接続チェック結果
+            - connected: bool - 接続成功かどうか
+            - version: str - Neo4jバージョン情報
+            - error: str - エラーメッセージ（ある場合）
+    """
+    result = {
+        "connected": False,
+        "uri": uri,
+        "version": None,
+        "error": None
+    }
+    
+    try:
+        from neo4j import GraphDatabase
+        
+        driver = GraphDatabase.driver(uri, auth=(user, password))
+        
+        with driver.session() as session:
+            db_result = session.run(
+                "CALL dbms.components() YIELD name, versions, edition "
+                "RETURN name, versions[0] as version, edition"
+            )
+            record = db_result.single()
+            
+            if record:
+                result["connected"] = True
+                result["version"] = record.get("version", "不明")
+        
+        driver.close()
+        
+    except ImportError:
+        result["error"] = "neo4j Pythonパッケージがインストールされていません"
+    except Exception as e:
+        error_msg = str(e)
+        if "authentication" in error_msg.lower():
+            result["error"] = f"認証失敗: {error_msg}"
+        elif "connection" in error_msg.lower() or "refused" in error_msg.lower():
+            result["error"] = f"接続失敗。Neo4jサービスが起動していることを確認してください: {error_msg}"
+        else:
+            result["error"] = f"エラー: {error_msg}"
+    
+    return result
+
+
 def get_pmd_command():
     """
     環境に応じて適切なPMDコマンドを判定する関数
@@ -44,6 +98,9 @@ def check_pmd_environment():
         "conf_dir_exists": False,
         "java_available": False,
         "java_version": None,
+        "neo4j_connected": False,
+        "neo4j_version": None,
+        "neo4j_error": None,
         "ready": False
     }
     
@@ -66,6 +123,16 @@ def check_pmd_environment():
             result["java_available"] = False
             result["java_version"] = "Javaが見つかりません"
         
+        # Neo4jの確認
+        neo4j_uri = os.getenv('NEO4J_URI', 'bolt://localhost:7687')
+        neo4j_user = os.getenv('NEO4J_USER', 'neo4j')
+        neo4j_password = os.getenv('NEO4J_PASSWORD', 'password')
+        
+        neo4j_result = check_neo4j_connection(neo4j_uri, neo4j_user, neo4j_password)
+        result["neo4j_connected"] = neo4j_result["connected"]
+        result["neo4j_version"] = neo4j_result["version"]
+        result["neo4j_error"] = neo4j_result["error"]
+        
         # PMDコマンドパスを取得
         pmd_cmd = get_pmd_command()
         result["pmd_command"] = pmd_cmd
@@ -84,11 +151,14 @@ def check_pmd_environment():
         result["lib_dir_exists"] = lib_dir.exists()
         result["conf_dir_exists"] = conf_dir.exists()
         
-        # 全ての条件が満たされているかチェック
+        # 全ての条件が満たされているかチェック（Neo4jは警告のみで必須ではない）
         result["ready"] = (result["command_exists"] and 
                           result["lib_dir_exists"] and 
                           result["conf_dir_exists"] and
                           result["java_available"])
+        
+        # Neo4jは推奨だが必須ではないため、警告のみ
+        result["neo4j_warning"] = not result["neo4j_connected"]
         
     except Exception as e:
         result["error"] = str(e)
@@ -397,8 +467,41 @@ if __name__ == "__main__":
     print("=" * 80)
     env_check = check_pmd_environment()
     
-    for key, value in env_check.items():
-        print(f"  {key}: {value}")
+    # Java環境チェック結果
+    print("\n[Java環境]")
+    if env_check["java_available"]:
+        print(f"  ✅ Java: 利用可能")
+        print(f"     バージョン: {env_check['java_version']}")
+    else:
+        print(f"  ❌ Java: 利用不可")
+        print(f"     エラー: {env_check['java_version']}")
+    
+    # Neo4j接続チェック結果
+    print("\n[Neo4j接続]")
+    if env_check["neo4j_connected"]:
+        print(f"  ✅ Neo4j: 接続成功")
+        print(f"     バージョン: {env_check['neo4j_version']}")
+    else:
+        print(f"  ⚠️  Neo4j: 接続失敗（グラフ機能は利用できません）")
+        if env_check["neo4j_error"]:
+            print(f"     エラー: {env_check['neo4j_error']}")
+    
+    # PMD環境チェック結果
+    print("\n[PMD環境]")
+    print(f"  OS: {env_check['os']}")
+    print(f"  PMDコマンド: {env_check['pmd_command']}")
+    print(f"  コマンド存在: {'✅' if env_check['command_exists'] else '❌'}")
+    print(f"  libディレクトリ: {'✅' if env_check['lib_dir_exists'] else '❌'}")
+    print(f"  confディレクトリ: {'✅' if env_check['conf_dir_exists'] else '❌'}")
+    
+    print("\n[総合判定]")
+    if env_check["ready"]:
+        print("  ✅ PMD解析の実行が可能です")
+    else:
+        print("  ❌ PMD解析に必要な環境が整っていません")
+    
+    if env_check.get("neo4j_warning"):
+        print("  ⚠️  Neo4jが利用できないため、グラフ機能は使用できません")
     
     print(f"\n推奨PMDコマンド: {get_pmd_command()}")
     print(f"実行ファイル名: {get_pmd_executable_name()}")

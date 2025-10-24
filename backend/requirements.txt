@@ -5,6 +5,7 @@ django-cors-headers==4.3.0
 
 # 图数据库
 neo4j==5.14.1
+networkx==3.2.1
 
 # XML解析
 lxml==4.9.3

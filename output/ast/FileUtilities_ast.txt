@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ApexFile DefiningType='FileUtilities' Image='' RealLoc='true'>
+    <UserClass DefiningType='FileUtilities' Image='FileUtilities' InterfaceNames='[]' Nested='false' RealLoc='true' SimpleName='FileUtilities' SuperClassName=''>
+        <ModifierNode Abstract='false' DefiningType='FileUtilities' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='1' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='true' WithoutSharing='false' />
+        <Method Arity='3' CanonicalName='createFile' Constructor='false' DefiningType='FileUtilities' Image='createFile' RealLoc='true' ReturnType='String' StaticInitializer='false'>
+            <ModifierNode Abstract='false' DefiningType='FileUtilities' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='9' Override='false' Private='false' Protected='false' Public='true' RealLoc='true' Static='true' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false'>
+                <Annotation DefiningType='FileUtilities' Image='AuraEnabled' Name='AuraEnabled' RawName='AuraEnabled' RealLoc='true' Resolved='true' />
+            </ModifierNode>
+            <Parameter DefiningType='FileUtilities' Image='base64data' RealLoc='true' Type='String'>
+                <ModifierNode Abstract='false' DefiningType='FileUtilities' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            </Parameter>
+            <Parameter DefiningType='FileUtilities' Image='filename' RealLoc='true' Type='String'>
+                <ModifierNode Abstract='false' DefiningType='FileUtilities' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            </Parameter>
+            <Parameter DefiningType='FileUtilities' Image='recordId' RealLoc='true' Type='String'>
+                <ModifierNode Abstract='false' DefiningType='FileUtilities' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+            </Parameter>
+            <BlockStatement CurlyBrace='true' DefiningType='FileUtilities' Image='' RealLoc='true'>
+                <TryCatchFinallyBlockStatement DefiningType='FileUtilities' Image='' RealLoc='true'>
+                    <BlockStatement CurlyBrace='true' DefiningType='FileUtilities' Image='' RealLoc='true'>
+                        <VariableDeclarationStatements DefiningType='FileUtilities' Image='' RealLoc='true'>
+                            <ModifierNode Abstract='false' DefiningType='FileUtilities' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                            <VariableDeclaration DefiningType='FileUtilities' Image='contentVersion' RealLoc='true' Type='ContentVersion'>
+                                <NewObjectExpression DefiningType='FileUtilities' Image='' RealLoc='true' Type='ContentVersion' />
+                                <VariableExpression DefiningType='FileUtilities' Image='contentVersion' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </VariableDeclaration>
+                        </VariableDeclarationStatements>
+                        <ExpressionStatement DefiningType='FileUtilities' Image='' RealLoc='true'>
+                            <AssignmentExpression DefiningType='FileUtilities' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='FileUtilities' Image='VersionData' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='FileUtilities' Image='contentVersion' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                                </VariableExpression>
+                                <MethodCallExpression DefiningType='FileUtilities' FullMethodName='EncodingUtil.base64Decode' Image='' InputParametersSize='1' MethodName='base64Decode' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='FileUtilities' Image='EncodingUtil' RealLoc='true' ReferenceType='METHOD' SObjectType='false' SafeNav='false' />
+                                    <VariableExpression DefiningType='FileUtilities' Image='base64data' RealLoc='true'>
+                                        <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                    </VariableExpression>
+                                </MethodCallExpression>
+                            </AssignmentExpression>
+                        </ExpressionStatement>
+                        <ExpressionStatement DefiningType='FileUtilities' Image='' RealLoc='true'>
+                            <AssignmentExpression DefiningType='FileUtilities' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='FileUtilities' Image='Title' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='FileUtilities' Image='contentVersion' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                                </VariableExpression>
+                                <VariableExpression DefiningType='FileUtilities' Image='filename' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </AssignmentExpression>
+                        </ExpressionStatement>
+                        <ExpressionStatement DefiningType='FileUtilities' Image='' RealLoc='true'>
+                            <AssignmentExpression DefiningType='FileUtilities' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='FileUtilities' Image='PathOnClient' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='FileUtilities' Image='contentVersion' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                                </VariableExpression>
+                                <VariableExpression DefiningType='FileUtilities' Image='filename' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </AssignmentExpression>
+                        </ExpressionStatement>
+                        <DmlInsertStatement DefiningType='FileUtilities' Image='' RealLoc='true'>
+                            <VariableExpression DefiningType='FileUtilities' Image='contentVersion' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                        </DmlInsertStatement>
+                        <ExpressionStatement DefiningType='FileUtilities' Image='' RealLoc='true'>
+                            <AssignmentExpression DefiningType='FileUtilities' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='FileUtilities' Image='contentVersion' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                                <SoqlExpression CanonicalQuery='SELECT ContentDocumentId
+                FROM ContentVersion
+                WHERE Id = :tmpVar1
+                WITH USER_MODE' DefiningType='FileUtilities' Image='' Query='SELECT ContentDocumentId
+                FROM ContentVersion
+                WHERE Id = :contentVersion.Id
+                WITH USER_MODE' RealLoc='true'>
+                                    <BindExpressions DefiningType='FileUtilities' Image='' RealLoc='true'>
+                                        <VariableExpression DefiningType='FileUtilities' Image='Id' RealLoc='true'>
+                                            <ReferenceExpression DefiningType='FileUtilities' Image='contentVersion' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                                        </VariableExpression>
+                                    </BindExpressions>
+                                </SoqlExpression>
+                            </AssignmentExpression>
+                        </ExpressionStatement>
+                        <VariableDeclarationStatements DefiningType='FileUtilities' Image='' RealLoc='true'>
+                            <ModifierNode Abstract='false' DefiningType='FileUtilities' DeprecatedTestMethod='false' Final='false' Global='false' Image='' InheritedSharing='false' Modifiers='0' Override='false' Private='false' Protected='false' Public='false' RealLoc='false' Static='false' Test='false' TestOrTestSetup='false' Transient='false' Virtual='false' WebService='false' WithSharing='false' WithoutSharing='false' />
+                            <VariableDeclaration DefiningType='FileUtilities' Image='contentDocumentLink' RealLoc='true' Type='ContentDocumentLink'>
+                                <NewObjectExpression DefiningType='FileUtilities' Image='' RealLoc='true' Type='ContentDocumentLink' />
+                                <VariableExpression DefiningType='FileUtilities' Image='contentDocumentLink' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </VariableDeclaration>
+                        </VariableDeclarationStatements>
+                        <ExpressionStatement DefiningType='FileUtilities' Image='' RealLoc='true'>
+                            <AssignmentExpression DefiningType='FileUtilities' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='FileUtilities' Image='ContentDocumentId' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='FileUtilities' Image='contentDocumentLink' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                                </VariableExpression>
+                                <VariableExpression DefiningType='FileUtilities' Image='ContentDocumentId' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='FileUtilities' Image='contentVersion' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                                </VariableExpression>
+                            </AssignmentExpression>
+                        </ExpressionStatement>
+                        <ExpressionStatement DefiningType='FileUtilities' Image='' RealLoc='true'>
+                            <AssignmentExpression DefiningType='FileUtilities' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='FileUtilities' Image='LinkedEntityId' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='FileUtilities' Image='contentDocumentLink' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                                </VariableExpression>
+                                <VariableExpression DefiningType='FileUtilities' Image='recordId' RealLoc='true'>
+                                    <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                </VariableExpression>
+                            </AssignmentExpression>
+                        </ExpressionStatement>
+                        <ExpressionStatement DefiningType='FileUtilities' Image='' RealLoc='true'>
+                            <AssignmentExpression DefiningType='FileUtilities' Image='' Op='=' RealLoc='true'>
+                                <VariableExpression DefiningType='FileUtilities' Image='ShareType' RealLoc='true'>
+                                    <ReferenceExpression DefiningType='FileUtilities' Image='contentDocumentLink' RealLoc='true' ReferenceType='STORE' SObjectType='false' SafeNav='false' />
+                                </VariableExpression>
+                                <LiteralExpression Boolean='false' Decimal='false' DefiningType='FileUtilities' Double='false' Image='V' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                            </AssignmentExpression>
+                        </ExpressionStatement>
+                        <DmlInsertStatement DefiningType='FileUtilities' Image='' RealLoc='true'>
+                            <VariableExpression DefiningType='FileUtilities' Image='contentDocumentLink' RealLoc='true'>
+                                <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                            </VariableExpression>
+                        </DmlInsertStatement>
+                        <ReturnStatement DefiningType='FileUtilities' Image='' RealLoc='true'>
+                            <VariableExpression DefiningType='FileUtilities' Image='Id' RealLoc='true'>
+                                <ReferenceExpression DefiningType='FileUtilities' Image='contentDocumentLink' RealLoc='true' ReferenceType='LOAD' SObjectType='false' SafeNav='false' />
+                            </VariableExpression>
+                        </ReturnStatement>
+                    </BlockStatement>
+                    <CatchBlockStatement ContainsComment='false' DefiningType='FileUtilities' ExceptionType='Exception' Image='' RealLoc='true' VariableName='e'>
+                        <BlockStatement CurlyBrace='true' DefiningType='FileUtilities' Image='' RealLoc='true'>
+                            <ThrowStatement DefiningType='FileUtilities' Image='' RealLoc='true'>
+                                <NewObjectExpression DefiningType='FileUtilities' Image='' RealLoc='true' Type='AuraHandledException'>
+                                    <BinaryExpression DefiningType='FileUtilities' Image='' Op='+' RealLoc='true'>
+                                        <LiteralExpression Boolean='false' Decimal='false' DefiningType='FileUtilities' Double='false' Image='Error creating file: ' Integer='false' LiteralType='STRING' Long='false' Name='' Null='false' RealLoc='true' String='true' />
+                                        <VariableExpression DefiningType='FileUtilities' Image='e' RealLoc='true'>
+                                            <EmptyReferenceExpression DefiningType='' Image='' RealLoc='false' />
+                                        </VariableExpression>
+                                    </BinaryExpression>
+                                </NewObjectExpression>
+                            </ThrowStatement>
+                        </BlockStatement>
+                    </CatchBlockStatement>
+                </TryCatchFinallyBlockStatement>
+            </BlockStatement>
+        </Method>
+    </UserClass>
+</ApexFile>

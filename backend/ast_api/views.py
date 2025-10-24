@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from .import_service import ast_import_service
-from .neo4j_service import neo4j_service
+from .unified_graph_service import unified_graph_service
 from .models import ASTFile
 from pathlib import Path
 import logging
@@ -63,7 +63,7 @@ def import_ast_directory(request):
 def get_graph_data(request):
     """获取完整的图数据用于可视化"""
     try:
-        graph_data = neo4j_service.get_full_graph()
+        graph_data = unified_graph_service.get_full_graph()
         
         # 转换为前端需要的格式
         nodes = []
@@ -116,7 +116,7 @@ def get_graph_data(request):
 def get_class_graph(request, class_name):
     """获取特定类的图数据"""
     try:
-        graph_data = neo4j_service.get_class_graph(class_name)
+        graph_data = unified_graph_service.get_class_graph(class_name)
         return Response(graph_data)
     except Exception as e:
         logger.error(f"Failed to get class graph: {e}")
@@ -130,7 +130,7 @@ def get_class_graph(request, class_name):
 def get_statistics(request):
     """获取数据库统计信息"""
     try:
-        stats = neo4j_service.get_statistics()
+        stats = unified_graph_service.get_statistics()
         
         # 添加导入文件统计
         imported_files = ASTFile.objects.count()
@@ -164,7 +164,7 @@ def list_imported_files(request):
 def clear_database(request):
     """清空图数据库（谨慎使用）"""
     try:
-        neo4j_service.clear_database()
+        unified_graph_service.clear_database()
         ASTFile.objects.all().delete()
         return Response({'message': 'Database cleared successfully'})
     except Exception as e:
