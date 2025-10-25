@@ -26,6 +26,10 @@ COPY analyzer/ ./analyzer/
 # Copy backend application
 COPY backend/ ./backend/
 
+# Copy entrypoint script
+COPY docker-entrypoint.sh /app/
+RUN chmod +x /app/docker-entrypoint.sh
+
 # Copy built frontend to Django static files
 COPY --from=frontend-builder /app/frontend/dist ./backend/static/
 
@@ -52,15 +56,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
 WORKDIR /app/backend
 
 # Run migrations and start server
-CMD python manage.py migrate --noinput && \
-    python manage.py collectstatic --noinput && \
-    gunicorn apex_graph.wsgi:application \
-    --bind 0.0.0.0:${PORT:-8080} \
-    --workers 4 \
-    --threads 2 \
-    --timeout 300 \
-    --access-logfile - \
-    --error-logfile - \
-    --access-logfile - \
-    --error-logfile - \
-    --log-level info
+CMD ["/app/docker-entrypoint.sh"]
