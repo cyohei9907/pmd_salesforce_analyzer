@@ -51,6 +51,7 @@ graphdata/graphs/
 
 # Build files
 *.sh
+!docker-entrypoint.sh
 *.bat
 setup_environment.*
 quick_start.*
