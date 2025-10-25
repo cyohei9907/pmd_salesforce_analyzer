@@ -55,3 +55,7 @@ graphdata/graphs/
 *.bat
 setup_environment.*
 quick_start.*
+
+# Config files (keep nginx and supervisor configs)
+!nginx.conf
+!supervisord.conf
