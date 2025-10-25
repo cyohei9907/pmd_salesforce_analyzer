@@ -36,7 +36,12 @@ COPY backend/requirements.txt ./backend/
 RUN pip install --no-cache-dir -r backend/requirements.txt
 
 # Create necessary directories
-RUN mkdir -p /app/project /app/output /app/graphdata /var/log/supervisor
+RUN mkdir -p /app/project \
+             /app/output/ast \
+             /app/graphdata/exports \
+             /app/graphdata/graphs \
+             /var/log/supervisor && \
+    chmod -R 755 /app/output /app/graphdata /app/project
 
 # Copy Nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf

@@ -57,8 +57,39 @@ class ASTImportService:
         directory = Path(directory_path)
         results = []
         
+        # 检查目录是否存在
+        if not directory.exists():
+            logger.error(f"Directory does not exist: {directory}")
+            return {
+                'total': 0,
+                'successful': 0,
+                'failed': 0,
+                'error': f'Directory not found: {directory}',
+                'results': [],
+            }
+        
+        if not directory.is_dir():
+            logger.error(f"Path is not a directory: {directory}")
+            return {
+                'total': 0,
+                'successful': 0,
+                'failed': 0,
+                'error': f'Path is not a directory: {directory}',
+                'results': [],
+            }
+        
         # 查找所有AST文件
-        ast_files = list(directory.glob('*_ast.txt')) + list(directory.glob('*_ast.xml'))
+        try:
+            ast_files = list(directory.glob('*_ast.txt')) + list(directory.glob('*_ast.xml'))
+        except Exception as e:
+            logger.error(f"Failed to list files in {directory}: {e}")
+            return {
+                'total': 0,
+                'successful': 0,
+                'failed': 0,
+                'error': f'Failed to list files: {str(e)}',
+                'results': [],
+            }
         
         logger.info(f"Found {len(ast_files)} AST files in {directory}")
         
