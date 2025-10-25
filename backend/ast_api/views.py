@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .import_service import ast_import_service
 from .unified_graph_service import unified_graph_service
+from .git_service import git_service
 from .models import ASTFile
 from pathlib import Path
 from django.conf import settings
@@ -226,3 +227,195 @@ def clear_database(request):
             {'error': str(e)},
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+
+
+@api_view(['POST'])
+def clone_repository(request):
+    """克隆Git仓库"""
+    repo_url = request.data.get('repo_url')
+    branch = request.data.get('branch', 'main')
+    force = request.data.get('force', False)
+    
+    if not repo_url:
+        return Response(
+            {'error': 'repo_url is required'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    result = git_service.clone_repository(repo_url, branch, force)
+    
+    if result['success']:
+        return Response(result, status=status.HTTP_201_CREATED)
+    else:
+        return Response(result, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['POST'])
+def analyze_repository(request):
+    """分析Git仓库中的Apex代码"""
+    repo_name = request.data.get('repo_name')
+    apex_dir = request.data.get('apex_dir', 'force-app/main/default/classes')
+    
+    if not repo_name:
+        return Response(
+            {'error': 'repo_name is required'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    result = git_service.analyze_repository(repo_name, apex_dir)
+    
+    if result['success']:
+        return Response(result, status=status.HTTP_200_OK)
+    else:
+        return Response(result, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['POST'])
+def clone_and_analyze(request):
+    """克隆仓库并分析（一步完成）"""
+    repo_url = request.data.get('repo_url')
+    branch = request.data.get('branch', 'main')
+    apex_dir = request.data.get('apex_dir', 'force-app/main/default/classes')
+    force = request.data.get('force', False)
+    auto_import = request.data.get('auto_import', True)
+    
+    if not repo_url:
+        return Response(
+            {'error': 'repo_url is required'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    # 步骤1: 克隆仓库
+    clone_result = git_service.clone_repository(repo_url, branch, force)
+    if not clone_result['success']:
+        return Response(clone_result, status=status.HTTP_400_BAD_REQUEST)
+    
+    repo_name = clone_result['repo_name']
+    
+    # 步骤2: 分析代码
+    analyze_result = git_service.analyze_repository(repo_name, apex_dir)
+    if not analyze_result['success']:
+        return Response({
+            'clone': clone_result,
+            'analyze': analyze_result,
+        }, status=status.HTTP_400_BAD_REQUEST)
+    
+    # 步骤3: 自动导入（如果启用）
+    import_result = None
+    if auto_import and analyze_result['analyzed'] > 0:
+        # 转换为绝对路径 - 支持Cloud Storage
+        if settings.USE_CLOUD_STORAGE:
+            import sys
+            sys.path.insert(0, str(settings.BASE_DIR.parent))
+            from cloud_storage import get_data_path
+            output_ast_path = get_data_path('ast')
+        else:
+            output_ast_path = settings.BASE_DIR.parent / 'output' / 'ast'
+        import_result = ast_import_service.import_directory(str(output_ast_path))
+    
+    return Response({
+        'success': True,
+        'clone': clone_result,
+        'analyze': analyze_result,
+        'import': import_result,
+    }, status=status.HTTP_201_CREATED)
+
+
+@api_view(['GET'])
+def list_repositories(request):
+    """列出已克隆的仓库"""
+    result = git_service.list_repositories()
+    return Response(result)
+
+
+@api_view(['DELETE'])
+def delete_repository(request, repo_name):
+    """删除仓库"""
+    result = git_service.delete_repository(repo_name)
+    
+    if result['success']:
+        return Response(result, status=status.HTTP_200_OK)
+    else:
+        return Response(result, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['POST'])
+def save_graph_layout(request):
+    """保存图布局"""
+    try:
+        layout_data = request.data.get('layout', {})
+        
+        # 获取数据存储路径
+        if settings.USE_CLOUD_STORAGE:
+            import sys
+            sys.path.insert(0, str(settings.BASE_DIR.parent))
+            from cloud_storage import get_data_path
+            graph_dir = get_data_path('graph_data')
+        else:
+            graph_dir = Path(settings.BASE_DIR).parent / 'graphdata' / 'graphs'
+        
+        graph_dir.mkdir(parents=True, exist_ok=True)
+        layout_file = graph_dir / 'layout.json'
+        
+        # 保存布局数据
+        import json
+        with open(layout_file, 'w', encoding='utf-8') as f:
+            json.dump(layout_data, f, ensure_ascii=False, indent=2)
+        
+        logger.info(f"Graph layout saved to {layout_file}")
+        return Response({
+            'success': True,
+            'message': 'Layout saved successfully'
+        })
+    except Exception as e:
+        logger.error(f"Failed to save graph layout: {e}")
+        return Response(
+            {'error': str(e)},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
+
+@api_view(['GET'])
+def load_graph_layout(request):
+    """加载图布局"""
+    try:
+        # 获取数据存储路径
+        if settings.USE_CLOUD_STORAGE:
+            import sys
+            sys.path.insert(0, str(settings.BASE_DIR.parent))
+            from cloud_storage import get_data_path
+            graph_dir = get_data_path('graph_data')
+        else:
+            graph_dir = Path(settings.BASE_DIR).parent / 'graphdata' / 'graphs'
+        
+        layout_file = graph_dir / 'layout.json'
+        
+        if not layout_file.exists():
+            return Response({
+                'success': False,
+                'layout': None,
+                'message': 'No saved layout found'
+            })
+        
+        # 读取布局数据
+        import json
+        with open(layout_file, 'r', encoding='utf-8') as f:
+            layout_data = json.load(f)
+        
+        logger.info(f"Graph layout loaded from {layout_file}")
+        return Response({
+            'success': True,
+            'layout': layout_data
+        })
+    except Exception as e:
+        logger.error(f"Failed to load graph layout: {e}")
+        return Response(
+            {'error': str(e)},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+    
+    if result['success']:
+        return Response(result, status=status.HTTP_200_OK)
+    else:
+        return Response(result, status=status.HTTP_404_NOT_FOUND)
+

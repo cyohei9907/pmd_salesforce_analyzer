@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
     nginx \
     supervisor \
     curl \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
@@ -35,15 +36,20 @@ COPY --from=frontend-builder /app/frontend/dist /usr/share/nginx/html
 COPY backend/requirements.txt ./backend/
 RUN pip install --no-cache-dir -r backend/requirements.txt
 
-# Create necessary directories
-RUN mkdir -p /app/project \
-             /app/output/ast \
-             /app/graphdata/exports \
-             /app/graphdata/graphs \
-             /var/log/supervisor && \
-    chmod -R 755 /app/output /app/graphdata /app/project
+# Copy cloud storage configuration
+COPY backend/cloud_storage.py ./
 
-# Copy sample AST files for testing
+# Create necessary directories
+# /data will be mounted as Cloud Storage volume in production
+RUN mkdir -p /app/project \
+             /data/ast \
+             /data/database \
+             /data/graph/exports \
+             /data/graph/graphs \
+             /var/log/supervisor && \
+    chmod -R 755 /app/project /data /var/log/supervisor
+
+# Copy sample AST files for testing (to /data/ast when using cloud storage)
 COPY output/ast/ /app/output/ast/
 
 # Copy Nginx configuration

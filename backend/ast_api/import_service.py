@@ -78,9 +78,9 @@ class ASTImportService:
                 'results': [],
             }
         
-        # 查找所有AST文件
+        # 查找所有AST文件（只导入XML格式）
         try:
-            ast_files = list(directory.glob('*_ast.txt')) + list(directory.glob('*_ast.xml'))
+            ast_files = list(directory.glob('*_ast.xml'))
         except Exception as e:
             logger.error(f"Failed to list files in {directory}: {e}")
             return {

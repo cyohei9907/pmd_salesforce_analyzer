@@ -8,6 +8,28 @@
       </template>
       
       <div class="welcome-content">
+        <!-- 快速开始提示 -->
+        <el-alert
+          v-if="stats && stats.classes === 0"
+          title="开始使用"
+          type="info"
+          :closable="false"
+          style="margin-bottom: 20px"
+        >
+          <template #default>
+            <p>检测到数据库为空，您可以：</p>
+            <div style="margin-top: 10px">
+              <el-button type="primary" @click="quickStart" :loading="initializing" size="small">
+                一键导入示例数据
+              </el-button>
+              <span style="margin-left: 10px; color: #909399">或者</span>
+              <el-button @click="$router.push('/import')" size="small">
+                手动导入自己的项目
+              </el-button>
+            </div>
+          </template>
+        </el-alert>
+        
         <h2>{{ $t('home.features') }}</h2>
         <el-divider />
         
@@ -100,12 +122,34 @@ import { ElMessage } from 'element-plus'
 
 const { t } = useI18n()
 const stats = ref(null)
+const initializing = ref(false)
 
 const loadStatistics = async () => {
   try {
     stats.value = await api.getStatistics()
   } catch (error) {
     ElMessage.error(t('stats.loadError'))
+  }
+}
+
+const quickStart = async () => {
+  try {
+    initializing.value = true
+    
+    // 自动导入 output/ast 目录下的示例数据
+    const result = await api.importDirectory('output/ast')
+    
+    if (result.successful > 0) {
+      ElMessage.success(`成功导入 ${result.successful} 个文件！现在可以查看图表了。`)
+      // 重新加载统计信息
+      await loadStatistics()
+    } else {
+      ElMessage.warning('未找到示例数据，请手动导入项目')
+    }
+  } catch (error) {
+    ElMessage.error('导入失败: ' + (error.response?.data?.error || error.message))
+  } finally {
+    initializing.value = false
   }
 }
 

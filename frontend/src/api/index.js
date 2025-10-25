@@ -39,6 +39,33 @@ export default {
     return api.post('/import/directory/', { directory_path: directoryPath })
   },
   
+  // Git仓库相关
+  cloneRepository(repoUrl, branch = 'main', force = false) {
+    return api.post('/git/clone/', { repo_url: repoUrl, branch, force })
+  },
+  
+  analyzeRepository(repoName, apexDir = 'force-app/main/default/classes') {
+    return api.post('/git/analyze/', { repo_name: repoName, apex_dir: apexDir })
+  },
+  
+  cloneAndAnalyze(repoUrl, branch = 'main', apexDir = 'force-app/main/default/classes', force = false, autoImport = true) {
+    return api.post('/git/clone-and-analyze/', { 
+      repo_url: repoUrl, 
+      branch, 
+      apex_dir: apexDir, 
+      force, 
+      auto_import: autoImport 
+    })
+  },
+  
+  listRepositories() {
+    return api.get('/git/repositories/')
+  },
+  
+  deleteRepository(repoName) {
+    return api.delete(`/git/repositories/${repoName}/`)
+  },
+  
   // 图数据查询
   getGraphData() {
     return api.get('/graph/')
@@ -46,6 +73,15 @@ export default {
   
   getClassGraph(className) {
     return api.get(`/graph/class/${className}/`)
+  },
+  
+  // 图布局保存和加载
+  saveGraphLayout(layout) {
+    return api.post('/graph/layout/', { layout })
+  },
+  
+  loadGraphLayout() {
+    return api.get('/graph/layout/load/')
   },
   
   // 统计信息

@@ -18,6 +18,20 @@
 
     <!-- 图表容器 -->
     <div class="graph-container" @contextmenu.prevent>
+      <!-- 空数据提示 -->
+      <el-empty 
+        v-if="!loading && graphData && graphData.nodes.length === 0"
+        description="暂无数据"
+        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10;"
+      >
+        <template #default>
+          <p style="margin-bottom: 10px">数据库中没有数据，请先导入 AST 文件</p>
+          <el-button type="primary" @click="$router.push('/import')">
+            前往导入页面
+          </el-button>
+        </template>
+      </el-empty>
+      
       <div ref="cyContainer" class="cy-container"></div>
       
       <!-- 图例 -->
@@ -96,6 +110,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
 import api from '@/api'
 import { ElMessage } from 'element-plus'
 import { Refresh, FullScreen } from '@element-plus/icons-vue'
@@ -108,12 +123,14 @@ cytoscape.use(coseBilkent)
 cytoscape.use(cxtmenu)
 
 const { t } = useI18n()
+const router = useRouter()
 
 // 状态管理
 const cyContainer = ref(null)
 const loading = ref(false)
 const drawerVisible = ref(false)
 const selectedNode = ref(null)
+const graphData = ref(null)
 
 let cy = null // Cytoscape 实例
 
@@ -158,54 +175,175 @@ const isTypeActive = (type) => {
   return activeNodeTypes.value.has(type)
 }
 
+// 应用布局并添加动画
+const applyLayoutWithAnimation = () => {
+  cy.nodes().forEach((node, index) => {
+    node.style('opacity', 0)
+    setTimeout(() => {
+      node.animate({
+        style: { opacity: 1 },
+        duration: 500,
+        easing: 'ease-in-out-cubic'
+      })
+    }, index * 20)
+  })
+  
+  cy.edges().forEach((edge, index) => {
+    edge.style('opacity', 0)
+    setTimeout(() => {
+      edge.animate({
+        style: { opacity: 1 },
+        duration: 500,
+        easing: 'ease-in-out-cubic'
+      })
+    }, cy.nodes().length * 20 + index * 10)
+  })
+  
+  const layout = cy.layout({
+    name: 'cose',
+    animate: true,
+    animationDuration: 1000,
+    animationEasing: 'ease-out-cubic',
+    fit: true,
+    padding: 50,
+    nodeRepulsion: 8000,
+    idealEdgeLength: 100,
+    edgeElasticity: 100,
+    nestingFactor: 1.2,
+    gravity: 0.8,
+    numIter: 1000,
+    initialTemp: 200,
+    coolingFactor: 0.95,
+    minTemp: 1
+  })
+  
+  layout.run()
+  
+  // 布局完成后保存位置
+  layout.on('layoutstop', () => {
+    saveGraphLayout()
+  })
+}
+
+// 保存图布局和完整数据
+const saveGraphLayout = async () => {
+  if (!cy) return
+  
+  try {
+    // 保存节点位置
+    const layout = {}
+    cy.nodes().forEach(node => {
+      layout[node.id()] = node.position()
+    })
+    
+    // 保存完整的图数据（包括节点和边）
+    const graphSnapshot = {
+      layout: layout,
+      nodes: allNodes.value,
+      edges: allEdges.value,
+      timestamp: new Date().toISOString()
+    }
+    
+    await api.saveGraphLayout(graphSnapshot)
+    console.log('Graph layout and data saved')
+  } catch (error) {
+    console.error('Failed to save graph layout:', error)
+  }
+}
+
 // 加载图数据
 const loadGraph = async (showMessage = true) => {
   loading.value = true
   try {
-    const data = await api.getGraphData()
+    // 先尝试加载保存的快照
+    let nodes = []
+    let edges = []
+    let savedLayout = null
+    let useSnapshot = false
     
-    // 转换节点数据
-    const nodes = data.nodes.map(node => ({
-      data: {
-        id: String(node.id),
-        label: node.type === 'SOQLQuery' ? 'SOQL' : (node.name || node.id),
-        type: node.type,
-        color: getNodeColor(node.type),
-        properties: node.properties || {},
-        originalData: node
+    try {
+      const layoutResponse = await api.loadGraphLayout()
+      if (layoutResponse.success && layoutResponse.layout) {
+        const snapshot = layoutResponse.layout
+        
+        // 检查是否是完整的快照（包含nodes和edges）
+        if (snapshot.nodes && snapshot.edges && snapshot.layout) {
+          console.log('Loading from saved snapshot...')
+          nodes = snapshot.nodes
+          edges = snapshot.edges
+          savedLayout = snapshot.layout
+          useSnapshot = true
+          
+          // 更新统计信息
+          nodeTypeCounts.value = {
+            ApexClass: 0,
+            ApexMethod: 0,
+            SOQLQuery: 0,
+            DMLOperation: 0
+          }
+          for (const node of nodes) {
+            const type = node.data.type
+            if (nodeTypeCounts.value.hasOwnProperty(type)) {
+              nodeTypeCounts.value[type]++
+            }
+          }
+        } else if (snapshot.layout) {
+          // 旧格式：只有布局信息
+          savedLayout = snapshot.layout || snapshot
+        }
       }
-    }))
-    
-    // 统计节点类型
-    nodeTypeCounts.value = {
-      ApexClass: 0,
-      ApexMethod: 0,
-      SOQLQuery: 0,
-      DMLOperation: 0
-    }
-    for (const node of nodes) {
-      const type = node.data.type
-      if (nodeTypeCounts.value.hasOwnProperty(type)) {
-        nodeTypeCounts.value[type]++
-      }
+    } catch (error) {
+      console.log('No saved snapshot found, loading from backend...')
     }
     
-    // 转换边数据
-    const validNodeIds = new Set(nodes.map(n => n.data.id))
-    const edges = data.edges
-      .filter(edge => {
-        const source = String(edge.source)
-        const target = String(edge.target)
-        return validNodeIds.has(source) && validNodeIds.has(target)
-      })
-      .map((edge, index) => ({
+    // 如果没有快照，从后端加载
+    if (!useSnapshot) {
+      const data = await api.getGraphData()
+      graphData.value = data
+      
+      // 转换节点数据
+      nodes = data.nodes.map(node => ({
         data: {
-          id: `edge-${index}`,
-          source: String(edge.source),
-          target: String(edge.target),
-          label: edge.label || edge.type
+          id: String(node.id),
+          label: node.type === 'SOQLQuery' ? 'SOQL' : (node.name || node.id),
+          type: node.type,
+          color: getNodeColor(node.type),
+          properties: node.properties || {},
+          originalData: node
         }
       }))
+      
+      // 统计节点类型
+      nodeTypeCounts.value = {
+        ApexClass: 0,
+        ApexMethod: 0,
+        SOQLQuery: 0,
+        DMLOperation: 0
+      }
+      for (const node of nodes) {
+        const type = node.data.type
+        if (nodeTypeCounts.value.hasOwnProperty(type)) {
+          nodeTypeCounts.value[type]++
+        }
+      }
+      
+      // 转换边数据
+      const validNodeIds = new Set(nodes.map(n => n.data.id))
+      edges = data.edges
+        .filter(edge => {
+          const source = String(edge.source)
+          const target = String(edge.target)
+          return validNodeIds.has(source) && validNodeIds.has(target)
+        })
+        .map((edge, index) => ({
+          data: {
+            id: `edge-${index}`,
+            source: String(edge.source),
+            target: String(edge.target),
+            label: edge.label || edge.type
+          }
+        }))
+    }
     
     // 保存原始数据
     allNodes.value = nodes
@@ -219,46 +357,49 @@ const loadGraph = async (showMessage = true) => {
       cy.add(nodes)
       cy.add(edges)
       
-      // 添加刷新时的淡入动画
-      cy.nodes().forEach((node, index) => {
-        node.style('opacity', 0)
+      // 如果有保存的布局，应用它
+      if (savedLayout) {
+        console.log('Applying saved layout...')
+        
+        // 应用保存的位置
+        cy.nodes().forEach(node => {
+          const nodeId = node.id()
+          if (savedLayout[nodeId]) {
+            node.position(savedLayout[nodeId])
+          }
+        })
+        
+        // 添加淡入动画
+        cy.nodes().forEach((node, index) => {
+          node.style('opacity', 0)
+          setTimeout(() => {
+            node.animate({
+              style: { opacity: 1 },
+              duration: 500,
+              easing: 'ease-in-out-cubic'
+            })
+          }, index * 20)
+        })
+        
+        cy.edges().forEach((edge, index) => {
+          edge.style('opacity', 0)
+          setTimeout(() => {
+            edge.animate({
+              style: { opacity: 1 },
+              duration: 500,
+              easing: 'ease-in-out-cubic'
+            })
+          }, cy.nodes().length * 20 + index * 10)
+        })
+        
+        // 适应视图
         setTimeout(() => {
-          node.animate({
-            style: { opacity: 1 },
-            duration: 500,
-            easing: 'ease-in-out-cubic'
-          })
-        }, index * 20)
-      })
-      
-      cy.edges().forEach((edge, index) => {
-        edge.style('opacity', 0)
-        setTimeout(() => {
-          edge.animate({
-            style: { opacity: 1 },
-            duration: 500,
-            easing: 'ease-in-out-cubic'
-          })
-        }, cy.nodes().length * 20 + index * 10)
-      })
-      
-      cy.layout({
-        name: 'cose',
-        animate: true,
-        animationDuration: 1000,
-        animationEasing: 'ease-out-cubic',
-        fit: true,
-        padding: 50,
-        nodeRepulsion: 8000,
-        idealEdgeLength: 100,
-        edgeElasticity: 100,
-        nestingFactor: 1.2,
-        gravity: 0.8,
-        numIter: 1000,
-        initialTemp: 200,
-        coolingFactor: 0.95,
-        minTemp: 1
-      }).run()
+          cy.fit(null, 50)
+        }, 600)
+      } else {
+        // 没有保存的布局，使用自动布局
+        applyLayoutWithAnimation()
+      }
     } else {
       initCytoscape(nodes, edges)
     }
@@ -421,6 +562,17 @@ const initCytoscape = (nodes, edges) => {
       isPanning = false
       panStartPos = null
     }
+  })
+  
+  // 节点拖动结束后保存布局
+  cy.on('dragfree', 'node', () => {
+    // 使用防抖，避免频繁保存
+    if (window.saveLayoutTimeout) {
+      clearTimeout(window.saveLayoutTimeout)
+    }
+    window.saveLayoutTimeout = setTimeout(() => {
+      saveGraphLayout()
+    }, 1000) // 1秒后保存
   })
   
   // 立即阻止容器的右键菜单

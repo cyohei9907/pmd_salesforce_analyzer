@@ -47,10 +47,13 @@ steps:
       - '--max-instances=5'
       - '--min-instances=0'
       - '--allow-unauthenticated'
-      - '--set-env-vars=PYTHONUNBUFFERED=1,DEBUG=False,SECRET_KEY=TE6DqtNmAaqhn99h_YmLuyLhJXyqjCN5FiY4i-ZXTZ8yTFViuMDxVd2y1yIFUJFwNKU'
+      - '--set-env-vars=PYTHONUNBUFFERED=1,DEBUG=False,USE_CLOUD_STORAGE=true,SECRET_KEY=TE6DqtNmAaqhn99h_YmLuyLhJXyqjCN5FiY4i-ZXTZ8yTFViuMDxVd2y1yIFUJFwNKU'
       - '--port=8080'
       - '--no-cpu-throttling'
       - '--cpu-boost'
+      # Mount Cloud Storage bucket as volume
+      - '--add-volume=name=data-volume,type=cloud-storage,bucket=pmd-salesforce-data'
+      - '--add-volume-mount=volume=data-volume,mount-path=/data'
     id: 'deploy-cloud-run'
     waitFor: ['push-docker-image']
 

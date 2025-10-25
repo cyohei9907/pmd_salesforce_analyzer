@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "timestamp": "2025-10-25T11:10:01.373782",
+    "timestamp": "2025-10-25T17:53:39.455314",
     "total_entities": 72
   },
   "entities": {
@@ -14,98 +14,7 @@
         "public": false,
         "withSharing": false,
         "fileName": "FileUtilities_ast.xml",
-        "created_at": "2025-10-25T11:10:01.249573"
-      }
-    },
-    "class:FileUtilitiesTest": {
-      "node_id": "class:FileUtilitiesTest",
-      "attributes": {
-        "type": "ApexClass",
-        "name": "FileUtilitiesTest",
-        "simpleName": "FileUtilitiesTest",
-        "definingType": "FileUtilitiesTest",
-        "public": false,
-        "withSharing": true,
-        "fileName": "FileUtilitiesTest_ast.txt",
-        "created_at": "2025-10-25T11:09:59.407151"
-      }
-    },
-    "class:GeocodingService": {
-      "node_id": "class:GeocodingService",
-      "attributes": {
-        "type": "ApexClass",
-        "name": "GeocodingService",
-        "simpleName": "GeocodingService",
-        "definingType": "GeocodingService",
-        "public": false,
-        "withSharing": false,
-        "fileName": "GeocodingService_ast.txt",
-        "created_at": "2025-10-25T11:09:59.812814"
-      }
-    },
-    "class:GeocodingServiceTest": {
-      "node_id": "class:GeocodingServiceTest",
-      "attributes": {
-        "type": "ApexClass",
-        "name": "GeocodingServiceTest",
-        "simpleName": "GeocodingServiceTest",
-        "definingType": "GeocodingServiceTest",
-        "public": false,
-        "withSharing": true,
-        "fileName": "GeocodingServiceTest_ast.txt",
-        "created_at": "2025-10-25T11:09:59.693680"
-      }
-    },
-    "class:PagedResult": {
-      "node_id": "class:PagedResult",
-      "attributes": {
-        "type": "ApexClass",
-        "name": "PagedResult",
-        "simpleName": "PagedResult",
-        "definingType": "PagedResult",
-        "public": false,
-        "withSharing": false,
-        "fileName": "PagedResult_ast.txt",
-        "created_at": "2025-10-25T11:09:59.853526"
-      }
-    },
-    "class:PropertyController": {
-      "node_id": "class:PropertyController",
-      "attributes": {
-        "type": "ApexClass",
-        "name": "PropertyController",
-        "simpleName": "PropertyController",
-        "definingType": "PropertyController",
-        "public": false,
-        "withSharing": false,
-        "fileName": "PropertyController_ast.txt",
-        "created_at": "2025-10-25T11:10:00.061740"
-      }
-    },
-    "class:SampleDataController": {
-      "node_id": "class:SampleDataController",
-      "attributes": {
-        "type": "ApexClass",
-        "name": "SampleDataController",
-        "simpleName": "SampleDataController",
-        "definingType": "SampleDataController",
-        "public": false,
-        "withSharing": false,
-        "fileName": "SampleDataController_ast.txt",
-        "created_at": "2025-10-25T11:10:00.253130"
-      }
-    },
-    "class:TestPropertyController": {
-      "node_id": "class:TestPropertyController",
-      "attributes": {
-        "type": "ApexClass",
-        "name": "TestPropertyController",
-        "simpleName": "TestPropertyController",
-        "definingType": "TestPropertyController",
-        "public": false,
-        "withSharing": false,
-        "fileName": "TestPropertyController_ast.txt",
-        "created_at": "2025-10-25T11:10:00.769232"
+        "created_at": "2025-10-25T17:53:38.072802"
       }
     },
     "method:FileUtilities.createFile": {
@@ -119,343 +28,17 @@
         "static": true,
         "returnType": "String",
         "arity": 3,
-        "created_at": "2025-10-25T11:10:01.262586"
+        "created_at": "2025-10-25T17:53:38.086478"
       }
     },
-    "method:FileUtilitiesTest.createFileFailsWhenIncorrectBase64Data": {
-      "node_id": "method:FileUtilitiesTest.createFileFailsWhenIncorrectBase64Data",
+    "soql:FileUtilities.createFile.0": {
+      "node_id": "soql:FileUtilities.createFile.0",
       "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "FileUtilitiesTest.createFileFailsWhenIncorrectBase64Data",
-        "className": "FileUtilitiesTest",
-        "name": "createFileFailsWhenIncorrectBase64Data",
-        "public": false,
-        "static": true,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T11:09:59.482372"
-      }
-    },
-    "method:FileUtilitiesTest.createFileFailsWhenIncorrectFilename": {
-      "node_id": "method:FileUtilitiesTest.createFileFailsWhenIncorrectFilename",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "FileUtilitiesTest.createFileFailsWhenIncorrectFilename",
-        "className": "FileUtilitiesTest",
-        "name": "createFileFailsWhenIncorrectFilename",
-        "public": false,
-        "static": true,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T11:09:59.523844"
-      }
-    },
-    "method:FileUtilitiesTest.createFileFailsWhenIncorrectRecordId": {
-      "node_id": "method:FileUtilitiesTest.createFileFailsWhenIncorrectRecordId",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "FileUtilitiesTest.createFileFailsWhenIncorrectRecordId",
-        "className": "FileUtilitiesTest",
-        "name": "createFileFailsWhenIncorrectRecordId",
-        "public": false,
-        "static": true,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T11:09:59.461033"
-      }
-    },
-    "method:FileUtilitiesTest.createFileSucceedsWhenCorrectInput": {
-      "node_id": "method:FileUtilitiesTest.createFileSucceedsWhenCorrectInput",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "FileUtilitiesTest.createFileSucceedsWhenCorrectInput",
-        "className": "FileUtilitiesTest",
-        "name": "createFileSucceedsWhenCorrectInput",
-        "public": false,
-        "static": true,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T11:09:59.419177"
-      }
-    },
-    "method:GeocodingService.geocodeAddresses": {
-      "node_id": "method:GeocodingService.geocodeAddresses",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "GeocodingService.geocodeAddresses",
-        "className": "GeocodingService",
-        "name": "geocodeAddresses",
-        "public": true,
-        "static": true,
-        "returnType": "List&lt;Coordinates>",
-        "arity": 1,
-        "created_at": "2025-10-25T11:09:59.823836"
-      }
-    },
-    "method:GeocodingServiceTest.blankAddress": {
-      "node_id": "method:GeocodingServiceTest.blankAddress",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "GeocodingServiceTest.blankAddress",
-        "className": "GeocodingServiceTest",
-        "name": "blankAddress",
-        "public": false,
-        "static": true,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T11:09:59.763733"
-      }
-    },
-    "method:GeocodingServiceTest.errorResponse": {
-      "node_id": "method:GeocodingServiceTest.errorResponse",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "GeocodingServiceTest.errorResponse",
-        "className": "GeocodingServiceTest",
-        "name": "errorResponse",
-        "public": false,
-        "static": true,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T11:09:59.784257"
-      }
-    },
-    "method:GeocodingServiceTest.respond": {
-      "node_id": "method:GeocodingServiceTest.respond",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "GeocodingServiceTest.respond",
-        "className": "GeocodingServiceTest",
-        "name": "respond",
-        "public": false,
-        "static": false,
-        "returnType": "HTTPResponse",
-        "arity": 1,
-        "created_at": "2025-10-25T11:09:59.725117"
-      }
-    },
-    "method:GeocodingServiceTest.successResponse": {
-      "node_id": "method:GeocodingServiceTest.successResponse",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "GeocodingServiceTest.successResponse",
-        "className": "GeocodingServiceTest",
-        "name": "successResponse",
-        "public": false,
-        "static": true,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T11:09:59.744200"
-      }
-    },
-    "method:PagedResult.__sfdc_pageNumber": {
-      "node_id": "method:PagedResult.__sfdc_pageNumber",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "PagedResult.__sfdc_pageNumber",
-        "className": "PagedResult",
-        "name": "__sfdc_pageNumber",
-        "public": true,
-        "static": false,
-        "returnType": "void",
-        "arity": 1,
-        "created_at": "2025-10-25T11:09:59.920996"
-      }
-    },
-    "method:PagedResult.__sfdc_pageSize": {
-      "node_id": "method:PagedResult.__sfdc_pageSize",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "PagedResult.__sfdc_pageSize",
-        "className": "PagedResult",
-        "name": "__sfdc_pageSize",
-        "public": true,
-        "static": false,
-        "returnType": "void",
-        "arity": 1,
-        "created_at": "2025-10-25T11:09:59.882930"
-      }
-    },
-    "method:PagedResult.__sfdc_records": {
-      "node_id": "method:PagedResult.__sfdc_records",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "PagedResult.__sfdc_records",
-        "className": "PagedResult",
-        "name": "__sfdc_records",
-        "public": true,
-        "static": false,
-        "returnType": "void",
-        "arity": 1,
-        "created_at": "2025-10-25T11:10:00.007121"
-      }
-    },
-    "method:PagedResult.__sfdc_totalItemCount": {
-      "node_id": "method:PagedResult.__sfdc_totalItemCount",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "PagedResult.__sfdc_totalItemCount",
-        "className": "PagedResult",
-        "name": "__sfdc_totalItemCount",
-        "public": true,
-        "static": false,
-        "returnType": "void",
-        "arity": 1,
-        "created_at": "2025-10-25T11:09:59.961048"
-      }
-    },
-    "method:PropertyController.getPagedPropertyList": {
-      "node_id": "method:PropertyController.getPagedPropertyList",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "PropertyController.getPagedPropertyList",
-        "className": "PropertyController",
-        "name": "getPagedPropertyList",
-        "public": true,
-        "static": true,
-        "returnType": "PagedResult",
-        "arity": 6,
-        "created_at": "2025-10-25T11:10:00.074259"
-      }
-    },
-    "method:PropertyController.getPictures": {
-      "node_id": "method:PropertyController.getPictures",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "PropertyController.getPictures",
-        "className": "PropertyController",
-        "name": "getPictures",
-        "public": true,
-        "static": true,
-        "returnType": "List&lt;ContentVersion>",
-        "arity": 1,
-        "created_at": "2025-10-25T11:10:00.156028"
-      }
-    },
-    "method:SampleDataController.importSampleData": {
-      "node_id": "method:SampleDataController.importSampleData",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "SampleDataController.importSampleData",
-        "className": "SampleDataController",
-        "name": "importSampleData",
-        "public": true,
-        "static": true,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T11:10:00.267305"
-      }
-    },
-    "method:SampleDataController.insertBrokers": {
-      "node_id": "method:SampleDataController.insertBrokers",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "SampleDataController.insertBrokers",
-        "className": "SampleDataController",
-        "name": "insertBrokers",
-        "public": false,
-        "static": false,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T11:10:00.520388"
-      }
-    },
-    "method:SampleDataController.insertContacts": {
-      "node_id": "method:SampleDataController.insertContacts",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "SampleDataController.insertContacts",
-        "className": "SampleDataController",
-        "name": "insertContacts",
-        "public": false,
-        "static": false,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T11:10:00.674011"
-      }
-    },
-    "method:SampleDataController.insertProperties": {
-      "node_id": "method:SampleDataController.insertProperties",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "SampleDataController.insertProperties",
-        "className": "SampleDataController",
-        "name": "insertProperties",
-        "public": false,
-        "static": false,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T11:10:00.596525"
-      }
-    },
-    "method:SampleDataController.randomizeDateListed": {
-      "node_id": "method:SampleDataController.randomizeDateListed",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "SampleDataController.randomizeDateListed",
-        "className": "SampleDataController",
-        "name": "randomizeDateListed",
-        "public": false,
-        "static": false,
-        "returnType": "void",
-        "arity": 1,
-        "created_at": "2025-10-25T11:10:00.737197"
-      }
-    },
-    "method:TestPropertyController.createProperties": {
-      "node_id": "method:TestPropertyController.createProperties",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "TestPropertyController.createProperties",
-        "className": "TestPropertyController",
-        "name": "createProperties",
-        "public": false,
-        "static": false,
-        "returnType": "void",
-        "arity": 1,
-        "created_at": "2025-10-25T11:10:00.777742"
-      }
-    },
-    "method:TestPropertyController.testGetPagedPropertyList": {
-      "node_id": "method:TestPropertyController.testGetPagedPropertyList",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "TestPropertyController.testGetPagedPropertyList",
-        "className": "TestPropertyController",
-        "name": "testGetPagedPropertyList",
-        "public": false,
-        "static": true,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T11:10:00.819776"
-      }
-    },
-    "method:TestPropertyController.testGetPicturesNoResults": {
-      "node_id": "method:TestPropertyController.testGetPicturesNoResults",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "TestPropertyController.testGetPicturesNoResults",
-        "className": "TestPropertyController",
-        "name": "testGetPicturesNoResults",
-        "public": false,
-        "static": true,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T11:10:00.923738"
-      }
-    },
-    "method:TestPropertyController.testGetPicturesWithResults": {
-      "node_id": "method:TestPropertyController.testGetPicturesWithResults",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "TestPropertyController.testGetPicturesWithResults",
-        "className": "TestPropertyController",
-        "name": "testGetPicturesWithResults",
-        "public": false,
-        "static": true,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T11:10:00.961789"
+        "type": "SOQLQuery",
+        "query": "SELECT ContentDocumentId                 FROM ContentVersion                 WHERE Id = :contentVersion.Id                 WITH USER_MODE",
+        "canonicalQuery": "SELECT ContentDocumentId                 FROM ContentVersion                 WHERE Id = :tmpVar1                 WITH USER_MODE",
+        "className": "FileUtilities",
+        "methodName": "createFile"
       }
     },
     "dml:FileUtilities.createFile.INSERT.0": {
@@ -476,22 +59,31 @@
         "operationType": "INSERT"
       }
     },
-    "dml:FileUtilitiesTest.createFileFailsWhenIncorrectBase64Data.INSERT.0": {
-      "node_id": "dml:FileUtilitiesTest.createFileFailsWhenIncorrectBase64Data.INSERT.0",
+    "class:FileUtilitiesTest": {
+      "node_id": "class:FileUtilitiesTest",
       "attributes": {
-        "type": "DMLOperation",
-        "className": "FileUtilitiesTest",
-        "methodName": "createFileFailsWhenIncorrectBase64Data",
-        "operationType": "INSERT"
+        "type": "ApexClass",
+        "name": "FileUtilitiesTest",
+        "simpleName": "FileUtilitiesTest",
+        "definingType": "FileUtilitiesTest",
+        "public": false,
+        "withSharing": true,
+        "fileName": "FileUtilitiesTest_ast.xml",
+        "created_at": "2025-10-25T17:53:37.926842"
       }
     },
-    "dml:FileUtilitiesTest.createFileFailsWhenIncorrectFilename.INSERT.0": {
-      "node_id": "dml:FileUtilitiesTest.createFileFailsWhenIncorrectFilename.INSERT.0",
+    "method:FileUtilitiesTest.createFileSucceedsWhenCorrectInput": {
+      "node_id": "method:FileUtilitiesTest.createFileSucceedsWhenCorrectInput",
       "attributes": {
-        "type": "DMLOperation",
+        "type": "ApexMethod",
+        "canonicalName": "FileUtilitiesTest.createFileSucceedsWhenCorrectInput",
         "className": "FileUtilitiesTest",
-        "methodName": "createFileFailsWhenIncorrectFilename",
-        "operationType": "INSERT"
+        "name": "createFileSucceedsWhenCorrectInput",
+        "public": false,
+        "static": true,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-25T17:53:37.928841"
       }
     },
     "dml:FileUtilitiesTest.createFileSucceedsWhenCorrectInput.INSERT.0": {
@@ -503,140 +95,256 @@
         "operationType": "INSERT"
       }
     },
-    "dml:SampleDataController.importSampleData.DELETE.0": {
-      "node_id": "dml:SampleDataController.importSampleData.DELETE.0",
+    "method:FileUtilitiesTest.createFileFailsWhenIncorrectRecordId": {
+      "node_id": "method:FileUtilitiesTest.createFileFailsWhenIncorrectRecordId",
       "attributes": {
-        "type": "DMLOperation",
-        "className": "SampleDataController",
-        "methodName": "importSampleData",
-        "operationType": "DELETE"
+        "type": "ApexMethod",
+        "canonicalName": "FileUtilitiesTest.createFileFailsWhenIncorrectRecordId",
+        "className": "FileUtilitiesTest",
+        "name": "createFileFailsWhenIncorrectRecordId",
+        "public": false,
+        "static": true,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-25T17:53:37.961549"
       }
     },
-    "dml:SampleDataController.importSampleData.DELETE.1": {
-      "node_id": "dml:SampleDataController.importSampleData.DELETE.1",
+    "method:FileUtilitiesTest.createFileFailsWhenIncorrectBase64Data": {
+      "node_id": "method:FileUtilitiesTest.createFileFailsWhenIncorrectBase64Data",
       "attributes": {
-        "type": "DMLOperation",
-        "className": "SampleDataController",
-        "methodName": "importSampleData",
-        "operationType": "DELETE"
+        "type": "ApexMethod",
+        "canonicalName": "FileUtilitiesTest.createFileFailsWhenIncorrectBase64Data",
+        "className": "FileUtilitiesTest",
+        "name": "createFileFailsWhenIncorrectBase64Data",
+        "public": false,
+        "static": true,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-25T17:53:37.979678"
       }
     },
-    "dml:SampleDataController.importSampleData.DELETE.2": {
-      "node_id": "dml:SampleDataController.importSampleData.DELETE.2",
+    "dml:FileUtilitiesTest.createFileFailsWhenIncorrectBase64Data.INSERT.0": {
+      "node_id": "dml:FileUtilitiesTest.createFileFailsWhenIncorrectBase64Data.INSERT.0",
       "attributes": {
         "type": "DMLOperation",
-        "className": "SampleDataController",
-        "methodName": "importSampleData",
-        "operationType": "DELETE"
-      }
-    },
-    "dml:SampleDataController.importSampleData.DELETE.3": {
-      "node_id": "dml:SampleDataController.importSampleData.DELETE.3",
-      "attributes": {
-        "type": "DMLOperation",
-        "className": "SampleDataController",
-        "methodName": "importSampleData",
-        "operationType": "DELETE"
-      }
-    },
-    "dml:SampleDataController.insertBrokers.INSERT.0": {
-      "node_id": "dml:SampleDataController.insertBrokers.INSERT.0",
-      "attributes": {
-        "type": "DMLOperation",
-        "className": "SampleDataController",
-        "methodName": "insertBrokers",
+        "className": "FileUtilitiesTest",
+        "methodName": "createFileFailsWhenIncorrectBase64Data",
         "operationType": "INSERT"
       }
     },
-    "dml:SampleDataController.insertContacts.INSERT.0": {
-      "node_id": "dml:SampleDataController.insertContacts.INSERT.0",
+    "method:FileUtilitiesTest.createFileFailsWhenIncorrectFilename": {
+      "node_id": "method:FileUtilitiesTest.createFileFailsWhenIncorrectFilename",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "FileUtilitiesTest.createFileFailsWhenIncorrectFilename",
+        "className": "FileUtilitiesTest",
+        "name": "createFileFailsWhenIncorrectFilename",
+        "public": false,
+        "static": true,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-25T17:53:38.020444"
+      }
+    },
+    "dml:FileUtilitiesTest.createFileFailsWhenIncorrectFilename.INSERT.0": {
+      "node_id": "dml:FileUtilitiesTest.createFileFailsWhenIncorrectFilename.INSERT.0",
       "attributes": {
         "type": "DMLOperation",
-        "className": "SampleDataController",
-        "methodName": "insertContacts",
+        "className": "FileUtilitiesTest",
+        "methodName": "createFileFailsWhenIncorrectFilename",
         "operationType": "INSERT"
       }
     },
-    "dml:SampleDataController.insertProperties.INSERT.0": {
-      "node_id": "dml:SampleDataController.insertProperties.INSERT.0",
+    "class:GeocodingServiceTest": {
+      "node_id": "class:GeocodingServiceTest",
       "attributes": {
-        "type": "DMLOperation",
-        "className": "SampleDataController",
-        "methodName": "insertProperties",
-        "operationType": "INSERT"
+        "type": "ApexClass",
+        "name": "GeocodingServiceTest",
+        "simpleName": "GeocodingServiceTest",
+        "definingType": "GeocodingServiceTest",
+        "public": false,
+        "withSharing": true,
+        "fileName": "GeocodingServiceTest_ast.xml",
+        "created_at": "2025-10-25T17:53:38.186203"
       }
     },
-    "dml:TestPropertyController.createProperties.INSERT.0": {
-      "node_id": "dml:TestPropertyController.createProperties.INSERT.0",
+    "method:GeocodingServiceTest.respond": {
+      "node_id": "method:GeocodingServiceTest.respond",
       "attributes": {
-        "type": "DMLOperation",
-        "className": "TestPropertyController",
-        "methodName": "createProperties",
-        "operationType": "INSERT"
+        "type": "ApexMethod",
+        "canonicalName": "GeocodingServiceTest.respond",
+        "className": "GeocodingServiceTest",
+        "name": "respond",
+        "public": false,
+        "static": false,
+        "returnType": "HTTPResponse",
+        "arity": 1,
+        "created_at": "2025-10-25T17:53:38.218311"
       }
     },
-    "dml:TestPropertyController.testGetPagedPropertyList.INSERT.0": {
-      "node_id": "dml:TestPropertyController.testGetPagedPropertyList.INSERT.0",
+    "method:GeocodingServiceTest.successResponse": {
+      "node_id": "method:GeocodingServiceTest.successResponse",
       "attributes": {
-        "type": "DMLOperation",
-        "className": "TestPropertyController",
-        "methodName": "testGetPagedPropertyList",
-        "operationType": "INSERT"
+        "type": "ApexMethod",
+        "canonicalName": "GeocodingServiceTest.successResponse",
+        "className": "GeocodingServiceTest",
+        "name": "successResponse",
+        "public": false,
+        "static": true,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-25T17:53:38.238951"
       }
     },
-    "dml:TestPropertyController.testGetPagedPropertyList.INSERT.1": {
-      "node_id": "dml:TestPropertyController.testGetPagedPropertyList.INSERT.1",
+    "method:GeocodingServiceTest.blankAddress": {
+      "node_id": "method:GeocodingServiceTest.blankAddress",
       "attributes": {
-        "type": "DMLOperation",
-        "className": "TestPropertyController",
-        "methodName": "testGetPagedPropertyList",
-        "operationType": "INSERT"
+        "type": "ApexMethod",
+        "canonicalName": "GeocodingServiceTest.blankAddress",
+        "className": "GeocodingServiceTest",
+        "name": "blankAddress",
+        "public": false,
+        "static": true,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-25T17:53:38.259974"
       }
     },
-    "dml:TestPropertyController.testGetPicturesNoResults.INSERT.0": {
-      "node_id": "dml:TestPropertyController.testGetPicturesNoResults.INSERT.0",
+    "method:GeocodingServiceTest.errorResponse": {
+      "node_id": "method:GeocodingServiceTest.errorResponse",
       "attributes": {
-        "type": "DMLOperation",
-        "className": "TestPropertyController",
-        "methodName": "testGetPicturesNoResults",
-        "operationType": "INSERT"
+        "type": "ApexMethod",
+        "canonicalName": "GeocodingServiceTest.errorResponse",
+        "className": "GeocodingServiceTest",
+        "name": "errorResponse",
+        "public": false,
+        "static": true,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-25T17:53:38.282612"
       }
     },
-    "dml:TestPropertyController.testGetPicturesWithResults.INSERT.0": {
-      "node_id": "dml:TestPropertyController.testGetPicturesWithResults.INSERT.0",
+    "class:GeocodingService": {
+      "node_id": "class:GeocodingService",
       "attributes": {
-        "type": "DMLOperation",
-        "className": "TestPropertyController",
-        "methodName": "testGetPicturesWithResults",
-        "operationType": "INSERT"
+        "type": "ApexClass",
+        "name": "GeocodingService",
+        "simpleName": "GeocodingService",
+        "definingType": "GeocodingService",
+        "public": false,
+        "withSharing": false,
+        "fileName": "GeocodingService_ast.xml",
+        "created_at": "2025-10-25T17:53:38.307871"
       }
     },
-    "dml:TestPropertyController.testGetPicturesWithResults.INSERT.1": {
-      "node_id": "dml:TestPropertyController.testGetPicturesWithResults.INSERT.1",
+    "method:GeocodingService.geocodeAddresses": {
+      "node_id": "method:GeocodingService.geocodeAddresses",
       "attributes": {
-        "type": "DMLOperation",
-        "className": "TestPropertyController",
-        "methodName": "testGetPicturesWithResults",
-        "operationType": "INSERT"
+        "type": "ApexMethod",
+        "canonicalName": "GeocodingService.geocodeAddresses",
+        "className": "GeocodingService",
+        "name": "geocodeAddresses",
+        "public": true,
+        "static": true,
+        "returnType": "List&lt;Coordinates>",
+        "arity": 1,
+        "created_at": "2025-10-25T17:53:38.318578"
       }
     },
-    "dml:TestPropertyController.testGetPicturesWithResults.INSERT.2": {
-      "node_id": "dml:TestPropertyController.testGetPicturesWithResults.INSERT.2",
+    "class:PagedResult": {
+      "node_id": "class:PagedResult",
       "attributes": {
-        "type": "DMLOperation",
-        "className": "TestPropertyController",
-        "methodName": "testGetPicturesWithResults",
-        "operationType": "INSERT"
+        "type": "ApexClass",
+        "name": "PagedResult",
+        "simpleName": "PagedResult",
+        "definingType": "PagedResult",
+        "public": false,
+        "withSharing": false,
+        "fileName": "PagedResult_ast.xml",
+        "created_at": "2025-10-25T17:53:38.341675"
       }
     },
-    "soql:FileUtilities.createFile.0": {
-      "node_id": "soql:FileUtilities.createFile.0",
+    "method:PagedResult.__sfdc_pageSize": {
+      "node_id": "method:PagedResult.__sfdc_pageSize",
       "attributes": {
-        "type": "SOQLQuery",
-        "query": "SELECT ContentDocumentId                 FROM ContentVersion                 WHERE Id = :contentVersion.Id                 WITH USER_MODE",
-        "canonicalQuery": "SELECT ContentDocumentId                 FROM ContentVersion                 WHERE Id = :tmpVar1                 WITH USER_MODE",
-        "className": "FileUtilities",
-        "methodName": "createFile"
+        "type": "ApexMethod",
+        "canonicalName": "PagedResult.__sfdc_pageSize",
+        "className": "PagedResult",
+        "name": "__sfdc_pageSize",
+        "public": true,
+        "static": false,
+        "returnType": "void",
+        "arity": 1,
+        "created_at": "2025-10-25T17:53:38.372160"
+      }
+    },
+    "method:PagedResult.__sfdc_pageNumber": {
+      "node_id": "method:PagedResult.__sfdc_pageNumber",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "PagedResult.__sfdc_pageNumber",
+        "className": "PagedResult",
+        "name": "__sfdc_pageNumber",
+        "public": true,
+        "static": false,
+        "returnType": "void",
+        "arity": 1,
+        "created_at": "2025-10-25T17:53:38.417566"
+      }
+    },
+    "method:PagedResult.__sfdc_totalItemCount": {
+      "node_id": "method:PagedResult.__sfdc_totalItemCount",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "PagedResult.__sfdc_totalItemCount",
+        "className": "PagedResult",
+        "name": "__sfdc_totalItemCount",
+        "public": true,
+        "static": false,
+        "returnType": "void",
+        "arity": 1,
+        "created_at": "2025-10-25T17:53:38.460601"
+      }
+    },
+    "method:PagedResult.__sfdc_records": {
+      "node_id": "method:PagedResult.__sfdc_records",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "PagedResult.__sfdc_records",
+        "className": "PagedResult",
+        "name": "__sfdc_records",
+        "public": true,
+        "static": false,
+        "returnType": "void",
+        "arity": 1,
+        "created_at": "2025-10-25T17:53:38.501534"
+      }
+    },
+    "class:PropertyController": {
+      "node_id": "class:PropertyController",
+      "attributes": {
+        "type": "ApexClass",
+        "name": "PropertyController",
+        "simpleName": "PropertyController",
+        "definingType": "PropertyController",
+        "public": false,
+        "withSharing": false,
+        "fileName": "PropertyController_ast.xml",
+        "created_at": "2025-10-25T17:53:38.528593"
+      }
+    },
+    "method:PropertyController.getPagedPropertyList": {
+      "node_id": "method:PropertyController.getPagedPropertyList",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "PropertyController.getPagedPropertyList",
+        "className": "PropertyController",
+        "name": "getPagedPropertyList",
+        "public": true,
+        "static": true,
+        "returnType": "PagedResult",
+        "arity": 6,
+        "created_at": "2025-10-25T17:53:38.538103"
       }
     },
     "soql:PropertyController.getPagedPropertyList.0": {
@@ -659,6 +367,20 @@
         "methodName": "getPagedPropertyList"
       }
     },
+    "method:PropertyController.getPictures": {
+      "node_id": "method:PropertyController.getPictures",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "PropertyController.getPictures",
+        "className": "PropertyController",
+        "name": "getPictures",
+        "public": true,
+        "static": true,
+        "returnType": "List&lt;ContentVersion>",
+        "arity": 1,
+        "created_at": "2025-10-25T17:53:38.597867"
+      }
+    },
     "soql:PropertyController.getPictures.0": {
       "node_id": "soql:PropertyController.getPictures.0",
       "attributes": {
@@ -677,6 +399,33 @@
         "canonicalQuery": "SELECT Id, Title             FROM ContentVersion             WHERE ContentDocumentId IN :tmpVar1 AND IsLatest = TRUE             WITH USER_MODE             ORDER BY CreatedDate",
         "className": "PropertyController",
         "methodName": "getPictures"
+      }
+    },
+    "class:SampleDataController": {
+      "node_id": "class:SampleDataController",
+      "attributes": {
+        "type": "ApexClass",
+        "name": "SampleDataController",
+        "simpleName": "SampleDataController",
+        "definingType": "SampleDataController",
+        "public": false,
+        "withSharing": false,
+        "fileName": "SampleDataController_ast.xml",
+        "created_at": "2025-10-25T17:53:38.661598"
+      }
+    },
+    "method:SampleDataController.importSampleData": {
+      "node_id": "method:SampleDataController.importSampleData",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "SampleDataController.importSampleData",
+        "className": "SampleDataController",
+        "name": "importSampleData",
+        "public": true,
+        "static": true,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-25T17:53:38.671255"
       }
     },
     "soql:SampleDataController.importSampleData.0": {
@@ -719,6 +468,56 @@
         "methodName": "importSampleData"
       }
     },
+    "dml:SampleDataController.importSampleData.DELETE.0": {
+      "node_id": "dml:SampleDataController.importSampleData.DELETE.0",
+      "attributes": {
+        "type": "DMLOperation",
+        "className": "SampleDataController",
+        "methodName": "importSampleData",
+        "operationType": "DELETE"
+      }
+    },
+    "dml:SampleDataController.importSampleData.DELETE.1": {
+      "node_id": "dml:SampleDataController.importSampleData.DELETE.1",
+      "attributes": {
+        "type": "DMLOperation",
+        "className": "SampleDataController",
+        "methodName": "importSampleData",
+        "operationType": "DELETE"
+      }
+    },
+    "dml:SampleDataController.importSampleData.DELETE.2": {
+      "node_id": "dml:SampleDataController.importSampleData.DELETE.2",
+      "attributes": {
+        "type": "DMLOperation",
+        "className": "SampleDataController",
+        "methodName": "importSampleData",
+        "operationType": "DELETE"
+      }
+    },
+    "dml:SampleDataController.importSampleData.DELETE.3": {
+      "node_id": "dml:SampleDataController.importSampleData.DELETE.3",
+      "attributes": {
+        "type": "DMLOperation",
+        "className": "SampleDataController",
+        "methodName": "importSampleData",
+        "operationType": "DELETE"
+      }
+    },
+    "method:SampleDataController.insertBrokers": {
+      "node_id": "method:SampleDataController.insertBrokers",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "SampleDataController.insertBrokers",
+        "className": "SampleDataController",
+        "name": "insertBrokers",
+        "public": false,
+        "static": false,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-25T17:53:38.858686"
+      }
+    },
     "soql:SampleDataController.insertBrokers.0": {
       "node_id": "soql:SampleDataController.insertBrokers.0",
       "attributes": {
@@ -727,6 +526,62 @@
         "canonicalQuery": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_brokers'",
         "className": "SampleDataController",
         "methodName": "insertBrokers"
+      }
+    },
+    "dml:SampleDataController.insertBrokers.INSERT.0": {
+      "node_id": "dml:SampleDataController.insertBrokers.INSERT.0",
+      "attributes": {
+        "type": "DMLOperation",
+        "className": "SampleDataController",
+        "methodName": "insertBrokers",
+        "operationType": "INSERT"
+      }
+    },
+    "method:SampleDataController.insertProperties": {
+      "node_id": "method:SampleDataController.insertProperties",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "SampleDataController.insertProperties",
+        "className": "SampleDataController",
+        "name": "insertProperties",
+        "public": false,
+        "static": false,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-25T17:53:38.919752"
+      }
+    },
+    "soql:SampleDataController.insertProperties.0": {
+      "node_id": "soql:SampleDataController.insertProperties.0",
+      "attributes": {
+        "type": "SOQLQuery",
+        "query": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_properties'",
+        "canonicalQuery": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_properties'",
+        "className": "SampleDataController",
+        "methodName": "insertProperties"
+      }
+    },
+    "dml:SampleDataController.insertProperties.INSERT.0": {
+      "node_id": "dml:SampleDataController.insertProperties.INSERT.0",
+      "attributes": {
+        "type": "DMLOperation",
+        "className": "SampleDataController",
+        "methodName": "insertProperties",
+        "operationType": "INSERT"
+      }
+    },
+    "method:SampleDataController.insertContacts": {
+      "node_id": "method:SampleDataController.insertContacts",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "SampleDataController.insertContacts",
+        "className": "SampleDataController",
+        "name": "insertContacts",
+        "public": false,
+        "static": false,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-25T17:53:38.981554"
       }
     },
     "soql:SampleDataController.insertContacts.0": {
@@ -739,14 +594,77 @@
         "methodName": "insertContacts"
       }
     },
-    "soql:SampleDataController.insertProperties.0": {
-      "node_id": "soql:SampleDataController.insertProperties.0",
+    "dml:SampleDataController.insertContacts.INSERT.0": {
+      "node_id": "dml:SampleDataController.insertContacts.INSERT.0",
       "attributes": {
-        "type": "SOQLQuery",
-        "query": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_properties'",
-        "canonicalQuery": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_properties'",
+        "type": "DMLOperation",
         "className": "SampleDataController",
-        "methodName": "insertProperties"
+        "methodName": "insertContacts",
+        "operationType": "INSERT"
+      }
+    },
+    "method:SampleDataController.randomizeDateListed": {
+      "node_id": "method:SampleDataController.randomizeDateListed",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "SampleDataController.randomizeDateListed",
+        "className": "SampleDataController",
+        "name": "randomizeDateListed",
+        "public": false,
+        "static": false,
+        "returnType": "void",
+        "arity": 1,
+        "created_at": "2025-10-25T17:53:39.046415"
+      }
+    },
+    "class:TestPropertyController": {
+      "node_id": "class:TestPropertyController",
+      "attributes": {
+        "type": "ApexClass",
+        "name": "TestPropertyController",
+        "simpleName": "TestPropertyController",
+        "definingType": "TestPropertyController",
+        "public": false,
+        "withSharing": false,
+        "fileName": "TestPropertyController_ast.xml",
+        "created_at": "2025-10-25T17:53:39.068965"
+      }
+    },
+    "method:TestPropertyController.createProperties": {
+      "node_id": "method:TestPropertyController.createProperties",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "TestPropertyController.createProperties",
+        "className": "TestPropertyController",
+        "name": "createProperties",
+        "public": false,
+        "static": false,
+        "returnType": "void",
+        "arity": 1,
+        "created_at": "2025-10-25T17:53:39.079052"
+      }
+    },
+    "dml:TestPropertyController.createProperties.INSERT.0": {
+      "node_id": "dml:TestPropertyController.createProperties.INSERT.0",
+      "attributes": {
+        "type": "DMLOperation",
+        "className": "TestPropertyController",
+        "methodName": "createProperties",
+        "operationType": "INSERT"
+      }
+    },
+    "method:TestPropertyController.testGetPagedPropertyList": {
+      "node_id": "method:TestPropertyController.testGetPagedPropertyList",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "TestPropertyController.testGetPagedPropertyList",
+        "className": "TestPropertyController",
+        "name": "testGetPagedPropertyList",
+        "public": false,
+        "static": true,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-25T17:53:39.121718"
       }
     },
     "soql:TestPropertyController.testGetPagedPropertyList.0": {
@@ -769,6 +687,61 @@
         "methodName": "testGetPagedPropertyList"
       }
     },
+    "dml:TestPropertyController.testGetPagedPropertyList.INSERT.0": {
+      "node_id": "dml:TestPropertyController.testGetPagedPropertyList.INSERT.0",
+      "attributes": {
+        "type": "DMLOperation",
+        "className": "TestPropertyController",
+        "methodName": "testGetPagedPropertyList",
+        "operationType": "INSERT"
+      }
+    },
+    "dml:TestPropertyController.testGetPagedPropertyList.INSERT.1": {
+      "node_id": "dml:TestPropertyController.testGetPagedPropertyList.INSERT.1",
+      "attributes": {
+        "type": "DMLOperation",
+        "className": "TestPropertyController",
+        "methodName": "testGetPagedPropertyList",
+        "operationType": "INSERT"
+      }
+    },
+    "method:TestPropertyController.testGetPicturesNoResults": {
+      "node_id": "method:TestPropertyController.testGetPicturesNoResults",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "TestPropertyController.testGetPicturesNoResults",
+        "className": "TestPropertyController",
+        "name": "testGetPicturesNoResults",
+        "public": false,
+        "static": true,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-25T17:53:39.224568"
+      }
+    },
+    "dml:TestPropertyController.testGetPicturesNoResults.INSERT.0": {
+      "node_id": "dml:TestPropertyController.testGetPicturesNoResults.INSERT.0",
+      "attributes": {
+        "type": "DMLOperation",
+        "className": "TestPropertyController",
+        "methodName": "testGetPicturesNoResults",
+        "operationType": "INSERT"
+      }
+    },
+    "method:TestPropertyController.testGetPicturesWithResults": {
+      "node_id": "method:TestPropertyController.testGetPicturesWithResults",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "TestPropertyController.testGetPicturesWithResults",
+        "className": "TestPropertyController",
+        "name": "testGetPicturesWithResults",
+        "public": false,
+        "static": true,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-25T17:53:39.266736"
+      }
+    },
     "soql:TestPropertyController.testGetPicturesWithResults.0": {
       "node_id": "soql:TestPropertyController.testGetPicturesWithResults.0",
       "attributes": {
@@ -777,6 +750,33 @@
         "canonicalQuery": "SELECT Id, Title, LatestPublishedVersionId             FROM ContentDocument             LIMIT 1",
         "className": "TestPropertyController",
         "methodName": "testGetPicturesWithResults"
+      }
+    },
+    "dml:TestPropertyController.testGetPicturesWithResults.INSERT.0": {
+      "node_id": "dml:TestPropertyController.testGetPicturesWithResults.INSERT.0",
+      "attributes": {
+        "type": "DMLOperation",
+        "className": "TestPropertyController",
+        "methodName": "testGetPicturesWithResults",
+        "operationType": "INSERT"
+      }
+    },
+    "dml:TestPropertyController.testGetPicturesWithResults.INSERT.1": {
+      "node_id": "dml:TestPropertyController.testGetPicturesWithResults.INSERT.1",
+      "attributes": {
+        "type": "DMLOperation",
+        "className": "TestPropertyController",
+        "methodName": "testGetPicturesWithResults",
+        "operationType": "INSERT"
+      }
+    },
+    "dml:TestPropertyController.testGetPicturesWithResults.INSERT.2": {
+      "node_id": "dml:TestPropertyController.testGetPicturesWithResults.INSERT.2",
+      "attributes": {
+        "type": "DMLOperation",
+        "className": "TestPropertyController",
+        "methodName": "testGetPicturesWithResults",
+        "operationType": "INSERT"
       }
     },
     "class:TestSampleDataController": {
@@ -788,8 +788,8 @@
         "definingType": "TestSampleDataController",
         "public": false,
         "withSharing": false,
-        "fileName": "TestSampleDataController_ast.txt",
-        "created_at": "2025-10-25T11:10:01.101498"
+        "fileName": "TestSampleDataController_ast.xml",
+        "created_at": "2025-10-25T17:53:39.371543"
       }
     },
     "method:TestSampleDataController.importSampleData": {
@@ -803,7 +803,7 @@
         "static": true,
         "returnType": "void",
         "arity": 0,
-        "created_at": "2025-10-25T11:10:01.114514"
+        "created_at": "2025-10-25T17:53:39.381572"
       }
     },
     "soql:TestSampleDataController.importSampleData.0": {
