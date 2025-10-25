@@ -52,7 +52,7 @@ steps:
       - '--no-cpu-throttling'
       - '--cpu-boost'
       # Mount Cloud Storage bucket as volume
-      - '--add-volume=name=data-volume,type=cloud-storage,bucket=pmd-salesforce-data'
+      - '--add-volume=name=data-volume,type=cloud-storage,bucket=pm-salesforce-analyzer-storage'
       - '--add-volume-mount=volume=data-volume,mount-path=/data'
     id: 'deploy-cloud-run'
     waitFor: ['push-docker-image']
