@@ -1,30 +1,45 @@
 <template>
-  <div class="graph-view" :style="{ left: sidebarWidth + 'px' }">
-    <!-- 顶部控制栏 -->
-    
+  <div class="graph-view">
+    <!-- 顶部工具栏 -->
+    <div class="toolbar">
+      <el-button @click="loadGraph" :icon="Refresh" :loading="loading">
+        {{ $t('common.refresh') }}
+      </el-button>
+      <el-button @click="fitView" :icon="FullScreen">
+        {{ $t('graph.fitView') }}
+      </el-button>
+      <el-button v-if="hasActiveFilter" type="info" @click="clearFilter">
+        清除过滤
+      </el-button>
+      <el-button v-if="hasHiddenNodes" type="warning" @click="showAllNodes">
+        显示全部节点
+      </el-button>
+    </div>
+
     <!-- 图表容器 -->
-    <div class="graph-container">
-      <div ref="networkContainer" class="network"></div>
+    <div class="graph-container" @contextmenu.prevent>
+      <div ref="cyContainer" class="cy-container"></div>
       
+      <!-- 图例 -->
       <div class="legend">
-        <h4 style="margin: 0 0 8px 0;">图例（点击过滤）</h4>
+        <h4>{{ $t('graph.legend') }}</h4>
         <div 
           class="legend-item" 
           :class="{ active: isTypeActive('ApexClass'), inactive: !isTypeActive('ApexClass') && hasActiveFilter }"
           @click="toggleNodeType('ApexClass')"
         >
           <span class="legend-color" style="background: #409eff"></span>
-          <span>Apex类</span>
+          <span>{{ $t('graph.apexClass') }}</span>
           <span v-if="nodeTypeCounts.ApexClass" class="count">({{ nodeTypeCounts.ApexClass }})</span>
         </div>
         <div 
           class="legend-item" 
-          :class="{ active: isTypeActive('Method'), inactive: !isTypeActive('Method') && hasActiveFilter }"
-          @click="toggleNodeType('Method')"
+          :class="{ active: isTypeActive('ApexMethod'), inactive: !isTypeActive('ApexMethod') && hasActiveFilter }"
+          @click="toggleNodeType('ApexMethod')"
         >
           <span class="legend-color" style="background: #67c23a"></span>
-          <span>方法</span>
-          <span v-if="nodeTypeCounts.Method" class="count">({{ nodeTypeCounts.Method }})</span>
+          <span>{{ $t('graph.method') }}</span>
+          <span v-if="nodeTypeCounts.ApexMethod" class="count">({{ nodeTypeCounts.ApexMethod }})</span>
         </div>
         <div 
           class="legend-item" 
@@ -32,7 +47,7 @@
           @click="toggleNodeType('SOQLQuery')"
         >
           <span class="legend-color" style="background: #e6a23c"></span>
-          <span>SOQL查询</span>
+          <span>{{ $t('graph.soqlQuery') }}</span>
           <span v-if="nodeTypeCounts.SOQLQuery" class="count">({{ nodeTypeCounts.SOQLQuery }})</span>
         </div>
         <div 
@@ -41,394 +56,554 @@
           @click="toggleNodeType('DMLOperation')"
         >
           <span class="legend-color" style="background: #f56c6c"></span>
-          <span>DML操作</span>
+          <span>{{ $t('graph.dmlOperation') }}</span>
           <span v-if="nodeTypeCounts.DMLOperation" class="count">({{ nodeTypeCounts.DMLOperation }})</span>
-        </div>
-        <el-divider style="margin: 10px 0" />
-        <el-button 
-          v-if="hasActiveFilter" 
-          size="small" 
-          type="info" 
-          @click="clearFilter"
-          style="width: 100%"
-        >
-          清除过滤
-        </el-button>
-      </div>
-      
-      <!-- 悬浮按钮组：图右上角，仿legend节点样式 -->
-      <div class="graph-float-btns">
-        <el-button @click="loadGraph" :icon="Refresh" :loading="loading" circle size="large" title="刷新" />
-        <el-button @click="fitView" :icon="FullScreen" circle size="large" title="适应窗口" style="margin-left: 8px;" />
-      </div>
-
-      <!-- 右键菜单 -->
-      <div 
-        v-if="contextMenu.visible" 
-        class="context-menu" 
-        :style="{ left: contextMenu.x + 'px', top: contextMenu.y + 'px' }"
-      >
-        <div class="context-menu-item" @click="showNodePath">
-          <el-icon><Share /></el-icon>
-          <span>显示节点路径</span>
-        </div>
-        <div class="context-menu-item" @click="focusNode">
-          <el-icon><Aim /></el-icon>
-          <span>聚焦节点</span>
-        </div>
-        <div class="context-menu-item" @click="showNodeDetails">
-          <el-icon><InfoFilled /></el-icon>
-          <span>查看详情</span>
         </div>
       </div>
     </div>
 
-    <!-- 右侧抽屉面板 -->
+    <!-- 节点详情抽屉 -->
     <el-drawer
       v-model="drawerVisible"
-      title="节点详情"
-      :size="400"
+      :title="$t('graph.nodeDetails')"
+      :size="500"
       direction="rtl"
+      class="node-detail-drawer"
     >
       <div v-if="selectedNode" class="node-detail">
-        <!-- 类节点 -->
-        <div v-if="selectedNode.type === 'ApexClass'" class="detail-section">
-          <el-descriptions :column="1" border>
-            <el-descriptions-item label="类型">
-              <el-tag type="primary">Apex类</el-tag>
-            </el-descriptions-item>
-            <el-descriptions-item label="类名">
-              <strong>{{ selectedNode.properties.name }}</strong>
-            </el-descriptions-item>
-            <el-descriptions-item label="简单名称">
-              {{ selectedNode.properties.simpleName }}
-            </el-descriptions-item>
-            <el-descriptions-item label="访问修饰符">
-              <el-tag :type="selectedNode.properties.public ? 'success' : 'info'">
-                {{ selectedNode.properties.public ? 'public' : 'private' }}
-              </el-tag>
-            </el-descriptions-item>
-            <el-descriptions-item label="共享设置">
-              <el-tag :type="selectedNode.properties.withSharing ? 'success' : 'warning'">
-                {{ selectedNode.properties.withSharing ? 'with sharing' : 'without sharing' }}
-              </el-tag>
-            </el-descriptions-item>
-            <el-descriptions-item label="文件名">
-              {{ selectedNode.properties.fileName }}
-            </el-descriptions-item>
-          </el-descriptions>
-        </div>
-
-        <!-- 方法节点 -->
-        <div v-else-if="selectedNode.type === 'Method'" class="detail-section">
-          <el-descriptions :column="1" border>
-            <el-descriptions-item label="类型">
-              <el-tag type="success">方法</el-tag>
-            </el-descriptions-item>
-            <el-descriptions-item label="方法名">
-              <strong>{{ selectedNode.properties.name }}</strong>
-            </el-descriptions-item>
-            <el-descriptions-item label="所属类">
-              {{ selectedNode.properties.className }}
-            </el-descriptions-item>
-            <el-descriptions-item label="返回类型">
-              <el-tag size="small">{{ selectedNode.properties.returnType }}</el-tag>
-            </el-descriptions-item>
-            <el-descriptions-item label="参数数量">
-              {{ selectedNode.properties.arity }}
-            </el-descriptions-item>
-            <el-descriptions-item label="修饰符">
-              <el-tag v-if="selectedNode.properties.public" type="success" size="small">public</el-tag>
-              <el-tag v-if="selectedNode.properties.static" type="info" size="small" style="margin-left: 5px">static</el-tag>
-              <el-tag v-if="selectedNode.properties.constructor" type="warning" size="small" style="margin-left: 5px">constructor</el-tag>
-            </el-descriptions-item>
-            <el-descriptions-item label="规范名称">
-              <code>{{ selectedNode.properties.canonicalName }}</code>
-            </el-descriptions-item>
-          </el-descriptions>
-        </div>
-
-        <!-- SOQL查询节点 -->
-        <div v-else-if="selectedNode.type === 'SOQLQuery'" class="detail-section">
-          <el-descriptions :column="1" border>
-            <el-descriptions-item label="类型">
-              <el-tag type="warning">SOQL查询</el-tag>
-            </el-descriptions-item>
-            <el-descriptions-item label="所属类">
-              {{ selectedNode.properties.className }}
-            </el-descriptions-item>
-            <el-descriptions-item label="所属方法">
-              {{ selectedNode.properties.methodName }}
-            </el-descriptions-item>
-            <el-descriptions-item label="查询语句" :span="2">
-              <el-input
-                :model-value="selectedNode.properties.query"
-                type="textarea"
-                :rows="4"
-                readonly
-              />
-            </el-descriptions-item>
-            <el-descriptions-item label="规范查询" :span="2">
-              <el-input
-                :model-value="selectedNode.properties.canonicalQuery"
-                type="textarea"
-                :rows="3"
-                readonly
-              />
-            </el-descriptions-item>
-          </el-descriptions>
-        </div>
-
-        <!-- DML操作节点 -->
-        <div v-else-if="selectedNode.type === 'DMLOperation'" class="detail-section">
-          <el-descriptions :column="1" border>
-            <el-descriptions-item label="类型">
-              <el-tag type="danger">DML操作</el-tag>
-            </el-descriptions-item>
-            <el-descriptions-item label="操作类型">
-              <el-tag :type="getDMLTypeTag(selectedNode.properties.operationType)">
-                {{ selectedNode.properties.operationType }}
-              </el-tag>
-            </el-descriptions-item>
-            <el-descriptions-item label="所属类">
-              {{ selectedNode.properties.className }}
-            </el-descriptions-item>
-            <el-descriptions-item label="所属方法">
-              {{ selectedNode.properties.methodName }}
-            </el-descriptions-item>
-            <el-descriptions-item label="类型标识">
-              {{ selectedNode.properties.type }}
-            </el-descriptions-item>
-          </el-descriptions>
-        </div>
-
-        <!-- 原始数据 -->
-        <el-divider>原始数据</el-divider>
-        <el-input
-          :model-value="JSON.stringify(selectedNode.properties, null, 2)"
-          type="textarea"
-          :rows="10"
-          readonly
-        />
+        <el-descriptions :column="1" border class="detail-descriptions">
+          <el-descriptions-item :label="$t('graph.nodeType')">
+            <el-tag :type="getNodeTypeTagColor(selectedNode.type)">
+              {{ selectedNode.type }}
+            </el-tag>
+          </el-descriptions-item>
+          <el-descriptions-item :label="$t('graph.nodeName')">
+            <div class="detail-value">{{ selectedNode.name || selectedNode.id }}</div>
+          </el-descriptions-item>
+          <el-descriptions-item 
+            v-for="(value, key) in selectedNode.properties" 
+            :key="key"
+            :label="key"
+          >
+            <div class="detail-value">{{ value }}</div>
+          </el-descriptions-item>
+        </el-descriptions>
       </div>
     </el-drawer>
-
-    <!-- 链路展示对话框 -->
-    <el-dialog
-      v-model="pathDialogVisible"
-      title="节点链路分析"
-      width="80%"
-      top="5vh"
-    >
-      <div v-if="nodePath" class="path-container">
-        <el-alert 
-          :title="`从节点 '${nodePath.rootNode.name}' 出发的所有连接`" 
-          type="info" 
-          :closable="false"
-          style="margin-bottom: 20px"
-        />
-        
-        <el-tabs type="border-card">
-          <!-- 直接连接 -->
-          <el-tab-pane label="直接连接">
-            <template #label>
-              <span><el-icon><Link /></el-icon> 直接连接 ({{ nodePath.directConnections.length }})</span>
-            </template>
-            <div v-if="nodePath.directConnections.length > 0">
-              <el-table :data="nodePath.directConnections" stripe style="width: 100%">
-                <el-table-column label="目标节点" width="200">
-                  <template #default="{ row }">
-                    <el-tag :type="getNodeTypeTagColor(row.type)">{{ row.name }}</el-tag>
-                  </template>
-                </el-table-column>
-                <el-table-column prop="type" label="类型" width="120">
-                  <template #default="{ row }">
-                    <el-tag size="small">{{ row.type }}</el-tag>
-                  </template>
-                </el-table-column>
-                <el-table-column prop="relationship" label="关系" width="150">
-                  <template #default="{ row }">
-                    <el-tag type="success" size="small">{{ row.relationship }}</el-tag>
-                  </template>
-                </el-table-column>
-                <el-table-column label="属性">
-                  <template #default="{ row }">
-                    <el-scrollbar max-height="100px">
-                      <pre style="font-size: 12px; margin: 0;">{{ JSON.stringify(row.properties, null, 2) }}</pre>
-                    </el-scrollbar>
-                  </template>
-                </el-table-column>
-              </el-table>
-            </div>
-            <el-empty v-else description="没有直接连接的节点" />
-          </el-tab-pane>
-
-          <!-- 所有路径 -->
-          <el-tab-pane label="完整路径">
-            <template #label>
-              <span><el-icon><Connection /></el-icon> 完整路径 ({{ nodePath.allPaths.length }})</span>
-            </template>
-            <div v-if="nodePath.allPaths.length > 0">
-              <el-collapse accordion>
-                <el-collapse-item 
-                  v-for="(path, index) in nodePath.allPaths" 
-                  :key="index"
-                  :name="index"
-                >
-                  <template #title>
-                    <div class="path-title">
-                      <el-tag size="small" type="info">路径 {{ index + 1 }}</el-tag>
-                      <span style="margin-left: 10px">深度: {{ path.length }}</span>
-                    </div>
-                  </template>
-                  <div class="path-flow">
-                    <div v-for="(step, stepIndex) in path" :key="stepIndex" class="path-step">
-                      <div class="step-node">
-                        <el-tag :type="getNodeTypeTagColor(step.type)">
-                          {{ step.name }}
-                        </el-tag>
-                        <div class="step-type">{{ step.type }}</div>
-                      </div>
-                      <div v-if="stepIndex < path.length - 1" class="step-arrow">
-                        <el-icon><Right /></el-icon>
-                        <span class="step-relation">{{ step.relationshipToNext }}</span>
-                      </div>
-                    </div>
-                  </div>
-                </el-collapse-item>
-              </el-collapse>
-            </div>
-            <el-empty v-else description="没有找到连接路径" />
-          </el-tab-pane>
-
-          <!-- 统计信息 -->
-          <el-tab-pane label="统计">
-            <template #label>
-              <span><el-icon><DataAnalysis /></el-icon> 统计</span>
-            </template>
-            <el-row :gutter="20">
-              <el-col :span="6">
-                <el-statistic title="直接连接数" :value="nodePath.directConnections.length" />
-              </el-col>
-              <el-col :span="6">
-                <el-statistic title="所有路径数" :value="nodePath.allPaths.length" />
-              </el-col>
-              <el-col :span="6">
-                <el-statistic title="最长路径深度" :value="nodePath.maxDepth" />
-              </el-col>
-              <el-col :span="6">
-                <el-statistic title="涉及节点数" :value="nodePath.uniqueNodes" />
-              </el-col>
-            </el-row>
-          </el-tab-pane>
-        </el-tabs>
-      </div>
-      </el-dialog>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, computed, nextTick, inject, watch } from 'vue'
-import * as G6 from '@antv/g6'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import api from '@/api'
 import { ElMessage } from 'element-plus'
-import { 
-  Refresh, 
-  FullScreen, 
-  Share, 
-  Aim, 
-  InfoFilled,
-  Link,
-  Connection,
-  Right,
-  DataAnalysis
-} from '@element-plus/icons-vue'
+import { Refresh, FullScreen } from '@element-plus/icons-vue'
+import cytoscape from 'cytoscape'
+import coseBilkent from 'cytoscape-cose-bilkent'
+import cxtmenu from 'cytoscape-cxtmenu'
 
-// 获取sidebar的折叠状态
-const sidebarCollapsed = inject('sidebarCollapsed', ref(true))
+// 注册布局插件和右键菜单插件
+cytoscape.use(coseBilkent)
+cytoscape.use(cxtmenu)
 
-// 计算sidebar的宽度
-const sidebarWidth = computed(() => sidebarCollapsed.value ? 64 : 250)
+const { t } = useI18n()
 
-// 监听sidebar宽度变化，调整图视图
-watch(sidebarWidth, () => {
-  if (graph) {
-    // 延迟调整以等待CSS过渡完成
-    setTimeout(() => {
-      requestAnimationFrame(() => {
-        // 更新画布大小并居中显示
-        const container = networkContainer.value
-        if (container) {
-          const width = container.offsetWidth
-          const height = container.offsetHeight
-          graph.changeSize(width, height)
-          graph.fitView(20) // 20px padding
-        }
-      })
-    }, 400)
-  }
-})
-
-const networkContainer = ref(null)
+// 状态管理
+const cyContainer = ref(null)
 const loading = ref(false)
-const selectedNode = ref(null)
 const drawerVisible = ref(false)
-const activeNodeTypes = ref(new Set())
+const selectedNode = ref(null)
+
+let cy = null // Cytoscape 实例
+
+// 数据存储
 const allNodes = ref([])
 const allEdges = ref([])
 const nodeTypeCounts = ref({
   ApexClass: 0,
-  Method: 0,
+  ApexMethod: 0,
   SOQLQuery: 0,
   DMLOperation: 0
 })
-const contextMenu = ref({
-  visible: false,
-  x: 0,
-  y: 0,
-  nodeId: null
-})
-const pathDialogVisible = ref(false)
-const nodePath = ref(null)
-let graph = null
 
+// 过滤状态
+const activeNodeTypes = ref(new Set())
 const hasActiveFilter = computed(() => activeNodeTypes.value.size > 0)
+const hasHiddenNodes = ref(false)
 
-const isTypeActive = (type) => {
-  if (activeNodeTypes.value.size === 0) return true
-  return activeNodeTypes.value.has(type)
-}
-
+// 工具函数
 const getNodeColor = (type) => {
   const colors = {
     'ApexClass': '#409eff',
-    'Method': '#67c23a',
+    'ApexMethod': '#67c23a',
     'SOQLQuery': '#e6a23c',
     'DMLOperation': '#f56c6c',
   }
   return colors[type] || '#909399'
 }
 
-const getDMLTypeTag = (type) => {
-  const tags = {
-    'INSERT': 'success',
-    'UPDATE': 'warning',
-    'DELETE': 'danger',
-    'UPSERT': 'info'
-  }
-  return tags[type] || 'info'
-}
-
 const getNodeTypeTagColor = (type) => {
   const colors = {
     'ApexClass': 'primary',
-    'Method': 'success',
+    'ApexMethod': 'success',
     'SOQLQuery': 'warning',
     'DMLOperation': 'danger'
   }
   return colors[type] || 'info'
 }
 
+const isTypeActive = (type) => {
+  if (activeNodeTypes.value.size === 0) return true
+  return activeNodeTypes.value.has(type)
+}
+
+// 加载图数据
+const loadGraph = async (showMessage = true) => {
+  loading.value = true
+  try {
+    const data = await api.getGraphData()
+    
+    // 转换节点数据
+    const nodes = data.nodes.map(node => ({
+      data: {
+        id: String(node.id),
+        label: node.type === 'SOQLQuery' ? 'SOQL' : (node.name || node.id),
+        type: node.type,
+        color: getNodeColor(node.type),
+        properties: node.properties || {},
+        originalData: node
+      }
+    }))
+    
+    // 统计节点类型
+    nodeTypeCounts.value = {
+      ApexClass: 0,
+      ApexMethod: 0,
+      SOQLQuery: 0,
+      DMLOperation: 0
+    }
+    for (const node of nodes) {
+      const type = node.data.type
+      if (nodeTypeCounts.value.hasOwnProperty(type)) {
+        nodeTypeCounts.value[type]++
+      }
+    }
+    
+    // 转换边数据
+    const validNodeIds = new Set(nodes.map(n => n.data.id))
+    const edges = data.edges
+      .filter(edge => {
+        const source = String(edge.source)
+        const target = String(edge.target)
+        return validNodeIds.has(source) && validNodeIds.has(target)
+      })
+      .map((edge, index) => ({
+        data: {
+          id: `edge-${index}`,
+          source: String(edge.source),
+          target: String(edge.target),
+          label: edge.label || edge.type
+        }
+      }))
+    
+    // 保存原始数据
+    allNodes.value = nodes
+    allEdges.value = edges
+    
+    console.log('Loaded:', nodes.length, 'nodes,', edges.length, 'edges')
+    
+    // 创建或更新图
+    if (cy) {
+      cy.elements().remove()
+      cy.add(nodes)
+      cy.add(edges)
+      
+      // 添加刷新时的淡入动画
+      cy.nodes().forEach((node, index) => {
+        node.style('opacity', 0)
+        setTimeout(() => {
+          node.animate({
+            style: { opacity: 1 },
+            duration: 500,
+            easing: 'ease-in-out-cubic'
+          })
+        }, index * 20)
+      })
+      
+      cy.edges().forEach((edge, index) => {
+        edge.style('opacity', 0)
+        setTimeout(() => {
+          edge.animate({
+            style: { opacity: 1 },
+            duration: 500,
+            easing: 'ease-in-out-cubic'
+          })
+        }, cy.nodes().length * 20 + index * 10)
+      })
+      
+      cy.layout({
+        name: 'cose',
+        animate: true,
+        animationDuration: 1000,
+        animationEasing: 'ease-out-cubic',
+        fit: true,
+        padding: 50,
+        nodeRepulsion: 8000,
+        idealEdgeLength: 100,
+        edgeElasticity: 100,
+        nestingFactor: 1.2,
+        gravity: 0.8,
+        numIter: 1000,
+        initialTemp: 200,
+        coolingFactor: 0.95,
+        minTemp: 1
+      }).run()
+    } else {
+      initCytoscape(nodes, edges)
+    }
+    
+    if (showMessage) {
+      ElMessage.success(t('graph.loadSuccess'))
+    }
+  } catch (error) {
+    console.error('Load graph error:', error)
+    ElMessage.error(t('graph.loadError'))
+  } finally {
+    loading.value = false
+  }
+}
+
+// 初始化 Cytoscape
+const initCytoscape = (nodes, edges) => {
+  cy = cytoscape({
+    container: cyContainer.value,
+    
+    elements: {
+      nodes: nodes,
+      edges: edges
+    },
+    
+    style: [
+      {
+        selector: 'node',
+        style: {
+          'background-color': 'data(color)',
+          'label': 'data(label)',
+          'text-valign': 'center',
+          'text-halign': 'center',
+          'font-size': '16px',    // 增大字体
+          'width': '120px',       // 增大节点宽度到120px
+          'height': '120px',      // 增大节点高度到120px
+          'color': '#333',
+          'text-outline-width': 2,
+          'text-outline-color': '#fff',
+          'transition-property': 'background-color, border-color, border-width, opacity',
+          'transition-duration': '0.3s',
+          'transition-timing-function': 'ease-in-out'
+        }
+      },
+      {
+        selector: 'node:active',
+        style: {
+          'overlay-opacity': 0.2,
+          'overlay-color': '#000'
+        }
+      },
+      {
+        selector: 'edge',
+        style: {
+          'width': 2,
+          'line-color': '#999',
+          'target-arrow-color': '#999',
+          'target-arrow-shape': 'triangle',
+          'curve-style': 'bezier',
+          'label': 'data(label)',
+          'font-size': '10px',
+          'color': '#666',
+          'text-background-color': '#fff',
+          'text-background-opacity': 0.8,
+          'text-background-padding': '2px',
+          'transition-property': 'line-color, target-arrow-color, width, opacity',
+          'transition-duration': '0.3s',
+          'transition-timing-function': 'ease-in-out'
+        }
+      },
+      {
+        selector: ':selected',
+        style: {
+          'border-width': 3,
+          'border-color': '#000'
+        }
+      },
+      {
+        selector: '.highlighted',
+        style: {
+          'border-width': 3,
+          'border-color': '#FF0000',
+          'line-color': '#FF0000',
+          'target-arrow-color': '#FF0000',
+          'z-index': 999
+        }
+      },
+      {
+        selector: '.filtered',
+        style: {
+          'opacity': 0.2
+        }
+      }
+    ],
+    
+    layout: {
+      name: 'cose',  // 使用COSE布局,避免边重叠
+      animate: true,
+      animationDuration: 1000,  // 增加动画时长到1秒
+      animationEasing: 'ease-out-cubic',  // 添加缓动效果
+      fit: true,
+      padding: 50,
+      nodeRepulsion: 8000,  // 节点间斥力,避免重叠
+      idealEdgeLength: 100,  // 理想边长,控制relation不会拉太远
+      edgeElasticity: 100,   // 边弹性
+      nestingFactor: 1.2,
+      gravity: 0.8,          // 重力,防止节点飞太远
+      numIter: 1000,         // 迭代次数
+      initialTemp: 200,
+      coolingFactor: 0.95,
+      minTemp: 1
+    },
+    
+    minZoom: 0.1,
+    maxZoom: 5,              // 增大最大缩放倍数
+    wheelSensitivity: 4,      // 增大滚轮灵敏度到4 (原来2的2倍)
+    
+    // 启用拖动画面
+    userPanningEnabled: true,
+    panningEnabled: true,
+    
+    // 禁用默认的用户交互行为
+    autoungrabify: false,
+    autounselectify: false
+  })
+  
+  // 实现右键拖动画面功能
+  let isPanning = false
+  let panStartPos = null
+  
+  cy.on('mousedown', function(event) {
+    if (event.originalEvent && event.originalEvent.button === 2) {
+      // 右键点击且不在节点上
+      if (!event.target || event.target === cy) {
+        isPanning = true
+        panStartPos = { x: event.originalEvent.clientX, y: event.originalEvent.clientY }
+        event.originalEvent.preventDefault()
+      }
+    }
+  })
+  
+  cy.on('mousemove', function(event) {
+    if (isPanning && panStartPos) {
+      const deltaX = event.originalEvent.clientX - panStartPos.x
+      const deltaY = event.originalEvent.clientY - panStartPos.y
+      
+      const pan = cy.pan()
+      cy.pan({
+        x: pan.x + deltaX,
+        y: pan.y + deltaY
+      })
+      
+      panStartPos = { x: event.originalEvent.clientX, y: event.originalEvent.clientY }
+      event.originalEvent.preventDefault()
+    }
+  })
+  
+  cy.on('mouseup', function(event) {
+    if (event.originalEvent && event.originalEvent.button === 2) {
+      isPanning = false
+      panStartPos = null
+    }
+  })
+  
+  // 立即阻止容器的右键菜单
+  const container = cy.container()
+  if (container) {
+    // 阻止所有的 contextmenu 事件
+    const preventContext = (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      return false
+    }
+    container.addEventListener('contextmenu', preventContext, { capture: true })
+    
+    // 同时监听 mouseup 事件,在右键松开时也阻止
+    container.addEventListener('mouseup', (e) => {
+      if (e.button === 2) { // 右键
+        e.preventDefault()
+        e.stopPropagation()
+      }
+    }, { capture: true })
+  }
+  
+  // 初始化右键菜单插件
+  cy.cxtmenu({
+    selector: 'node',
+    commands: [
+      {
+        content: `<span style="display: flex; align-items: center; gap: 8px;"><svg style="width: 16px; height: 16px;" fill="currentColor" viewBox="0 0 1024 1024"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"/><path d="M464 336a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"/></svg>${t('graph.viewDetails')}</span>`,
+        select: function(ele) {
+          selectedNode.value = ele.data('originalData')
+          drawerVisible.value = true
+        }
+      },
+      {
+        content: `<span style="display: flex; align-items: center; gap: 8px;"><svg style="width: 16px; height: 16px;" fill="currentColor" viewBox="0 0 1024 1024"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm192 472c0 4.4-3.6 8-8 8H544v152c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V544H328c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h152V328c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v152h152c4.4 0 8 3.6 8 8v48z"/></svg>仅显示关联节点</span>`,
+        select: function(ele) {
+          showOnlyRelatedNodes(ele)
+        }
+      }
+    ],
+    fillColor: 'rgba(255, 255, 255, 0.95)',
+    activeFillColor: 'rgba(245, 247, 250, 1)',
+    activePadding: 8,
+    indicatorSize: 20,
+    separatorWidth: 3,
+    spotlightPadding: 4,
+    adaptativeNodeSpotlightRadius: true,
+    minSpotlightRadius: 20,
+    maxSpotlightRadius: 40,
+    openMenuEvents: 'cxttapstart',
+    itemColor: '#606266',
+    itemTextShadowColor: 'transparent',
+    zIndex: 9999,
+    atMouse: false,
+    // 尝试设置 spotlight 颜色为白色
+    outsideMenuCancel: 10
+  })
+  
+  // 使用 MutationObserver 监听 spotlight 元素的创建并修改其样式
+  const observer = new MutationObserver(() => {
+    const spotlight = document.querySelector('#cy-cxtmenu-spotlight circle')
+    if (spotlight) {
+      spotlight.setAttribute('stroke', 'white')
+      spotlight.setAttribute('stroke-width', '3')
+      spotlight.setAttribute('fill', 'none')
+    }
+  })
+  
+  // 监听 cytoscape 容器的变化
+  if (cyContainer.value) {
+    observer.observe(cyContainer.value, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['stroke', 'stroke-width']
+    })
+  }
+  
+  // 添加初始化动画效果
+  cy.nodes().forEach((node, index) => {
+    // 初始设置节点为不可见
+    node.style('opacity', 0)
+    
+    // 延迟显示每个节点，创建渐进效果
+    setTimeout(() => {
+      node.animate({
+        style: { opacity: 1 },
+        duration: 500,
+        easing: 'ease-in-out-cubic'
+      })
+    }, index * 20) // 每个节点延迟20ms
+  })
+  
+  // 边也添加淡入效果
+  cy.edges().forEach((edge, index) => {
+    edge.style('opacity', 0)
+    setTimeout(() => {
+      edge.animate({
+        style: { opacity: 1 },
+        duration: 500,
+        easing: 'ease-in-out-cubic'
+      })
+    }, cy.nodes().length * 20 + index * 10) // 在节点动画后开始
+  })
+  
+  console.log('Cytoscape initialized:', cy.nodes().length, 'nodes')
+}
+
+// 显示仅与选中节点相关的节点（包括所有关联链路）
+const showOnlyRelatedNodes = (node) => {
+  if (!cy) return
+  
+  // 使用广度优先搜索找到所有连接的节点
+  const relatedNodeIds = new Set()
+  const visited = new Set()
+  const queue = [node]
+  
+  while (queue.length > 0) {
+    const currentNode = queue.shift()
+    const currentId = currentNode.id()
+    
+    if (visited.has(currentId)) continue
+    visited.add(currentId)
+    relatedNodeIds.add(currentId)
+    
+    // 获取所有连接的节点（入边和出边）
+    const connectedNodes = currentNode.neighborhood('node')
+    for (const n of connectedNodes) {
+      if (!visited.has(n.id())) {
+        queue.push(n)
+      }
+    }
+  }
+  
+  // 隐藏所有不相关的节点和边
+  for (const ele of cy.elements()) {
+    if (ele.isNode()) {
+      if (relatedNodeIds.has(ele.id())) {
+        ele.style('display', 'element')
+      } else {
+        ele.style('display', 'none')
+      }
+    } else if (ele.isEdge()) {
+      // 只显示连接相关节点的边
+      const sourceId = ele.source().id()
+      const targetId = ele.target().id()
+      if (relatedNodeIds.has(sourceId) && relatedNodeIds.has(targetId)) {
+        ele.style('display', 'element')
+      } else {
+        ele.style('display', 'none')
+      }
+    }
+  }
+  
+  hasHiddenNodes.value = true
+  
+  // 适应视图
+  cy.fit(cy.elements(':visible'), 50)
+}
+
+// 显示所有节点
+const showAllNodes = () => {
+  if (!cy) return
+  
+  // 显示所有元素
+  for (const ele of cy.elements()) {
+    ele.style('display', 'element')
+  }
+  
+  hasHiddenNodes.value = false
+  
+  // 适应视图
+  cy.fit(null, 50)
+}
+
+// 适应视图
+const fitView = () => {
+  if (cy) {
+    cy.fit(null, 50)
+  }
+}
+
+// 节点类型过滤
 const toggleNodeType = (type) => {
   if (activeNodeTypes.value.has(type)) {
     activeNodeTypes.value.delete(type)
@@ -444,516 +619,103 @@ const clearFilter = () => {
 }
 
 const filterGraph = () => {
-  if (!graph) return
+  if (!cy) return
   
-  // 使用保存的原始数据进行过滤
-  const filteredNodes = activeNodeTypes.value.size === 0 
-    ? allNodes.value 
-    : allNodes.value.filter(node => activeNodeTypes.value.has(node.data.nodeType))
-  
-  const filteredNodeIds = new Set(filteredNodes.map(n => String(n.id)))
-  
-  const filteredEdges = allEdges.value.filter(edge => 
-    filteredNodeIds.has(String(edge.source)) && filteredNodeIds.has(String(edge.target))
-  )
-  
-  // 清空并重新加载数据
-  graph.clear()
-  
-  // 创建新的specification
-  const newSpec = {
-    data: { 
-      nodes: filteredNodes, 
-      edges: filteredEdges 
-    }
-  }
-  
-  // 更新graph数据
-  filteredNodes.forEach(node => {
-    graph.addData('node', node)
-  })
-  
-  filteredEdges.forEach(edge => {
-    graph.addData('edge', edge)
-  })
-  
-  // 重新渲染
-  graph.render()
-  
-  // 更新视图以适应新的布局
-  setTimeout(() => {
-    if (graph) {
-      graph.fitView()
-    }
-  }, 100)
-}
-
-const loadGraph = async () => {
-  loading.value = true
-  try {
-    const data = await api.getGraphData()
-    
-    // 转换节点数据 - G6 5.x格式
-    const nodes = data.nodes.map(node => ({
-      id: String(node.id),
-      data: {
-        label: node.name,
-        fill: getNodeColor(node.type),
-        nodeType: node.type,
-        originalData: node
-      }
-    }))
-    
-    console.log('Loaded nodes:', nodes.length)
-    
-    // 转换边数据 - G6 5.x格式
-    // 首先收集所有有效的节点ID
-    const validNodeIds = new Set(nodes.map(n => n.id))
-    
-    const edges = data.edges
-      .filter(edge => {
-        const source = String(edge.source)
-        const target = String(edge.target)
-        const isValid = validNodeIds.has(source) && validNodeIds.has(target)
-        if (!isValid) {
-          console.warn('过滤无效边:', { source, target, edge })
-        }
-        return isValid
-      })
-      .map((edge, index) => ({
-        id: `edge-${index}`,
-        source: String(edge.source),
-        target: String(edge.target),
-        data: {
-          label: edge.label
-        }
-      }))
-    
-    console.log('Loaded edges:', edges.length, '(原始:', data.edges.length, ')')
-    
-    // 保存原始数据
-    allNodes.value = nodes
-    allEdges.value = edges
-    
-    // 统计各类型节点数量
-    nodeTypeCounts.value = {
-      ApexClass: 0,
-      Method: 0,
-      SOQLQuery: 0,
-      DMLOperation: 0
-    }
-    nodes.forEach(node => {
-      if (nodeTypeCounts.value.hasOwnProperty(node.nodeType)) {
-        nodeTypeCounts.value[node.nodeType]++
-      }
-    })
-    
-    // 创建或更新图
-    if (graph) {
-      console.log('Updating existing graph')
-      graph.clear()
-      graph.data({ nodes, edges })
-    } else {
-      const container = networkContainer.value
-      const width = container.offsetWidth
-      const height = container.offsetHeight
-      
-      console.log('Creating graph with size:', width, height)
-      console.log('Nodes:', nodes.length, 'Edges:', edges.length)
-      
-      // G6 5.x 使用Specification配置
-      const specification = {
-        data: { nodes, edges },
-        node: (model) => {
-          return {
-            id: model.id,
-            data: {
-              ...model.data,
-              type: 'circle',
-              keyShape: {
-                r: 20,
-                fill: model.data.fill || '#5B8FF9',
-                stroke: 'transparent'
-              },
-              labelShape: {
-                text: model.data.label || '',
-                position: 'bottom',
-                fill: '#333',
-                fontSize: 14,
-                maxWidth: '200%',
-                offsetY: 8
-              }
-            }
-          }
-        },
-        edge: (model) => {
-          return {
-            id: model.id,
-            source: model.source,
-            target: model.target,
-            data: {
-              type: 'line',
-              keyShape: {
-                stroke: '#848484',
-                lineWidth: 2,
-                endArrow: {
-                  type: 'vee',
-                  fill: '#848484'
-                }
-              },
-              labelShape: model.data?.label ? {
-                text: model.data.label,
-                fill: '#666',
-                fontSize: 12
-              } : undefined
-            }
-          }
-        },
-        layout: {
-          type: 'force',
-          animated: true,
-          preventOverlap: true,
-          nodeStrength: -50,
-          edgeStrength: 0.5,
-          linkDistance: 100
-        },
-        modes: {
-          default: [
-            'drag-node',        // ノードをドラッグ可能にする
-            'drag-canvas',      // キャンバス全体をドラッグ可能にする
-            'zoom-canvas',      // マウスホイールでズーム
-            'click-select'      // クリックで選択
-          ]
-        },
-        autoFit: 'view',
-        padding: 20
-      }
-      
-      // 创建Graph实例
-      graph = new G6.Graph({
-        container: container,
-        width,
-        height,
-        ...specification
-      })
-      
-      // 手动渲染
-      graph.render()
-      
-      console.log('Graph instance created:', graph)
-      console.log('Graph rendered')
-      
-      // 监听节点点击事件
-      graph.on('node:click', (evt) => {
-        const { itemId } = evt
-        const nodeData = allNodes.value.find(n => String(n.id) === String(itemId))
-        if (nodeData && nodeData.data.originalData) {
-          selectedNode.value = nodeData.data.originalData
-          drawerVisible.value = true
-        }
-        contextMenu.value.visible = false
-      })
-      
-      // 监听画布点击事件
-      graph.on('canvas:click', () => {
-        drawerVisible.value = false
-        contextMenu.value.visible = false
-      })
-      
-      // 监听节点右键事件
-      graph.on('node:contextmenu', (evt) => {
-        evt.preventDefault()
-        const { itemId, canvas } = evt
-        const nodeData = allNodes.value.find(n => String(n.id) === String(itemId))
-        
-        if (nodeData && nodeData.data.originalData) {
-          selectedNode.value = nodeData.data.originalData
-          nextTick(() => {
-            contextMenu.value = {
-              visible: true,
-              x: canvas.x,
-              y: canvas.y,
-              nodeId: itemId
-            }
-          })
-        }
-      })
-      
-      // 适应视图
-      setTimeout(() => {
-        graph.fitView({ padding: 20 })
-      }, 500)
-    }
-    
-    ElMessage.success(`图数据加载成功 (${nodes.length} 个节点, ${edges.length} 条边)`)
-  } catch (error) {
-    console.error('Load graph error:', error)
-    ElMessage.error('加载图数据失败: ' + (error.message || '未知错误'))
-  } finally {
-    loading.value = false
-  }
-}
-
-const fitView = () => {
-  if (graph) {
-    graph.fitView({ padding: 20, easing: 'ease-in-out', duration: 400 })
-  }
-}
-
-const showNodePath = () => {
-  contextMenu.value.visible = false
-  
-  if (!contextMenu.value.nodeId || !selectedNode.value) {
-    ElMessage.warning('请先选择一个节点')
-    return
-  }
-  
-  // 分析节点路径
-  analyzeNodePath(contextMenu.value.nodeId)
-  pathDialogVisible.value = true
-}
-
-const focusNode = () => {
-  contextMenu.value.visible = false
-  
-  if (!contextMenu.value.nodeId || !graph) return
-  
-  // G6 5.x: 使用focusItem聚焦节点
-  try {
-    graph.focusItem(contextMenu.value.nodeId, {
-      easing: 'ease-in-out',
-      duration: 400
-    })
-  } catch (e) {
-    console.warn('Focus node failed:', e)
-    // 如果focusItem不存在，尝试其他方法
-    ElMessage.info('聚焦功能在当前版本中不可用')
-  }
-}
-
-const showNodeDetails = () => {
-  contextMenu.value.visible = false
-  drawerVisible.value = true
-}
-
-const analyzeNodePath = (nodeId) => {
-  const node = allNodes.value.find(n => n.id === nodeId)
-  if (!node) return
-  
-  // 找出直接连接
-  const directConnections = []
-  const outgoingEdges = allEdges.value.filter(e => e.from === nodeId)
-  const incomingEdges = allEdges.value.filter(e => e.to === nodeId)
-  
-  outgoingEdges.forEach(edge => {
-    const targetNode = allNodes.value.find(n => n.id === edge.to)
-    if (targetNode) {
-      directConnections.push({
-        ...targetNode.data,
-        relationship: edge.label || 'CONNECTED_TO',
-        direction: 'outgoing'
-      })
-    }
-  })
-  
-  incomingEdges.forEach(edge => {
-    const sourceNode = allNodes.value.find(n => n.id === edge.from)
-    if (sourceNode) {
-      directConnections.push({
-        ...sourceNode.data,
-        relationship: edge.label || 'CONNECTED_FROM',
-        direction: 'incoming'
-      })
-    }
-  })
-  
-  // 找出所有路径（使用BFS，限制深度）
-  const allPaths = findAllPaths(nodeId, 3) // 最大深度3
-  
-  // 计算统计信息
-  const uniqueNodesSet = new Set()
-  allPaths.forEach(path => {
-    path.forEach(step => uniqueNodesSet.add(step.id))
-  })
-  
-  const maxDepth = allPaths.reduce((max, path) => Math.max(max, path.length), 0)
-  
-  nodePath.value = {
-    rootNode: node.data,
-    directConnections,
-    allPaths,
-    maxDepth,
-    uniqueNodes: uniqueNodesSet.size
-  }
-}
-
-const findAllPaths = (startNodeId, maxDepth) => {
-  const paths = []
-  const visited = new Set()
-  
-  const dfs = (currentId, currentPath, depth) => {
-    if (depth > maxDepth) return
-    
-    const currentNode = allNodes.value.find(n => n.id === currentId)
-    if (!currentNode) return
-    
-    visited.add(currentId)
-    
-    const outgoingEdges = allEdges.value.filter(e => e.from === currentId)
-    
-    if (outgoingEdges.length === 0 && currentPath.length > 0) {
-      // 到达叶子节点，保存路径
-      paths.push([...currentPath])
-    } else {
-      outgoingEdges.forEach(edge => {
-        if (!visited.has(edge.to)) {
-          const nextNode = allNodes.value.find(n => n.id === edge.to)
-          if (nextNode) {
-            const stepWithRelation = {
-              ...currentNode.data,
-              id: currentId,
-              relationshipToNext: edge.label || 'CONNECTED_TO'
-            }
-            
-            currentPath.push(stepWithRelation)
-            dfs(edge.to, currentPath, depth + 1)
-            currentPath.pop()
-          }
-        }
-      })
-    }
-    
-    visited.delete(currentId)
-  }
-  
-  dfs(startNodeId, [], 0)
-  
-  // 如果没有路径，至少返回起始节点
-  if (paths.length === 0) {
-    const startNode = allNodes.value.find(n => n.id === startNodeId)
-    if (startNode) {
-      paths.push([{ ...startNode.data, id: startNodeId }])
-    }
+  if (activeNodeTypes.value.size === 0) {
+    // 显示所有节点
+    cy.elements().removeClass('filtered')
   } else {
-    // 为每条路径添加最后一个节点
-    paths.forEach(path => {
-      if (path.length > 0) {
-        const lastStep = path[path.length - 1]
-        const lastEdge = allEdges.value.find(e => 
-          e.from === lastStep.id
-        )
-        if (lastEdge) {
-          const lastNode = allNodes.value.find(n => n.id === lastEdge.to)
-          if (lastNode) {
-            path.push({ ...lastNode.data, id: lastEdge.to })
-          }
-        }
+    // 过滤节点
+    cy.nodes().forEach(node => {
+      const nodeType = node.data('type')
+      if (activeNodeTypes.value.has(nodeType)) {
+        node.removeClass('filtered')
+      } else {
+        node.addClass('filtered')
+      }
+    })
+    
+    // 过滤边：只显示两端节点都可见的边
+    cy.edges().forEach(edge => {
+      const source = edge.source()
+      const target = edge.target()
+      if (source.hasClass('filtered') || target.hasClass('filtered')) {
+        edge.addClass('filtered')
+      } else {
+        edge.removeClass('filtered')
       }
     })
   }
-  
-  return paths
 }
 
-// 全局点击关闭右键菜单
-const handleGlobalClick = (event) => {
-  contextMenu.value.visible = false
-}
-
+// 生命周期
 onMounted(() => {
-  loadGraph()
-  // 延迟添加全局点击监听,避免与右键事件冲突
-  setTimeout(() => {
-    document.addEventListener('click', handleGlobalClick)
-  }, 100)
+  loadGraph(false) // 初次加载不显示成功消息
 })
 
-onBeforeUnmount(() => {
-  if (graph) {
-    graph.destroy()
+onUnmounted(() => {
+  if (cy) {
+    cy.destroy()
   }
-  // 清理全局事件监听
-  document.removeEventListener('click', handleGlobalClick)
 })
 </script>
 
 <style scoped>
 .graph-view {
-  position: fixed;
-  top: 60px; /* header高度，根据实际调整 */
-  right: 0;
-  bottom: 0;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: left;
-  transform: translateZ(0);
-  backface-visibility: hidden;
+  background: #f5f7fa;
+  overflow: hidden;
+}
+
+.toolbar {
+  padding: 16px;
+  background: transparent;
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .graph-container {
-  position: relative;
   flex: 1;
-  width: 100%;
-  height: 100%;
+  position: relative;
   overflow: hidden;
-  transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
-.graph-float-btns {
-  position: absolute;
-  top: 18px;
-  right: 220px;
-  z-index: 20;
-  display: flex;
-  gap: 8px;
-  background: white;
-  border-radius: 6px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-  padding: 6px 10px;
-  align-items: center;
-  will-change: transform;
-}
-
-.network {
-  position: absolute;
-  top: 0;
-  left: 0;
+.cy-container {
   width: 100%;
   height: 100%;
-  border: none;
-  border-radius: 0;
-  transform: translateZ(0);
-  backface-visibility: hidden;
+  background: #fafafa;
 }
 
 .legend {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  bottom: 20px;
+  right: 20px;
   background: white;
-  padding: 15px;
-  border-radius: 4px;
+  padding: 16px;
+  border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
   z-index: 10;
 }
 
 .legend h4 {
-  margin: 0 0 10px 0;
+  margin: 0 0 12px 0;
   font-size: 14px;
+  font-weight: 600;
+  color: #303133;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
-  font-size: 13px;
+  padding: 8px;
+  margin: 4px 0;
   cursor: pointer;
-  padding: 5px;
   border-radius: 4px;
   transition: all 0.3s;
-  user-select: none;
 }
 
 .legend-item:hover {
@@ -961,129 +723,160 @@ onBeforeUnmount(() => {
 }
 
 .legend-item.active {
-  background: #e3f2fd;
-  font-weight: 600;
+  background: #ecf5ff;
+  border-left: 3px solid #409eff;
 }
 
 .legend-item.inactive {
-  opacity: 0.3;
-}
-
-.legend-item .count {
-  margin-left: auto;
-  font-size: 12px;
-  color: #909399;
+  opacity: 0.4;
 }
 
 .legend-color {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 8px;
+}
+
+.count {
+  margin-left: auto;
+  color: #909399;
+  font-size: 12px;
 }
 
 .node-detail {
-  padding: 10px;
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
 }
 
-.detail-section {
-  margin-bottom: 20px;
+.detail-descriptions {
+  width: 100%;
 }
 
-.detail-section code {
-  font-size: 12px;
-  background: #f5f7fa;
-  padding: 2px 6px;
-  border-radius: 3px;
+.detail-value {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 300px;
+  padding: 4px;
+  line-height: 1.6;
+}
+
+/* 自定义滚动条样式 */
+.node-detail::-webkit-scrollbar,
+.detail-value::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.node-detail::-webkit-scrollbar-track,
+.detail-value::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.node-detail::-webkit-scrollbar-thumb,
+.detail-value::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.node-detail::-webkit-scrollbar-thumb:hover,
+.detail-value::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Element Plus Descriptions 单元格样式调整 */
+:deep(.el-descriptions__body) {
+  background-color: #fff;
 }
 
 :deep(.el-descriptions__label) {
-  font-weight: 600;
-  width: 100px;
+  width: 120px;
+  min-width: 120px;
+  max-width: 120px;
+  word-wrap: break-word;
+  vertical-align: top;
 }
 
 :deep(.el-descriptions__content) {
-  word-break: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
-.context-menu {
-  position: fixed;
-  background: white;
-  border: 1px solid #dcdfe6;
-  border-radius: 4px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-  z-index: 9999;
-  min-width: 200px;
-  padding: 5px 0;
+:deep(.el-descriptions-item__cell) {
+  padding: 12px 16px;
 }
 
-.context-menu-item {
+/* 移除节点详情中 descriptions 的边框 */
+:deep(.node-detail-drawer .el-descriptions) {
+  border: none !important;
+}
+
+/* 节点详情抽屉 header 高度统一为 60px */
+:deep(.node-detail-drawer.el-drawer .el-drawer__header) {
+  height: 60px;
+  margin-bottom: 0;
+  padding: 0 20px;
   display: flex;
   align-items: center;
-  padding: 10px 15px;
-  cursor: pointer;
-  transition: background 0.3s;
-  font-size: 14px;
+  border-bottom: 2px solid #333 !important;
+  border-top: none !important;
+  border-right: none !important;
 }
 
-.context-menu-item:hover {
-  background: #f5f7fa;
+:deep(.node-detail-drawer.el-drawer .el-drawer__title) {
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.context-menu-item .el-icon {
-  margin-right: 10px;
-  font-size: 16px;
+:deep(.node-detail-drawer.el-drawer .el-drawer__body) {
+  padding: 20px;
+  border-top: none !important;
 }
 
-.path-container {
-  padding: 10px;
+/* 移除 drawer 的上下右边框,只保留左边框 */
+:deep(.node-detail-drawer.el-drawer) {
+  border-top: none !important;
+  border-bottom: none !important;
+  border-right: none !important;
+  border-left: 2px solid var(--wireframe-border) !important;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15) !important;
+}
+</style>
+
+<style>
+/* 非 scoped 全局样式 - 最高优先级覆盖 wireframe.css */
+.node-detail-drawer.el-drawer {
+  border-top: none !important;
+  border-bottom: none !important;
+  border-right: none !important;
+  border-left: 2px solid var(--wireframe-border) !important;
 }
 
-.path-title {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
+.node-detail-drawer.el-drawer .el-drawer__header {
+  border-top: none !important;
+  border-right: none !important;
 }
 
-.path-flow {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  padding: 15px;
-  background: #f5f7fa;
-  border-radius: 4px;
+/* 右键菜单的节点高亮边框改为白色 */
+.cy-cxtmenu-spotlight {
+  stroke: white !important;
+  stroke-width: 3px !important;
+  fill: none !important;
 }
 
-.path-step {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.step-node {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
-.step-type {
-  font-size: 12px;
-  color: #909399;
-}
-
-.step-arrow {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  color: #409eff;
-}
-
-.step-relation {
-  font-size: 11px;
-  color: #67c23a;
-  font-weight: 600;
+/* 针对 SVG circle 元素 */
+#cy-cxtmenu-spotlight circle,
+.cy-cxtmenu-spotlight circle {
+  stroke: white !important;
+  stroke-width: 3px !important;
+  fill: none !important;
 }
 </style>

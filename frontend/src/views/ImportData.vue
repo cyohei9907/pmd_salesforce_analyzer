@@ -156,7 +156,8 @@ const fileForm = ref({
 })
 
 const useDefaultPath = () => {
-  directoryForm.value.path = 'D:\\workspace\\project018_pmd\\pmd_analyzer\\output\\ast'
+  // 使用相对路径，相对于项目根目录
+  directoryForm.value.path = 'output/ast'
 }
 
 const clearForm = () => {

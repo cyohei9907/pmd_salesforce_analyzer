@@ -43,3 +43,7 @@ $RECYCLE.BIN/
 
 # Local environment variables
 .env
+
+backend/ast_api/__pycache__/
+backend/apex_graph/__pycache__/
+__pycache__

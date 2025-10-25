@@ -73,10 +73,23 @@
 - Vite 5.0.0
 - Vue Router 4.2.4
 - Axios (HTTP 客户端)
+- pnpm 8.7+ (包管理器 - 快速、节省磁盘空间)
+
+> **为什么使用 pnpm？**
+> - ⚡ 安装速度比 npm/yarn 快 2-3 倍
+> - 💾 节省磁盘空间（使用硬链接共享依赖）
+> - 🔒 更严格的依赖管理（避免幽灵依赖）
+> - 📦 支持 monorepo 工作区
 
 ---
 
 ## 🚀 快速启动
+
+> **💡 重要提示**: 
+> - Python依赖文件位于: `backend/requirements.txt`
+> - 前端依赖文件位于: `frontend/package.json`
+> - 前端使用 **pnpm** 作为包管理器
+> - 安装时需进入对应目录！
 
 ### 方式一: 一键安装 + 启动 (推荐)
 
@@ -102,24 +115,60 @@ chmod +x quick_start.sh
 
 ### 方式二: 手动启动
 
-#### 1. 环境检查
+#### 1. 安装后端依赖
+```bash
+# 进入backend目录
+cd backend
+
+# 创建虚拟环境（推荐）
+python -m venv venv
+
+# 激活虚拟环境
+# Windows:
+venv\Scripts\activate
+# Linux/Mac:
+source venv/bin/activate
+
+# 安装依赖
+pip install -r requirements.txt
+
+# 返回项目根目录
+cd ..
+```
+
+#### 3. 安装前端依赖
+```bash
+# 进入frontend目录
+cd frontend
+
+# 安装依赖（使用 pnpm）
+pnpm install
+
+# 如果未安装 pnpm，先安装：
+# npm install -g pnpm
+
+# 返回项目根目录
+cd ..
+```
+
+#### 4. 环境检查
 ```bash
 python environment_check.py
 ```
 
-#### 2. 启动后端服务
+#### 5. 启动后端服务
 ```bash
 cd backend
 python manage.py runserver
 ```
 
-#### 3. 启动前端服务
+#### 5. 启动前端服务（新终端窗口）
 ```bash
 cd frontend
-npm run dev
+pnpm run dev
 ```
 
-#### 4. 访问应用
+#### 6. 访问应用
 - 前端界面: http://localhost:5173
 - 后端API: http://localhost:8000/api/
 
@@ -205,16 +254,41 @@ else:
 #### 本地存储 (graphdata/)
 ```
 graphdata/
-├── entities/              # 节点数据 (JSON)
-│   ├── ApexClass_PropertyController_20251024210000.json
-│   └── ApexMethod_getPagedPropertyList_20251024210001.json
-├── relations/             # 关系数据 (JSON)
-│   └── PropertyController__HAS_METHOD__getPagedPropertyList.json
-├── graphs/                # 图对象 (pickle)
+├── graph_data.json        # 统一数据文件（包含所有实体和关系）
+├── graphs/                # NetworkX 图对象缓存 (pickle)
 │   └── main_graph.gpickle
 └── exports/               # 导出文件
     ├── graph_export_20251024.json
     └── graph_export_20251024.gexf (Gephi格式)
+```
+
+**graph_data.json 结构**:
+```json
+{
+  "metadata": {
+    "timestamp": "2025-10-25T00:04:27.377518",
+    "total_entities": 67,
+    "total_relations": 59
+  },
+  "entities": {
+    "class:PropertyController": {
+      "node_id": "class:PropertyController",
+      "attributes": { "type": "ApexClass", "name": "PropertyController", ... }
+    },
+    "method:PropertyController.getPagedPropertyList": {
+      "node_id": "method:PropertyController.getPagedPropertyList",
+      "attributes": { "type": "ApexMethod", "name": "getPagedPropertyList", ... }
+    }
+  },
+  "relations": [
+    {
+      "from": "class:PropertyController",
+      "to": "method:PropertyController.getPagedPropertyList",
+      "type": "HAS_METHOD",
+      "properties": { "created_at": "2025-10-24T21:00:01" }
+    }
+  ]
+}
 ```
 
 ---
@@ -234,7 +308,7 @@ graphdata/
 
 **使用方法**:
 ```bash
-# 完整环境检查
+# 完整环境检查（在项目根目录运行）
 python environment_check.py
 
 # 快速检查
@@ -242,6 +316,9 @@ python check_environment.py
 
 # PMD专项检查
 python pmd_check.py
+
+# 注意: 在检查前，请先安装依赖
+# cd backend && pip install -r requirements.txt
 ```
 
 ### 2. AST 解析
@@ -675,12 +752,48 @@ java -version
 
 **解决方案**:
 ```bash
-# 安装 NetworkX
+# 方法1: 进入backend目录安装（推荐）
+cd backend
+pip install -r requirements.txt
+
+# 方法2: 直接安装 NetworkX
 pip install networkx==3.2.1
 
-# 或重新运行环境安装脚本
+# 方法3: 重新运行环境安装脚本
 setup_environment.bat  # Windows
 ./setup_environment.sh  # Linux/Mac
+
+# 注意: requirements.txt 在 backend/ 目录下
+```
+
+### 问题 2.1: pip 安装时编码错误
+
+**错误信息**:
+```
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x90
+```
+
+**原因**: Windows 系统默认使用 cp1252 编码，无法读取某些字符
+
+**解决方案**:
+```bash
+# 方法1: 使用 UTF-8 编码安装（推荐）
+cd backend
+python -m pip install -r requirements.txt --no-cache-dir
+
+# 方法2: 设置环境变量后安装
+# Windows PowerShell:
+$env:PYTHONUTF8=1
+pip install -r requirements.txt
+
+# 方法3: 逐个安装依赖
+pip install Django==4.2.7
+pip install djangorestframework==3.14.0
+pip install django-cors-headers==4.3.0
+pip install neo4j==5.14.1
+pip install networkx==3.2.1
+pip install lxml==4.9.3
+pip install python-dotenv==1.0.0
 ```
 
 ### 问题 3: 端口被占用
@@ -720,25 +833,74 @@ icacls graphdata /grant Users:F /t
 chmod -R 755 graphdata/
 ```
 
-### 问题 5: 前端依赖安装失败
+### 问题 5: pnpm 命令未找到
 
 **错误信息**:
 ```
-npm ERR! Failed to install dependencies
+pnpm : 无法将"pnpm"项识别为 cmdlet、函数、脚本文件或可运行程序的名称
+```
+
+**解决方案**:
+```bash
+# 方法1: 使用 npm 全局安装 pnpm（推荐）
+npm install -g pnpm
+
+# 方法2: 使用 PowerShell（Windows）
+iwr https://get.pnpm.io/install.ps1 -useb | iex
+
+# 方法3: 验证安装
+pnpm --version
+
+# 如果依然无法使用 pnpm，可以暂时使用 npm 作为替代
+cd frontend
+npm install
+npm run dev
+```
+
+### 问题 5.1: 从 npm 迁移到 pnpm
+
+**场景**: 项目之前使用 npm，现在想切换到 pnpm
+
+**解决方案**:
+```bash
+cd frontend
+
+# 1. 删除旧的 npm 文件
+Remove-Item -Force package-lock.json  # Windows
+rm -f package-lock.json  # Linux/Mac
+Remove-Item -Recurse -Force node_modules  # Windows
+rm -rf node_modules  # Linux/Mac
+
+# 2. 使用 pnpm 重新安装
+pnpm install
+
+# 3. 验证安装成功
+pnpm run dev
+```
+
+### 问题 6: 前端依赖安装失败
+
+**错误信息**:
+```
+pnpm ERR! Failed to install dependencies
 ```
 
 **解决方案**:
 ```bash
 cd frontend
 
-# 清理 npm 缓存
-npm cache clean --force
+# 方法1: 清理 pnpm 存储并重新安装
+pnpm store prune
+rm -rf node_modules pnpm-lock.yaml  # Linux/Mac
+Remove-Item -Recurse -Force node_modules, pnpm-lock.yaml  # Windows
+pnpm install
 
-# 删除 node_modules 和 package-lock.json
-rm -rf node_modules package-lock.json  # Linux/Mac
-Remove-Item -Recurse -Force node_modules, package-lock.json  # Windows
+# 方法2: 使用 --force 强制重新安装
+pnpm install --force
 
-# 重新安装
+# 方法3: 如果未安装 pnpm，先安装
+npm install -g pnpm
+# 或使用 npm 安装（备用方案）
 npm install
 ```
 
@@ -757,7 +919,7 @@ pmd_salesforce_analyzer/
 │
 ├── backend/                     # Django 后端
 │   ├── manage.py               # Django 管理脚本
-│   ├── requirements.txt        # Python 依赖
+│   ├── requirements.txt        # ⭐ Python 依赖（重要：在backend目录下）
 │   ├── apex_graph/             # Django 项目配置
 │   └── ast_api/                # AST API 应用
 │       ├── views.py            # API 视图
@@ -777,11 +939,13 @@ pmd_salesforce_analyzer/
 │   │   │   ├── ImportData.vue  # 数据导入
 │   │   │   └── Statistics.vue  # 统计信息
 │   │   └── api/                # API 客户端
-│   └── package.json            # Node.js 依赖
+│   ├── package.json            # Node.js 依赖
+│   └── pnpm-lock.yaml          # pnpm 锁定文件
 │
 ├── graphdata/                   # 本地图数据库存储
-│   ├── entities/               # 实体文件 (JSON)
-│   ├── relations/              # 关系文件 (JSON)
+│   ├── graph_data.json          # 统一数据文件（实体+关系）
+│   ├── graphs/                  # NetworkX 图缓存
+│   └── exports/                 # 导出文件
 │   ├── graphs/                 # 图对象 (pickle)
 │   └── exports/                # 导出文件 (JSON/GEXF)
 │

@@ -1,0 +1,638 @@
+{
+  "metadata": {
+    "timestamp": "2025-10-25T11:10:01.406879",
+    "total_relations": 63
+  },
+  "relations": [
+    {
+      "from": "class:FileUtilitiesTest",
+      "to": "method:FileUtilitiesTest.createFileFailsWhenIncorrectBase64Data",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:09:59.491883"
+      }
+    },
+    {
+      "from": "class:FileUtilitiesTest",
+      "to": "method:FileUtilitiesTest.createFileFailsWhenIncorrectFilename",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:09:59.536372"
+      }
+    },
+    {
+      "from": "class:FileUtilitiesTest",
+      "to": "method:FileUtilitiesTest.createFileFailsWhenIncorrectRecordId",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:09:59.471566"
+      }
+    },
+    {
+      "from": "class:FileUtilitiesTest",
+      "to": "method:FileUtilitiesTest.createFileSucceedsWhenCorrectInput",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:09:59.428605"
+      }
+    },
+    {
+      "from": "class:FileUtilities",
+      "to": "method:FileUtilities.createFile",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:10:01.278614"
+      }
+    },
+    {
+      "from": "class:GeocodingServiceTest",
+      "to": "method:GeocodingServiceTest.blankAddress",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:09:59.773248"
+      }
+    },
+    {
+      "from": "class:GeocodingServiceTest",
+      "to": "method:GeocodingServiceTest.errorResponse",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:09:59.792769"
+      }
+    },
+    {
+      "from": "class:GeocodingServiceTest",
+      "to": "method:GeocodingServiceTest.respond",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:09:59.735132"
+      }
+    },
+    {
+      "from": "class:GeocodingServiceTest",
+      "to": "method:GeocodingServiceTest.successResponse",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:09:59.753712"
+      }
+    },
+    {
+      "from": "class:GeocodingService",
+      "to": "method:GeocodingService.geocodeAddresses",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:09:59.831849"
+      }
+    },
+    {
+      "from": "class:PagedResult",
+      "to": "method:PagedResult.__sfdc_pageNumber",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:09:59.929008"
+      }
+    },
+    {
+      "from": "class:PagedResult",
+      "to": "method:PagedResult.__sfdc_pageSize",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:09:59.892446"
+      }
+    },
+    {
+      "from": "class:PagedResult",
+      "to": "method:PagedResult.__sfdc_records",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:10:00.026186"
+      }
+    },
+    {
+      "from": "class:PagedResult",
+      "to": "method:PagedResult.__sfdc_totalItemCount",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:09:59.971979"
+      }
+    },
+    {
+      "from": "class:PropertyController",
+      "to": "method:PropertyController.getPagedPropertyList",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:10:00.087346"
+      }
+    },
+    {
+      "from": "class:PropertyController",
+      "to": "method:PropertyController.getPictures",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:10:00.170070"
+      }
+    },
+    {
+      "from": "class:SampleDataController",
+      "to": "method:SampleDataController.importSampleData",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:10:00.283874"
+      }
+    },
+    {
+      "from": "class:SampleDataController",
+      "to": "method:SampleDataController.insertBrokers",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:10:00.530909"
+      }
+    },
+    {
+      "from": "class:SampleDataController",
+      "to": "method:SampleDataController.insertContacts",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:10:00.686593"
+      }
+    },
+    {
+      "from": "class:SampleDataController",
+      "to": "method:SampleDataController.insertProperties",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:10:00.609039"
+      }
+    },
+    {
+      "from": "class:SampleDataController",
+      "to": "method:SampleDataController.randomizeDateListed",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:10:00.745197"
+      }
+    },
+    {
+      "from": "class:TestPropertyController",
+      "to": "method:TestPropertyController.createProperties",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:10:00.787741"
+      }
+    },
+    {
+      "from": "class:TestPropertyController",
+      "to": "method:TestPropertyController.testGetPagedPropertyList",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:10:00.827785"
+      }
+    },
+    {
+      "from": "class:TestPropertyController",
+      "to": "method:TestPropertyController.testGetPicturesNoResults",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:10:00.932755"
+      }
+    },
+    {
+      "from": "class:TestPropertyController",
+      "to": "method:TestPropertyController.testGetPicturesWithResults",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:10:00.972306"
+      }
+    },
+    {
+      "from": "method:FileUtilities.createFile",
+      "to": "dml:FileUtilities.createFile.INSERT.0",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "INSERT",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:01.346258"
+      }
+    },
+    {
+      "from": "method:FileUtilities.createFile",
+      "to": "dml:FileUtilities.createFile.INSERT.1",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "INSERT",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:01.375289"
+      }
+    },
+    {
+      "from": "method:FileUtilities.createFile",
+      "to": "soql:FileUtilities.createFile.0",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT ContentDocumentId                 FROM ContentVersion                 WHERE Id = :contentVersion.Id                 WITH USER_MODE",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:01.313174"
+      }
+    },
+    {
+      "from": "method:FileUtilitiesTest.createFileFailsWhenIncorrectBase64Data",
+      "to": "dml:FileUtilitiesTest.createFileFailsWhenIncorrectBase64Data.INSERT.0",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "INSERT",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:09:59.510903"
+      }
+    },
+    {
+      "from": "method:FileUtilitiesTest.createFileFailsWhenIncorrectFilename",
+      "to": "dml:FileUtilitiesTest.createFileFailsWhenIncorrectFilename.INSERT.0",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "INSERT",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:09:59.561861"
+      }
+    },
+    {
+      "from": "method:FileUtilitiesTest.createFileSucceedsWhenCorrectInput",
+      "to": "dml:FileUtilitiesTest.createFileSucceedsWhenCorrectInput.INSERT.0",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "INSERT",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:09:59.452523"
+      }
+    },
+    {
+      "from": "method:PropertyController.getPagedPropertyList",
+      "to": "soql:PropertyController.getPagedPropertyList.0",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT COUNT()             FROM Property__c             WHERE                 (Name LIKE :searchPattern                 OR City__c LIKE :searchPattern                 OR Tags__c LIKE :searchPattern)                 AND Price__c &lt;= :safeMaxPrice                 AND Beds__c >= :safeMinBedrooms                 AND Baths__c >= :safeMinBathrooms",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:00.112880"
+      }
+    },
+    {
+      "from": "method:PropertyController.getPagedPropertyList",
+      "to": "soql:PropertyController.getPagedPropertyList.1",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT                 Id,                 Name,                 Address__c,                 City__c,                 State__c,                 Description__c,                 Price__c,                 Baths__c,                 Beds__c,                 Thumbnail__c,                 Location__Latitude__s,                 Location__Longitude__s             FROM Property__c             WHERE                 (Name LIKE :searchPattern                 OR City__c LIKE :searchPattern                 OR Tags__c LIKE :searchPattern)                 AND Price__c &lt;= :safeMaxPrice                 AND Beds__c >= :safeMinBedrooms                 AND Baths__c >= :safeMinBathrooms             WITH USER_MODE             ORDER BY Price__c             LIMIT :safePageSize             OFFSET :offset",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:00.142013"
+      }
+    },
+    {
+      "from": "method:PropertyController.getPictures",
+      "to": "soql:PropertyController.getPictures.0",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT Id, LinkedEntityId, ContentDocument.Title             FROM ContentDocumentLink             WHERE                 LinkedEntityId = :propertyId                 AND ContentDocument.FileType IN ('PNG', 'JPG', 'GIF')             WITH USER_MODE",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:00.195993"
+      }
+    },
+    {
+      "from": "method:PropertyController.getPictures",
+      "to": "soql:PropertyController.getPictures.1",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT Id, Title             FROM ContentVersion             WHERE ContentDocumentId IN :contentIds AND IsLatest = TRUE             WITH USER_MODE             ORDER BY CreatedDate",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:00.225575"
+      }
+    },
+    {
+      "from": "method:SampleDataController.importSampleData",
+      "to": "dml:SampleDataController.importSampleData.DELETE.0",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "DELETE",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:00.432787"
+      }
+    },
+    {
+      "from": "method:SampleDataController.importSampleData",
+      "to": "dml:SampleDataController.importSampleData.DELETE.1",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "DELETE",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:00.457954"
+      }
+    },
+    {
+      "from": "method:SampleDataController.importSampleData",
+      "to": "dml:SampleDataController.importSampleData.DELETE.2",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "DELETE",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:00.480835"
+      }
+    },
+    {
+      "from": "method:SampleDataController.importSampleData",
+      "to": "dml:SampleDataController.importSampleData.DELETE.3",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "DELETE",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:00.506368"
+      }
+    },
+    {
+      "from": "method:SampleDataController.importSampleData",
+      "to": "soql:SampleDataController.importSampleData.0",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT Id FROM Case",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:00.310393"
+      }
+    },
+    {
+      "from": "method:SampleDataController.importSampleData",
+      "to": "soql:SampleDataController.importSampleData.1",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT Id FROM Property__c",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:00.341590"
+      }
+    },
+    {
+      "from": "method:SampleDataController.importSampleData",
+      "to": "soql:SampleDataController.importSampleData.2",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT Id FROM Broker__c",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:00.372347"
+      }
+    },
+    {
+      "from": "method:SampleDataController.importSampleData",
+      "to": "soql:SampleDataController.importSampleData.3",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT Id FROM Contact",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:00.404559"
+      }
+    },
+    {
+      "from": "method:SampleDataController.insertBrokers",
+      "to": "dml:SampleDataController.insertBrokers.INSERT.0",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "INSERT",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:00.584501"
+      }
+    },
+    {
+      "from": "method:SampleDataController.insertBrokers",
+      "to": "soql:SampleDataController.insertBrokers.0",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_brokers'",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:00.557439"
+      }
+    },
+    {
+      "from": "method:SampleDataController.insertContacts",
+      "to": "dml:SampleDataController.insertContacts.INSERT.0",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "INSERT",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:00.726179"
+      }
+    },
+    {
+      "from": "method:SampleDataController.insertContacts",
+      "to": "soql:SampleDataController.insertContacts.0",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_contacts'",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:00.707608"
+      }
+    },
+    {
+      "from": "method:SampleDataController.insertProperties",
+      "to": "dml:SampleDataController.insertProperties.INSERT.0",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "INSERT",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:00.659984"
+      }
+    },
+    {
+      "from": "method:SampleDataController.insertProperties",
+      "to": "soql:SampleDataController.insertProperties.0",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_properties'",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:00.632591"
+      }
+    },
+    {
+      "from": "method:TestPropertyController.createProperties",
+      "to": "dml:TestPropertyController.createProperties.INSERT.0",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "INSERT",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:00.807753"
+      }
+    },
+    {
+      "from": "method:TestPropertyController.testGetPagedPropertyList",
+      "to": "dml:TestPropertyController.testGetPagedPropertyList.INSERT.0",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "INSERT",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:00.890188"
+      }
+    },
+    {
+      "from": "method:TestPropertyController.testGetPagedPropertyList",
+      "to": "dml:TestPropertyController.testGetPagedPropertyList.INSERT.1",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "INSERT",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:00.911707"
+      }
+    },
+    {
+      "from": "method:TestPropertyController.testGetPagedPropertyList",
+      "to": "soql:TestPropertyController.testGetPagedPropertyList.0",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT Name, Id             FROM Profile             WHERE                 UserType = 'Standard'                 AND PermissionsPrivacyDataAccess = FALSE                 AND PermissionsSubmitMacrosAllowed = TRUE                 AND PermissionsMassInlineEdit = TRUE             LIMIT 1",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:00.847307"
+      }
+    },
+    {
+      "from": "method:TestPropertyController.testGetPagedPropertyList",
+      "to": "soql:TestPropertyController.testGetPagedPropertyList.1",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT Id             FROM PermissionSet             WHERE Name = 'dreamhouse'",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:00.868666"
+      }
+    },
+    {
+      "from": "method:TestPropertyController.testGetPicturesNoResults",
+      "to": "dml:TestPropertyController.testGetPicturesNoResults.INSERT.0",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "INSERT",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:00.952780"
+      }
+    },
+    {
+      "from": "method:TestPropertyController.testGetPicturesWithResults",
+      "to": "dml:TestPropertyController.testGetPicturesWithResults.INSERT.0",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "INSERT",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:01.014003"
+      }
+    },
+    {
+      "from": "method:TestPropertyController.testGetPicturesWithResults",
+      "to": "dml:TestPropertyController.testGetPicturesWithResults.INSERT.1",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "INSERT",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:01.041570"
+      }
+    },
+    {
+      "from": "method:TestPropertyController.testGetPicturesWithResults",
+      "to": "dml:TestPropertyController.testGetPicturesWithResults.INSERT.2",
+      "type": "CONTAINS_DML",
+      "properties": {
+        "operationType": "INSERT",
+        "type": "CONTAINS_DML",
+        "created_at": "2025-10-25T11:10:01.068423"
+      }
+    },
+    {
+      "from": "method:TestPropertyController.testGetPicturesWithResults",
+      "to": "soql:TestPropertyController.testGetPicturesWithResults.0",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT Id, Title, LatestPublishedVersionId             FROM ContentDocument             LIMIT 1",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:00.991458"
+      }
+    },
+    {
+      "from": "class:TestSampleDataController",
+      "to": "method:TestSampleDataController.importSampleData",
+      "type": "HAS_METHOD",
+      "properties": {
+        "description": "Class contains method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-25T11:10:01.131580"
+      }
+    },
+    {
+      "from": "method:TestSampleDataController.importSampleData",
+      "to": "soql:TestSampleDataController.importSampleData.0",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT COUNT() FROM Property__c",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:01.162623"
+      }
+    },
+    {
+      "from": "method:TestSampleDataController.importSampleData",
+      "to": "soql:TestSampleDataController.importSampleData.1",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT COUNT() FROM Broker__c",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:01.194378"
+      }
+    },
+    {
+      "from": "method:TestSampleDataController.importSampleData",
+      "to": "soql:TestSampleDataController.importSampleData.2",
+      "type": "CONTAINS_SOQL",
+      "properties": {
+        "query": "SELECT COUNT() FROM Contact",
+        "type": "CONTAINS_SOQL",
+        "created_at": "2025-10-25T11:10:01.220419"
+      }
+    }
+  ]
+}

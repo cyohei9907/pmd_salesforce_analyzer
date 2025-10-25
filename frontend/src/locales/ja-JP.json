@@ -37,6 +37,8 @@
     "dmlOperation": "DML操作",
     "clearFilter": "フィルターをクリア",
     "nodeDetails": "ノード詳細",
+    "nodeType": "ノードタイプ",
+    "nodeName": "ノード名",
     "type": "タイプ",
     "className": "クラス名",
     "simpleName": "簡易名",
@@ -61,6 +63,7 @@
     "withoutSharing": "共有なし",
     "static": "静的",
     "constructor": "コンストラクタ",
+    "viewDetails": "詳細を表示",
     "contextMenu": {
       "showPath": "パス内の全ノードを表示",
       "focus": "このノードにフォーカス",
@@ -98,8 +101,8 @@
     "filePath": "ファイルパス",
     "directoryPath": "ディレクトリパス",
     "fileName": "ファイル名",
-    "selectFile": "ファイルを選択",
-    "selectDirectory": "ディレクトリを選択",
+    "selectFile": "ファイルパスを入力（相対パスをサポート、例：output/ast/Example_ast.txt）",
+    "selectDirectory": "ディレクトリパスを入力（相対パスをサポート、例：output/ast）",
     "startImport": "インポート開始",
     "importing": "インポート中...",
     "importSuccess": "インポート成功",
@@ -112,7 +115,8 @@
     "tip1": "PMDが生成したApex AST XMLファイルのインポートをサポート",
     "tip2": "単一ファイルまたはディレクトリ全体を選択して一括インポート可能",
     "tip3": "インポートされたデータはNeo4jグラフデータベースに保存されます",
-    "tip4": "インポート後、グラフ可視化ページで結果を表示できます"
+    "tip4": "インポート後、グラフ可視化ページで結果を表示できます",
+    "tip5": "パスは相対パス（プロジェクトルートからの）と絶対パスの両方をサポート"
   },
   "stats": {
     "title": "統計情報",

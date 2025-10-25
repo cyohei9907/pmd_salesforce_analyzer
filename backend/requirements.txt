@@ -1,14 +1,14 @@
-# Django后端依赖
+# Django backend dependencies
 Django==4.2.7
 djangorestframework==3.14.0
 django-cors-headers==4.3.0
 
-# 图数据库
+# Graph database
 neo4j==5.14.1
 networkx==3.2.1
 
-# XML解析
+# XML parser
 lxml==4.9.3
 
-# 工具
+# Utilities
 python-dotenv==1.0.0

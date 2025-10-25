@@ -72,6 +72,8 @@ DATABASES = {
 
 
 # Neo4j Configuration
+# 默认禁用 Neo4j，使用本地图数据库
+USE_NEO4J = os.getenv('USE_NEO4J', 'false').lower() == 'true'
 NEO4J_URI = os.getenv('NEO4J_URI', 'bolt://localhost:7687')
 NEO4J_USER = os.getenv('NEO4J_USER', 'neo4j')
 NEO4J_PASSWORD = os.getenv('NEO4J_PASSWORD', 'password')

@@ -4,6 +4,7 @@
 """
 import logging
 from typing import Dict, Any, Optional
+from django.conf import settings
 
 logger = logging.getLogger(__name__)
 
@@ -21,15 +22,21 @@ class UnifiedGraphService:
     
     def _init_services(self):
         """初始化服务"""
-        # 尝试初始化 Neo4j
-        try:
-            from .neo4j_service import neo4j_service
-            if neo4j_service.driver is not None:
-                self.neo4j_service = neo4j_service
-                self.use_neo4j = True
-                logger.info("Neo4j service initialized successfully")
-        except Exception as e:
-            logger.warning(f"Neo4j service not available: {e}")
+        # 检查是否启用 Neo4j
+        use_neo4j_enabled = getattr(settings, 'USE_NEO4J', False)
+        
+        # 尝试初始化 Neo4j（仅当配置启用时）
+        if use_neo4j_enabled:
+            try:
+                from .neo4j_service import neo4j_service
+                if neo4j_service.driver is not None:
+                    self.neo4j_service = neo4j_service
+                    self.use_neo4j = True
+                    logger.info("Neo4j service initialized successfully")
+            except Exception as e:
+                logger.warning(f"Neo4j service not available: {e}")
+        else:
+            logger.info("Neo4j disabled in settings (USE_NEO4J=False)")
         
         # 初始化本地图服务（始终可用）
         try:

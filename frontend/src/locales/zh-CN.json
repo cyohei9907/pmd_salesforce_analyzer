@@ -37,6 +37,8 @@
     "dmlOperation": "DML操作",
     "clearFilter": "清除过滤",
     "nodeDetails": "节点详情",
+    "nodeType": "节点类型",
+    "nodeName": "节点名称",
     "type": "类型",
     "className": "类名",
     "simpleName": "简单名称",
@@ -61,6 +63,7 @@
     "withoutSharing": "without sharing",
     "static": "静态",
     "constructor": "构造函数",
+    "viewDetails": "查看详情",
     "contextMenu": {
       "showPath": "展示当前链路所有节点",
       "focus": "聚焦此节点",
@@ -98,8 +101,8 @@
     "filePath": "文件路径",
     "directoryPath": "目录路径",
     "fileName": "文件名",
-    "selectFile": "选择文件",
-    "selectDirectory": "选择目录",
+    "selectFile": "输入文件路径（支持相对路径，如 output/ast/Example_ast.txt）",
+    "selectDirectory": "输入目录路径（支持相对路径，如 output/ast）",
     "startImport": "开始导入",
     "importing": "导入中...",
     "importSuccess": "导入成功",
@@ -112,7 +115,8 @@
     "tip1": "支持导入 PMD 生成的 Apex AST XML 文件",
     "tip2": "可以选择单个文件或整个目录进行批量导入",
     "tip3": "导入的数据将存储在 Neo4j 图数据库中",
-    "tip4": "导入后可以在图可视化页面查看结果"
+    "tip4": "导入后可以在图可视化页面查看结果",
+    "tip5": "路径支持相对路径（相对于项目根目录）和绝对路径"
   },
   "stats": {
     "title": "统计信息",
