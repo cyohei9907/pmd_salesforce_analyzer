@@ -44,6 +44,7 @@ Thumbs.db
 
 # Project specific
 output/
+!output/ast/
 graphdata/exports/
 graphdata/graphs/
 *.md

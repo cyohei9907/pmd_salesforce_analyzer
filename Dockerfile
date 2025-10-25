@@ -43,6 +43,9 @@ RUN mkdir -p /app/project \
              /var/log/supervisor && \
     chmod -R 755 /app/output /app/graphdata /app/project
 
+# Copy sample AST files for testing
+COPY output/ast/ /app/output/ast/
+
 # Copy Nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 
