@@ -12,3 +12,6 @@ lxml==4.9.3
 
 # Utilities
 python-dotenv==1.0.0
+
+# Production server
+gunicorn==21.2.0

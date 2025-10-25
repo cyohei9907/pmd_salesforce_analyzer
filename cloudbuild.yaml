@@ -1,0 +1,79 @@
+steps:
+  # Build frontend
+  - name: 'node:18'
+    entrypoint: 'npm'
+    args: ['install', '--prefix', 'frontend']
+    id: 'install-frontend-deps'
+
+  - name: 'node:18'
+    entrypoint: 'npm'
+    args: ['run', 'build', '--prefix', 'frontend']
+    id: 'build-frontend'
+    waitFor: ['install-frontend-deps']
+
+  # Build backend Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/pmd-salesforce-analyzer:$COMMIT_SHA'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/pmd-salesforce-analyzer:latest'
+      - '-f'
+      - 'Dockerfile'
+      - '.'
+    id: 'build-docker-image'
+    waitFor: ['build-frontend']
+
+  # Push Docker image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'gcr.io/$PROJECT_ID/pmd-salesforce-analyzer:$COMMIT_SHA'
+    id: 'push-docker-image'
+    waitFor: ['build-docker-image']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'gcr.io/$PROJECT_ID/pmd-salesforce-analyzer:latest'
+    waitFor: ['build-docker-image']
+
+  # Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'pmd-salesforce-analyzer'
+      - '--image=gcr.io/$PROJECT_ID/pmd-salesforce-analyzer:$COMMIT_SHA'
+      - '--region=asia-northeast1'
+      - '--platform=managed'
+      - '--memory=2Gi'
+      - '--cpu=2'
+      - '--timeout=300'
+      - '--max-instances=10'
+      - '--min-instances=0'
+      - '--port=8000'
+      - '--allow-unauthenticated'
+      - '--set-env-vars=PYTHONUNBUFFERED=1,DEBUG=False'
+      - '--add-volume=name=project-data,type=cloud-storage,bucket=${_PROJECT_BUCKET}'
+      - '--add-volume-mount=volume=project-data,mount-path=/app/project'
+    id: 'deploy-cloud-run'
+    waitFor: ['push-docker-image']
+
+# Store images in Container Registry
+images:
+  - 'gcr.io/$PROJECT_ID/pmd-salesforce-analyzer:$COMMIT_SHA'
+  - 'gcr.io/$PROJECT_ID/pmd-salesforce-analyzer:latest'
+
+# Build options
+options:
+  machineType: 'N1_HIGHCPU_8'
+  logging: CLOUD_LOGGING_ONLY
+
+# Substitutions for variables
+substitutions:
+  _PROJECT_BUCKET: 'pmd-salesforce-analyzer-project-data'
+
+timeout: '1800s'
