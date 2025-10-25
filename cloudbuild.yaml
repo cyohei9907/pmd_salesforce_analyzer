@@ -55,7 +55,7 @@ steps:
       - '--max-instances=5'
       - '--min-instances=0'
       - '--allow-unauthenticated'
-      - '--set-env-vars=PYTHONUNBUFFERED=1,DEBUG=False,PORT=8080'
+      - '--set-env-vars=PYTHONUNBUFFERED=1,DEBUG=False,SECRET_KEY=zn+p_3&a&!(x#b+5k607j+owxyi=(_l6-5(pmvcx^w)aqnqz#q'
       - '--port=8080'
       - '--no-cpu-throttling'
       - '--cpu-boost'
@@ -76,6 +76,6 @@ options:
 
 # Substitutions for variables
 substitutions:
-  _PROJECT_BUCKET: 'pmd-salesforce-analyzer-project-data'
+  _PROJECT_BUCKET: 'pm-salesforce-analyzer-storage'
 
 timeout: '1800s'
