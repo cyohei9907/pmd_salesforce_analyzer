@@ -75,9 +75,10 @@
                 :title="gitResult.success ? '处理成功' : '处理失败'"
                 :type="gitResult.success ? 'success' : 'error'"
                 :closable="false"
+                class="custom-alert"
                 style="margin-top: 20px"
               >
-                <div v-if="gitResult.success">
+                <div v-if="gitResult.success" class="alert-content">
                   <h4>克隆结果:</h4>
                   <p>仓库: {{ gitResult.clone?.repo_name }}</p>
                   
@@ -92,7 +93,7 @@
                     <p>失败: {{ gitResult.import?.failed }}</p>
                   </div>
                 </div>
-                <div v-else>
+                <div v-else class="alert-content">
                   <p>{{ gitResult.error || gitResult.clone?.error || gitResult.analyze?.error }}</p>
                 </div>
               </el-alert>
@@ -244,7 +245,7 @@ const fileForm = ref({
 })
 
 const gitForm = ref({
-  repoUrl: '',
+  repoUrl: 'https://github.com/trailheadapps/dreamhouse-lwc.git',
   branch: 'main',
   apexDir: 'force-app/main/default/classes',
   autoImport: true,
@@ -388,5 +389,32 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* 自定义Alert样式 - 黑色文字，灰色背景 */
+.custom-alert {
+  background-color: #f5f5f5 !important;
+  border-color: #d3d3d3 !important;
+}
+
+.custom-alert :deep(.el-alert__title) {
+  color: #303133 !important;
+  font-weight: 600;
+}
+
+.custom-alert :deep(.el-alert__description),
+.custom-alert .alert-content {
+  color: #303133 !important;
+}
+
+.custom-alert .alert-content h4 {
+  color: #303133 !important;
+  font-weight: 600;
+  margin: 8px 0;
+}
+
+.custom-alert .alert-content p {
+  color: #303133 !important;
+  margin: 4px 0;
 }
 </style>
