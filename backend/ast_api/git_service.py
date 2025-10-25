@@ -89,14 +89,28 @@ class GitService:
             
             # 克隆仓库
             logger.info(f"Cloning repository: {repo_url} (branch: {branch})")
-            # 添加 --no-hardlinks 以避免 Cloud Storage FUSE 的硬链接问题
-            cmd = ['git', 'clone', '--depth', '1', '--branch', branch, '--no-hardlinks', repo_url, str(target_dir)]
+            
+            # 设置环境变量和 Git 配置以避免 Cloud Storage FUSE 的硬链接问题
+            env = os.environ.copy()
+            env['GIT_CONFIG_GLOBAL'] = '/tmp/.gitconfig'
+            env['TMPDIR'] = '/tmp'
+            env['GIT_OBJECT_DIRECTORY'] = '/tmp/git-objects'
+            env['GIT_ALTERNATE_OBJECT_DIRECTORIES'] = ''
+            
+            # 配置 Git 避免硬链接
+            # 注意：--no-hardlinks 只对本地克隆有效，对远程克隆无效
+            # 我们需要通过配置来确保不使用硬链接
+            subprocess.run(['git', 'config', '--global', 'core.sharedRepository', 'false'], 
+                         capture_output=True, env=env)
+            
+            cmd = ['git', 'clone', '--depth', '1', '--branch', branch, repo_url, str(target_dir)]
             
             result = subprocess.run(
                 cmd,
                 capture_output=True,
                 text=True,
-                timeout=300  # 5分钟超时
+                timeout=300,  # 5分钟超时
+                env=env
             )
             
             if result.returncode != 0:

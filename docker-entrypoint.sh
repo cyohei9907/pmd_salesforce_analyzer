@@ -8,6 +8,16 @@ echo "DEBUG: ${DEBUG}"
 echo "USE_CLOUD_STORAGE: ${USE_CLOUD_STORAGE:-false}"
 echo "Working directory: $(pwd)"
 
+# Configure Git to avoid hardlinks (required for Cloud Storage FUSE)
+echo "=== Configuring Git ==="
+git config --global core.createObject false 2>/dev/null || true
+git config --global pack.windowMemory 10m 2>/dev/null || true
+git config --global pack.packSizeLimit 20m 2>/dev/null || true
+git config --global core.fsyncObjectFiles false 2>/dev/null || true
+export GIT_OBJECT_DIRECTORY=/tmp/git-objects
+mkdir -p /tmp/git-objects
+echo "Git configured to avoid hardlinks"
+
 # Initialize Cloud Storage directories if enabled
 if [ "${USE_CLOUD_STORAGE}" = "true" ]; then
     echo "=== Initializing Cloud Storage directories ==="

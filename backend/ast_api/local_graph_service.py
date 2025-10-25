@@ -82,7 +82,10 @@ class LocalGraphService:
                     properties = relation.get('properties', {})
                     
                     if from_node and to_node:
-                        self.graph.add_edge(from_node, to_node, type=rel_type, **properties)
+                        # 避免 type 参数冲突：从 properties 中移除 type 键
+                        edge_props = {k: v for k, v in properties.items() if k != 'type'}
+                        edge_props['type'] = rel_type
+                        self.graph.add_edge(from_node, to_node, **edge_props)
                 
                 logger.info(f"Loaded graph from separate files with {self.graph.number_of_nodes()} nodes and {self.graph.number_of_edges()} edges")
                 return
