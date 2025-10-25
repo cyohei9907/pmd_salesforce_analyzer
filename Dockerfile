@@ -39,14 +39,14 @@ RUN mkdir -p /app/project /app/output /app/graphdata
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
 ENV DJANGO_SETTINGS_MODULE=apex_graph.settings
-ENV PORT=8000
+ENV PORT=8080
 
 # Expose port
-EXPOSE 8000
+EXPOSE 8080
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-  CMD curl -f http://localhost:8000/ || exit 1
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+  CMD curl -f http://localhost:${PORT:-8080}/ || exit 1
 
 # Change to backend directory
 WORKDIR /app/backend
@@ -55,10 +55,12 @@ WORKDIR /app/backend
 CMD python manage.py migrate --noinput && \
     python manage.py collectstatic --noinput && \
     gunicorn apex_graph.wsgi:application \
-    --bind 0.0.0.0:$PORT \
+    --bind 0.0.0.0:${PORT:-8080} \
     --workers 4 \
     --threads 2 \
     --timeout 300 \
+    --access-logfile - \
+    --error-logfile - \
     --access-logfile - \
     --error-logfile - \
     --log-level info
