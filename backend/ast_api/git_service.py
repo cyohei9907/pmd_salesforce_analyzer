@@ -89,7 +89,8 @@ class GitService:
             
             # 克隆仓库
             logger.info(f"Cloning repository: {repo_url} (branch: {branch})")
-            cmd = ['git', 'clone', '--depth', '1', '--branch', branch, repo_url, str(target_dir)]
+            # 添加 --no-hardlinks 以避免 Cloud Storage FUSE 的硬链接问题
+            cmd = ['git', 'clone', '--depth', '1', '--branch', branch, '--no-hardlinks', repo_url, str(target_dir)]
             
             result = subprocess.run(
                 cmd,

@@ -51,9 +51,11 @@ steps:
       - '--port=8080'
       - '--no-cpu-throttling'
       - '--cpu-boost'
-      # Mount Cloud Storage bucket as volume
+      # Mount Cloud Storage bucket as volume with implicit-dirs for better Git compatibility
+      - '--update-env-vars=GIT_CONFIG_GLOBAL=/tmp/.gitconfig'
       - '--add-volume=name=data-volume,type=cloud-storage,bucket=pm-salesforce-analyzer-storage'
       - '--add-volume-mount=volume=data-volume,mount-path=/data'
+      - '--execution-environment=gen2'
     id: 'deploy-cloud-run'
     waitFor: ['push-docker-image']
 

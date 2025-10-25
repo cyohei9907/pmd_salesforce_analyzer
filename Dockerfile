@@ -25,6 +25,8 @@ WORKDIR /app
 
 # Copy PMD analyzer
 COPY analyzer/ ./analyzer/
+# Make PMD executable
+RUN chmod +x /app/analyzer/bin/pmd /app/analyzer/bin/pmd.bat
 
 # Copy backend application
 COPY backend/ ./backend/
