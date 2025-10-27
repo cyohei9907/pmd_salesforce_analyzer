@@ -44,6 +44,7 @@ Thumbs.db
 
 # Project specific
 output/
+!output/ast/
 graphdata/exports/
 graphdata/graphs/
 *.md
@@ -51,6 +52,11 @@ graphdata/graphs/
 
 # Build files
 *.sh
+!docker-entrypoint.sh
 *.bat
 setup_environment.*
 quick_start.*
+
+# Config files (keep nginx and supervisor configs)
+!nginx.conf
+!supervisord.conf

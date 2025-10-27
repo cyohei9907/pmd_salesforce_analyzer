@@ -4,15 +4,28 @@ Django settings for apex_graph project.
 
 from pathlib import Path
 import os
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Cloud Storage configuration
+USE_CLOUD_STORAGE = os.environ.get('USE_CLOUD_STORAGE', 'false').lower() == 'true'
+
+if USE_CLOUD_STORAGE:
+    # Import cloud storage config
+    sys.path.insert(0, str(BASE_DIR.parent))
+    from cloud_storage import get_db_path
+    DB_PATH = get_db_path()
+else:
+    # Local development path
+    DB_PATH = BASE_DIR / 'db.sqlite3'
+
 
 # Quick-start development settings - unsuitable for production
-SECRET_KEY = 'django-insecure-your-secret-key-change-in-production'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-your-secret-key-change-in-production')
 
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['*']
 
@@ -66,7 +79,7 @@ WSGI_APPLICATION = 'apex_graph.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': DB_PATH,
     }
 }
 
@@ -104,7 +117,8 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

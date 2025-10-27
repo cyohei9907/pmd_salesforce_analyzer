@@ -5,22 +5,42 @@ echo "=== Starting PMD Salesforce Analyzer ==="
 echo "PORT: ${PORT:-8080}"
 echo "PYTHONUNBUFFERED: ${PYTHONUNBUFFERED}"
 echo "DEBUG: ${DEBUG}"
+echo "USE_CLOUD_STORAGE: ${USE_CLOUD_STORAGE:-false}"
+echo "Working directory: $(pwd)"
+
+# Configure Git to avoid hardlinks (required for Cloud Storage FUSE)
+echo "=== Configuring Git ==="
+git config --global core.createObject false 2>/dev/null || true
+git config --global pack.windowMemory 10m 2>/dev/null || true
+git config --global pack.packSizeLimit 20m 2>/dev/null || true
+git config --global core.fsyncObjectFiles false 2>/dev/null || true
+export GIT_OBJECT_DIRECTORY=/tmp/git-objects
+mkdir -p /tmp/git-objects
+echo "Git configured to avoid hardlinks"
+
+# Initialize Cloud Storage directories if enabled
+if [ "${USE_CLOUD_STORAGE}" = "true" ]; then
+    echo "=== Initializing Cloud Storage directories ==="
+    mkdir -p /data/ast /data/database /data/graph/exports /data/graph/graphs
+    chmod -R 755 /data
+    echo "Cloud Storage directories initialized"
+    
+    # Copy sample AST files if /data/ast is empty
+    if [ ! "$(ls -A /data/ast)" ]; then
+        echo "Copying sample AST files to Cloud Storage..."
+        cp -r /app/output/ast/* /data/ast/ 2>/dev/null || echo "No sample files to copy"
+    fi
+else
+    echo "=== Using local storage ==="
+fi
 
 cd /app/backend
 
 echo "=== Running database migrations ==="
-python manage.py migrate --noinput
+python manage.py migrate --noinput || echo "Migration failed but continuing..."
 
 echo "=== Collecting static files ==="
-python manage.py collectstatic --noinput --clear
+python manage.py collectstatic --noinput --clear || echo "Collectstatic failed but continuing..."
 
-echo "=== Starting Gunicorn server on 0.0.0.0:${PORT:-8080} ==="
-exec gunicorn apex_graph.wsgi:application \
-    --bind 0.0.0.0:${PORT:-8080} \
-    --workers 2 \
-    --threads 2 \
-    --timeout 300 \
-    --access-logfile - \
-    --error-logfile - \
-    --log-level info \
-    --capture-output
+echo "=== Starting Nginx and Gunicorn with Supervisor ==="
+exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf

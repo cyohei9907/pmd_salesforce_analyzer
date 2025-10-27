@@ -16,8 +16,6 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'gcr.io/$PROJECT_ID/pmd-salesforce-analyzer:$COMMIT_SHA'
-      - '-t'
       - 'gcr.io/$PROJECT_ID/pmd-salesforce-analyzer:latest'
       - '-f'
       - 'Dockerfile'
@@ -29,14 +27,8 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - 'push'
-      - 'gcr.io/$PROJECT_ID/pmd-salesforce-analyzer:$COMMIT_SHA'
-    id: 'push-docker-image'
-    waitFor: ['build-docker-image']
-
-  - name: 'gcr.io/cloud-builders/docker'
-    args:
-      - 'push'
       - 'gcr.io/$PROJECT_ID/pmd-salesforce-analyzer:latest'
+    id: 'push-docker-image'
     waitFor: ['build-docker-image']
 
   # Deploy to Cloud Run
@@ -46,7 +38,7 @@ steps:
       - 'run'
       - 'deploy'
       - 'pmd-salesforce-analyzer'
-      - '--image=gcr.io/$PROJECT_ID/pmd-salesforce-analyzer:$COMMIT_SHA'
+      - '--image=gcr.io/$PROJECT_ID/pmd-salesforce-analyzer:latest'
       - '--region=asia-northeast1'
       - '--platform=managed'
       - '--memory=1Gi'
@@ -55,27 +47,24 @@ steps:
       - '--max-instances=5'
       - '--min-instances=0'
       - '--allow-unauthenticated'
-      - '--set-env-vars=PYTHONUNBUFFERED=1,DEBUG=False,PORT=8080'
+      - '--set-env-vars=PYTHONUNBUFFERED=1,DEBUG=False,USE_CLOUD_STORAGE=true,GIT_CONFIG_GLOBAL=/tmp/.gitconfig,SECRET_KEY=TE6DqtNmAaqhn99h_YmLuyLhJXyqjCN5FiY4i-ZXTZ8yTFViuMDxVd2y1yIFUJFwNKU'
       - '--port=8080'
       - '--no-cpu-throttling'
-      - '--startup-cpu-boost'
-      - '--add-volume=name=project-data,type=cloud-storage,bucket=${_PROJECT_BUCKET}'
-      - '--add-volume-mount=volume=project-data,mount-path=/app/project'
+      - '--cpu-boost'
+      - '--execution-environment=gen2'
+      # Mount Cloud Storage bucket as volume
+      - '--add-volume=name=data-volume,type=cloud-storage,bucket=pm-salesforce-analyzer-storage'
+      - '--add-volume-mount=volume=data-volume,mount-path=/data'
     id: 'deploy-cloud-run'
     waitFor: ['push-docker-image']
 
 # Store images in Container Registry
 images:
-  - 'gcr.io/$PROJECT_ID/pmd-salesforce-analyzer:$COMMIT_SHA'
   - 'gcr.io/$PROJECT_ID/pmd-salesforce-analyzer:latest'
 
 # Build options
 options:
   machineType: 'E2_HIGHCPU_8'
   logging: CLOUD_LOGGING_ONLY
-
-# Substitutions for variables
-substitutions:
-  _PROJECT_BUCKET: 'pmd-salesforce-analyzer-project-data'
 
 timeout: '1800s'
