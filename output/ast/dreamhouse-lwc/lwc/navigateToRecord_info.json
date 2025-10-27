@@ -1,0 +1,27 @@
+{
+  "name": "navigateToRecord",
+  "has_js": true,
+  "has_html": true,
+  "has_meta": true,
+  "files": [
+    {
+      "name": "navigateToRecord.html",
+      "type": ".html",
+      "size": 24
+    },
+    {
+      "name": "navigateToRecord.js",
+      "type": ".js",
+      "size": 473
+    },
+    {
+      "name": "navigateToRecord.js-meta.xml",
+      "type": ".xml",
+      "size": 678
+    }
+  ],
+  "ast_file": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\navigateToRecord_ast.xml",
+  "ast_generated": true,
+  "js_source": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\navigateToRecord.js",
+  "source_dir": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\navigateToRecord"
+}

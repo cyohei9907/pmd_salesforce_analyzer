@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<AstRoot Image='' JsDoc='' NumComments='3' SideEffects='false'>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <VariableDeclaration Const='true' Image='' JsDoc='' Let='false' SideEffects='true' Var='false'>
+        <VariableInitializer Destructuring='false' Image='' JsDoc='' SideEffects='true'>
+            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='MAX_ITEM_OFFSET' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='true' />
+            <NumberLiteral Image='' Inaccurate='false' JsDoc='' NormalizedImage='2000.0' Number='2000.0' SideEffects='false' Value='2000' />
+        </VariableInitializer>
+    </VariableDeclaration>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <Comment Image='' JsDoc='' SideEffects='false' Value='/** The number of items on a page. */' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <Comment Image='' JsDoc='' SideEffects='false' Value='/** The total number of items in the list. */' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+        <ConditionalExpression Image='' JsDoc='' SideEffects='false'>
+            <InfixExpression Image='' JsDoc='' Operator='===' SideEffects='false'>
+                <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                    <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='totalItemCount' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                </PropertyGet>
+                <NumberLiteral Image='' Inaccurate='false' JsDoc='' NormalizedImage='0.0' Number='0.0' SideEffects='false' Value='0' />
+            </InfixExpression>
+            <NumberLiteral Image='' Inaccurate='false' JsDoc='' NormalizedImage='0.0' Number='0.0' SideEffects='false' Value='0' />
+            <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='pageNumber' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+            </PropertyGet>
+        </ConditionalExpression>
+    </ExpressionStatement>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+        <InfixExpression Image='' JsDoc='' Operator='>' SideEffects='false'>
+            <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='pageNumber' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+            </PropertyGet>
+            <NumberLiteral Image='' Inaccurate='false' JsDoc='' NormalizedImage='1.0' Number='1.0' SideEffects='false' Value='1' />
+        </InfixExpression>
+    </ExpressionStatement>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+        <ParenthesizedExpression Image='' JsDoc='' SideEffects='false'>
+            <InfixExpression Image='' JsDoc='' Operator='&amp;&amp;' SideEffects='false'>
+                <InfixExpression Image='' JsDoc='' Operator='&amp;lt;' SideEffects='false'>
+                    <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                        <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='pageNumber' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                    </PropertyGet>
+                    <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                        <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='totalPages' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                    </PropertyGet>
+                </InfixExpression>
+                <InfixExpression Image='' JsDoc='' Operator='&amp;lt;' SideEffects='false'>
+                    <InfixExpression Image='' JsDoc='' Operator='*' SideEffects='false'>
+                        <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                            <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='pageNumber' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                        </PropertyGet>
+                        <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                            <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='pageSize' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                        </PropertyGet>
+                    </InfixExpression>
+                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='MAX_ITEM_OFFSET' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                </InfixExpression>
+            </InfixExpression>
+        </ParenthesizedExpression>
+    </ExpressionStatement>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+        <FunctionCall Arguments='true' Image='' JsDoc='' NumArguments='1' SideEffects='true'>
+            <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='Math' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='ceil' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+            </PropertyGet>
+            <InfixExpression Image='' JsDoc='' Operator='/' SideEffects='false'>
+                <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                    <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='totalItemCount' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                </PropertyGet>
+                <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                    <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='pageSize' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                </PropertyGet>
+            </InfixExpression>
+        </FunctionCall>
+    </ExpressionStatement>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+</AstRoot>

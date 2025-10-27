@@ -2,6 +2,15 @@
   <div class="graph-view">
     <!-- 顶部工具栏 -->
     <div class="toolbar">
+      <!-- 仓库选择器 -->
+      <RepositorySelector 
+        ref="repoSelector"
+        @repo-changed="handleRepoChange" 
+        style="margin-right: 20px;"
+      />
+      
+      <el-divider direction="vertical" style="height: 32px;" />
+      
       <el-button @click="loadGraph" :icon="Refresh" :loading="loading">
         {{ $t('common.refresh') }}
       </el-button>
@@ -80,7 +89,7 @@
     <el-drawer
       v-model="drawerVisible"
       :title="$t('graph.nodeDetails')"
-      :size="500"
+      :size="800"
       direction="rtl"
       class="node-detail-drawer"
     >
@@ -102,6 +111,33 @@
             <div class="detail-value">{{ value }}</div>
           </el-descriptions-item>
         </el-descriptions>
+        
+        <!-- 源代码显示 -->
+        <div v-if="shouldShowSourceCode(selectedNode)" class="source-code-section">
+          <el-divider />
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <h3 style="margin: 0;">源代码</h3>
+            <el-button 
+              v-if="!sourceCode && !loadingSource"
+              type="primary" 
+              size="small"
+              @click="loadSourceCodeForNode(selectedNode)"
+            >
+              查看源代码
+            </el-button>
+          </div>
+          
+          <div v-if="loadingSource" style="text-align: center; padding: 20px;">
+            <el-icon class="is-loading" style="font-size: 32px;"><Loading /></el-icon>
+            <p>加载中...</p>
+          </div>
+          
+          <div v-else-if="sourceCode" class="code-viewer">
+            <pre><code class="language-apex">{{ sourceCode }}</code></pre>
+          </div>
+          
+          <el-empty v-else-if="sourceCodeError" :description="sourceCodeError" />
+        </div>
       </div>
     </el-drawer>
   </div>
@@ -113,10 +149,11 @@ import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import api from '@/api'
 import { ElMessage } from 'element-plus'
-import { Refresh, FullScreen } from '@element-plus/icons-vue'
+import { Refresh, FullScreen, Loading } from '@element-plus/icons-vue'
 import cytoscape from 'cytoscape'
 import coseBilkent from 'cytoscape-cose-bilkent'
 import cxtmenu from 'cytoscape-cxtmenu'
+import RepositorySelector from '@/components/RepositorySelector.vue'
 
 // 注册布局插件和右键菜单插件
 cytoscape.use(coseBilkent)
@@ -127,10 +164,17 @@ const router = useRouter()
 
 // 状态管理
 const cyContainer = ref(null)
+const repoSelector = ref(null)
 const loading = ref(false)
 const drawerVisible = ref(false)
 const selectedNode = ref(null)
 const graphData = ref(null)
+const currentRepoId = ref(null)
+
+// 源代码相关
+const sourceCode = ref('')
+const loadingSource = ref(false)
+const sourceCodeError = ref('')
 
 let cy = null // Cytoscape 实例
 
@@ -173,6 +217,56 @@ const getNodeTypeTagColor = (type) => {
 const isTypeActive = (type) => {
   if (activeNodeTypes.value.size === 0) return true
   return activeNodeTypes.value.has(type)
+}
+
+// 判断是否应该显示源代码
+const shouldShowSourceCode = (node) => {
+  if (!node) return false
+  return ['ApexClass', 'ApexMethod', 'SOQLQuery', 'DMLOperation'].includes(node.type)
+}
+
+// 根据节点类型加载源代码
+const loadSourceCodeForNode = async (node) => {
+  if (!node) return
+  
+  let className = ''
+  
+  // 根据节点类型获取类名
+  if (node.type === 'ApexClass') {
+    className = node.name || node.id
+  } else if (node.type === 'ApexMethod') {
+    className = node.properties?.className || ''
+  } else if (node.type === 'SOQLQuery' || node.type === 'DMLOperation') {
+    className = node.properties?.className || ''
+  }
+  
+  if (!className) {
+    sourceCodeError.value = '无法获取类名'
+    return
+  }
+  
+  await loadSourceCode(className)
+}
+
+// 加载源代码
+const loadSourceCode = async (className) => {
+  loadingSource.value = true
+  sourceCode.value = ''
+  sourceCodeError.value = ''
+  
+  try {
+    const result = await api.getSourceCode(className)
+    if (result.success) {
+      sourceCode.value = result.source_code
+    } else {
+      sourceCodeError.value = result.error || '加载失败'
+    }
+  } catch (error) {
+    console.error('Failed to load source code:', error)
+    sourceCodeError.value = error.message || '加载失败'
+  } finally {
+    loadingSource.value = false
+  }
 }
 
 // 应用布局并添加动画
@@ -221,11 +315,13 @@ const applyLayoutWithAnimation = () => {
   
   // 布局完成后保存位置
   layout.on('layoutstop', () => {
-    saveGraphLayout()
+    // レイアウト保存機能は現在無効化（マルチリポジトリ対応が必要）
+    // saveGraphLayout()
   })
 }
 
 // 保存图布局和完整数据
+// TODO: マルチリポジトリ対応のレイアウト保存機能を実装
 const saveGraphLayout = async () => {
   if (!cy) return
   
@@ -241,64 +337,100 @@ const saveGraphLayout = async () => {
       layout: layout,
       nodes: allNodes.value,
       edges: allEdges.value,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      repositoryId: currentRepoId.value // リポジトリIDを追加
     }
     
-    await api.saveGraphLayout(graphSnapshot)
-    console.log('Graph layout and data saved')
+    // マルチリポジトリ対応が必要なため、現在は無効化
+    // await api.saveGraphLayout(graphSnapshot)
+    console.log('Graph layout save is currently disabled (multi-repository support needed)')
   } catch (error) {
     console.error('Failed to save graph layout:', error)
   }
+}
+
+// 处理仓库切换
+const handleRepoChange = async (repoId) => {
+  console.log('Repository changed to:', repoId)
+  currentRepoId.value = repoId
+  // 重新加载图数据
+  await loadGraph(true)
 }
 
 // 加载图数据
 const loadGraph = async (showMessage = true) => {
   loading.value = true
   try {
+    // 如果有选中的仓库,加载该仓库的数据
+    let apiEndpoint = '/graph/'
+    if (currentRepoId.value) {
+      apiEndpoint = `/repositories/${currentRepoId.value}/graph/`
+    } else {
+      // 没有选中仓库,检查是否有可用的仓库
+      try {
+        const reposData = await api.get('/repositories/')
+        if (reposData.success && reposData.repositories.length === 0) {
+          console.log('No repositories available')
+          graphData.value = { nodes: [], edges: [] }
+          loading.value = false
+          return
+        }
+      } catch (error) {
+        console.error('Failed to check repositories:', error)
+      }
+    }
+    
+    // レイアウト読み込み機能は現在無効化（マルチリポジトリ対応が必要）
     // 先尝试加载保存的快照
     let nodes = []
     let edges = []
     let savedLayout = null
     let useSnapshot = false
     
-    try {
-      const layoutResponse = await api.loadGraphLayout()
-      if (layoutResponse.success && layoutResponse.layout) {
-        const snapshot = layoutResponse.layout
-        
-        // 检查是否是完整的快照（包含nodes和edges）
-        if (snapshot.nodes && snapshot.edges && snapshot.layout) {
-          console.log('Loading from saved snapshot...')
-          nodes = snapshot.nodes
-          edges = snapshot.edges
-          savedLayout = snapshot.layout
-          useSnapshot = true
-          
-          // 更新统计信息
-          nodeTypeCounts.value = {
-            ApexClass: 0,
-            ApexMethod: 0,
-            SOQLQuery: 0,
-            DMLOperation: 0
-          }
-          for (const node of nodes) {
-            const type = node.data.type
-            if (nodeTypeCounts.value.hasOwnProperty(type)) {
-              nodeTypeCounts.value[type]++
-            }
-          }
-        } else if (snapshot.layout) {
-          // 旧格式：只有布局信息
-          savedLayout = snapshot.layout || snapshot
-        }
-      }
-    } catch (error) {
-      console.log('No saved snapshot found, loading from backend...')
-    }
+    // レイアウトスナップショット機能は無効化
+    // try {
+    //   const layoutResponse = await api.loadGraphLayout()
+    //   if (layoutResponse.success && layoutResponse.layout) {
+    //     const snapshot = layoutResponse.layout
+    //     
+    //     if (snapshot.nodes && snapshot.edges && snapshot.layout) {
+    //       console.log('Loading from saved snapshot...')
+    //       nodes = snapshot.nodes
+    //       edges = snapshot.edges
+    //       savedLayout = snapshot.layout
+    //       useSnapshot = true
+    //       
+    //       nodeTypeCounts.value = {
+    //         ApexClass: 0,
+    //         ApexMethod: 0,
+    //         SOQLQuery: 0,
+    //         DMLOperation: 0
+    //       }
+    //       for (const node of nodes) {
+    //         const type = node.data.type
+    //         if (nodeTypeCounts.value.hasOwnProperty(type)) {
+    //           nodeTypeCounts.value[type]++
+    //         }
+    //       }
+    //     } else if (snapshot.layout) {
+    //       savedLayout = snapshot.layout || snapshot
+    //     }
+    //   }
+    // } catch (error) {
+    //   console.log('No saved snapshot found, loading from backend...')
+    // }
     
     // 如果没有快照，从后端加载
     if (!useSnapshot) {
-      const data = await api.getGraphData()
+      let data
+      if (currentRepoId.value) {
+        // 加载指定仓库的图数据
+        const responseData = await api.get(apiEndpoint)
+        data = responseData.graph || responseData
+      } else {
+        // 加载所有图数据
+        data = await api.getGraphData()
+      }
       graphData.value = data
       
       // 转换节点数据
@@ -564,15 +696,15 @@ const initCytoscape = (nodes, edges) => {
     }
   })
   
-  // 节点拖动结束后保存布局
+  // 节点拖动结束后保存布局（現在無効化）
   cy.on('dragfree', 'node', () => {
-    // 使用防抖，避免频繁保存
-    if (window.saveLayoutTimeout) {
-      clearTimeout(window.saveLayoutTimeout)
-    }
-    window.saveLayoutTimeout = setTimeout(() => {
-      saveGraphLayout()
-    }, 1000) // 1秒后保存
+    // レイアウト保存は現在無効化（マルチリポジトリ対応が必要）
+    // if (window.saveLayoutTimeout) {
+    //   clearTimeout(window.saveLayoutTimeout)
+    // }
+    // window.saveLayoutTimeout = setTimeout(() => {
+    //   saveGraphLayout()
+    // }, 1000)
   })
   
   // 立即阻止容器的右键菜单
@@ -603,6 +735,10 @@ const initCytoscape = (nodes, edges) => {
         content: `<span style="display: flex; align-items: center; gap: 8px;"><svg style="width: 16px; height: 16px;" fill="currentColor" viewBox="0 0 1024 1024"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"/><path d="M464 336a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"/></svg>${t('graph.viewDetails')}</span>`,
         select: function(ele) {
           selectedNode.value = ele.data('originalData')
+          // 重置源代码状态
+          sourceCode.value = ''
+          loadingSource.value = false
+          sourceCodeError.value = ''
           drawerVisible.value = true
         }
       },
@@ -827,6 +963,8 @@ onUnmounted(() => {
   display: flex;
   gap: 12px;
   flex-shrink: 0;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .graph-container {
@@ -964,6 +1102,32 @@ onUnmounted(() => {
 
 :deep(.el-descriptions-item__cell) {
   padding: 12px 16px;
+}
+
+/* 源代码查看器样式 */
+.source-code-section {
+  margin-top: 20px;
+}
+
+.code-viewer {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: auto;
+  max-height: 600px;
+}
+
+.code-viewer pre {
+  margin: 0;
+  padding: 16px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.code-viewer code {
+  color: #333;
+  background-color: transparent;
 }
 
 /* 移除节点详情中 descriptions 的边框 */

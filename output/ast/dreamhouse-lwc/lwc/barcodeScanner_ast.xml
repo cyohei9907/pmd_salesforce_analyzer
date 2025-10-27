@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<AstRoot Image='' JsDoc='' NumComments='13' SideEffects='false'>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+        <Assignment Image='' JsDoc='' Operator='=' SideEffects='true'>
+            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='scanButtonEnabled' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+            <KeywordLiteral Boolean='true' Debugger='false' Image='' JsDoc='' Literal='false' Null='false' SideEffects='false' This='false' />
+        </Assignment>
+    </ExpressionStatement>
+    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+        <Assignment Image='' JsDoc='' Operator='=' SideEffects='true'>
+            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='scannedQrCode' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+            <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='' />
+        </Assignment>
+    </ExpressionStatement>
+    <Comment Image='' JsDoc='' SideEffects='false' Value='// When the component is initialized, determine whether to enable the Scan button' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+        <Assignment Image='' JsDoc='' Operator='=' SideEffects='true'>
+            <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='scannedQrCode' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+            </PropertyGet>
+            <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='' />
+        </Assignment>
+    </ExpressionStatement>
+    <Comment Image='' JsDoc='' SideEffects='false' Value='// Make sure BarcodeScanner is available before trying to use it' />
+    <Comment Image='' JsDoc='' SideEffects='false' Value='// Scan QR Code button also disabled when scanner unavailable' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+        <Assignment Image='' JsDoc='' Operator='=' SideEffects='true'>
+            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='scanningOptions' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+            <ObjectLiteral Destructuring='false' Image='' JsDoc='' SideEffects='false' TrailingComma='false'>
+                <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='barcodeTypes' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                    <ArrayLiteral Destructuring='false' Image='' JsDoc='' SideEffects='false' TrailingComma='false'>
+                        <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                            <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                                <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                                    <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='myScanner' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                </PropertyGet>
+                                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='barcodeTypes' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                            </PropertyGet>
+                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='QR' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                        </PropertyGet>
+                    </ArrayLiteral>
+                </ObjectProperty>
+                <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='instructionText' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                    <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='Scan a QR Code' />
+                </ObjectProperty>
+                <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='successText' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                    <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='Scanning complete.' />
+                </ObjectProperty>
+            </ObjectLiteral>
+        </Assignment>
+    </ExpressionStatement>
+    <Comment Image='' JsDoc='' SideEffects='false' Value='// Try starting the scanning process, then using the result to navigate to a property record' />
+    <TryStatement Catch='true' Finally='true' Image='' JsDoc='' NumCatchClause='1' SideEffects='true'>
+        <Scope Image='' JsDoc='' SideEffects='true'>
+            <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+            <Comment Image='' JsDoc='' SideEffects='false' Value='// Extract QR code data' />
+            <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+                <Assignment Image='' JsDoc='' Operator='=' SideEffects='true'>
+                    <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                        <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='scannedQrCode' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                    </PropertyGet>
+                    <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='captureResult' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='value' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                    </PropertyGet>
+                </Assignment>
+            </ExpressionStatement>
+            <Comment Image='' JsDoc='' SideEffects='false' Value='// Navigate to the records page of the property with extracted ID' />
+            <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+                <FunctionCall Arguments='true' Image='' JsDoc='' NumArguments='1' SideEffects='true'>
+                    <ElementGet Image='' JsDoc='' SideEffects='false'>
+                        <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                        <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='NavigationMixin' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='Navigate' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                        </PropertyGet>
+                    </ElementGet>
+                    <ObjectLiteral Destructuring='false' Image='' JsDoc='' SideEffects='false' TrailingComma='false'>
+                        <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='type' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                            <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='standard__recordPage' />
+                        </ObjectProperty>
+                        <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='attributes' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                            <ObjectLiteral Destructuring='false' Image='' JsDoc='' SideEffects='false' TrailingComma='false'>
+                                <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='recordId' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                    <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                                        <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                                        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='scannedQrCode' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                    </PropertyGet>
+                                </ObjectProperty>
+                                <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='objectApiName' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                    <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='Property__c' />
+                                </ObjectProperty>
+                                <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='actionName' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                    <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='view' />
+                                </ObjectProperty>
+                            </ObjectLiteral>
+                        </ObjectProperty>
+                    </ObjectLiteral>
+                </FunctionCall>
+            </ExpressionStatement>
+        </Scope>
+        <CatchClause If='false' Image='' JsDoc='' SideEffects='true'>
+            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='error' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+            <Scope Image='' JsDoc='' SideEffects='true'>
+                <Comment Image='' JsDoc='' SideEffects='false' Value='// There was an error while scanning' />
+                <Comment Image='' JsDoc='' SideEffects='false' Value='// We chose to handle errors with toasts to stay in line with the mobile experience' />
+                <Comment Image='' JsDoc='' SideEffects='false' Value='// The user canceled the scan' />
+                <IfStatement Else='true' Image='' JsDoc='' SideEffects='true'>
+                    <InfixExpression Image='' JsDoc='' Operator='===' SideEffects='false'>
+                        <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='error' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='code' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                        </PropertyGet>
+                        <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='userDismissedScanner' />
+                    </InfixExpression>
+                    <Scope Image='' JsDoc='' SideEffects='true'>
+                        <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+                            <FunctionCall Arguments='true' Image='' JsDoc='' NumArguments='1' SideEffects='true'>
+                                <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                                    <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='dispatchEvent' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                </PropertyGet>
+                                <NewExpression Arguments='true' Image='' Initializer='false' JsDoc='' NumArguments='1' SideEffects='true'>
+                                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='ShowToastEvent' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                    <ObjectLiteral Destructuring='false' Image='' JsDoc='' SideEffects='false' TrailingComma='false'>
+                                        <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='title' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                            <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='Scanning Canceled' />
+                                        </ObjectProperty>
+                                        <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='message' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                            <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='Scanning session canceled.' />
+                                        </ObjectProperty>
+                                        <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='mode' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                            <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='sticky' />
+                                        </ObjectProperty>
+                                    </ObjectLiteral>
+                                </NewExpression>
+                            </FunctionCall>
+                        </ExpressionStatement>
+                    </Scope>
+                    <Scope Image='' JsDoc='' SideEffects='true'>
+                        <Comment Image='' JsDoc='' SideEffects='false' Value='// Inform the user we ran into something unexpected' />
+                        <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+                            <FunctionCall Arguments='true' Image='' JsDoc='' NumArguments='1' SideEffects='true'>
+                                <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                                    <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='dispatchEvent' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                </PropertyGet>
+                                <NewExpression Arguments='true' Image='' Initializer='false' JsDoc='' NumArguments='1' SideEffects='true'>
+                                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='ShowToastEvent' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                    <ObjectLiteral Destructuring='false' Image='' JsDoc='' SideEffects='false' TrailingComma='false'>
+                                        <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='title' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                            <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='Barcode Scanner Error' />
+                                        </ObjectProperty>
+                                        <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='message' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                            <InfixExpression Image='' JsDoc='' Operator='+' SideEffects='false'>
+                                                <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='There was a problem scanning the QR code: ' />
+                                                <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                                                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='error' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='message' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                                </PropertyGet>
+                                            </InfixExpression>
+                                        </ObjectProperty>
+                                        <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='variant' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                            <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='error' />
+                                        </ObjectProperty>
+                                        <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='mode' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                                            <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='sticky' />
+                                        </ObjectProperty>
+                                    </ObjectLiteral>
+                                </NewExpression>
+                            </FunctionCall>
+                        </ExpressionStatement>
+                    </Scope>
+                </IfStatement>
+            </Scope>
+        </CatchClause>
+        <Scope Image='' JsDoc='' SideEffects='true'>
+            <Comment Image='' JsDoc='' SideEffects='false' Value='// Close capture process regardless of whether we completed successfully or had an error' />
+            <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+                <FunctionCall Arguments='false' Image='' JsDoc='' NumArguments='0' SideEffects='true'>
+                    <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                        <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                            <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='myScanner' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                        </PropertyGet>
+                        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='endCapture' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                    </PropertyGet>
+                </FunctionCall>
+            </ExpressionStatement>
+        </Scope>
+    </TryStatement>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+</AstRoot>

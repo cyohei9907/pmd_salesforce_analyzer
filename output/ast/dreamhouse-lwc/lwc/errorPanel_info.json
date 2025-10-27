@@ -1,0 +1,22 @@
+{
+  "name": "errorPanel",
+  "has_js": true,
+  "has_html": false,
+  "has_meta": true,
+  "files": [
+    {
+      "name": "errorPanel.js",
+      "type": ".js",
+      "size": 817
+    },
+    {
+      "name": "errorPanel.js-meta.xml",
+      "type": ".xml",
+      "size": 215
+    }
+  ],
+  "ast_file": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\errorPanel_ast.xml",
+  "ast_generated": true,
+  "js_source": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\errorPanel.js",
+  "source_dir": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\errorPanel"
+}

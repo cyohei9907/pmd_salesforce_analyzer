@@ -365,6 +365,7 @@ class LocalGraphService:
         """获取完整图数据"""
         nodes = []
         edges = []
+        seen_edges = set()  # 用于跟踪已见过的边，避免重复
         
         # 获取所有节点
         for node_id, node_data in self.graph.nodes(data=True):
@@ -376,14 +377,21 @@ class LocalGraphService:
                 'properties': {k: v for k, v in node_data.items() if k != 'type'}  # 除 type 外的所有属性
             })
         
-        # 获取所有边
+        # 获取所有边（去重）
         for source, target, key, edge_data in self.graph.edges(keys=True, data=True):
-            edges.append({
-                'source': source,
-                'target': target,
-                'type': edge_data.get('type', key),
-                **edge_data
-            })
+            # 创建边的唯一标识符
+            edge_type = edge_data.get('type', key)
+            edge_key = (source, target, edge_type)
+            
+            # 如果这条边还没有添加过，则添加
+            if edge_key not in seen_edges:
+                seen_edges.add(edge_key)
+                edges.append({
+                    'source': source,
+                    'target': target,
+                    'type': edge_type,
+                    **{k: v for k, v in edge_data.items() if k != 'type'}
+                })
         
         return {'nodes': nodes, 'edges': edges}
     

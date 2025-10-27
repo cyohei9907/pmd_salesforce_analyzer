@@ -1,0 +1,27 @@
+{
+  "name": "barcodeScanner",
+  "has_js": true,
+  "has_html": true,
+  "has_meta": true,
+  "files": [
+    {
+      "name": "barcodeScanner.html",
+      "type": ".html",
+      "size": 1549
+    },
+    {
+      "name": "barcodeScanner.js",
+      "type": ".js",
+      "size": 3448
+    },
+    {
+      "name": "barcodeScanner.js-meta.xml",
+      "type": ".xml",
+      "size": 640
+    }
+  ],
+  "ast_file": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\barcodeScanner_ast.xml",
+  "ast_generated": true,
+  "js_source": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\barcodeScanner.js",
+  "source_dir": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\barcodeScanner"
+}

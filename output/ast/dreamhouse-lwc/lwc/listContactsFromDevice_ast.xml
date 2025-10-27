@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<AstRoot Image='' JsDoc='' NumComments='0' SideEffects='false'>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='deviceContacts' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+    </ExpressionStatement>
+    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='error' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+    </ExpressionStatement>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <IfStatement Else='true' Image='' JsDoc='' SideEffects='true'>
+        <FunctionCall Arguments='false' Image='' JsDoc='' NumArguments='0' SideEffects='true'>
+            <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                    <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='contactsService' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                </PropertyGet>
+                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='isAvailable' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+            </PropertyGet>
+        </FunctionCall>
+        <Scope Image='' JsDoc='' SideEffects='true'>
+            <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+        </Scope>
+        <Scope Image='' JsDoc='' SideEffects='true'>
+            <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+                <Assignment Image='' JsDoc='' Operator='=' SideEffects='true'>
+                    <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                        <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='error' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                    </PropertyGet>
+                    <ObjectLiteral Destructuring='false' Image='' JsDoc='' SideEffects='false' TrailingComma='false'>
+                        <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='message' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                            <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='Contact service not available' />
+                        </ObjectProperty>
+                    </ObjectLiteral>
+                </Assignment>
+            </ExpressionStatement>
+        </Scope>
+    </IfStatement>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+        <Assignment Image='' JsDoc='' Operator='=' SideEffects='true'>
+            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='options' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+            <ObjectLiteral Destructuring='false' Image='' JsDoc='' SideEffects='false' TrailingComma='false'>
+                <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='permissionRationaleText' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                    <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='Allow access to your contacts to enable contacts processing.' />
+                </ObjectProperty>
+            </ObjectLiteral>
+        </Assignment>
+    </ExpressionStatement>
+    <TryStatement Catch='true' Finally='false' Image='' JsDoc='' NumCatchClause='1' SideEffects='true'>
+        <Scope Image='' JsDoc='' SideEffects='true'>
+            <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+        </Scope>
+        <CatchClause If='false' Image='' JsDoc='' SideEffects='true'>
+            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='error' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+            <Scope Image='' JsDoc='' SideEffects='true'>
+                <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+                    <Assignment Image='' JsDoc='' Operator='=' SideEffects='true'>
+                        <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                            <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='error' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                        </PropertyGet>
+                        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='error' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                    </Assignment>
+                </ExpressionStatement>
+            </Scope>
+        </CatchClause>
+    </TryStatement>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+</AstRoot>

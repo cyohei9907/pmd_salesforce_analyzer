@@ -1,0 +1,27 @@
+{
+  "name": "paginator",
+  "has_js": true,
+  "has_html": true,
+  "has_meta": true,
+  "files": [
+    {
+      "name": "paginator.html",
+      "type": ".html",
+      "size": 1238
+    },
+    {
+      "name": "paginator.js",
+      "type": ".js",
+      "size": 975
+    },
+    {
+      "name": "paginator.js-meta.xml",
+      "type": ".xml",
+      "size": 215
+    }
+  ],
+  "ast_file": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\paginator_ast.xml",
+  "ast_generated": true,
+  "js_source": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\paginator.js",
+  "source_dir": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\paginator"
+}

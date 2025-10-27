@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const api = axios.create({
   baseURL: import.meta.env.PROD ? '/api' : 'http://localhost:8000/api',
-  timeout: 30000,
+  timeout: 300000,  // 5分钟タイムアウト（Git クローンと解析に必要）
   headers: {
     'Content-Type': 'application/json'
   }
@@ -30,6 +30,12 @@ api.interceptors.response.use(
 )
 
 export default {
+  // 直接公開 axios インスタンスのメソッド
+  get: (url, config) => api.get(url, config),
+  post: (url, data, config) => api.post(url, data, config),
+  put: (url, data, config) => api.put(url, data, config),
+  delete: (url, config) => api.delete(url, config),
+  
   // 导入相关
   importFile(filePath) {
     return api.post('/import/file/', { file_path: filePath })
@@ -55,7 +61,14 @@ export default {
       apex_dir: apexDir, 
       force, 
       auto_import: autoImport 
+    }, {
+      timeout: 600000  // 10分钟タイムアウト（大規模リポジトリ対応）
     })
+  },
+  
+  // 获取分析进度
+  getAnalysisProgress(taskId) {
+    return api.get(`/progress/${taskId}/`)
   },
   
   listRepositories() {
@@ -82,6 +95,11 @@ export default {
   
   loadGraphLayout() {
     return api.get('/graph/layout/load/')
+  },
+  
+  // 源代码查询
+  getSourceCode(className) {
+    return api.get(`/source/${className}/`)
   },
   
   // 统计信息

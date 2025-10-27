@@ -1,0 +1,32 @@
+{
+  "name": "propertyTile",
+  "has_js": true,
+  "has_html": true,
+  "has_meta": true,
+  "files": [
+    {
+      "name": "propertyTile.css",
+      "type": ".css",
+      "size": 546
+    },
+    {
+      "name": "propertyTile.html",
+      "type": ".html",
+      "size": 875
+    },
+    {
+      "name": "propertyTile.js",
+      "type": ".js",
+      "size": 1134
+    },
+    {
+      "name": "propertyTile.js-meta.xml",
+      "type": ".xml",
+      "size": 215
+    }
+  ],
+  "ast_file": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\propertyTile_ast.xml",
+  "ast_generated": true,
+  "js_source": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\propertyTile.js",
+  "source_dir": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\propertyTile"
+}

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<AstRoot Image='' JsDoc='' NumComments='3' SideEffects='false'>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <Comment Image='' JsDoc='' SideEffects='false' Value='/** Generic / user-friendly message */' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <Comment Image='' JsDoc='' SideEffects='false' Value='/** Type of error message **/' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+        <Assignment Image='' JsDoc='/** Type of error message **/' Operator='=' SideEffects='true'>
+            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='viewDetails' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+            <KeywordLiteral Boolean='true' Debugger='false' Image='' JsDoc='' Literal='false' Null='false' SideEffects='false' This='false' />
+        </Assignment>
+    </ExpressionStatement>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+        <FunctionCall Arguments='true' Image='' JsDoc='' NumArguments='1' SideEffects='true'>
+            <Name FunctionCallName='true' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='reduceErrors' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+            <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='errors' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+            </PropertyGet>
+        </FunctionCall>
+    </ExpressionStatement>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='noDataIllustration' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+    </ExpressionStatement>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+</AstRoot>

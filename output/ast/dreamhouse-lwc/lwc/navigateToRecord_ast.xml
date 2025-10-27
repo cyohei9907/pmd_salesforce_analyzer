@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<AstRoot Image='' JsDoc='' NumComments='0' SideEffects='false'>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
+        <FunctionCall Arguments='true' Image='' JsDoc='' NumArguments='1' SideEffects='true'>
+            <ArrayLiteral Destructuring='false' Image='' JsDoc='' SideEffects='false' TrailingComma='false'>
+                <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='NavigationMixin' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='Navigate' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                </PropertyGet>
+            </ArrayLiteral>
+            <ObjectLiteral Destructuring='false' Image='' JsDoc='' SideEffects='false' TrailingComma='false'>
+                <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='type' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                    <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='standard__recordPage' />
+                </ObjectProperty>
+                <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='attributes' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                    <ObjectLiteral Destructuring='false' Image='' JsDoc='' SideEffects='false' TrailingComma='false'>
+                        <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='recordId' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                            <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
+                                <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
+                                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='recordId' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                            </PropertyGet>
+                        </ObjectProperty>
+                        <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
+                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='actionName' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
+                            <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='view' />
+                        </ObjectProperty>
+                    </ObjectLiteral>
+                </ObjectProperty>
+            </ObjectLiteral>
+        </FunctionCall>
+    </ExpressionStatement>
+    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
+</AstRoot>

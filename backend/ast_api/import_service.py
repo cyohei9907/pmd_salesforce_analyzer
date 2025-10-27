@@ -4,7 +4,7 @@ AST导入服务
 """
 from .ast_parser import parse_ast_file
 from .unified_graph_service import unified_graph_service
-from .models import ASTFile
+from .models import ASTFile, Repository
 import logging
 from pathlib import Path
 
@@ -17,8 +17,15 @@ class ASTImportService:
     def __init__(self):
         self.graph_service = unified_graph_service
     
-    def import_ast_file(self, file_path):
-        """导入单个AST文件到图数据库"""
+    def import_ast_file(self, file_path, repository=None, source_code_path=None):
+        """
+        导入单个AST文件到图数据库
+        
+        Args:
+            file_path: AST文件路径
+            repository: Repository对象或None
+            source_code_path: 源代码文件路径（可选）
+        """
         try:
             # 解析AST文件
             logger.info(f"Parsing AST file: {file_path}")
@@ -26,16 +33,30 @@ class ASTImportService:
             
             # 导入到图数据库（自动选择 Neo4j 或本地）
             logger.info(f"Importing to graph database: {ast_data['name']}")
-            self._import_to_graph(ast_data)
+            self._import_to_graph(ast_data, repository)
             
             # 记录到数据库
-            ast_file, created = ASTFile.objects.update_or_create(
-                filename=Path(file_path).name,
-                defaults={
-                    'class_name': ast_data['name'],
-                    'file_path': str(file_path),
-                }
-            )
+            defaults = {
+                'class_name': ast_data['name'],
+                'file_path': str(file_path),
+            }
+            if source_code_path:
+                defaults['source_code_path'] = str(source_code_path)
+            if repository:
+                defaults['repository'] = repository
+            
+            # 如果有仓库,使用仓库+文件名作为唯一标识
+            if repository:
+                ast_file, created = ASTFile.objects.update_or_create(
+                    repository=repository,
+                    filename=Path(file_path).name,
+                    defaults=defaults
+                )
+            else:
+                ast_file, created = ASTFile.objects.update_or_create(
+                    filename=Path(file_path).name,
+                    defaults=defaults
+                )
             
             return {
                 'success': True,
@@ -43,6 +64,7 @@ class ASTImportService:
                 'methods_count': len(ast_data['methods']),
                 'created': created,
                 'backend': self.graph_service.backend_type,
+                'repository': repository.name if repository else None,
             }
             
         except Exception as e:
@@ -52,8 +74,14 @@ class ASTImportService:
                 'error': str(e),
             }
     
-    def import_directory(self, directory_path):
-        """导入目录中的所有AST文件"""
+    def import_directory(self, directory_path, repository=None):
+        """
+        导入目录中的所有AST文件
+        
+        Args:
+            directory_path: 目录路径
+            repository: Repository对象或None
+        """
         directory = Path(directory_path)
         results = []
         
@@ -94,7 +122,7 @@ class ASTImportService:
         logger.info(f"Found {len(ast_files)} AST files in {directory}")
         
         for ast_file in ast_files:
-            result = self.import_ast_file(str(ast_file))
+            result = self.import_ast_file(str(ast_file), repository)
             result['filename'] = ast_file.name
             results.append(result)
         
@@ -105,8 +133,14 @@ class ASTImportService:
             'results': results,
         }
     
-    def _import_to_graph(self, ast_data):
-        """将AST数据导入到图数据库"""
+    def _import_to_graph(self, ast_data, repository=None):
+        """
+        将AST数据导入到图数据库
+        
+        Args:
+            ast_data: AST数据
+            repository: Repository对象或None
+        """
         # 创建类节点
         class_data = {
             'name': ast_data['name'],
@@ -117,15 +151,27 @@ class ASTImportService:
             'fileName': ast_data['fileName'],
         }
         
+        # 添加仓库信息
+        if repository:
+            class_data['repository'] = repository.name
+            class_data['repositoryId'] = repository.id
+        
         # 使用统一服务创建类节点
         self.graph_service.create_class_node(class_data)
         
         # 创建方法节点和关系
         for method in ast_data['methods']:
-            self._import_method(ast_data['name'], method)
+            self._import_method(ast_data['name'], method, repository)
     
-    def _import_method(self, class_name, method_data):
-        """导入方法及其相关信息"""
+    def _import_method(self, class_name, method_data, repository=None):
+        """
+        导入方法及其相关信息
+        
+        Args:
+            class_name: 类名
+            method_data: 方法数据
+            repository: Repository对象或None
+        """
         # 创建方法节点
         method_node_data = {
             'canonicalName': f"{class_name}.{method_data['name']}",
@@ -137,6 +183,11 @@ class ASTImportService:
             'static': method_data['static'],
             'constructor': method_data['constructor'],
         }
+        
+        # 添加仓库信息
+        if repository:
+            method_node_data['repository'] = repository.name
+            method_node_data['repositoryId'] = repository.id
         
         # 创建方法节点
         self.graph_service.create_method_node(method_node_data)
@@ -164,6 +215,12 @@ class ASTImportService:
                     'className': class_name,
                     'methodName': method_data['name'],
                 }
+                
+                # 添加仓库信息
+                if repository:
+                    soql_attrs['repository'] = repository.name
+                    soql_attrs['repositoryId'] = repository.id
+                
                 self.graph_service.local_service.graph.add_node(soql_node_id, **soql_attrs)
                 self.graph_service.local_service._save_entity(soql_node_id, soql_attrs)
             
