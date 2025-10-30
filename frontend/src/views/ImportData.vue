@@ -39,16 +39,14 @@
                   <el-input
                     v-model="gitForm.apexDir"
                     placeholder="force-app/main/default/classes"
-                  >
-                    <template #append>
-                      <el-button @click="useDefaultApexPath">重置</el-button>
-                    </template>
-                  </el-input>
+                    :disabled="!!detectedStructure?.apex_classes"
+                  />
                   <div style="color: #909399; font-size: 12px; margin-top: 4px;">
-                    相对于仓库根目录的Apex类文件路径
+                    {{ detectedStructure?.apex_classes ? '已自动检测' : '相对于仓库根目录的Apex类文件路径' }}
                   </div>
                 </el-form-item>
                 
+   
                 <el-form-item>
                   <el-checkbox v-model="gitForm.autoImport">分析后自动导入到图数据库</el-checkbox>
                 </el-form-item>
@@ -69,6 +67,69 @@
                   <el-button @click="clearGitForm">{{ $t('common.reset') }}</el-button>
                 </el-form-item>
               </el-form>
+
+              <!-- 项目结构检测结果 -->
+              <el-alert
+                v-if="detectedStructure"
+                :closable="false"
+                class="structure-alert"
+                style="margin-bottom: 20px"
+              >
+                <template #title>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <el-icon><Select /></el-icon>
+                    <span>已自动检测项目结构</span>
+                  </div>
+                </template>
+                <div style="margin-top: 10px;">
+                  <div v-if="detectedStructure.apex_classes">
+                    <strong>Apex类:</strong> {{ detectedStructure.apex_classes.path }} 
+                    <el-tag size="small" type="success" style="margin-left: 8px;">
+                      {{ detectedStructure.apex_classes.count }} 个类
+                    </el-tag>
+                  </div>
+                  <div v-if="detectedStructure.lwc_components" style="margin-top: 8px;">
+                    <strong>LWC组件:</strong> {{ detectedStructure.lwc_components.path }}
+                    <el-tag size="small" type="success" style="margin-left: 8px;">
+                      {{ detectedStructure.lwc_components.count }} 个组件
+                    </el-tag>
+                  </div>
+                  <div v-if="detectedStructure.visualforce_pages" style="margin-top: 8px;">
+                    <strong>Visualforce页面:</strong> {{ detectedStructure.visualforce_pages.path }}
+                    <el-tag size="small" type="success" style="margin-left: 8px;">
+                      {{ detectedStructure.visualforce_pages.count }} 个画面
+                    </el-tag>
+                  </div>
+                </div>
+              </el-alert>
+                
+              
+              <!-- 进度显示 -->
+              <el-alert
+                v-if="analysisProgress.stage"
+                :closable="false"
+                class="progress-alert"
+                style="margin-top: 20px; margin-bottom: 20px"
+              >
+                <template #title>
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <el-icon class="is-loading"><Loading /></el-icon>
+                    <span>{{ analysisProgress.message }}</span>
+                  </div>
+                </template>
+                <div style="margin-top: 10px;">
+                  <el-progress 
+                    :percentage="analysisProgress.progress" 
+                    :status="analysisProgress.stage === 'error' ? 'exception' : undefined"
+                  />
+                  <div style="margin-top: 8px; font-size: 12px; color: #303133;">
+                    阶段: {{ analysisProgress.stage }} 
+                    <span v-if="analysisProgress.total > 0">
+                      ({{ analysisProgress.current }} / {{ analysisProgress.total }})
+                    </span>
+                  </div>
+                </div>
+              </el-alert>
               
               <el-alert
                 v-if="gitResult"
@@ -196,15 +257,78 @@
             </div>
           </template>
           
-          <el-table :data="importedFiles" style="width: 100%" max-height="600">
-            <el-table-column prop="class_name" :label="$t('graph.className')" />
-            <el-table-column prop="filename" :label="$t('import.fileName')" />
-            <el-table-column :label="$t('import.importTime')" width="180">
-              <template #default="scope">
-                {{ formatDate(scope.row.imported_at) }}
-              </template>
-            </el-table-column>
-          </el-table>
+          <!-- 按仓库分组显示 -->
+          <div v-if="filesByRepository && filesByRepository.repositories && filesByRepository.repositories.length > 0" style="max-height: 600px; overflow-y: auto;">
+            <el-collapse v-model="expandedRepos">
+              <el-collapse-item 
+                v-for="repo in filesByRepository.repositories" 
+                :key="repo.id"
+                :name="repo.id"
+              >
+                <template #title>
+                  <div style="display: flex; align-items: center; gap: 8px; width: 100%;">
+                    <el-icon><FolderOpened /></el-icon>
+                    <strong>{{ repo.name }}</strong>
+                    <el-tag v-if="repo.is_active" type="success" size="small">活动</el-tag>
+                    <span style="margin-left: auto; font-size: 12px; color: #909399;">
+                      {{ getTotalFileCount(repo) }} 个文件
+                    </span>
+                  </div>
+                </template>
+                
+                <!-- Apex -->
+                <div v-if="repo.components.apex && repo.components.apex.length > 0" style="margin-bottom: 15px;">
+                  <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
+                    <el-icon color="#409eff"><Document /></el-icon>
+                    <strong style="color: #409eff;">Apex Classes</strong>
+                    <el-tag size="small" type="primary">{{ repo.components.apex.length }}</el-tag>
+                  </div>
+                  <div style="margin-left: 20px;">
+                    <div v-for="file in repo.components.apex" :key="file.name" class="file-item">
+                      <el-icon><Document /></el-icon>
+                      <span>{{ file.name }}</span>
+                      <el-tag size="small" style="margin-left: 8px;">XML</el-tag>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Visualforce -->
+                <div v-if="repo.components.visualforce && repo.components.visualforce.length > 0" style="margin-bottom: 15px;">
+                  <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
+                    <el-icon color="#e6a23c"><Document /></el-icon>
+                    <strong style="color: #e6a23c;">Visualforce Pages</strong>
+                    <el-tag size="small" type="warning">{{ repo.components.visualforce.length }}</el-tag>
+                  </div>
+                  <div style="margin-left: 20px;">
+                    <div v-for="file in repo.components.visualforce" :key="file.name" class="file-item">
+                      <el-icon><Document /></el-icon>
+                      <span>{{ file.name }}</span>
+                      <el-tag size="small" style="margin-left: 8px;">XML</el-tag>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- LWC -->
+                <div v-if="repo.components.lwc && repo.components.lwc.length > 0">
+                  <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px;">
+                    <el-icon color="#67c23a"><Files /></el-icon>
+                    <strong style="color: #67c23a;">LWC Components</strong>
+                    <el-tag size="small" type="success">{{ repo.components.lwc.length }}</el-tag>
+                  </div>
+                  <div style="margin-left: 20px;">
+                    <div v-for="file in repo.components.lwc" :key="file.name" class="file-item">
+                      <el-icon><Files /></el-icon>
+                      <span>{{ file.name }}</span>
+                      <el-tag v-if="file.ast_file" size="small" style="margin-left: 8px;">XML</el-tag>
+                      <el-tag v-else size="small" type="info" style="margin-left: 8px;">JSON</el-tag>
+                    </div>
+                  </div>
+                </div>
+              </el-collapse-item>
+            </el-collapse>
+          </div>
+          
+          <el-empty v-else description="暂无已导入的文件" />
           
           <div style="margin-top: 20px; text-align: center">
             <el-popconfirm
@@ -227,14 +351,37 @@ import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import api from '@/api'
 import { ElMessage } from 'element-plus'
-import { Upload, Refresh, Delete, Download, Link } from '@element-plus/icons-vue'
+import { 
+  Upload, 
+  Refresh, 
+  Delete, 
+  Download, 
+  Link, 
+  Select, 
+  Document, 
+  Files, 
+  FolderOpened,
+  Loading
+} from '@element-plus/icons-vue'
 
 const { t, locale } = useI18n()
 const activeTab = ref('git')
 const importing = ref(false)
 const importResult = ref(null)
 const gitResult = ref(null)
-const importedFiles = ref([])
+const filesByRepository = ref(null)
+const expandedRepos = ref([])
+const detectedStructure = ref(null)
+
+// 进度跟踪
+const analysisProgress = ref({
+  stage: '',
+  message: '',
+  progress: 0,
+  current: 0,
+  total: 0
+})
+let progressTimer = null
 
 const directoryForm = ref({
   path: ''
@@ -251,6 +398,15 @@ const gitForm = ref({
   autoImport: true,
   force: false
 })
+
+// 计算仓库总文件数
+const getTotalFileCount = (repo) => {
+  let total = 0
+  if (repo.components.apex) total += repo.components.apex.length
+  if (repo.components.visualforce) total += repo.components.visualforce.length
+  if (repo.components.lwc) total += repo.components.lwc.length
+  return total
+}
 
 const useDefaultPath = () => {
   // 使用相对路径，相对于项目根目录
@@ -305,14 +461,17 @@ const importFile = async () => {
 
 const loadImportedFiles = async () => {
   try {
-    importedFiles.value = await api.getImportedFiles()
+    const data = await api.getImportedFiles()
+    filesByRepository.value = data
+    
+    // 默认展开所有仓库
+    if (data.repositories && data.repositories.length > 0) {
+      expandedRepos.value = data.repositories.map(r => r.id)
+    }
   } catch (error) {
+    console.error('Failed to load imported files:', error)
     ElMessage.error(t('import.loadError'))
   }
-}
-
-const useDefaultApexPath = () => {
-  gitForm.value.apexDir = 'force-app/main/default/classes'
 }
 
 const clearGitForm = () => {
@@ -324,6 +483,80 @@ const clearGitForm = () => {
     force: false
   }
   gitResult.value = null
+  detectedStructure.value = null
+  stopPolling()
+  analysisProgress.value = {
+    stage: '',
+    message: '',
+    progress: 0,
+    current: 0,
+    total: 0
+  }
+}
+
+// 进度轮询函数
+const pollProgress = async (taskId) => {
+  try {
+    const response = await api.getAnalysisProgress(taskId)
+    
+    if (response && response.success && response.progress) {
+      const progress = response.progress
+      
+      analysisProgress.value = {
+        stage: progress.stage || '',
+        message: progress.message || '',
+        progress: progress.progress || 0,
+        current: progress.current || 0,
+        total: progress.total || 0
+      }
+      
+      // 如果还没完成,继续轮询
+      if (progress.stage !== 'completed' && progress.stage !== 'error') {
+        progressTimer = setTimeout(() => pollProgress(taskId), 1000) // 每秒轮询一次
+      } else {
+        // 完成或错误
+        importing.value = false
+        
+        if (progress.stage === 'completed') {
+          ElMessage.success('处理完成!')
+          // リロードファイルリスト
+          if (gitForm.value.autoImport) {
+            loadImportedFiles()
+          }
+        } else if (progress.stage === 'error') {
+          ElMessage.error('处理失败: ' + (progress.message || '未知错误'))
+        }
+        
+        // 2秒後にクリア
+        setTimeout(() => {
+          analysisProgress.value = {
+            stage: '',
+            message: '',
+            progress: 0,
+            current: 0,
+            total: 0
+          }
+        }, 3000)
+      }
+    } else {
+      // 進度が見つからない場合
+      console.warn('Progress not found for task:', taskId)
+    }
+  } catch (error) {
+    console.error('Failed to poll progress:', error)
+    // エラーの場合も続行
+    if (analysisProgress.value.stage !== 'completed' && analysisProgress.value.stage !== 'error') {
+      progressTimer = setTimeout(() => pollProgress(taskId), 2000) // エラー時は2秒待つ
+    }
+  }
+}
+
+// 停止轮询
+const stopPolling = () => {
+  if (progressTimer) {
+    clearTimeout(progressTimer)
+    progressTimer = null
+  }
 }
 
 const cloneAndAnalyze = async () => {
@@ -334,6 +567,17 @@ const cloneAndAnalyze = async () => {
   
   importing.value = true
   gitResult.value = null
+  detectedStructure.value = null
+  stopPolling() // 清除之前的轮询
+  
+  // 重置进度
+  analysisProgress.value = {
+    stage: 'init',
+    message: '初始化...',
+    progress: 0,
+    current: 0,
+    total: 0
+  }
   
   try {
     const result = await api.cloneAndAnalyze(
@@ -343,15 +587,45 @@ const cloneAndAnalyze = async () => {
       gitForm.value.force,
       gitForm.value.autoImport
     )
-    gitResult.value = result
-    ElMessage.success('Git仓库处理成功！')
-    if (gitForm.value.autoImport) {
-      loadImportedFiles()
+    
+    // バックグラウンドタスクが開始された
+    if (result.task_id) {
+      ElMessage.info('处理已开始，请稍候...')
+      // 開始輪詢進度
+      pollProgress(result.task_id)
+    } else {
+      // 古い同期レスポンスの場合
+      gitResult.value = result
+      
+      // 保存检测到的项目结构
+      if (result.structure && result.structure.success) {
+        detectedStructure.value = result.structure
+        
+        // 如果检测到Apex路径,更新表单
+        if (result.structure.apex_classes) {
+          gitForm.value.apexDir = result.structure.apex_classes.path
+        }
+      }
+      
+      ElMessage.success('Git仓库处理成功!')
+      if (gitForm.value.autoImport) {
+        loadImportedFiles()
+      }
+      importing.value = false
     }
   } catch (error) {
     gitResult.value = { success: false, error: error.response?.data?.error || error.message }
     ElMessage.error('处理失败: ' + (error.response?.data?.error || error.message))
-  } finally {
+    stopPolling()
+    
+    // 显示错误状态
+    analysisProgress.value = {
+      stage: 'error',
+      message: '处理失败',
+      progress: 0,
+      current: 0,
+      total: 0
+    }
     importing.value = false
   }
 }
@@ -416,5 +690,58 @@ onMounted(() => {
 .custom-alert .alert-content p {
   color: #303133 !important;
   margin: 4px 0;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+  font-size: 13px;
+  color: #606266;
+}
+
+.file-item:hover {
+  background-color: #f5f7fa;
+  padding-left: 4px;
+  border-radius: 4px;
+}
+
+/* 进度显示Alert样式 - 灰色背景，黑色文字 */
+.progress-alert {
+  background-color: #f5f5f5 !important;
+  border-color: #d3d3d3 !important;
+}
+
+.progress-alert :deep(.el-alert__title) {
+  color: #303133 !important;
+  font-weight: 600;
+}
+
+.progress-alert :deep(.el-alert__description) {
+  color: #303133 !important;
+}
+
+/* 项目结构检测Alert样式 - 灰色背景，黑色文字 */
+.structure-alert {
+  background-color: #f5f5f5 !important;
+  border-color: #d3d3d3 !important;
+}
+
+.structure-alert :deep(.el-alert__title) {
+  color: #303133 !important;
+  font-weight: 600;
+}
+
+.structure-alert :deep(.el-alert__description) {
+  color: #303133 !important;
+}
+
+.structure-alert div {
+  color: #303133 !important;
+}
+
+.structure-alert strong {
+  color: #303133 !important;
 }
 </style>

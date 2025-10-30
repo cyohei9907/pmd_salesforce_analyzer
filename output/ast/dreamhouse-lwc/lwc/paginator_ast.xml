@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="paginator.js">
+  <Imports>
+    <Import source="lwc">
+      <Specifier type="named" imported="LightningElement" local="LightningElement" />
+      <Specifier type="named" imported="api" local="api" />
+    </Import>
+  </Imports>
+  <Exports>
+    <Export type="default" name="Paginator" />
+  </Exports>
+  <Classes>
+    <Class name="Paginator" superClass="LightningElement">
+      <Properties>
+        <Property name="pageNumber" static="false" />
+        <Property name="pageSize" static="false" />
+        <Property name="totalItemCount" static="false" />
+      </Properties>
+      <Methods>
+        <Method name="handlePrevious" kind="method" async="false" static="false">
+        </Method>
+        <Method name="handleNext" kind="method" async="false" static="false">
+        </Method>
+        <Method name="currentPageNumber" kind="get" async="false" static="false">
+        </Method>
+        <Method name="isNotFirstPage" kind="get" async="false" static="false">
+        </Method>
+        <Method name="isNotLastPage" kind="get" async="false" static="false">
+        </Method>
+        <Method name="totalPages" kind="get" async="false" static="false">
+        </Method>
+      </Methods>
+    </Class>
+  </Classes>
+</JavaScriptFile>

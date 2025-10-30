@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="propertyListMap.js">
+  <Imports>
+    <Import source="lwc">
+      <Specifier type="named" imported="LightningElement" local="LightningElement" />
+      <Specifier type="named" imported="wire" local="wire" />
+    </Import>
+    <Import source="lightning/messageService">
+      <Specifier type="named" imported="publish" local="publish" />
+      <Specifier type="named" imported="subscribe" local="subscribe" />
+      <Specifier type="named" imported="unsubscribe" local="unsubscribe" />
+      <Specifier type="named" imported="MessageContext" local="MessageContext" />
+    </Import>
+    <Import source="@salesforce/messageChannel/FiltersChange__c">
+      <Specifier type="default" imported="FILTERS_CHANGED" local="FILTERS_CHANGED" />
+    </Import>
+    <Import source="@salesforce/messageChannel/PropertySelected__c">
+      <Specifier type="default" imported="PROPERTY_SELECTED" local="PROPERTY_SELECTED" />
+    </Import>
+    <Import source="lightning/platformShowToastEvent">
+      <Specifier type="named" imported="ShowToastEvent" local="ShowToastEvent" />
+    </Import>
+    <Import source="lightning/platformResourceLoader">
+      <Specifier type="named" imported="loadScript" local="loadScript" />
+      <Specifier type="named" imported="loadStyle" local="loadStyle" />
+    </Import>
+    <Import source="@salesforce/resourceUrl/leafletjs">
+      <Specifier type="default" imported="LEAFLET" local="LEAFLET" />
+    </Import>
+    <Import source="@salesforce/apex/PropertyController.getPagedPropertyList">
+      <Specifier type="default" imported="getPagedPropertyList" local="getPagedPropertyList" />
+    </Import>
+  </Imports>
+  <Exports>
+    <Export type="default" name="PropertyListMap" />
+  </Exports>
+  <Classes>
+    <Class name="PropertyListMap" superClass="LightningElement">
+      <Properties>
+        <Property name="properties" static="false" />
+        <Property name="leafletState" static="false" />
+        <Property name="map" static="false" />
+        <Property name="propertyLayer" static="false" />
+        <Property name="searchKey" static="false" />
+        <Property name="maxPrice" static="false" />
+        <Property name="minBedrooms" static="false" />
+        <Property name="minBathrooms" static="false" />
+        <Property name="pageNumber" static="false" />
+        <Property name="pageSize" static="false" />
+        <Property name="messageContext" static="false" />
+      </Properties>
+      <Methods>
+        <Method name="wiredProperties" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="ObjectPattern" />
+          </Parameters>
+        </Method>
+        <Method name="connectedCallback" kind="method" async="false" static="false">
+        </Method>
+        <Method name="disconnectedCallback" kind="method" async="false" static="false">
+        </Method>
+        <Method name="renderedCallback" kind="method" async="true" static="false">
+        </Method>
+        <Method name="initializeLeaflet" kind="method" async="true" static="false">
+        </Method>
+        <Method name="displayProperties" kind="method" async="false" static="false">
+        </Method>
+        <Method name="handleFilterChange" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="filters" />
+          </Parameters>
+        </Method>
+        <Method name="getTooltipMarkup" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="property" />
+          </Parameters>
+        </Method>
+      </Methods>
+    </Class>
+  </Classes>
+</JavaScriptFile>

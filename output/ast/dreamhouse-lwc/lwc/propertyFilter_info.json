@@ -1,0 +1,28 @@
+{
+  "name": "propertyFilter",
+  "has_js": true,
+  "has_html": true,
+  "has_meta": true,
+  "files": [
+    {
+      "name": "propertyFilter.html",
+      "type": ".html",
+      "size": 1345
+    },
+    {
+      "name": "propertyFilter.js",
+      "type": ".js",
+      "size": 1919
+    },
+    {
+      "name": "propertyFilter.js-meta.xml",
+      "type": ".xml",
+      "size": 640
+    }
+  ],
+  "ast_file": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\propertyFilter_ast.xml",
+  "ast_generated": true,
+  "parser": "babel",
+  "js_source": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\propertyFilter.js",
+  "source_dir": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\propertyFilter"
+}

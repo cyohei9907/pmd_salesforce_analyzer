@@ -1,0 +1,33 @@
+{
+  "name": "propertyListMap",
+  "has_js": true,
+  "has_html": true,
+  "has_meta": true,
+  "files": [
+    {
+      "name": "propertyListMap.css",
+      "type": ".css",
+      "size": 698
+    },
+    {
+      "name": "propertyListMap.html",
+      "type": ".html",
+      "size": 71
+    },
+    {
+      "name": "propertyListMap.js",
+      "type": ".js",
+      "size": 6132
+    },
+    {
+      "name": "propertyListMap.js-meta.xml",
+      "type": ".xml",
+      "size": 340
+    }
+  ],
+  "ast_file": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\propertyListMap_ast.xml",
+  "ast_generated": true,
+  "parser": "babel",
+  "js_source": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\propertyListMap.js",
+  "source_dir": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\propertyListMap"
+}

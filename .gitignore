@@ -24,6 +24,11 @@ yarn-error.log*
 # Dependency directories
 frontend/node_modules/*
 backend/venv/*
+node_modules/
+
+# Package lock files
+package-lock.json
+yarn.lock
 
 # Eslint cache
 .eslintcache

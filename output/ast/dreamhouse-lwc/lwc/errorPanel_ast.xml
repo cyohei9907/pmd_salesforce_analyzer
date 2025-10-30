@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="errorPanel.js">
+  <Imports>
+    <Import source="lwc">
+      <Specifier type="named" imported="LightningElement" local="LightningElement" />
+      <Specifier type="named" imported="api" local="api" />
+    </Import>
+    <Import source="c/ldsUtils">
+      <Specifier type="named" imported="reduceErrors" local="reduceErrors" />
+    </Import>
+    <Import source="./templates/noDataIllustration.html">
+      <Specifier type="default" imported="noDataIllustration" local="noDataIllustration" />
+    </Import>
+    <Import source="./templates/inlineMessage.html">
+      <Specifier type="default" imported="inlineMessage" local="inlineMessage" />
+    </Import>
+  </Imports>
+  <Exports>
+    <Export type="default" name="ErrorPanel" />
+  </Exports>
+  <Classes>
+    <Class name="ErrorPanel" superClass="LightningElement">
+      <Properties>
+        <Property name="errors" static="false" />
+        <Property name="friendlyMessage" static="false" />
+        <Property name="type" static="false" />
+        <Property name="viewDetails" static="false" />
+      </Properties>
+      <Methods>
+        <Method name="errorMessages" kind="get" async="false" static="false">
+        </Method>
+        <Method name="handleShowDetailsClick" kind="method" async="false" static="false">
+        </Method>
+        <Method name="render" kind="method" async="false" static="false">
+        </Method>
+      </Methods>
+    </Class>
+  </Classes>
+</JavaScriptFile>

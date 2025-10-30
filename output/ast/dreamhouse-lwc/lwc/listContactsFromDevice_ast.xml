@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="listContactsFromDevice.js">
+  <Imports>
+    <Import source="lwc">
+      <Specifier type="named" imported="LightningElement" local="LightningElement" />
+    </Import>
+    <Import source="lightning/mobileCapabilities">
+      <Specifier type="named" imported="getContactsService" local="getContactsService" />
+    </Import>
+  </Imports>
+  <Exports>
+    <Export type="default" name="ListContactsFromDevice" />
+  </Exports>
+  <Classes>
+    <Class name="ListContactsFromDevice" superClass="LightningElement">
+      <Properties>
+        <Property name="contactsService" static="false" />
+        <Property name="deviceContacts" static="false" />
+        <Property name="error" static="false" />
+      </Properties>
+      <Methods>
+        <Method name="connectedCallback" kind="method" async="true" static="false">
+        </Method>
+        <Method name="retrieveDeviceContacts" kind="method" async="true" static="false">
+        </Method>
+      </Methods>
+    </Class>
+  </Classes>
+</JavaScriptFile>

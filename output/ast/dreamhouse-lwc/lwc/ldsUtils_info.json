@@ -1,0 +1,23 @@
+{
+  "name": "ldsUtils",
+  "has_js": true,
+  "has_html": false,
+  "has_meta": true,
+  "files": [
+    {
+      "name": "ldsUtils.js",
+      "type": ".js",
+      "size": 1296
+    },
+    {
+      "name": "ldsUtils.js-meta.xml",
+      "type": ".xml",
+      "size": 242
+    }
+  ],
+  "ast_file": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\ldsUtils_ast.xml",
+  "ast_generated": true,
+  "parser": "babel",
+  "js_source": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\ldsUtils.js",
+  "source_dir": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\ldsUtils"
+}

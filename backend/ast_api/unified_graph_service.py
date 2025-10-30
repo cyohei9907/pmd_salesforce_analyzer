@@ -243,6 +243,48 @@ class UnifiedGraphService:
         except Exception as e:
             logger.error(f"Failed to export graph: {e}")
             return None
+    
+    def get_repository_graph(self, repository_name: str) -> Dict[str, Any]:
+        """
+        获取指定仓库的图数据
+        
+        Args:
+            repository_name: 仓库名称
+            
+        Returns:
+            包含节点和边的图数据
+        """
+        if not self.use_local:
+            logger.error("Local graph service not available")
+            return {'nodes': [], 'edges': []}
+        
+        try:
+            # 获取所有节点,筛选属于该仓库的节点
+            all_graph = self.local_service.get_full_graph()
+            
+            repo_nodes = []
+            repo_edges = []
+            repo_node_ids = set()
+            
+            # 筛选该仓库的节点
+            for node in all_graph['nodes']:
+                props = node.get('properties', {})
+                if props.get('repository') == repository_name:
+                    repo_nodes.append(node)
+                    repo_node_ids.add(node['id'])
+            
+            # 筛选该仓库的关系(两端节点都在该仓库中)
+            for edge in all_graph.get('edges', []):
+                if edge['source'] in repo_node_ids and edge['target'] in repo_node_ids:
+                    repo_edges.append(edge)
+            
+            return {
+                'nodes': repo_nodes,
+                'edges': repo_edges
+            }
+        except Exception as e:
+            logger.error(f"Failed to get repository graph: {e}")
+            return {'nodes': [], 'edges': []}
 
 
 # 全局统一服务实例

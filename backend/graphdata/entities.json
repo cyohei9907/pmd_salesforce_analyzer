@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "timestamp": "2025-10-25T18:19:34.314584",
-    "total_entities": 72
+    "timestamp": "2025-10-29T14:45:28.685041",
+    "total_entities": 214
   },
   "entities": {
     "class:FileUtilities": {
@@ -14,7 +14,7 @@
         "public": false,
         "withSharing": false,
         "fileName": "FileUtilities_ast.xml",
-        "created_at": "2025-10-25T18:19:32.877062"
+        "created_at": "2025-10-29T14:45:21.411358"
       }
     },
     "method:FileUtilities.createFile": {
@@ -28,7 +28,7 @@
         "static": true,
         "returnType": "String",
         "arity": 3,
-        "created_at": "2025-10-25T18:19:32.886134"
+        "created_at": "2025-10-29T14:45:21.417379"
       }
     },
     "soql:FileUtilities.createFile.0": {
@@ -38,7 +38,9 @@
         "query": "SELECT ContentDocumentId                 FROM ContentVersion                 WHERE Id = :contentVersion.Id                 WITH USER_MODE",
         "canonicalQuery": "SELECT ContentDocumentId                 FROM ContentVersion                 WHERE Id = :tmpVar1                 WITH USER_MODE",
         "className": "FileUtilities",
-        "methodName": "createFile"
+        "methodName": "createFile",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "dml:FileUtilities.createFile.INSERT.0": {
@@ -69,7 +71,7 @@
         "public": false,
         "withSharing": true,
         "fileName": "FileUtilitiesTest_ast.xml",
-        "created_at": "2025-10-25T18:19:32.702297"
+        "created_at": "2025-10-29T14:45:21.534419"
       }
     },
     "method:FileUtilitiesTest.createFileSucceedsWhenCorrectInput": {
@@ -83,7 +85,7 @@
         "static": true,
         "returnType": "void",
         "arity": 0,
-        "created_at": "2025-10-25T18:19:32.704295"
+        "created_at": "2025-10-29T14:45:21.547419"
       }
     },
     "dml:FileUtilitiesTest.createFileSucceedsWhenCorrectInput.INSERT.0": {
@@ -106,7 +108,7 @@
         "static": true,
         "returnType": "void",
         "arity": 0,
-        "created_at": "2025-10-25T18:19:32.747203"
+        "created_at": "2025-10-29T14:45:21.601052"
       }
     },
     "method:FileUtilitiesTest.createFileFailsWhenIncorrectBase64Data": {
@@ -120,7 +122,7 @@
         "static": true,
         "returnType": "void",
         "arity": 0,
-        "created_at": "2025-10-25T18:19:32.767838"
+        "created_at": "2025-10-29T14:45:21.628058"
       }
     },
     "dml:FileUtilitiesTest.createFileFailsWhenIncorrectBase64Data.INSERT.0": {
@@ -143,7 +145,7 @@
         "static": true,
         "returnType": "void",
         "arity": 0,
-        "created_at": "2025-10-25T18:19:32.821616"
+        "created_at": "2025-10-29T14:45:21.681242"
       }
     },
     "dml:FileUtilitiesTest.createFileFailsWhenIncorrectFilename.INSERT.0": {
@@ -153,75 +155,6 @@
         "className": "FileUtilitiesTest",
         "methodName": "createFileFailsWhenIncorrectFilename",
         "operationType": "INSERT"
-      }
-    },
-    "class:GeocodingServiceTest": {
-      "node_id": "class:GeocodingServiceTest",
-      "attributes": {
-        "type": "ApexClass",
-        "name": "GeocodingServiceTest",
-        "simpleName": "GeocodingServiceTest",
-        "definingType": "GeocodingServiceTest",
-        "public": false,
-        "withSharing": true,
-        "fileName": "GeocodingServiceTest_ast.xml",
-        "created_at": "2025-10-25T18:19:32.983123"
-      }
-    },
-    "method:GeocodingServiceTest.respond": {
-      "node_id": "method:GeocodingServiceTest.respond",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "GeocodingServiceTest.respond",
-        "className": "GeocodingServiceTest",
-        "name": "respond",
-        "public": false,
-        "static": false,
-        "returnType": "HTTPResponse",
-        "arity": 1,
-        "created_at": "2025-10-25T18:19:33.014766"
-      }
-    },
-    "method:GeocodingServiceTest.successResponse": {
-      "node_id": "method:GeocodingServiceTest.successResponse",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "GeocodingServiceTest.successResponse",
-        "className": "GeocodingServiceTest",
-        "name": "successResponse",
-        "public": false,
-        "static": true,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T18:19:33.033310"
-      }
-    },
-    "method:GeocodingServiceTest.blankAddress": {
-      "node_id": "method:GeocodingServiceTest.blankAddress",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "GeocodingServiceTest.blankAddress",
-        "className": "GeocodingServiceTest",
-        "name": "blankAddress",
-        "public": false,
-        "static": true,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T18:19:33.054333"
-      }
-    },
-    "method:GeocodingServiceTest.errorResponse": {
-      "node_id": "method:GeocodingServiceTest.errorResponse",
-      "attributes": {
-        "type": "ApexMethod",
-        "canonicalName": "GeocodingServiceTest.errorResponse",
-        "className": "GeocodingServiceTest",
-        "name": "errorResponse",
-        "public": false,
-        "static": true,
-        "returnType": "void",
-        "arity": 0,
-        "created_at": "2025-10-25T18:19:33.076555"
       }
     },
     "class:GeocodingService": {
@@ -234,7 +167,7 @@
         "public": false,
         "withSharing": false,
         "fileName": "GeocodingService_ast.xml",
-        "created_at": "2025-10-25T18:19:33.109133"
+        "created_at": "2025-10-29T14:45:21.755028"
       }
     },
     "method:GeocodingService.geocodeAddresses": {
@@ -248,7 +181,76 @@
         "static": true,
         "returnType": "List&lt;Coordinates>",
         "arity": 1,
-        "created_at": "2025-10-25T18:19:33.120164"
+        "created_at": "2025-10-29T14:45:21.769031"
+      }
+    },
+    "class:GeocodingServiceTest": {
+      "node_id": "class:GeocodingServiceTest",
+      "attributes": {
+        "type": "ApexClass",
+        "name": "GeocodingServiceTest",
+        "simpleName": "GeocodingServiceTest",
+        "definingType": "GeocodingServiceTest",
+        "public": false,
+        "withSharing": true,
+        "fileName": "GeocodingServiceTest_ast.xml",
+        "created_at": "2025-10-29T14:45:21.810998"
+      }
+    },
+    "method:GeocodingServiceTest.respond": {
+      "node_id": "method:GeocodingServiceTest.respond",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "GeocodingServiceTest.respond",
+        "className": "GeocodingServiceTest",
+        "name": "respond",
+        "public": false,
+        "static": false,
+        "returnType": "HTTPResponse",
+        "arity": 1,
+        "created_at": "2025-10-29T14:45:21.851950"
+      }
+    },
+    "method:GeocodingServiceTest.successResponse": {
+      "node_id": "method:GeocodingServiceTest.successResponse",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "GeocodingServiceTest.successResponse",
+        "className": "GeocodingServiceTest",
+        "name": "successResponse",
+        "public": false,
+        "static": true,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-29T14:45:21.879368"
+      }
+    },
+    "method:GeocodingServiceTest.blankAddress": {
+      "node_id": "method:GeocodingServiceTest.blankAddress",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "GeocodingServiceTest.blankAddress",
+        "className": "GeocodingServiceTest",
+        "name": "blankAddress",
+        "public": false,
+        "static": true,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-29T14:45:21.907368"
+      }
+    },
+    "method:GeocodingServiceTest.errorResponse": {
+      "node_id": "method:GeocodingServiceTest.errorResponse",
+      "attributes": {
+        "type": "ApexMethod",
+        "canonicalName": "GeocodingServiceTest.errorResponse",
+        "className": "GeocodingServiceTest",
+        "name": "errorResponse",
+        "public": false,
+        "static": true,
+        "returnType": "void",
+        "arity": 0,
+        "created_at": "2025-10-29T14:45:21.939001"
       }
     },
     "class:PagedResult": {
@@ -261,7 +263,7 @@
         "public": false,
         "withSharing": false,
         "fileName": "PagedResult_ast.xml",
-        "created_at": "2025-10-25T18:19:33.160625"
+        "created_at": "2025-10-29T14:45:21.983382"
       }
     },
     "method:PagedResult.__sfdc_pageSize": {
@@ -275,7 +277,7 @@
         "static": false,
         "returnType": "void",
         "arity": 1,
-        "created_at": "2025-10-25T18:19:33.195263"
+        "created_at": "2025-10-29T14:45:22.023900"
       }
     },
     "method:PagedResult.__sfdc_pageNumber": {
@@ -289,7 +291,7 @@
         "static": false,
         "returnType": "void",
         "arity": 1,
-        "created_at": "2025-10-25T18:19:33.242439"
+        "created_at": "2025-10-29T14:45:22.088690"
       }
     },
     "method:PagedResult.__sfdc_totalItemCount": {
@@ -303,7 +305,7 @@
         "static": false,
         "returnType": "void",
         "arity": 1,
-        "created_at": "2025-10-25T18:19:33.287511"
+        "created_at": "2025-10-29T14:45:22.148240"
       }
     },
     "method:PagedResult.__sfdc_records": {
@@ -317,7 +319,7 @@
         "static": false,
         "returnType": "void",
         "arity": 1,
-        "created_at": "2025-10-25T18:19:33.329127"
+        "created_at": "2025-10-29T14:45:22.201323"
       }
     },
     "class:PropertyController": {
@@ -330,7 +332,7 @@
         "public": false,
         "withSharing": false,
         "fileName": "PropertyController_ast.xml",
-        "created_at": "2025-10-25T18:19:33.359294"
+        "created_at": "2025-10-29T14:45:22.249247"
       }
     },
     "method:PropertyController.getPagedPropertyList": {
@@ -344,7 +346,7 @@
         "static": true,
         "returnType": "PagedResult",
         "arity": 6,
-        "created_at": "2025-10-25T18:19:33.367944"
+        "created_at": "2025-10-29T14:45:22.263267"
       }
     },
     "soql:PropertyController.getPagedPropertyList.0": {
@@ -354,7 +356,9 @@
         "query": "SELECT COUNT()             FROM Property__c             WHERE                 (Name LIKE :searchPattern                 OR City__c LIKE :searchPattern                 OR Tags__c LIKE :searchPattern)                 AND Price__c &lt;= :safeMaxPrice                 AND Beds__c >= :safeMinBedrooms                 AND Baths__c >= :safeMinBathrooms",
         "canonicalQuery": "SELECT COUNT()             FROM Property__c             WHERE                 (Name LIKE :tmpVar1                 OR City__c LIKE :tmpVar2                 OR Tags__c LIKE :tmpVar3)                 AND Price__c &lt;= :tmpVar4                 AND Beds__c >= :tmpVar5                 AND Baths__c >= :tmpVar6",
         "className": "PropertyController",
-        "methodName": "getPagedPropertyList"
+        "methodName": "getPagedPropertyList",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "soql:PropertyController.getPagedPropertyList.1": {
@@ -364,7 +368,9 @@
         "query": "SELECT                 Id,                 Name,                 Address__c,                 City__c,                 State__c,                 Description__c,                 Price__c,                 Baths__c,                 Beds__c,                 Thumbnail__c,                 Location__Latitude__s,                 Location__Longitude__s             FROM Property__c             WHERE                 (Name LIKE :searchPattern                 OR City__c LIKE :searchPattern                 OR Tags__c LIKE :searchPattern)                 AND Price__c &lt;= :safeMaxPrice                 AND Beds__c >= :safeMinBedrooms                 AND Baths__c >= :safeMinBathrooms             WITH USER_MODE             ORDER BY Price__c             LIMIT :safePageSize             OFFSET :offset",
         "canonicalQuery": "SELECT                 Id,                 Name,                 Address__c,                 City__c,                 State__c,                 Description__c,                 Price__c,                 Baths__c,                 Beds__c,                 Thumbnail__c,                 Location__Latitude__s,                 Location__Longitude__s             FROM Property__c             WHERE                 (Name LIKE :tmpVar1                 OR City__c LIKE :tmpVar2                 OR Tags__c LIKE :tmpVar3)                 AND Price__c &lt;= :tmpVar4                 AND Beds__c >= :tmpVar5                 AND Baths__c >= :tmpVar6             WITH USER_MODE             ORDER BY Price__c             LIMIT :tmpVar7             OFFSET :tmpVar8",
         "className": "PropertyController",
-        "methodName": "getPagedPropertyList"
+        "methodName": "getPagedPropertyList",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "method:PropertyController.getPictures": {
@@ -378,7 +384,7 @@
         "static": true,
         "returnType": "List&lt;ContentVersion>",
         "arity": 1,
-        "created_at": "2025-10-25T18:19:33.427026"
+        "created_at": "2025-10-29T14:45:22.345712"
       }
     },
     "soql:PropertyController.getPictures.0": {
@@ -388,7 +394,9 @@
         "query": "SELECT Id, LinkedEntityId, ContentDocument.Title             FROM ContentDocumentLink             WHERE                 LinkedEntityId = :propertyId                 AND ContentDocument.FileType IN ('PNG', 'JPG', 'GIF')             WITH USER_MODE",
         "canonicalQuery": "SELECT Id, LinkedEntityId, ContentDocument.Title             FROM ContentDocumentLink             WHERE                 LinkedEntityId = :tmpVar1                 AND ContentDocument.FileType IN ('PNG', 'JPG', 'GIF')             WITH USER_MODE",
         "className": "PropertyController",
-        "methodName": "getPictures"
+        "methodName": "getPictures",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "soql:PropertyController.getPictures.1": {
@@ -398,7 +406,9 @@
         "query": "SELECT Id, Title             FROM ContentVersion             WHERE ContentDocumentId IN :contentIds AND IsLatest = TRUE             WITH USER_MODE             ORDER BY CreatedDate",
         "canonicalQuery": "SELECT Id, Title             FROM ContentVersion             WHERE ContentDocumentId IN :tmpVar1 AND IsLatest = TRUE             WITH USER_MODE             ORDER BY CreatedDate",
         "className": "PropertyController",
-        "methodName": "getPictures"
+        "methodName": "getPictures",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "class:SampleDataController": {
@@ -411,7 +421,7 @@
         "public": false,
         "withSharing": false,
         "fileName": "SampleDataController_ast.xml",
-        "created_at": "2025-10-25T18:19:33.494909"
+        "created_at": "2025-10-29T14:45:22.444525"
       }
     },
     "method:SampleDataController.importSampleData": {
@@ -425,7 +435,7 @@
         "static": true,
         "returnType": "void",
         "arity": 0,
-        "created_at": "2025-10-25T18:19:33.502415"
+        "created_at": "2025-10-29T14:45:22.458860"
       }
     },
     "soql:SampleDataController.importSampleData.0": {
@@ -435,7 +445,9 @@
         "query": "SELECT Id FROM Case",
         "canonicalQuery": "SELECT Id FROM Case",
         "className": "SampleDataController",
-        "methodName": "importSampleData"
+        "methodName": "importSampleData",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "soql:SampleDataController.importSampleData.1": {
@@ -445,7 +457,9 @@
         "query": "SELECT Id FROM Property__c",
         "canonicalQuery": "SELECT Id FROM Property__c",
         "className": "SampleDataController",
-        "methodName": "importSampleData"
+        "methodName": "importSampleData",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "soql:SampleDataController.importSampleData.2": {
@@ -455,7 +469,9 @@
         "query": "SELECT Id FROM Broker__c",
         "canonicalQuery": "SELECT Id FROM Broker__c",
         "className": "SampleDataController",
-        "methodName": "importSampleData"
+        "methodName": "importSampleData",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "soql:SampleDataController.importSampleData.3": {
@@ -465,7 +481,9 @@
         "query": "SELECT Id FROM Contact",
         "canonicalQuery": "SELECT Id FROM Contact",
         "className": "SampleDataController",
-        "methodName": "importSampleData"
+        "methodName": "importSampleData",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "dml:SampleDataController.importSampleData.DELETE.0": {
@@ -515,7 +533,7 @@
         "static": false,
         "returnType": "void",
         "arity": 0,
-        "created_at": "2025-10-25T18:19:33.694712"
+        "created_at": "2025-10-29T14:45:22.699185"
       }
     },
     "soql:SampleDataController.insertBrokers.0": {
@@ -525,7 +543,9 @@
         "query": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_brokers'",
         "canonicalQuery": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_brokers'",
         "className": "SampleDataController",
-        "methodName": "insertBrokers"
+        "methodName": "insertBrokers",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "dml:SampleDataController.insertBrokers.INSERT.0": {
@@ -548,7 +568,7 @@
         "static": false,
         "returnType": "void",
         "arity": 0,
-        "created_at": "2025-10-25T18:19:33.752193"
+        "created_at": "2025-10-29T14:45:22.780320"
       }
     },
     "soql:SampleDataController.insertProperties.0": {
@@ -558,7 +578,9 @@
         "query": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_properties'",
         "canonicalQuery": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_properties'",
         "className": "SampleDataController",
-        "methodName": "insertProperties"
+        "methodName": "insertProperties",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "dml:SampleDataController.insertProperties.INSERT.0": {
@@ -581,7 +603,7 @@
         "static": false,
         "returnType": "void",
         "arity": 0,
-        "created_at": "2025-10-25T18:19:33.814359"
+        "created_at": "2025-10-29T14:45:22.866122"
       }
     },
     "soql:SampleDataController.insertContacts.0": {
@@ -591,7 +613,9 @@
         "query": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_contacts'",
         "canonicalQuery": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_contacts'",
         "className": "SampleDataController",
-        "methodName": "insertContacts"
+        "methodName": "insertContacts",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "dml:SampleDataController.insertContacts.INSERT.0": {
@@ -614,7 +638,7 @@
         "static": false,
         "returnType": "void",
         "arity": 1,
-        "created_at": "2025-10-25T18:19:33.876397"
+        "created_at": "2025-10-29T14:45:22.946782"
       }
     },
     "class:TestPropertyController": {
@@ -627,7 +651,7 @@
         "public": false,
         "withSharing": false,
         "fileName": "TestPropertyController_ast.xml",
-        "created_at": "2025-10-25T18:19:33.909009"
+        "created_at": "2025-10-29T14:45:22.994427"
       }
     },
     "method:TestPropertyController.createProperties": {
@@ -641,7 +665,7 @@
         "static": false,
         "returnType": "void",
         "arity": 1,
-        "created_at": "2025-10-25T18:19:33.919088"
+        "created_at": "2025-10-29T14:45:23.008233"
       }
     },
     "dml:TestPropertyController.createProperties.INSERT.0": {
@@ -664,7 +688,7 @@
         "static": true,
         "returnType": "void",
         "arity": 0,
-        "created_at": "2025-10-25T18:19:33.962290"
+        "created_at": "2025-10-29T14:45:23.062337"
       }
     },
     "soql:TestPropertyController.testGetPagedPropertyList.0": {
@@ -674,7 +698,9 @@
         "query": "SELECT Name, Id             FROM Profile             WHERE                 UserType = 'Standard'                 AND PermissionsPrivacyDataAccess = FALSE                 AND PermissionsSubmitMacrosAllowed = TRUE                 AND PermissionsMassInlineEdit = TRUE             LIMIT 1",
         "canonicalQuery": "SELECT Name, Id             FROM Profile             WHERE                 UserType = 'Standard'                 AND PermissionsPrivacyDataAccess = FALSE                 AND PermissionsSubmitMacrosAllowed = TRUE                 AND PermissionsMassInlineEdit = TRUE             LIMIT 1",
         "className": "TestPropertyController",
-        "methodName": "testGetPagedPropertyList"
+        "methodName": "testGetPagedPropertyList",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "soql:TestPropertyController.testGetPagedPropertyList.1": {
@@ -684,7 +710,9 @@
         "query": "SELECT Id             FROM PermissionSet             WHERE Name = 'dreamhouse'",
         "canonicalQuery": "SELECT Id             FROM PermissionSet             WHERE Name = 'dreamhouse'",
         "className": "TestPropertyController",
-        "methodName": "testGetPagedPropertyList"
+        "methodName": "testGetPagedPropertyList",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "dml:TestPropertyController.testGetPagedPropertyList.INSERT.0": {
@@ -716,7 +744,7 @@
         "static": true,
         "returnType": "void",
         "arity": 0,
-        "created_at": "2025-10-25T18:19:34.065857"
+        "created_at": "2025-10-29T14:45:23.199408"
       }
     },
     "dml:TestPropertyController.testGetPicturesNoResults.INSERT.0": {
@@ -739,7 +767,7 @@
         "static": true,
         "returnType": "void",
         "arity": 0,
-        "created_at": "2025-10-25T18:19:34.106458"
+        "created_at": "2025-10-29T14:45:23.253638"
       }
     },
     "soql:TestPropertyController.testGetPicturesWithResults.0": {
@@ -749,7 +777,9 @@
         "query": "SELECT Id, Title, LatestPublishedVersionId             FROM ContentDocument             LIMIT 1",
         "canonicalQuery": "SELECT Id, Title, LatestPublishedVersionId             FROM ContentDocument             LIMIT 1",
         "className": "TestPropertyController",
-        "methodName": "testGetPicturesWithResults"
+        "methodName": "testGetPicturesWithResults",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "dml:TestPropertyController.testGetPicturesWithResults.INSERT.0": {
@@ -789,7 +819,7 @@
         "public": false,
         "withSharing": false,
         "fileName": "TestSampleDataController_ast.xml",
-        "created_at": "2025-10-25T18:19:34.223320"
+        "created_at": "2025-10-29T14:45:23.407750"
       }
     },
     "method:TestSampleDataController.importSampleData": {
@@ -803,7 +833,7 @@
         "static": true,
         "returnType": "void",
         "arity": 0,
-        "created_at": "2025-10-25T18:19:34.233828"
+        "created_at": "2025-10-29T14:45:23.421754"
       }
     },
     "soql:TestSampleDataController.importSampleData.0": {
@@ -813,7 +843,9 @@
         "query": "SELECT COUNT() FROM Property__c",
         "canonicalQuery": "SELECT COUNT() FROM Property__c",
         "className": "TestSampleDataController",
-        "methodName": "importSampleData"
+        "methodName": "importSampleData",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "soql:TestSampleDataController.importSampleData.1": {
@@ -823,7 +855,9 @@
         "query": "SELECT COUNT() FROM Broker__c",
         "canonicalQuery": "SELECT COUNT() FROM Broker__c",
         "className": "TestSampleDataController",
-        "methodName": "importSampleData"
+        "methodName": "importSampleData",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     },
     "soql:TestSampleDataController.importSampleData.2": {
@@ -833,7 +867,1812 @@
         "query": "SELECT COUNT() FROM Contact",
         "canonicalQuery": "SELECT COUNT() FROM Contact",
         "className": "TestSampleDataController",
-        "methodName": "importSampleData"
+        "methodName": "importSampleData",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:barcodeScanner": {
+      "node_id": "lwc:barcodeScanner",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "barcodeScanner",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:lwc": {
+      "node_id": "dep:lwc",
+      "attributes": {
+        "type": "Dependency",
+        "module": "lwc",
+        "specifiers": "LightningElement",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:lightning/navigation": {
+      "node_id": "dep:lightning/navigation",
+      "attributes": {
+        "type": "Dependency",
+        "module": "lightning/navigation",
+        "specifiers": "NavigationMixin",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:lightning/platformShowToastEvent": {
+      "node_id": "dep:lightning/platformShowToastEvent",
+      "attributes": {
+        "type": "Dependency",
+        "module": "lightning/platformShowToastEvent",
+        "specifiers": "ShowToastEvent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:lightning/mobileCapabilities": {
+      "node_id": "dep:lightning/mobileCapabilities",
+      "attributes": {
+        "type": "Dependency",
+        "module": "lightning/mobileCapabilities",
+        "specifiers": "getLocationService",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:barcodeScanner.BarcodeScanner": {
+      "node_id": "jsclass:barcodeScanner.BarcodeScanner",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "BarcodeScanner",
+        "componentName": "barcodeScanner",
+        "superClass": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:barcodeScanner.BarcodeScanner.connectedCallback": {
+      "node_id": "jsmethod:barcodeScanner.BarcodeScanner.connectedCallback",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "connectedCallback",
+        "className": "BarcodeScanner",
+        "componentName": "barcodeScanner",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:barcodeScanner.BarcodeScanner.handleBeginScanClick": {
+      "node_id": "jsmethod:barcodeScanner.BarcodeScanner.handleBeginScanClick",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handleBeginScanClick",
+        "className": "BarcodeScanner",
+        "componentName": "barcodeScanner",
+        "kind": "method",
+        "async": true,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:brokerCard": {
+      "node_id": "lwc:brokerCard",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "brokerCard",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:lightning/uiRecordApi": {
+      "node_id": "dep:lightning/uiRecordApi",
+      "attributes": {
+        "type": "Dependency",
+        "module": "lightning/uiRecordApi",
+        "specifiers": "getRecord, getFieldValue",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/schema/Property__c.Broker__c": {
+      "node_id": "dep:@salesforce/schema/Property__c.Broker__c",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/schema/Property__c.Broker__c",
+        "specifiers": "BROKER_FIELD",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/schema/Broker__c.Name": {
+      "node_id": "dep:@salesforce/schema/Broker__c.Name",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/schema/Broker__c.Name",
+        "specifiers": "NAME_FIELD",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/schema/Broker__c.Phone__c": {
+      "node_id": "dep:@salesforce/schema/Broker__c.Phone__c",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/schema/Broker__c.Phone__c",
+        "specifiers": "PHONE_FIELD",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/schema/Broker__c.Mobile_Phone__c": {
+      "node_id": "dep:@salesforce/schema/Broker__c.Mobile_Phone__c",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/schema/Broker__c.Mobile_Phone__c",
+        "specifiers": "MOBILE_PHONE_FIELD",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/schema/Broker__c.Email__c": {
+      "node_id": "dep:@salesforce/schema/Broker__c.Email__c",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/schema/Broker__c.Email__c",
+        "specifiers": "EMAIL_FIELD",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:brokerCard.BrokerCard": {
+      "node_id": "jsclass:brokerCard.BrokerCard",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "BrokerCard",
+        "componentName": "brokerCard",
+        "superClass": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:brokerCard.BrokerCard.brokerId": {
+      "node_id": "jsmethod:brokerCard.BrokerCard.brokerId",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "brokerId",
+        "className": "BrokerCard",
+        "componentName": "brokerCard",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:brokerCard.BrokerCard.handleNavigateToRecord": {
+      "node_id": "jsmethod:brokerCard.BrokerCard.handleNavigateToRecord",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handleNavigateToRecord",
+        "className": "BrokerCard",
+        "componentName": "brokerCard",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:daysOnMarket": {
+      "node_id": "lwc:daysOnMarket",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "daysOnMarket",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:lightning/messageService": {
+      "node_id": "dep:lightning/messageService",
+      "attributes": {
+        "type": "Dependency",
+        "module": "lightning/messageService",
+        "specifiers": "publish, subscribe, unsubscribe, MessageContext",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/messageChannel/PropertySelected__c": {
+      "node_id": "dep:@salesforce/messageChannel/PropertySelected__c",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/messageChannel/PropertySelected__c",
+        "specifiers": "PROPERTYSELECTEDMC",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/schema/Property__c.Date_Listed__c": {
+      "node_id": "dep:@salesforce/schema/Property__c.Date_Listed__c",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/schema/Property__c.Date_Listed__c",
+        "specifiers": "DATE_LISTED_FIELD",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/schema/Property__c.Days_On_Market__c": {
+      "node_id": "dep:@salesforce/schema/Property__c.Days_On_Market__c",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/schema/Property__c.Days_On_Market__c",
+        "specifiers": "DAYS_ON_MARKET_FIELD",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:daysOnMarket.DaysOnMarket": {
+      "node_id": "jsclass:daysOnMarket.DaysOnMarket",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "DaysOnMarket",
+        "componentName": "daysOnMarket",
+        "superClass": "LightningElement",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:daysOnMarket.DaysOnMarket.wiredRecord": {
+      "node_id": "jsmethod:daysOnMarket.DaysOnMarket.wiredRecord",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "wiredRecord",
+        "className": "DaysOnMarket",
+        "componentName": "daysOnMarket",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "ObjectPattern",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:daysOnMarket.DaysOnMarket.recordId": {
+      "node_id": "jsmethod:daysOnMarket.DaysOnMarket.recordId",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "recordId",
+        "className": "DaysOnMarket",
+        "componentName": "daysOnMarket",
+        "kind": "set",
+        "async": false,
+        "static": false,
+        "params": "propertyId",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:daysOnMarket.DaysOnMarket.hasNoPropertyId": {
+      "node_id": "jsmethod:daysOnMarket.DaysOnMarket.hasNoPropertyId",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "hasNoPropertyId",
+        "className": "DaysOnMarket",
+        "componentName": "daysOnMarket",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:daysOnMarket.DaysOnMarket.badgeClass": {
+      "node_id": "jsmethod:daysOnMarket.DaysOnMarket.badgeClass",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "badgeClass",
+        "className": "DaysOnMarket",
+        "componentName": "daysOnMarket",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:daysOnMarket.DaysOnMarket.barClass": {
+      "node_id": "jsmethod:daysOnMarket.DaysOnMarket.barClass",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "barClass",
+        "className": "DaysOnMarket",
+        "componentName": "daysOnMarket",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:daysOnMarket.DaysOnMarket.barStyle": {
+      "node_id": "jsmethod:daysOnMarket.DaysOnMarket.barStyle",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "barStyle",
+        "className": "DaysOnMarket",
+        "componentName": "daysOnMarket",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:daysOnMarket.DaysOnMarket.connectedCallback": {
+      "node_id": "jsmethod:daysOnMarket.DaysOnMarket.connectedCallback",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "connectedCallback",
+        "className": "DaysOnMarket",
+        "componentName": "daysOnMarket",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:daysOnMarket.DaysOnMarket.disconnectedCallback": {
+      "node_id": "jsmethod:daysOnMarket.DaysOnMarket.disconnectedCallback",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "disconnectedCallback",
+        "className": "DaysOnMarket",
+        "componentName": "daysOnMarket",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:daysOnMarket.DaysOnMarket.handlePropertySelected": {
+      "node_id": "jsmethod:daysOnMarket.DaysOnMarket.handlePropertySelected",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handlePropertySelected",
+        "className": "DaysOnMarket",
+        "componentName": "daysOnMarket",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "message",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:errorPanel": {
+      "node_id": "lwc:errorPanel",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "errorPanel",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:c/ldsUtils": {
+      "node_id": "dep:c/ldsUtils",
+      "attributes": {
+        "type": "Dependency",
+        "module": "c/ldsUtils",
+        "specifiers": "reduceErrors",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:./templates/noDataIllustration.html": {
+      "node_id": "dep:./templates/noDataIllustration.html",
+      "attributes": {
+        "type": "Dependency",
+        "module": "./templates/noDataIllustration.html",
+        "specifiers": "noDataIllustration",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:./templates/inlineMessage.html": {
+      "node_id": "dep:./templates/inlineMessage.html",
+      "attributes": {
+        "type": "Dependency",
+        "module": "./templates/inlineMessage.html",
+        "specifiers": "inlineMessage",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:errorPanel.ErrorPanel": {
+      "node_id": "jsclass:errorPanel.ErrorPanel",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "ErrorPanel",
+        "componentName": "errorPanel",
+        "superClass": "LightningElement",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:errorPanel.ErrorPanel.errorMessages": {
+      "node_id": "jsmethod:errorPanel.ErrorPanel.errorMessages",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "errorMessages",
+        "className": "ErrorPanel",
+        "componentName": "errorPanel",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:errorPanel.ErrorPanel.handleShowDetailsClick": {
+      "node_id": "jsmethod:errorPanel.ErrorPanel.handleShowDetailsClick",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handleShowDetailsClick",
+        "className": "ErrorPanel",
+        "componentName": "errorPanel",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:errorPanel.ErrorPanel.render": {
+      "node_id": "jsmethod:errorPanel.ErrorPanel.render",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "render",
+        "className": "ErrorPanel",
+        "componentName": "errorPanel",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:ldsUtils": {
+      "node_id": "lwc:ldsUtils",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "ldsUtils",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsfunc:ldsUtils.reduceErrors": {
+      "node_id": "jsfunc:ldsUtils.reduceErrors",
+      "attributes": {
+        "type": "JavaScriptFunction",
+        "name": "reduceErrors",
+        "componentName": "ldsUtils",
+        "async": false,
+        "params": "errors",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:listContactsFromDevice": {
+      "node_id": "lwc:listContactsFromDevice",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "listContactsFromDevice",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:listContactsFromDevice.ListContactsFromDevice": {
+      "node_id": "jsclass:listContactsFromDevice.ListContactsFromDevice",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "ListContactsFromDevice",
+        "componentName": "listContactsFromDevice",
+        "superClass": "LightningElement",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:listContactsFromDevice.ListContactsFromDevice.connectedCallback": {
+      "node_id": "jsmethod:listContactsFromDevice.ListContactsFromDevice.connectedCallback",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "connectedCallback",
+        "className": "ListContactsFromDevice",
+        "componentName": "listContactsFromDevice",
+        "kind": "method",
+        "async": true,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:listContactsFromDevice.ListContactsFromDevice.retrieveDeviceContacts": {
+      "node_id": "jsmethod:listContactsFromDevice.ListContactsFromDevice.retrieveDeviceContacts",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "retrieveDeviceContacts",
+        "className": "ListContactsFromDevice",
+        "componentName": "listContactsFromDevice",
+        "kind": "method",
+        "async": true,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:navigateToRecord": {
+      "node_id": "lwc:navigateToRecord",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "navigateToRecord",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:navigateToRecord.NavigateToRecord": {
+      "node_id": "jsclass:navigateToRecord.NavigateToRecord",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "NavigateToRecord",
+        "componentName": "navigateToRecord",
+        "superClass": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:navigateToRecord.NavigateToRecord.connectedCallback": {
+      "node_id": "jsmethod:navigateToRecord.NavigateToRecord.connectedCallback",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "connectedCallback",
+        "className": "NavigateToRecord",
+        "componentName": "navigateToRecord",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:paginator": {
+      "node_id": "lwc:paginator",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "paginator",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:paginator.Paginator": {
+      "node_id": "jsclass:paginator.Paginator",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "Paginator",
+        "componentName": "paginator",
+        "superClass": "LightningElement",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:paginator.Paginator.handlePrevious": {
+      "node_id": "jsmethod:paginator.Paginator.handlePrevious",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handlePrevious",
+        "className": "Paginator",
+        "componentName": "paginator",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:paginator.Paginator.handleNext": {
+      "node_id": "jsmethod:paginator.Paginator.handleNext",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handleNext",
+        "className": "Paginator",
+        "componentName": "paginator",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:paginator.Paginator.currentPageNumber": {
+      "node_id": "jsmethod:paginator.Paginator.currentPageNumber",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "currentPageNumber",
+        "className": "Paginator",
+        "componentName": "paginator",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:paginator.Paginator.isNotFirstPage": {
+      "node_id": "jsmethod:paginator.Paginator.isNotFirstPage",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "isNotFirstPage",
+        "className": "Paginator",
+        "componentName": "paginator",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:paginator.Paginator.isNotLastPage": {
+      "node_id": "jsmethod:paginator.Paginator.isNotLastPage",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "isNotLastPage",
+        "className": "Paginator",
+        "componentName": "paginator",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:paginator.Paginator.totalPages": {
+      "node_id": "jsmethod:paginator.Paginator.totalPages",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "totalPages",
+        "className": "Paginator",
+        "componentName": "paginator",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:propertyCarousel": {
+      "node_id": "lwc:propertyCarousel",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "propertyCarousel",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:lightning/mediaUtils": {
+      "node_id": "dep:lightning/mediaUtils",
+      "attributes": {
+        "type": "Dependency",
+        "module": "lightning/mediaUtils",
+        "specifiers": "processImage",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/apex": {
+      "node_id": "dep:@salesforce/apex",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/apex",
+        "specifiers": "refreshApex",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/apex/PropertyController.getPictures": {
+      "node_id": "dep:@salesforce/apex/PropertyController.getPictures",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/apex/PropertyController.getPictures",
+        "specifiers": "getPictures",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/apex/FileUtilities.createFile": {
+      "node_id": "dep:@salesforce/apex/FileUtilities.createFile",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/apex/FileUtilities.createFile",
+        "specifiers": "createFile",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/schema/Property__c.Address__c": {
+      "node_id": "dep:@salesforce/schema/Property__c.Address__c",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/schema/Property__c.Address__c",
+        "specifiers": "ADDRESS_FIELD",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/schema/Property__c.City__c": {
+      "node_id": "dep:@salesforce/schema/Property__c.City__c",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/schema/Property__c.City__c",
+        "specifiers": "CITY_FIELD",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/schema/Property__c.Description__c": {
+      "node_id": "dep:@salesforce/schema/Property__c.Description__c",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/schema/Property__c.Description__c",
+        "specifiers": "DESCRIPTION_FIELD",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:propertyCarousel.PropertyCarousel": {
+      "node_id": "jsclass:propertyCarousel.PropertyCarousel",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "PropertyCarousel",
+        "componentName": "propertyCarousel",
+        "superClass": "LightningElement",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyCarousel.PropertyCarousel.wiredPictures": {
+      "node_id": "jsmethod:propertyCarousel.PropertyCarousel.wiredPictures",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "wiredPictures",
+        "className": "PropertyCarousel",
+        "componentName": "propertyCarousel",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "pictures",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyCarousel.PropertyCarousel.address": {
+      "node_id": "jsmethod:propertyCarousel.PropertyCarousel.address",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "address",
+        "className": "PropertyCarousel",
+        "componentName": "propertyCarousel",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyCarousel.PropertyCarousel.city": {
+      "node_id": "jsmethod:propertyCarousel.PropertyCarousel.city",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "city",
+        "className": "PropertyCarousel",
+        "componentName": "propertyCarousel",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyCarousel.PropertyCarousel.description": {
+      "node_id": "jsmethod:propertyCarousel.PropertyCarousel.description",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "description",
+        "className": "PropertyCarousel",
+        "componentName": "propertyCarousel",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyCarousel.PropertyCarousel.errors": {
+      "node_id": "jsmethod:propertyCarousel.PropertyCarousel.errors",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "errors",
+        "className": "PropertyCarousel",
+        "componentName": "propertyCarousel",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyCarousel.PropertyCarousel.handleFilesSelected": {
+      "node_id": "jsmethod:propertyCarousel.PropertyCarousel.handleFilesSelected",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handleFilesSelected",
+        "className": "PropertyCarousel",
+        "componentName": "propertyCarousel",
+        "kind": "method",
+        "async": true,
+        "static": false,
+        "params": "event",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyCarousel.PropertyCarousel.blobToBase64": {
+      "node_id": "jsmethod:propertyCarousel.PropertyCarousel.blobToBase64",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "blobToBase64",
+        "className": "PropertyCarousel",
+        "componentName": "propertyCarousel",
+        "kind": "method",
+        "async": true,
+        "static": false,
+        "params": "blob",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:propertyFilter": {
+      "node_id": "lwc:propertyFilter",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "propertyFilter",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/messageChannel/FiltersChange__c": {
+      "node_id": "dep:@salesforce/messageChannel/FiltersChange__c",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/messageChannel/FiltersChange__c",
+        "specifiers": "FILTERSCHANGEMC",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:propertyFilter.PropertyFilter": {
+      "node_id": "jsclass:propertyFilter.PropertyFilter",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "PropertyFilter",
+        "componentName": "propertyFilter",
+        "superClass": "LightningElement",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyFilter.PropertyFilter.handleReset": {
+      "node_id": "jsmethod:propertyFilter.PropertyFilter.handleReset",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handleReset",
+        "className": "PropertyFilter",
+        "componentName": "propertyFilter",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyFilter.PropertyFilter.handleSearchKeyChange": {
+      "node_id": "jsmethod:propertyFilter.PropertyFilter.handleSearchKeyChange",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handleSearchKeyChange",
+        "className": "PropertyFilter",
+        "componentName": "propertyFilter",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "event",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyFilter.PropertyFilter.handleMaxPriceChange": {
+      "node_id": "jsmethod:propertyFilter.PropertyFilter.handleMaxPriceChange",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handleMaxPriceChange",
+        "className": "PropertyFilter",
+        "componentName": "propertyFilter",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "event",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyFilter.PropertyFilter.handleMinBedroomsChange": {
+      "node_id": "jsmethod:propertyFilter.PropertyFilter.handleMinBedroomsChange",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handleMinBedroomsChange",
+        "className": "PropertyFilter",
+        "componentName": "propertyFilter",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "event",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyFilter.PropertyFilter.handleMinBathroomsChange": {
+      "node_id": "jsmethod:propertyFilter.PropertyFilter.handleMinBathroomsChange",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handleMinBathroomsChange",
+        "className": "PropertyFilter",
+        "componentName": "propertyFilter",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "event",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyFilter.PropertyFilter.fireChangeEvent": {
+      "node_id": "jsmethod:propertyFilter.PropertyFilter.fireChangeEvent",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "fireChangeEvent",
+        "className": "PropertyFilter",
+        "componentName": "propertyFilter",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:propertyListMap": {
+      "node_id": "lwc:propertyListMap",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "propertyListMap",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:lightning/platformResourceLoader": {
+      "node_id": "dep:lightning/platformResourceLoader",
+      "attributes": {
+        "type": "Dependency",
+        "module": "lightning/platformResourceLoader",
+        "specifiers": "loadScript, loadStyle",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/resourceUrl/leafletjs": {
+      "node_id": "dep:@salesforce/resourceUrl/leafletjs",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/resourceUrl/leafletjs",
+        "specifiers": "LEAFLET",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/apex/PropertyController.getPagedPropertyList": {
+      "node_id": "dep:@salesforce/apex/PropertyController.getPagedPropertyList",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/apex/PropertyController.getPagedPropertyList",
+        "specifiers": "getPagedPropertyList",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:propertyListMap.PropertyListMap": {
+      "node_id": "jsclass:propertyListMap.PropertyListMap",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "PropertyListMap",
+        "componentName": "propertyListMap",
+        "superClass": "LightningElement",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyListMap.PropertyListMap.wiredProperties": {
+      "node_id": "jsmethod:propertyListMap.PropertyListMap.wiredProperties",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "wiredProperties",
+        "className": "PropertyListMap",
+        "componentName": "propertyListMap",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "ObjectPattern",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyListMap.PropertyListMap.connectedCallback": {
+      "node_id": "jsmethod:propertyListMap.PropertyListMap.connectedCallback",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "connectedCallback",
+        "className": "PropertyListMap",
+        "componentName": "propertyListMap",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyListMap.PropertyListMap.disconnectedCallback": {
+      "node_id": "jsmethod:propertyListMap.PropertyListMap.disconnectedCallback",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "disconnectedCallback",
+        "className": "PropertyListMap",
+        "componentName": "propertyListMap",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyListMap.PropertyListMap.renderedCallback": {
+      "node_id": "jsmethod:propertyListMap.PropertyListMap.renderedCallback",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "renderedCallback",
+        "className": "PropertyListMap",
+        "componentName": "propertyListMap",
+        "kind": "method",
+        "async": true,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyListMap.PropertyListMap.initializeLeaflet": {
+      "node_id": "jsmethod:propertyListMap.PropertyListMap.initializeLeaflet",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "initializeLeaflet",
+        "className": "PropertyListMap",
+        "componentName": "propertyListMap",
+        "kind": "method",
+        "async": true,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyListMap.PropertyListMap.displayProperties": {
+      "node_id": "jsmethod:propertyListMap.PropertyListMap.displayProperties",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "displayProperties",
+        "className": "PropertyListMap",
+        "componentName": "propertyListMap",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyListMap.PropertyListMap.handleFilterChange": {
+      "node_id": "jsmethod:propertyListMap.PropertyListMap.handleFilterChange",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handleFilterChange",
+        "className": "PropertyListMap",
+        "componentName": "propertyListMap",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "filters",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyListMap.PropertyListMap.getTooltipMarkup": {
+      "node_id": "jsmethod:propertyListMap.PropertyListMap.getTooltipMarkup",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "getTooltipMarkup",
+        "className": "PropertyListMap",
+        "componentName": "propertyListMap",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "property",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:propertyLocation": {
+      "node_id": "lwc:propertyLocation",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "propertyLocation",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:propertyLocation.PropertyLocation": {
+      "node_id": "jsclass:propertyLocation.PropertyLocation",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "PropertyLocation",
+        "componentName": "propertyLocation",
+        "superClass": "LightningElement",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyLocation.PropertyLocation.wiredProperty": {
+      "node_id": "jsmethod:propertyLocation.PropertyLocation.wiredProperty",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "wiredProperty",
+        "className": "PropertyLocation",
+        "componentName": "propertyLocation",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "ObjectPattern",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyLocation.PropertyLocation.connectedCallback": {
+      "node_id": "jsmethod:propertyLocation.PropertyLocation.connectedCallback",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "connectedCallback",
+        "className": "PropertyLocation",
+        "componentName": "propertyLocation",
+        "kind": "method",
+        "async": true,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyLocation.PropertyLocation.calculateLocationFromMobileDevice": {
+      "node_id": "jsmethod:propertyLocation.PropertyLocation.calculateLocationFromMobileDevice",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "calculateLocationFromMobileDevice",
+        "className": "PropertyLocation",
+        "componentName": "propertyLocation",
+        "kind": "method",
+        "async": true,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyLocation.PropertyLocation.calculateLocationFromBrowser": {
+      "node_id": "jsmethod:propertyLocation.PropertyLocation.calculateLocationFromBrowser",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "calculateLocationFromBrowser",
+        "className": "PropertyLocation",
+        "componentName": "propertyLocation",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyLocation.PropertyLocation.calculateDistance": {
+      "node_id": "jsmethod:propertyLocation.PropertyLocation.calculateDistance",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "calculateDistance",
+        "className": "PropertyLocation",
+        "componentName": "propertyLocation",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:propertyMap": {
+      "node_id": "lwc:propertyMap",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "propertyMap",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:propertyMap.PropertyMap": {
+      "node_id": "jsclass:propertyMap.PropertyMap",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "PropertyMap",
+        "componentName": "propertyMap",
+        "superClass": "LightningElement",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyMap.PropertyMap.wiredRecord": {
+      "node_id": "jsmethod:propertyMap.PropertyMap.wiredRecord",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "wiredRecord",
+        "className": "PropertyMap",
+        "componentName": "propertyMap",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "ObjectPattern",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyMap.PropertyMap.recordId": {
+      "node_id": "jsmethod:propertyMap.PropertyMap.recordId",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "recordId",
+        "className": "PropertyMap",
+        "componentName": "propertyMap",
+        "kind": "set",
+        "async": false,
+        "static": false,
+        "params": "propertyId",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyMap.PropertyMap.connectedCallback": {
+      "node_id": "jsmethod:propertyMap.PropertyMap.connectedCallback",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "connectedCallback",
+        "className": "PropertyMap",
+        "componentName": "propertyMap",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyMap.PropertyMap.disconnectedCallback": {
+      "node_id": "jsmethod:propertyMap.PropertyMap.disconnectedCallback",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "disconnectedCallback",
+        "className": "PropertyMap",
+        "componentName": "propertyMap",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyMap.PropertyMap.handlePropertySelected": {
+      "node_id": "jsmethod:propertyMap.PropertyMap.handlePropertySelected",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handlePropertySelected",
+        "className": "PropertyMap",
+        "componentName": "propertyMap",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "message",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:propertySummary": {
+      "node_id": "lwc:propertySummary",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "propertySummary",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/schema/Property__c.Name": {
+      "node_id": "dep:@salesforce/schema/Property__c.Name",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/schema/Property__c.Name",
+        "specifiers": "NAME_FIELD",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/schema/Property__c.Beds__c": {
+      "node_id": "dep:@salesforce/schema/Property__c.Beds__c",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/schema/Property__c.Beds__c",
+        "specifiers": "BED_FIELD",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/schema/Property__c.Baths__c": {
+      "node_id": "dep:@salesforce/schema/Property__c.Baths__c",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/schema/Property__c.Baths__c",
+        "specifiers": "BATH_FIELD",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/schema/Property__c.Price__c": {
+      "node_id": "dep:@salesforce/schema/Property__c.Price__c",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/schema/Property__c.Price__c",
+        "specifiers": "PRICE_FIELD",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/schema/Property__c.Picture__c": {
+      "node_id": "dep:@salesforce/schema/Property__c.Picture__c",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/schema/Property__c.Picture__c",
+        "specifiers": "PICTURE_FIELD",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:propertySummary.PropertySummary": {
+      "node_id": "jsclass:propertySummary.PropertySummary",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "PropertySummary",
+        "componentName": "propertySummary",
+        "superClass": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertySummary.PropertySummary.recordId": {
+      "node_id": "jsmethod:propertySummary.PropertySummary.recordId",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "recordId",
+        "className": "PropertySummary",
+        "componentName": "propertySummary",
+        "kind": "set",
+        "async": false,
+        "static": false,
+        "params": "propertyId",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertySummary.PropertySummary.hasNoPropertyId": {
+      "node_id": "jsmethod:propertySummary.PropertySummary.hasNoPropertyId",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "hasNoPropertyId",
+        "className": "PropertySummary",
+        "componentName": "propertySummary",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertySummary.PropertySummary.propertyName": {
+      "node_id": "jsmethod:propertySummary.PropertySummary.propertyName",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "propertyName",
+        "className": "PropertySummary",
+        "componentName": "propertySummary",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertySummary.PropertySummary.pictureURL": {
+      "node_id": "jsmethod:propertySummary.PropertySummary.pictureURL",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "pictureURL",
+        "className": "PropertySummary",
+        "componentName": "propertySummary",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertySummary.PropertySummary.connectedCallback": {
+      "node_id": "jsmethod:propertySummary.PropertySummary.connectedCallback",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "connectedCallback",
+        "className": "PropertySummary",
+        "componentName": "propertySummary",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertySummary.PropertySummary.disconnectedCallback": {
+      "node_id": "jsmethod:propertySummary.PropertySummary.disconnectedCallback",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "disconnectedCallback",
+        "className": "PropertySummary",
+        "componentName": "propertySummary",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertySummary.PropertySummary.handlePropertySelected": {
+      "node_id": "jsmethod:propertySummary.PropertySummary.handlePropertySelected",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handlePropertySelected",
+        "className": "PropertySummary",
+        "componentName": "propertySummary",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "message",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertySummary.PropertySummary.handleNavigateToRecord": {
+      "node_id": "jsmethod:propertySummary.PropertySummary.handleNavigateToRecord",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handleNavigateToRecord",
+        "className": "PropertySummary",
+        "componentName": "propertySummary",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:propertyTile": {
+      "node_id": "lwc:propertyTile",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "propertyTile",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/client/formFactor": {
+      "node_id": "dep:@salesforce/client/formFactor",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/client/formFactor",
+        "specifiers": "FORM_FACTOR",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:propertyTile.PropertyTile": {
+      "node_id": "jsclass:propertyTile.PropertyTile",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "PropertyTile",
+        "componentName": "propertyTile",
+        "superClass": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyTile.PropertyTile.handlePropertySelected": {
+      "node_id": "jsmethod:propertyTile.PropertyTile.handlePropertySelected",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handlePropertySelected",
+        "className": "PropertyTile",
+        "componentName": "propertyTile",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyTile.PropertyTile.backgroundImageStyle": {
+      "node_id": "jsmethod:propertyTile.PropertyTile.backgroundImageStyle",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "backgroundImageStyle",
+        "className": "PropertyTile",
+        "componentName": "propertyTile",
+        "kind": "get",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:propertyTileList": {
+      "node_id": "lwc:propertyTileList",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "propertyTileList",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:propertyTileList.PropertyTileList": {
+      "node_id": "jsclass:propertyTileList.PropertyTileList",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "PropertyTileList",
+        "componentName": "propertyTileList",
+        "superClass": "LightningElement",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyTileList.PropertyTileList.connectedCallback": {
+      "node_id": "jsmethod:propertyTileList.PropertyTileList.connectedCallback",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "connectedCallback",
+        "className": "PropertyTileList",
+        "componentName": "propertyTileList",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyTileList.PropertyTileList.disconnectedCallback": {
+      "node_id": "jsmethod:propertyTileList.PropertyTileList.disconnectedCallback",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "disconnectedCallback",
+        "className": "PropertyTileList",
+        "componentName": "propertyTileList",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyTileList.PropertyTileList.handleFilterChange": {
+      "node_id": "jsmethod:propertyTileList.PropertyTileList.handleFilterChange",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handleFilterChange",
+        "className": "PropertyTileList",
+        "componentName": "propertyTileList",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "filters",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyTileList.PropertyTileList.handlePreviousPage": {
+      "node_id": "jsmethod:propertyTileList.PropertyTileList.handlePreviousPage",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handlePreviousPage",
+        "className": "PropertyTileList",
+        "componentName": "propertyTileList",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyTileList.PropertyTileList.handleNextPage": {
+      "node_id": "jsmethod:propertyTileList.PropertyTileList.handleNextPage",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handleNextPage",
+        "className": "PropertyTileList",
+        "componentName": "propertyTileList",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:propertyTileList.PropertyTileList.handlePropertySelected": {
+      "node_id": "jsmethod:propertyTileList.PropertyTileList.handlePropertySelected",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handlePropertySelected",
+        "className": "PropertyTileList",
+        "componentName": "propertyTileList",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "event",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "lwc:sampleDataImporter": {
+      "node_id": "lwc:sampleDataImporter",
+      "attributes": {
+        "type": "LWCComponent",
+        "name": "sampleDataImporter",
+        "componentType": "LWCComponent",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "dep:@salesforce/apex/SampleDataController.importSampleData": {
+      "node_id": "dep:@salesforce/apex/SampleDataController.importSampleData",
+      "attributes": {
+        "type": "Dependency",
+        "module": "@salesforce/apex/SampleDataController.importSampleData",
+        "specifiers": "importSampleData",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsclass:sampleDataImporter.SampleDataImporter": {
+      "node_id": "jsclass:sampleDataImporter.SampleDataImporter",
+      "attributes": {
+        "type": "JavaScriptClass",
+        "name": "SampleDataImporter",
+        "componentName": "sampleDataImporter",
+        "superClass": "LightningElement",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
+      }
+    },
+    "jsmethod:sampleDataImporter.SampleDataImporter.handleImportSampleData": {
+      "node_id": "jsmethod:sampleDataImporter.SampleDataImporter.handleImportSampleData",
+      "attributes": {
+        "type": "JavaScriptMethod",
+        "name": "handleImportSampleData",
+        "className": "SampleDataImporter",
+        "componentName": "sampleDataImporter",
+        "kind": "method",
+        "async": false,
+        "static": false,
+        "params": "",
+        "repository": "dreamhouse-lwc",
+        "repositoryId": 1
       }
     }
   }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="propertyTileList.js">
+  <Imports>
+    <Import source="lwc">
+      <Specifier type="named" imported="LightningElement" local="LightningElement" />
+      <Specifier type="named" imported="wire" local="wire" />
+    </Import>
+    <Import source="lightning/messageService">
+      <Specifier type="named" imported="publish" local="publish" />
+      <Specifier type="named" imported="subscribe" local="subscribe" />
+      <Specifier type="named" imported="unsubscribe" local="unsubscribe" />
+      <Specifier type="named" imported="MessageContext" local="MessageContext" />
+    </Import>
+    <Import source="@salesforce/messageChannel/FiltersChange__c">
+      <Specifier type="default" imported="FILTERSCHANGEMC" local="FILTERSCHANGEMC" />
+    </Import>
+    <Import source="@salesforce/messageChannel/PropertySelected__c">
+      <Specifier type="default" imported="PROPERTYSELECTEDMC" local="PROPERTYSELECTEDMC" />
+    </Import>
+    <Import source="@salesforce/apex/PropertyController.getPagedPropertyList">
+      <Specifier type="default" imported="getPagedPropertyList" local="getPagedPropertyList" />
+    </Import>
+  </Imports>
+  <Exports>
+    <Export type="default" name="PropertyTileList" />
+  </Exports>
+  <Classes>
+    <Class name="PropertyTileList" superClass="LightningElement">
+      <Properties>
+        <Property name="pageNumber" static="false" />
+        <Property name="pageSize" static="false" />
+        <Property name="searchKey" static="false" />
+        <Property name="maxPrice" static="false" />
+        <Property name="minBedrooms" static="false" />
+        <Property name="minBathrooms" static="false" />
+        <Property name="messageContext" static="false" />
+        <Property name="properties" static="false" />
+      </Properties>
+      <Methods>
+        <Method name="connectedCallback" kind="method" async="false" static="false">
+        </Method>
+        <Method name="disconnectedCallback" kind="method" async="false" static="false">
+        </Method>
+        <Method name="handleFilterChange" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="filters" />
+          </Parameters>
+        </Method>
+        <Method name="handlePreviousPage" kind="method" async="false" static="false">
+        </Method>
+        <Method name="handleNextPage" kind="method" async="false" static="false">
+        </Method>
+        <Method name="handlePropertySelected" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="event" />
+          </Parameters>
+        </Method>
+      </Methods>
+    </Class>
+  </Classes>
+</JavaScriptFile>

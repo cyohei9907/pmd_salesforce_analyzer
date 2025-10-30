@@ -1,0 +1,28 @@
+{
+  "name": "brokerCard",
+  "has_js": true,
+  "has_html": true,
+  "has_meta": true,
+  "files": [
+    {
+      "name": "brokerCard.html",
+      "type": ".html",
+      "size": 993
+    },
+    {
+      "name": "brokerCard.js",
+      "type": ".js",
+      "size": 1302
+    },
+    {
+      "name": "brokerCard.js-meta.xml",
+      "type": ".xml",
+      "size": 735
+    }
+  ],
+  "ast_file": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\brokerCard_ast.xml",
+  "ast_generated": true,
+  "parser": "babel",
+  "js_source": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\brokerCard.js",
+  "source_dir": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\brokerCard"
+}

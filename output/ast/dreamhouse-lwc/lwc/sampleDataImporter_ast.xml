@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="sampleDataImporter.js">
+  <Imports>
+    <Import source="lwc">
+      <Specifier type="named" imported="LightningElement" local="LightningElement" />
+    </Import>
+    <Import source="lightning/platformShowToastEvent">
+      <Specifier type="named" imported="ShowToastEvent" local="ShowToastEvent" />
+    </Import>
+    <Import source="@salesforce/apex/SampleDataController.importSampleData">
+      <Specifier type="default" imported="importSampleData" local="importSampleData" />
+    </Import>
+  </Imports>
+  <Exports>
+    <Export type="default" name="SampleDataImporter" />
+  </Exports>
+  <Classes>
+    <Class name="SampleDataImporter" superClass="LightningElement">
+      <Methods>
+        <Method name="handleImportSampleData" kind="method" async="false" static="false">
+        </Method>
+      </Methods>
+    </Class>
+  </Classes>
+</JavaScriptFile>

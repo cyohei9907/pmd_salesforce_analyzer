@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="propertyTile.js">
+  <Imports>
+    <Import source="lwc">
+      <Specifier type="named" imported="LightningElement" local="LightningElement" />
+      <Specifier type="named" imported="api" local="api" />
+    </Import>
+    <Import source="@salesforce/client/formFactor">
+      <Specifier type="default" imported="FORM_FACTOR" local="FORM_FACTOR" />
+    </Import>
+    <Import source="lightning/navigation">
+      <Specifier type="named" imported="NavigationMixin" local="NavigationMixin" />
+    </Import>
+  </Imports>
+  <Exports>
+    <Export type="default" name="PropertyTile" />
+  </Exports>
+  <Classes>
+    <Class name="PropertyTile">
+      <Properties>
+        <Property name="property" static="false" />
+        <Property name="formFactor" static="false" />
+      </Properties>
+      <Methods>
+        <Method name="handlePropertySelected" kind="method" async="false" static="false">
+        </Method>
+        <Method name="backgroundImageStyle" kind="get" async="false" static="false">
+        </Method>
+      </Methods>
+    </Class>
+  </Classes>
+</JavaScriptFile>

@@ -1,0 +1,28 @@
+{
+  "name": "propertySummary",
+  "has_js": true,
+  "has_html": true,
+  "has_meta": true,
+  "files": [
+    {
+      "name": "propertySummary.html",
+      "type": ".html",
+      "size": 1432
+    },
+    {
+      "name": "propertySummary.js",
+      "type": ".js",
+      "size": 2352
+    },
+    {
+      "name": "propertySummary.js-meta.xml",
+      "type": ".xml",
+      "size": 1044
+    }
+  ],
+  "ast_file": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\propertySummary_ast.xml",
+  "ast_generated": true,
+  "parser": "babel",
+  "js_source": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\propertySummary.js",
+  "source_dir": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\propertySummary"
+}

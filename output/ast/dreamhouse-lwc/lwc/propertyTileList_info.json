@@ -1,0 +1,33 @@
+{
+  "name": "propertyTileList",
+  "has_js": true,
+  "has_html": true,
+  "has_meta": true,
+  "files": [
+    {
+      "name": "propertyTileList.css",
+      "type": ".css",
+      "size": 113
+    },
+    {
+      "name": "propertyTileList.html",
+      "type": ".html",
+      "size": 1211
+    },
+    {
+      "name": "propertyTileList.js",
+      "type": ".js",
+      "size": 1900
+    },
+    {
+      "name": "propertyTileList.js-meta.xml",
+      "type": ".xml",
+      "size": 643
+    }
+  ],
+  "ast_file": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\propertyTileList_ast.xml",
+  "ast_generated": true,
+  "parser": "babel",
+  "js_source": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\propertyTileList.js",
+  "source_dir": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\propertyTileList"
+}

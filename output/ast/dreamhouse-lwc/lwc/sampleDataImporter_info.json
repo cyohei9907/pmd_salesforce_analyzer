@@ -1,0 +1,28 @@
+{
+  "name": "sampleDataImporter",
+  "has_js": true,
+  "has_html": true,
+  "has_meta": true,
+  "files": [
+    {
+      "name": "sampleDataImporter.html",
+      "type": ".html",
+      "size": 668
+    },
+    {
+      "name": "sampleDataImporter.js",
+      "type": ".js",
+      "size": 935
+    },
+    {
+      "name": "sampleDataImporter.js-meta.xml",
+      "type": ".xml",
+      "size": 347
+    }
+  ],
+  "ast_file": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\sampleDataImporter_ast.xml",
+  "ast_generated": true,
+  "parser": "babel",
+  "js_source": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\sampleDataImporter.js",
+  "source_dir": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\sampleDataImporter"
+}

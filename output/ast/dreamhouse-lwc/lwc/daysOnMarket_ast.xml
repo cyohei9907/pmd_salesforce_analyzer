@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="daysOnMarket.js">
+  <Imports>
+    <Import source="lwc">
+      <Specifier type="named" imported="LightningElement" local="LightningElement" />
+      <Specifier type="named" imported="api" local="api" />
+      <Specifier type="named" imported="wire" local="wire" />
+    </Import>
+    <Import source="lightning/uiRecordApi">
+      <Specifier type="named" imported="getRecord" local="getRecord" />
+      <Specifier type="named" imported="getFieldValue" local="getFieldValue" />
+    </Import>
+    <Import source="lightning/messageService">
+      <Specifier type="named" imported="subscribe" local="subscribe" />
+      <Specifier type="named" imported="unsubscribe" local="unsubscribe" />
+      <Specifier type="named" imported="MessageContext" local="MessageContext" />
+    </Import>
+    <Import source="@salesforce/messageChannel/PropertySelected__c">
+      <Specifier type="default" imported="PROPERTYSELECTEDMC" local="PROPERTYSELECTEDMC" />
+    </Import>
+    <Import source="@salesforce/schema/Property__c.Date_Listed__c">
+      <Specifier type="default" imported="DATE_LISTED_FIELD" local="DATE_LISTED_FIELD" />
+    </Import>
+    <Import source="@salesforce/schema/Property__c.Days_On_Market__c">
+      <Specifier type="default" imported="DAYS_ON_MARKET_FIELD" local="DAYS_ON_MARKET_FIELD" />
+    </Import>
+  </Imports>
+  <Exports>
+    <Export type="default" name="DaysOnMarket" />
+  </Exports>
+  <Classes>
+    <Class name="DaysOnMarket" superClass="LightningElement">
+      <Properties>
+        <Property name="error" static="false" />
+        <Property name="daysOnMarket" static="false" />
+        <Property name="dateListed" static="false" />
+        <Property name="propertyId" static="false" />
+        <Property name="status" static="false" />
+        <Property name="subscription" static="false" />
+        <Property name="messageContext" static="false" />
+      </Properties>
+      <Methods>
+        <Method name="wiredRecord" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="ObjectPattern" />
+          </Parameters>
+        </Method>
+        <Method name="recordId" kind="get" async="false" static="false">
+        </Method>
+        <Method name="recordId" kind="set" async="false" static="false">
+          <Parameters>
+            <Parameter name="propertyId" />
+          </Parameters>
+        </Method>
+        <Method name="hasNoPropertyId" kind="get" async="false" static="false">
+        </Method>
+        <Method name="badgeClass" kind="get" async="false" static="false">
+        </Method>
+        <Method name="barClass" kind="get" async="false" static="false">
+        </Method>
+        <Method name="barStyle" kind="get" async="false" static="false">
+        </Method>
+        <Method name="connectedCallback" kind="method" async="false" static="false">
+        </Method>
+        <Method name="disconnectedCallback" kind="method" async="false" static="false">
+        </Method>
+        <Method name="handlePropertySelected" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="message" />
+          </Parameters>
+        </Method>
+      </Methods>
+    </Class>
+  </Classes>
+</JavaScriptFile>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="ldsUtils.js">
+  <Exports>
+    <Export type="function" name="reduceErrors" />
+  </Exports>
+  <Functions>
+    <Function name="reduceErrors" async="false">
+      <Parameters>
+        <Parameter name="errors" />
+      </Parameters>
+    </Function>
+  </Functions>
+</JavaScriptFile>

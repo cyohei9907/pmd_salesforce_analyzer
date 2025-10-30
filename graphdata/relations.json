@@ -1,0 +1,1942 @@
+{
+  "metadata": {
+    "timestamp": "2025-10-29T14:43:12.926102",
+    "total_relations": 176
+  },
+  "relations": [
+    {
+      "from": "lwc:barcodeScanner",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:07.936274"
+      }
+    },
+    {
+      "from": "lwc:barcodeScanner",
+      "to": "dep:lightning/navigation",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/navigation",
+        "specifiers": "NavigationMixin",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:07.954847"
+      }
+    },
+    {
+      "from": "lwc:barcodeScanner",
+      "to": "dep:lightning/platformShowToastEvent",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/platformShowToastEvent",
+        "specifiers": "ShowToastEvent",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:07.981880"
+      }
+    },
+    {
+      "from": "lwc:barcodeScanner",
+      "to": "dep:lightning/mobileCapabilities",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/mobileCapabilities",
+        "specifiers": "getBarcodeScanner",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.008854"
+      }
+    },
+    {
+      "from": "lwc:barcodeScanner",
+      "to": "jsclass:barcodeScanner.BarcodeScanner",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "BarcodeScanner",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:08.033873"
+      }
+    },
+    {
+      "from": "jsclass:barcodeScanner.BarcodeScanner",
+      "to": "jsmethod:barcodeScanner.BarcodeScanner.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:08.059082"
+      }
+    },
+    {
+      "from": "jsclass:barcodeScanner.BarcodeScanner",
+      "to": "jsmethod:barcodeScanner.BarcodeScanner.handleBeginScanClick",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleBeginScanClick",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:08.086124"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api, wire",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.136759"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:lightning/uiRecordApi",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/uiRecordApi",
+        "specifiers": "getRecord, getFieldValue",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.163897"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:lightning/navigation",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/navigation",
+        "specifiers": "NavigationMixin",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.189176"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:@salesforce/schema/Property__c.Broker__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Broker__c",
+        "specifiers": "BROKER_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.215277"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:@salesforce/schema/Broker__c.Name",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Broker__c.Name",
+        "specifiers": "NAME_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.242064"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:@salesforce/schema/Broker__c.Phone__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Broker__c.Phone__c",
+        "specifiers": "PHONE_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.267479"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:@salesforce/schema/Broker__c.Mobile_Phone__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Broker__c.Mobile_Phone__c",
+        "specifiers": "MOBILE_PHONE_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.295363"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:@salesforce/schema/Broker__c.Email__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Broker__c.Email__c",
+        "specifiers": "EMAIL_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.323352"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "jsclass:brokerCard.BrokerCard",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "BrokerCard",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:08.352637"
+      }
+    },
+    {
+      "from": "jsclass:brokerCard.BrokerCard",
+      "to": "jsmethod:brokerCard.BrokerCard.brokerId",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "brokerId",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:08.378150"
+      }
+    },
+    {
+      "from": "jsclass:brokerCard.BrokerCard",
+      "to": "jsmethod:brokerCard.BrokerCard.handleNavigateToRecord",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleNavigateToRecord",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:08.404669"
+      }
+    },
+    {
+      "from": "lwc:daysOnMarket",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api, wire",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.449083"
+      }
+    },
+    {
+      "from": "lwc:daysOnMarket",
+      "to": "dep:lightning/uiRecordApi",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/uiRecordApi",
+        "specifiers": "getRecord, getFieldValue",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.474638"
+      }
+    },
+    {
+      "from": "lwc:daysOnMarket",
+      "to": "dep:lightning/messageService",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/messageService",
+        "specifiers": "subscribe, unsubscribe, MessageContext",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.500617"
+      }
+    },
+    {
+      "from": "lwc:daysOnMarket",
+      "to": "dep:@salesforce/messageChannel/PropertySelected__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/PropertySelected__c",
+        "specifiers": "PROPERTYSELECTEDMC",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.525621"
+      }
+    },
+    {
+      "from": "lwc:daysOnMarket",
+      "to": "dep:@salesforce/schema/Property__c.Date_Listed__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Date_Listed__c",
+        "specifiers": "DATE_LISTED_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.553560"
+      }
+    },
+    {
+      "from": "lwc:daysOnMarket",
+      "to": "dep:@salesforce/schema/Property__c.Days_On_Market__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Days_On_Market__c",
+        "specifiers": "DAYS_ON_MARKET_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.583092"
+      }
+    },
+    {
+      "from": "lwc:daysOnMarket",
+      "to": "jsclass:daysOnMarket.DaysOnMarket",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "DaysOnMarket",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:08.612866"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.wiredRecord",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "wiredRecord",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:08.638596"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.recordId",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "recordId",
+        "kind": "set",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:08.693213"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.hasNoPropertyId",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "hasNoPropertyId",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:08.719239"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.badgeClass",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "badgeClass",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:08.744267"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.barClass",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "barClass",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:08.771321"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.barStyle",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "barStyle",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:08.796341"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:08.823322"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.disconnectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "disconnectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:08.848330"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.handlePropertySelected",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handlePropertySelected",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:08.908490"
+      }
+    },
+    {
+      "from": "lwc:errorPanel",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:08.991005"
+      }
+    },
+    {
+      "from": "lwc:errorPanel",
+      "to": "dep:c/ldsUtils",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "c/ldsUtils",
+        "specifiers": "reduceErrors",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:09.017004"
+      }
+    },
+    {
+      "from": "lwc:errorPanel",
+      "to": "dep:./templates/noDataIllustration.html",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "./templates/noDataIllustration.html",
+        "specifiers": "noDataIllustration",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:09.043010"
+      }
+    },
+    {
+      "from": "lwc:errorPanel",
+      "to": "dep:./templates/inlineMessage.html",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "./templates/inlineMessage.html",
+        "specifiers": "inlineMessage",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:09.067700"
+      }
+    },
+    {
+      "from": "lwc:errorPanel",
+      "to": "jsclass:errorPanel.ErrorPanel",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "ErrorPanel",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:09.093727"
+      }
+    },
+    {
+      "from": "jsclass:errorPanel.ErrorPanel",
+      "to": "jsmethod:errorPanel.ErrorPanel.errorMessages",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "errorMessages",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:09.119781"
+      }
+    },
+    {
+      "from": "jsclass:errorPanel.ErrorPanel",
+      "to": "jsmethod:errorPanel.ErrorPanel.handleShowDetailsClick",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleShowDetailsClick",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:09.144806"
+      }
+    },
+    {
+      "from": "jsclass:errorPanel.ErrorPanel",
+      "to": "jsmethod:errorPanel.ErrorPanel.render",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "render",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:09.171440"
+      }
+    },
+    {
+      "from": "lwc:ldsUtils",
+      "to": "jsfunc:ldsUtils.reduceErrors",
+      "type": "HAS_FUNCTION",
+      "properties": {
+        "functionName": "reduceErrors",
+        "type": "HAS_FUNCTION",
+        "created_at": "2025-10-29T14:43:09.220156"
+      }
+    },
+    {
+      "from": "lwc:listContactsFromDevice",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:09.266625"
+      }
+    },
+    {
+      "from": "lwc:listContactsFromDevice",
+      "to": "dep:lightning/mobileCapabilities",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/mobileCapabilities",
+        "specifiers": "getContactsService",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:09.293624"
+      }
+    },
+    {
+      "from": "lwc:listContactsFromDevice",
+      "to": "jsclass:listContactsFromDevice.ListContactsFromDevice",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "ListContactsFromDevice",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:09.319625"
+      }
+    },
+    {
+      "from": "jsclass:listContactsFromDevice.ListContactsFromDevice",
+      "to": "jsmethod:listContactsFromDevice.ListContactsFromDevice.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:09.345652"
+      }
+    },
+    {
+      "from": "jsclass:listContactsFromDevice.ListContactsFromDevice",
+      "to": "jsmethod:listContactsFromDevice.ListContactsFromDevice.retrieveDeviceContacts",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "retrieveDeviceContacts",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:09.374049"
+      }
+    },
+    {
+      "from": "lwc:navigateToRecord",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:09.418027"
+      }
+    },
+    {
+      "from": "lwc:navigateToRecord",
+      "to": "dep:lightning/navigation",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/navigation",
+        "specifiers": "NavigationMixin",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:09.447035"
+      }
+    },
+    {
+      "from": "lwc:navigateToRecord",
+      "to": "jsclass:navigateToRecord.NavigateToRecord",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "NavigateToRecord",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:09.477523"
+      }
+    },
+    {
+      "from": "jsclass:navigateToRecord.NavigateToRecord",
+      "to": "jsmethod:navigateToRecord.NavigateToRecord.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:09.505010"
+      }
+    },
+    {
+      "from": "lwc:paginator",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:09.551072"
+      }
+    },
+    {
+      "from": "lwc:paginator",
+      "to": "jsclass:paginator.Paginator",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "Paginator",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:09.580115"
+      }
+    },
+    {
+      "from": "jsclass:paginator.Paginator",
+      "to": "jsmethod:paginator.Paginator.handlePrevious",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handlePrevious",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:09.623146"
+      }
+    },
+    {
+      "from": "jsclass:paginator.Paginator",
+      "to": "jsmethod:paginator.Paginator.handleNext",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleNext",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:09.656659"
+      }
+    },
+    {
+      "from": "jsclass:paginator.Paginator",
+      "to": "jsmethod:paginator.Paginator.currentPageNumber",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "currentPageNumber",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:09.690664"
+      }
+    },
+    {
+      "from": "jsclass:paginator.Paginator",
+      "to": "jsmethod:paginator.Paginator.isNotFirstPage",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "isNotFirstPage",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:09.716667"
+      }
+    },
+    {
+      "from": "jsclass:paginator.Paginator",
+      "to": "jsmethod:paginator.Paginator.isNotLastPage",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "isNotLastPage",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:09.741669"
+      }
+    },
+    {
+      "from": "jsclass:paginator.Paginator",
+      "to": "jsmethod:paginator.Paginator.totalPages",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "totalPages",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:09.767684"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, wire, api",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:09.813251"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:lightning/uiRecordApi",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/uiRecordApi",
+        "specifiers": "getRecord, getFieldValue",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:09.840468"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:lightning/mediaUtils",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/mediaUtils",
+        "specifiers": "processImage",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:09.866041"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:@salesforce/apex",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/apex",
+        "specifiers": "refreshApex",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:09.891623"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:@salesforce/apex/PropertyController.getPictures",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/apex/PropertyController.getPictures",
+        "specifiers": "getPictures",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T10:53:23.165298"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:@salesforce/apex/FileUtilities.createFile",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/apex/FileUtilities.createFile",
+        "specifiers": "createFile",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T10:53:23.188528"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:@salesforce/schema/Property__c.Address__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Address__c",
+        "specifiers": "ADDRESS_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:10.010675"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:@salesforce/schema/Property__c.City__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.City__c",
+        "specifiers": "CITY_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:10.039356"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:@salesforce/schema/Property__c.Description__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Description__c",
+        "specifiers": "DESCRIPTION_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:10.065579"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "jsclass:propertyCarousel.PropertyCarousel",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertyCarousel",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:10.093639"
+      }
+    },
+    {
+      "from": "jsclass:propertyCarousel.PropertyCarousel",
+      "to": "jsmethod:propertyCarousel.PropertyCarousel.wiredPictures",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "wiredPictures",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.120773"
+      }
+    },
+    {
+      "from": "jsclass:propertyCarousel.PropertyCarousel",
+      "to": "jsmethod:propertyCarousel.PropertyCarousel.address",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "address",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.146778"
+      }
+    },
+    {
+      "from": "jsclass:propertyCarousel.PropertyCarousel",
+      "to": "jsmethod:propertyCarousel.PropertyCarousel.city",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "city",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.172539"
+      }
+    },
+    {
+      "from": "jsclass:propertyCarousel.PropertyCarousel",
+      "to": "jsmethod:propertyCarousel.PropertyCarousel.description",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "description",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.198762"
+      }
+    },
+    {
+      "from": "jsclass:propertyCarousel.PropertyCarousel",
+      "to": "jsmethod:propertyCarousel.PropertyCarousel.errors",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "errors",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.223763"
+      }
+    },
+    {
+      "from": "jsclass:propertyCarousel.PropertyCarousel",
+      "to": "jsmethod:propertyCarousel.PropertyCarousel.handleFilesSelected",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleFilesSelected",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.250159"
+      }
+    },
+    {
+      "from": "jsclass:propertyCarousel.PropertyCarousel",
+      "to": "jsmethod:propertyCarousel.PropertyCarousel.blobToBase64",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "blobToBase64",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.275493"
+      }
+    },
+    {
+      "from": "lwc:propertyFilter",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, wire",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:10.323109"
+      }
+    },
+    {
+      "from": "lwc:propertyFilter",
+      "to": "dep:lightning/messageService",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/messageService",
+        "specifiers": "publish, MessageContext",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:10.349484"
+      }
+    },
+    {
+      "from": "lwc:propertyFilter",
+      "to": "dep:@salesforce/messageChannel/FiltersChange__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/FiltersChange__c",
+        "specifiers": "FILTERSCHANGEMC",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:10.376473"
+      }
+    },
+    {
+      "from": "lwc:propertyFilter",
+      "to": "jsclass:propertyFilter.PropertyFilter",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertyFilter",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:10.401554"
+      }
+    },
+    {
+      "from": "jsclass:propertyFilter.PropertyFilter",
+      "to": "jsmethod:propertyFilter.PropertyFilter.handleReset",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleReset",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.427888"
+      }
+    },
+    {
+      "from": "jsclass:propertyFilter.PropertyFilter",
+      "to": "jsmethod:propertyFilter.PropertyFilter.handleSearchKeyChange",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleSearchKeyChange",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.456788"
+      }
+    },
+    {
+      "from": "jsclass:propertyFilter.PropertyFilter",
+      "to": "jsmethod:propertyFilter.PropertyFilter.handleMaxPriceChange",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleMaxPriceChange",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.482459"
+      }
+    },
+    {
+      "from": "jsclass:propertyFilter.PropertyFilter",
+      "to": "jsmethod:propertyFilter.PropertyFilter.handleMinBedroomsChange",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleMinBedroomsChange",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.511460"
+      }
+    },
+    {
+      "from": "jsclass:propertyFilter.PropertyFilter",
+      "to": "jsmethod:propertyFilter.PropertyFilter.handleMinBathroomsChange",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleMinBathroomsChange",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.538879"
+      }
+    },
+    {
+      "from": "jsclass:propertyFilter.PropertyFilter",
+      "to": "jsmethod:propertyFilter.PropertyFilter.fireChangeEvent",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "fireChangeEvent",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.565243"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, wire",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:10.612649"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:lightning/messageService",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/messageService",
+        "specifiers": "publish, subscribe, unsubscribe, MessageContext",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:10.640239"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:@salesforce/messageChannel/FiltersChange__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/FiltersChange__c",
+        "specifiers": "FILTERS_CHANGED",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:10.665825"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:@salesforce/messageChannel/PropertySelected__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/PropertySelected__c",
+        "specifiers": "PROPERTY_SELECTED",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:10.691294"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:lightning/platformShowToastEvent",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/platformShowToastEvent",
+        "specifiers": "ShowToastEvent",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:10.717643"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:lightning/platformResourceLoader",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/platformResourceLoader",
+        "specifiers": "loadScript, loadStyle",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:10.744078"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:@salesforce/resourceUrl/leafletjs",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/resourceUrl/leafletjs",
+        "specifiers": "LEAFLET",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:10.769628"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:@salesforce/apex/PropertyController.getPagedPropertyList",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/apex/PropertyController.getPagedPropertyList",
+        "specifiers": "getPagedPropertyList",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T10:53:23.915906"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "jsclass:propertyListMap.PropertyListMap",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertyListMap",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:10.823189"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.wiredProperties",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "wiredProperties",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.849221"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.875755"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.disconnectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "disconnectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.901409"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.renderedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "renderedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.927531"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.initializeLeaflet",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "initializeLeaflet",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.953396"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.displayProperties",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "displayProperties",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:10.979373"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.handleFilterChange",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleFilterChange",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:11.004528"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.getTooltipMarkup",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "getTooltipMarkup",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:11.030094"
+      }
+    },
+    {
+      "from": "lwc:propertyLocation",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, wire, api",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.078324"
+      }
+    },
+    {
+      "from": "lwc:propertyLocation",
+      "to": "dep:lightning/mobileCapabilities",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/mobileCapabilities",
+        "specifiers": "getLocationService",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.105347"
+      }
+    },
+    {
+      "from": "lwc:propertyLocation",
+      "to": "dep:lightning/uiRecordApi",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/uiRecordApi",
+        "specifiers": "getRecord, getFieldValue",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.130369"
+      }
+    },
+    {
+      "from": "lwc:propertyLocation",
+      "to": "jsclass:propertyLocation.PropertyLocation",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertyLocation",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:11.156105"
+      }
+    },
+    {
+      "from": "jsclass:propertyLocation.PropertyLocation",
+      "to": "jsmethod:propertyLocation.PropertyLocation.wiredProperty",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "wiredProperty",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:11.182663"
+      }
+    },
+    {
+      "from": "jsclass:propertyLocation.PropertyLocation",
+      "to": "jsmethod:propertyLocation.PropertyLocation.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:11.208312"
+      }
+    },
+    {
+      "from": "jsclass:propertyLocation.PropertyLocation",
+      "to": "jsmethod:propertyLocation.PropertyLocation.calculateLocationFromMobileDevice",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "calculateLocationFromMobileDevice",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:11.234140"
+      }
+    },
+    {
+      "from": "jsclass:propertyLocation.PropertyLocation",
+      "to": "jsmethod:propertyLocation.PropertyLocation.calculateLocationFromBrowser",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "calculateLocationFromBrowser",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:11.260081"
+      }
+    },
+    {
+      "from": "jsclass:propertyLocation.PropertyLocation",
+      "to": "jsmethod:propertyLocation.PropertyLocation.calculateDistance",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "calculateDistance",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:11.286024"
+      }
+    },
+    {
+      "from": "lwc:propertyMap",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api, wire",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.336048"
+      }
+    },
+    {
+      "from": "lwc:propertyMap",
+      "to": "dep:lightning/uiRecordApi",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/uiRecordApi",
+        "specifiers": "getRecord",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.363393"
+      }
+    },
+    {
+      "from": "lwc:propertyMap",
+      "to": "dep:lightning/messageService",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/messageService",
+        "specifiers": "subscribe, unsubscribe, MessageContext",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.389897"
+      }
+    },
+    {
+      "from": "lwc:propertyMap",
+      "to": "dep:@salesforce/messageChannel/PropertySelected__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/PropertySelected__c",
+        "specifiers": "PROPERTYSELECTEDMC",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.415916"
+      }
+    },
+    {
+      "from": "lwc:propertyMap",
+      "to": "jsclass:propertyMap.PropertyMap",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertyMap",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:11.441770"
+      }
+    },
+    {
+      "from": "jsclass:propertyMap.PropertyMap",
+      "to": "jsmethod:propertyMap.PropertyMap.wiredRecord",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "wiredRecord",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:11.467952"
+      }
+    },
+    {
+      "from": "jsclass:propertyMap.PropertyMap",
+      "to": "jsmethod:propertyMap.PropertyMap.recordId",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "recordId",
+        "kind": "set",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:11.519866"
+      }
+    },
+    {
+      "from": "jsclass:propertyMap.PropertyMap",
+      "to": "jsmethod:propertyMap.PropertyMap.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:11.545894"
+      }
+    },
+    {
+      "from": "jsclass:propertyMap.PropertyMap",
+      "to": "jsmethod:propertyMap.PropertyMap.disconnectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "disconnectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:11.571749"
+      }
+    },
+    {
+      "from": "jsclass:propertyMap.PropertyMap",
+      "to": "jsmethod:propertyMap.PropertyMap.handlePropertySelected",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handlePropertySelected",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:11.597849"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api, wire",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.647339"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:lightning/uiRecordApi",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/uiRecordApi",
+        "specifiers": "getRecord, getFieldValue",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.675852"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:lightning/navigation",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/navigation",
+        "specifiers": "NavigationMixin",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.706440"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:lightning/messageService",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/messageService",
+        "specifiers": "subscribe, unsubscribe, MessageContext",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.732581"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:@salesforce/messageChannel/PropertySelected__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/PropertySelected__c",
+        "specifiers": "PROPERTYSELECTEDMC",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.759103"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:@salesforce/schema/Property__c.Name",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Name",
+        "specifiers": "NAME_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.785269"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:@salesforce/schema/Property__c.Beds__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Beds__c",
+        "specifiers": "BED_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.834779"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:@salesforce/schema/Property__c.Baths__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Baths__c",
+        "specifiers": "BATH_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.863888"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:@salesforce/schema/Property__c.Price__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Price__c",
+        "specifiers": "PRICE_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.888916"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:@salesforce/schema/Property__c.Broker__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Broker__c",
+        "specifiers": "BROKER_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.915887"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:@salesforce/schema/Property__c.Picture__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Picture__c",
+        "specifiers": "PICTURE_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:11.941097"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "jsclass:propertySummary.PropertySummary",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertySummary",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:11.966384"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.recordId",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "recordId",
+        "kind": "set",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.018072"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.hasNoPropertyId",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "hasNoPropertyId",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.044411"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.propertyName",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "propertyName",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.070799"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.pictureURL",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "pictureURL",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.096798"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.122150"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.disconnectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "disconnectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.148213"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.handlePropertySelected",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handlePropertySelected",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.174631"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.handleNavigateToRecord",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleNavigateToRecord",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.200424"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, wire",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:12.248459"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "dep:lightning/messageService",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/messageService",
+        "specifiers": "publish, subscribe, unsubscribe, MessageContext",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:12.274661"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "dep:@salesforce/messageChannel/FiltersChange__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/FiltersChange__c",
+        "specifiers": "FILTERSCHANGEMC",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:12.301537"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "dep:@salesforce/messageChannel/PropertySelected__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/PropertySelected__c",
+        "specifiers": "PROPERTYSELECTEDMC",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:12.327929"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "dep:@salesforce/apex/PropertyController.getPagedPropertyList",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/apex/PropertyController.getPagedPropertyList",
+        "specifiers": "getPagedPropertyList",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T10:53:25.505836"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "jsclass:propertyTileList.PropertyTileList",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertyTileList",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:12.381606"
+      }
+    },
+    {
+      "from": "jsclass:propertyTileList.PropertyTileList",
+      "to": "jsmethod:propertyTileList.PropertyTileList.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.407568"
+      }
+    },
+    {
+      "from": "jsclass:propertyTileList.PropertyTileList",
+      "to": "jsmethod:propertyTileList.PropertyTileList.disconnectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "disconnectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.433226"
+      }
+    },
+    {
+      "from": "jsclass:propertyTileList.PropertyTileList",
+      "to": "jsmethod:propertyTileList.PropertyTileList.handleFilterChange",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleFilterChange",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.459392"
+      }
+    },
+    {
+      "from": "jsclass:propertyTileList.PropertyTileList",
+      "to": "jsmethod:propertyTileList.PropertyTileList.handlePreviousPage",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handlePreviousPage",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.485525"
+      }
+    },
+    {
+      "from": "jsclass:propertyTileList.PropertyTileList",
+      "to": "jsmethod:propertyTileList.PropertyTileList.handleNextPage",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleNextPage",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.511964"
+      }
+    },
+    {
+      "from": "jsclass:propertyTileList.PropertyTileList",
+      "to": "jsmethod:propertyTileList.PropertyTileList.handlePropertySelected",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handlePropertySelected",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.537602"
+      }
+    },
+    {
+      "from": "lwc:propertyTile",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:12.582401"
+      }
+    },
+    {
+      "from": "lwc:propertyTile",
+      "to": "dep:@salesforce/client/formFactor",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/client/formFactor",
+        "specifiers": "FORM_FACTOR",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:12.608234"
+      }
+    },
+    {
+      "from": "lwc:propertyTile",
+      "to": "dep:lightning/navigation",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/navigation",
+        "specifiers": "NavigationMixin",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:12.633795"
+      }
+    },
+    {
+      "from": "lwc:propertyTile",
+      "to": "jsclass:propertyTile.PropertyTile",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertyTile",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:12.660552"
+      }
+    },
+    {
+      "from": "jsclass:propertyTile.PropertyTile",
+      "to": "jsmethod:propertyTile.PropertyTile.handlePropertySelected",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handlePropertySelected",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.688553"
+      }
+    },
+    {
+      "from": "jsclass:propertyTile.PropertyTile",
+      "to": "jsmethod:propertyTile.PropertyTile.backgroundImageStyle",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "backgroundImageStyle",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.716226"
+      }
+    },
+    {
+      "from": "lwc:sampleDataImporter",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:12.775749"
+      }
+    },
+    {
+      "from": "lwc:sampleDataImporter",
+      "to": "dep:lightning/platformShowToastEvent",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/platformShowToastEvent",
+        "specifiers": "ShowToastEvent",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:43:12.801895"
+      }
+    },
+    {
+      "from": "lwc:sampleDataImporter",
+      "to": "dep:@salesforce/apex/SampleDataController.importSampleData",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/apex/SampleDataController.importSampleData",
+        "specifiers": "importSampleData",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T10:53:25.999670"
+      }
+    },
+    {
+      "from": "lwc:sampleDataImporter",
+      "to": "jsclass:sampleDataImporter.SampleDataImporter",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "SampleDataImporter",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:43:12.890103"
+      }
+    },
+    {
+      "from": "jsclass:sampleDataImporter.SampleDataImporter",
+      "to": "jsmethod:sampleDataImporter.SampleDataImporter.handleImportSampleData",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleImportSampleData",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:43:12.916101"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "class:PropertyController",
+      "type": "DEPENDS_ON_APEX_CLASS",
+      "properties": {
+        "apexClass": "PropertyController",
+        "importPath": "@salesforce/apex/PropertyController.getPagedPropertyList",
+        "description": "LWC component imports from Apex class PropertyController",
+        "type": "DEPENDS_ON_APEX_CLASS",
+        "created_at": "2025-10-29T14:43:10.783527"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "method:PropertyController.getPagedPropertyList",
+      "type": "CALLS_APEX_METHOD",
+      "properties": {
+        "apexClass": "PropertyController",
+        "apexMethod": "getPagedPropertyList",
+        "importPath": "@salesforce/apex/PropertyController.getPagedPropertyList",
+        "description": "LWC component calls Apex method PropertyController.getPagedPropertyList",
+        "type": "CALLS_APEX_METHOD",
+        "created_at": "2025-10-29T14:43:10.796888"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "class:PropertyController",
+      "type": "DEPENDS_ON_APEX_CLASS",
+      "properties": {
+        "apexClass": "PropertyController",
+        "importPath": "@salesforce/apex/PropertyController.getPictures",
+        "description": "LWC component imports from Apex class PropertyController",
+        "type": "DEPENDS_ON_APEX_CLASS",
+        "created_at": "2025-10-29T14:43:09.904623"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "method:PropertyController.getPictures",
+      "type": "CALLS_APEX_METHOD",
+      "properties": {
+        "apexClass": "PropertyController",
+        "apexMethod": "getPictures",
+        "importPath": "@salesforce/apex/PropertyController.getPictures",
+        "placeholder": true,
+        "type": "CALLS_APEX_METHOD",
+        "created_at": "2025-10-29T14:43:09.930670"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "class:FileUtilities",
+      "type": "DEPENDS_ON_APEX_CLASS",
+      "properties": {
+        "apexClass": "FileUtilities",
+        "importPath": "@salesforce/apex/FileUtilities.createFile",
+        "placeholder": true,
+        "type": "DEPENDS_ON_APEX_CLASS",
+        "created_at": "2025-10-29T14:43:09.957299"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "method:FileUtilities.createFile",
+      "type": "CALLS_APEX_METHOD",
+      "properties": {
+        "apexClass": "FileUtilities",
+        "apexMethod": "createFile",
+        "importPath": "@salesforce/apex/FileUtilities.createFile",
+        "placeholder": true,
+        "type": "CALLS_APEX_METHOD",
+        "created_at": "2025-10-29T14:43:09.983538"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "class:PropertyController",
+      "type": "DEPENDS_ON_APEX_CLASS",
+      "properties": {
+        "apexClass": "PropertyController",
+        "importPath": "@salesforce/apex/PropertyController.getPagedPropertyList",
+        "description": "LWC component imports from Apex class PropertyController",
+        "type": "DEPENDS_ON_APEX_CLASS",
+        "created_at": "2025-10-29T14:43:12.340929"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "method:PropertyController.getPagedPropertyList",
+      "type": "CALLS_APEX_METHOD",
+      "properties": {
+        "apexClass": "PropertyController",
+        "apexMethod": "getPagedPropertyList",
+        "importPath": "@salesforce/apex/PropertyController.getPagedPropertyList",
+        "description": "LWC component calls Apex method PropertyController.getPagedPropertyList",
+        "type": "CALLS_APEX_METHOD",
+        "created_at": "2025-10-29T14:43:12.354939"
+      }
+    },
+    {
+      "from": "lwc:sampleDataImporter",
+      "to": "class:SampleDataController",
+      "type": "DEPENDS_ON_APEX_CLASS",
+      "properties": {
+        "apexClass": "SampleDataController",
+        "importPath": "@salesforce/apex/SampleDataController.importSampleData",
+        "placeholder": true,
+        "type": "DEPENDS_ON_APEX_CLASS",
+        "created_at": "2025-10-29T14:43:12.827881"
+      }
+    },
+    {
+      "from": "lwc:sampleDataImporter",
+      "to": "method:SampleDataController.importSampleData",
+      "type": "CALLS_APEX_METHOD",
+      "properties": {
+        "apexClass": "SampleDataController",
+        "apexMethod": "importSampleData",
+        "importPath": "@salesforce/apex/SampleDataController.importSampleData",
+        "placeholder": true,
+        "type": "CALLS_APEX_METHOD",
+        "created_at": "2025-10-29T14:43:12.856011"
+      }
+    }
+  ]
+}

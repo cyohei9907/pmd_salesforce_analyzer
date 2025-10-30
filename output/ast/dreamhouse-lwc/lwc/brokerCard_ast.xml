@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="brokerCard.js">
+  <Imports>
+    <Import source="lwc">
+      <Specifier type="named" imported="LightningElement" local="LightningElement" />
+      <Specifier type="named" imported="api" local="api" />
+      <Specifier type="named" imported="wire" local="wire" />
+    </Import>
+    <Import source="lightning/uiRecordApi">
+      <Specifier type="named" imported="getRecord" local="getRecord" />
+      <Specifier type="named" imported="getFieldValue" local="getFieldValue" />
+    </Import>
+    <Import source="lightning/navigation">
+      <Specifier type="named" imported="NavigationMixin" local="NavigationMixin" />
+    </Import>
+    <Import source="@salesforce/schema/Property__c.Broker__c">
+      <Specifier type="default" imported="BROKER_FIELD" local="BROKER_FIELD" />
+    </Import>
+    <Import source="@salesforce/schema/Broker__c.Name">
+      <Specifier type="default" imported="NAME_FIELD" local="NAME_FIELD" />
+    </Import>
+    <Import source="@salesforce/schema/Broker__c.Phone__c">
+      <Specifier type="default" imported="PHONE_FIELD" local="PHONE_FIELD" />
+    </Import>
+    <Import source="@salesforce/schema/Broker__c.Mobile_Phone__c">
+      <Specifier type="default" imported="MOBILE_PHONE_FIELD" local="MOBILE_PHONE_FIELD" />
+    </Import>
+    <Import source="@salesforce/schema/Broker__c.Email__c">
+      <Specifier type="default" imported="EMAIL_FIELD" local="EMAIL_FIELD" />
+    </Import>
+  </Imports>
+  <Exports>
+    <Export type="default" name="BrokerCard" />
+  </Exports>
+  <Classes>
+    <Class name="BrokerCard">
+      <Properties>
+        <Property name="recordId" static="false" />
+        <Property name="brokerFields" static="false" />
+        <Property name="property" static="false" />
+      </Properties>
+      <Methods>
+        <Method name="brokerId" kind="get" async="false" static="false">
+        </Method>
+        <Method name="handleNavigateToRecord" kind="method" async="false" static="false">
+        </Method>
+      </Methods>
+    </Class>
+  </Classes>
+</JavaScriptFile>

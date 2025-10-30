@@ -1,0 +1,33 @@
+{
+  "name": "daysOnMarket",
+  "has_js": true,
+  "has_html": true,
+  "has_meta": true,
+  "files": [
+    {
+      "name": "daysOnMarket.css",
+      "type": ".css",
+      "size": 1276
+    },
+    {
+      "name": "daysOnMarket.html",
+      "type": ".html",
+      "size": 1731
+    },
+    {
+      "name": "daysOnMarket.js",
+      "type": ".js",
+      "size": 2635
+    },
+    {
+      "name": "daysOnMarket.js-meta.xml",
+      "type": ".xml",
+      "size": 829
+    }
+  ],
+  "ast_file": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\daysOnMarket_ast.xml",
+  "ast_generated": true,
+  "parser": "babel",
+  "js_source": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\daysOnMarket.js",
+  "source_dir": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\daysOnMarket"
+}
