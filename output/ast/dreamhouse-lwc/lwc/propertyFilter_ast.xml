@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="propertyFilter.js">
+  <Imports>
+    <Import source="lwc">
+      <Specifier type="named" imported="LightningElement" local="LightningElement" />
+      <Specifier type="named" imported="wire" local="wire" />
+    </Import>
+    <Import source="lightning/messageService">
+      <Specifier type="named" imported="publish" local="publish" />
+      <Specifier type="named" imported="MessageContext" local="MessageContext" />
+    </Import>
+    <Import source="@salesforce/messageChannel/FiltersChange__c">
+      <Specifier type="default" imported="FILTERSCHANGEMC" local="FILTERSCHANGEMC" />
+    </Import>
+  </Imports>
+  <Exports>
+    <Export type="default" name="PropertyFilter" />
+  </Exports>
+  <Classes>
+    <Class name="PropertyFilter" superClass="LightningElement">
+      <Properties>
+        <Property name="searchKey" static="false" />
+        <Property name="maxPrice" static="false" />
+        <Property name="minBedrooms" static="false" />
+        <Property name="minBathrooms" static="false" />
+        <Property name="messageContext" static="false" />
+      </Properties>
+      <Methods>
+        <Method name="handleReset" kind="method" async="false" static="false">
+        </Method>
+        <Method name="handleSearchKeyChange" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="event" />
+          </Parameters>
+        </Method>
+        <Method name="handleMaxPriceChange" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="event" />
+          </Parameters>
+        </Method>
+        <Method name="handleMinBedroomsChange" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="event" />
+          </Parameters>
+        </Method>
+        <Method name="handleMinBathroomsChange" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="event" />
+          </Parameters>
+        </Method>
+        <Method name="fireChangeEvent" kind="method" async="false" static="false">
+        </Method>
+      </Methods>
+    </Class>
+  </Classes>
+</JavaScriptFile>

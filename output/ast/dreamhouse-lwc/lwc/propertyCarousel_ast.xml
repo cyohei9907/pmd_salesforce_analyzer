@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="propertyCarousel.js">
+  <Imports>
+    <Import source="lwc">
+      <Specifier type="named" imported="LightningElement" local="LightningElement" />
+      <Specifier type="named" imported="wire" local="wire" />
+      <Specifier type="named" imported="api" local="api" />
+    </Import>
+    <Import source="lightning/uiRecordApi">
+      <Specifier type="named" imported="getRecord" local="getRecord" />
+      <Specifier type="named" imported="getFieldValue" local="getFieldValue" />
+    </Import>
+    <Import source="lightning/mediaUtils">
+      <Specifier type="named" imported="processImage" local="processImage" />
+    </Import>
+    <Import source="@salesforce/apex">
+      <Specifier type="named" imported="refreshApex" local="refreshApex" />
+    </Import>
+    <Import source="@salesforce/apex/PropertyController.getPictures">
+      <Specifier type="default" imported="getPictures" local="getPictures" />
+    </Import>
+    <Import source="@salesforce/apex/FileUtilities.createFile">
+      <Specifier type="default" imported="createFile" local="createFile" />
+    </Import>
+    <Import source="@salesforce/schema/Property__c.Address__c">
+      <Specifier type="default" imported="ADDRESS_FIELD" local="ADDRESS_FIELD" />
+    </Import>
+    <Import source="@salesforce/schema/Property__c.City__c">
+      <Specifier type="default" imported="CITY_FIELD" local="CITY_FIELD" />
+    </Import>
+    <Import source="@salesforce/schema/Property__c.Description__c">
+      <Specifier type="default" imported="DESCRIPTION_FIELD" local="DESCRIPTION_FIELD" />
+    </Import>
+  </Imports>
+  <Exports>
+    <Export type="default" name="PropertyCarousel" />
+  </Exports>
+  <Classes>
+    <Class name="PropertyCarousel" superClass="LightningElement">
+      <Properties>
+        <Property name="recordId" static="false" />
+        <Property name="carouselItems" static="false" />
+        <Property name="pictures" static="false" />
+        <Property name="property" static="false" />
+      </Properties>
+      <Methods>
+        <Method name="wiredPictures" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="pictures" />
+          </Parameters>
+        </Method>
+        <Method name="address" kind="get" async="false" static="false">
+        </Method>
+        <Method name="city" kind="get" async="false" static="false">
+        </Method>
+        <Method name="description" kind="get" async="false" static="false">
+        </Method>
+        <Method name="errors" kind="get" async="false" static="false">
+        </Method>
+        <Method name="handleFilesSelected" kind="method" async="true" static="false">
+          <Parameters>
+            <Parameter name="event" />
+          </Parameters>
+        </Method>
+        <Method name="blobToBase64" kind="method" async="true" static="false">
+          <Parameters>
+            <Parameter name="blob" />
+          </Parameters>
+        </Method>
+      </Methods>
+    </Class>
+  </Classes>
+</JavaScriptFile>

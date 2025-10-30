@@ -23,6 +23,9 @@
       <el-button v-if="hasHiddenNodes" type="warning" @click="showAllNodes">
         显示全部节点
       </el-button>
+      <el-button v-if="hasChainView" type="success" @click="restoreFullGraph">
+        恢复完整视图
+      </el-button>
     </div>
 
     <!-- 图表容器 -->
@@ -81,6 +84,42 @@
           <span class="legend-color" style="background: #f56c6c"></span>
           <span>{{ $t('graph.dmlOperation') }}</span>
           <span v-if="nodeTypeCounts.DMLOperation" class="count">({{ nodeTypeCounts.DMLOperation }})</span>
+        </div>
+        <div 
+          class="legend-item" 
+          :class="{ active: isTypeActive('LWCComponent'), inactive: !isTypeActive('LWCComponent') && hasActiveFilter }"
+          @click="toggleNodeType('LWCComponent')"
+        >
+          <span class="legend-color" style="background: #9c27b0"></span>
+          <span>LWC 组件</span>
+          <span v-if="nodeTypeCounts.LWCComponent" class="count">({{ nodeTypeCounts.LWCComponent }})</span>
+        </div>
+        <div 
+          class="legend-item" 
+          :class="{ active: isTypeActive('JavaScriptClass'), inactive: !isTypeActive('JavaScriptClass') && hasActiveFilter }"
+          @click="toggleNodeType('JavaScriptClass')"
+        >
+          <span class="legend-color" style="background: #795548"></span>
+          <span>JS 类</span>
+          <span v-if="nodeTypeCounts.JavaScriptClass" class="count">({{ nodeTypeCounts.JavaScriptClass }})</span>
+        </div>
+        <div 
+          class="legend-item" 
+          :class="{ active: isTypeActive('JavaScriptMethod'), inactive: !isTypeActive('JavaScriptMethod') && hasActiveFilter }"
+          @click="toggleNodeType('JavaScriptMethod')"
+        >
+          <span class="legend-color" style="background: #607d8b"></span>
+          <span>JS 方法</span>
+          <span v-if="nodeTypeCounts.JavaScriptMethod" class="count">({{ nodeTypeCounts.JavaScriptMethod }})</span>
+        </div>
+        <div 
+          class="legend-item" 
+          :class="{ active: isTypeActive('Dependency'), inactive: !isTypeActive('Dependency') && hasActiveFilter }"
+          @click="toggleNodeType('Dependency')"
+        >
+          <span class="legend-color" style="background: #ff9800"></span>
+          <span>依赖模块</span>
+          <span v-if="nodeTypeCounts.Dependency" class="count">({{ nodeTypeCounts.Dependency }})</span>
         </div>
       </div>
     </div>
@@ -148,7 +187,7 @@ import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import api from '@/api'
-import { ElMessage } from 'element-plus'
+import { ElMessage, ElMessageBox } from 'element-plus'
 import { Refresh, FullScreen, Loading } from '@element-plus/icons-vue'
 import cytoscape from 'cytoscape'
 import coseBilkent from 'cytoscape-cose-bilkent'
@@ -185,13 +224,20 @@ const nodeTypeCounts = ref({
   ApexClass: 0,
   ApexMethod: 0,
   SOQLQuery: 0,
-  DMLOperation: 0
+  DMLOperation: 0,
+  LWCComponent: 0,
+  JavaScriptClass: 0,
+  JavaScriptMethod: 0,
+  ApexClassPlaceholder: 0,
+  ApexMethodPlaceholder: 0,
+  Dependency: 0
 })
 
 // 过滤状态
 const activeNodeTypes = ref(new Set())
 const hasActiveFilter = computed(() => activeNodeTypes.value.size > 0)
 const hasHiddenNodes = ref(false)
+const hasChainView = ref(false) // 是否处于链路查看模式
 
 // 工具函数
 const getNodeColor = (type) => {
@@ -200,6 +246,12 @@ const getNodeColor = (type) => {
     'ApexMethod': '#67c23a',
     'SOQLQuery': '#e6a23c',
     'DMLOperation': '#f56c6c',
+    'LWCComponent': '#9c27b0',
+    'JavaScriptClass': '#795548',
+    'JavaScriptMethod': '#607d8b',
+    'ApexClassPlaceholder': '#b3d9ff',  // 淡蓝色
+    'ApexMethodPlaceholder': '#c3e6cb', // 淡绿色
+    'Dependency': '#ff9800', // 橙色
   }
   return colors[type] || '#909399'
 }
@@ -209,7 +261,11 @@ const getNodeTypeTagColor = (type) => {
     'ApexClass': 'primary',
     'ApexMethod': 'success',
     'SOQLQuery': 'warning',
-    'DMLOperation': 'danger'
+    'DMLOperation': 'danger',
+    'LWCComponent': 'primary',
+    'JavaScriptClass': 'warning',
+    'JavaScriptMethod': 'info',
+    'Dependency': 'warning' 
   }
   return colors[type] || 'info'
 }
@@ -222,7 +278,7 @@ const isTypeActive = (type) => {
 // 判断是否应该显示源代码
 const shouldShowSourceCode = (node) => {
   if (!node) return false
-  return ['ApexClass', 'ApexMethod', 'SOQLQuery', 'DMLOperation'].includes(node.type)
+  return ['ApexClass', 'ApexMethod', 'SOQLQuery', 'DMLOperation', 'LWCComponent', 'JavaScriptClass', 'JavaScriptMethod'].includes(node.type)
 }
 
 // 根据节点类型加载源代码
@@ -238,6 +294,12 @@ const loadSourceCodeForNode = async (node) => {
     className = node.properties?.className || ''
   } else if (node.type === 'SOQLQuery' || node.type === 'DMLOperation') {
     className = node.properties?.className || ''
+  } else if (node.type === 'LWCComponent') {
+    className = node.name || node.id
+  } else if (node.type === 'JavaScriptClass') {
+    className = node.properties?.componentName || node.name || ''
+  } else if (node.type === 'JavaScriptMethod') {
+    className = node.properties?.componentName || ''
   }
   
   if (!className) {
@@ -433,6 +495,17 @@ const loadGraph = async (showMessage = true) => {
       }
       graphData.value = data
       
+      // DEBUG: Log API response data
+      console.log('Graph API Response:', {
+        totalNodes: data.nodes?.length,
+        totalEdges: data.edges?.length,
+        nodeTypes: data.nodes?.reduce((acc, node) => {
+          acc[node.type] = (acc[node.type] || 0) + 1
+          return acc
+        }, {}),
+        sampleNodes: data.nodes?.slice(0, 5)
+      })
+      
       // 转换节点数据
       nodes = data.nodes.map(node => ({
         data: {
@@ -450,7 +523,13 @@ const loadGraph = async (showMessage = true) => {
         ApexClass: 0,
         ApexMethod: 0,
         SOQLQuery: 0,
-        DMLOperation: 0
+        DMLOperation: 0,
+        LWCComponent: 0,
+        JavaScriptClass: 0,
+        JavaScriptMethod: 0,
+        ApexClassPlaceholder: 0,
+        ApexMethodPlaceholder: 0,
+        Dependency: 0
       }
       for (const node of nodes) {
         const type = node.data.type
@@ -565,15 +644,80 @@ const initCytoscape = (nodes, edges) => {
           'label': 'data(label)',
           'text-valign': 'center',
           'text-halign': 'center',
-          'font-size': '16px',    // 增大字体
-          'width': '120px',       // 增大节点宽度到120px
-          'height': '120px',      // 增大节点高度到120px
+          'font-size': '16px',
+          'width': '120px',       
+          'height': '120px',      
           'color': '#333',
           'text-outline-width': 2,
           'text-outline-color': '#fff',
           'transition-property': 'background-color, border-color, border-width, opacity',
           'transition-duration': '0.3s',
           'transition-timing-function': 'ease-in-out'
+        }
+      },
+      // LWC组件节点 - 更大尺寸
+      {
+        selector: 'node[type = "LWCComponent"]',
+        style: {
+          'width': '140px',
+          'height': '140px',
+          'font-size': '18px',
+          'border-width': '3px',
+          'border-color': '#4CAF50',
+          'border-style': 'solid'
+        }
+      },
+      // JavaScript类节点
+      {
+        selector: 'node[type = "JavaScriptClass"]',
+        style: {
+          'width': '130px',
+          'height': '130px',
+          'font-size': '17px',
+          'border-width': '2px',
+          'border-color': '#FF9800',
+          'border-style': 'solid'
+        }
+      },
+      // JavaScript方法节点
+      {
+        selector: 'node[type = "JavaScriptMethod"]',
+        style: {
+          'width': '110px',
+          'height': '110px',
+          'font-size': '15px'
+        }
+      },
+      // Apex类节点
+      {
+        selector: 'node[type = "ApexClass"]',
+        style: {
+          'width': '125px',
+          'height': '125px',
+          'font-size': '16px',
+          'border-width': '2px',
+          'border-color': '#2196F3',
+          'border-style': 'solid'
+        }
+      },
+      // DML操作节点 - 小一些
+      {
+        selector: 'node[type = "DMLOperation"]',
+        style: {
+          'width': '90px',
+          'height': '90px',
+          'font-size': '14px',
+          'shape': 'diamond'
+        }
+      },
+      // SOQL查询节点 - 小一些
+      {
+        selector: 'node[type = "SOQLQuery"]',
+        style: {
+          'width': '95px',
+          'height': '95px',
+          'font-size': '14px',
+          'shape': 'hexagon'
         }
       },
       {
@@ -628,21 +772,41 @@ const initCytoscape = (nodes, edges) => {
     ],
     
     layout: {
-      name: 'cose',  // 使用COSE布局,避免边重叠
+      name: 'cose-bilkent',  // 使用更高级的cose-bilkent布局,更好的节点分布
       animate: true,
-      animationDuration: 1000,  // 增加动画时长到1秒
-      animationEasing: 'ease-out-cubic',  // 添加缓动效果
+      animationDuration: 1500,  // 增加动画时长
+      animationEasing: 'ease-out-cubic',
       fit: true,
-      padding: 50,
-      nodeRepulsion: 8000,  // 节点间斥力,避免重叠
-      idealEdgeLength: 100,  // 理想边长,控制relation不会拉太远
-      edgeElasticity: 100,   // 边弹性
-      nestingFactor: 1.2,
-      gravity: 0.8,          // 重力,防止节点飞太远
-      numIter: 1000,         // 迭代次数
-      initialTemp: 200,
-      coolingFactor: 0.95,
-      minTemp: 1
+      padding: 80,
+      
+      // cose-bilkent特定参数
+      quality: 'default',  // 'default' 或 'proof'
+      nodeDimensionsIncludeLabels: true,  // 考虑标签尺寸
+      randomize: false,
+      
+      // 节点分布参数
+      nodeRepulsion: 12000,  // 增加节点斥力,特别适用于LWC密集区域
+      idealEdgeLength: 150,  // 增加理想边长,让节点分布更开
+      edgeElasticity: 0.45,
+      nestingFactor: 0.1,
+      gravity: 0.4,  // 降低重力,让节点分布更自由
+      numIter: 2500,  // 增加迭代次数,获得更好的布局
+      
+      // 温度控制
+      initialTemp: 1000,
+      coolingFactor: 0.99,
+      minTemp: 1.0,
+      
+      // 特殊设置用于处理密集区域
+      gravityRangeCompound: 1.5,
+      gravityCompound: 1.0,
+      gravityRange: 3.8,
+      
+      // 使用多级布局,处理大图
+      improveFlow: true,
+      tile: true,  // 瓦片布局,防止重叠
+      tilingPaddingVertical: 30,
+      tilingPaddingHorizontal: 30
     },
     
     minZoom: 0.1,
@@ -746,6 +910,17 @@ const initCytoscape = (nodes, edges) => {
         content: `<span style="display: flex; align-items: center; gap: 8px;"><svg style="width: 16px; height: 16px;" fill="currentColor" viewBox="0 0 1024 1024"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm192 472c0 4.4-3.6 8-8 8H544v152c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V544H328c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h152V328c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v152h152c4.4 0 8 3.6 8 8v48z"/></svg>仅显示关联节点</span>`,
         select: function(ele) {
           showOnlyRelatedNodes(ele)
+        }
+      },
+      {
+        content: `<span style="display: flex; align-items: center; gap: 8px;"><svg style="width: 16px; height: 16px;" fill="currentColor" viewBox="0 0 1024 1024"><path d="M877.5 810.3L646.2 579c24.4-39.8 38.4-86.4 38.4-136C684.6 336.1 598.5 250 492.6 250S300.6 336.1 300.6 443s86.1 193 192 193c49.6 0 96.2-14 136-38.4l231.3 231.3c12.5 12.5 32.8 12.5 45.3 0l2.3-2.3c12.5-12.5 12.5-32.8 0-45.3zM492.6 584c-77.8 0-141-63.2-141-141s63.2-141 141-141 141 63.2 141 141-63.2 141-141 141z"/></svg>查询DML调用来源</span>`,
+        select: function(ele) {
+          findDMLCallers(ele)
+        },
+        show: function(ele) {
+          // 只对DML节点显示此菜单项
+          const nodeType = ele.data('originalData')?.type
+          return nodeType === 'DMLOperation'
         }
       }
     ],
@@ -882,6 +1057,472 @@ const showAllNodes = () => {
   
   // 适应视图
   cy.fit(null, 50)
+}
+
+// DML调用来源查询 - 显示完整调用链路
+const findDMLCallers = (dmlNode) => {
+  if (!cy || !dmlNode) return
+  
+  const dmlId = dmlNode.id()
+  const dmlData = dmlNode.data('originalData') || dmlNode.data()
+  
+  console.log('DML Node Data:', dmlData)
+  console.log('DML Node ID:', dmlId)
+  
+  // 构建完整的调用链路
+  const callChains = buildCallChains(dmlId)
+  
+  if (callChains.length > 0) {
+    const operationType = dmlData?.operationType || 'Unknown'
+    const className = dmlData?.className || 'Unknown'
+    const methodName = dmlData?.methodName || 'Unknown'
+    
+    let message = `DML操作信息:\n`
+    message += `  类型: ${operationType}\n`
+    message += `  所属类: ${className}\n`
+    message += `  所属方法: ${methodName}\n\n`
+    
+    if (callChains.length === 1) {
+      // 只有一条链路，直接显示并高亮
+      message += `调用链路:\n\n`
+      const chain = callChains[0]
+      chain.forEach((node, nodeIndex) => {
+        const indent = '  '.repeat(nodeIndex)
+        const arrow = nodeIndex > 0 ? ' → ' : ''
+        message += `${indent}${arrow}${node.name} (${node.type})\n`
+      })
+      
+      ElMessageBox.alert(message, 'DML调用链路分析', {
+        confirmButtonText: '高亮显示链路',
+        cancelButtonText: '关闭',
+        showCancelButton: true,
+        type: 'info',
+        customClass: 'dml-callers-dialog'
+      }).then(() => {
+        highlightSingleCallChain(dmlNode, chain)
+      }).catch(() => {
+        // 用户点击关闭，不做任何操作
+      })
+    } else {
+      // 多条链路，让用户选择
+      message += `发现 ${callChains.length} 条调用链路，请选择要查看的链路:\n\n`
+      
+      callChains.forEach((chain, chainIndex) => {
+        const rootNode = chain[chain.length - 1] // 链路的根节点
+        message += `${chainIndex + 1}. 从 ${rootNode.name} (${rootNode.type}) 开始\n`
+      })
+      
+      ElMessageBox.prompt(message, 'DML调用链路选择', {
+        confirmButtonText: '查看选中链路',
+        cancelButtonText: '查看所有链路',
+        showCancelButton: true,
+        inputPattern: /^[1-9]\d*$/,
+        inputErrorMessage: `请输入 1 到 ${callChains.length} 之间的数字`,
+        inputPlaceholder: `输入链路编号 (1-${callChains.length})`,
+        type: 'info',
+        customClass: 'dml-callers-dialog'
+      }).then(({ value }) => {
+        const chainIndex = parseInt(value) - 1
+        if (chainIndex >= 0 && chainIndex < callChains.length) {
+          // 显示选中的单条链路
+          showSingleChainDetails(dmlNode, callChains[chainIndex], chainIndex + 1)
+        }
+      }).catch(() => {
+        // 用户点击"查看所有链路"或关闭
+        showAllChainsDetails(dmlNode, callChains)
+      })
+    }
+  } else {
+    ElMessage.info('该DML操作没有找到调用来源')
+  }
+}
+
+// 显示单条链路的详细信息
+const showSingleChainDetails = (dmlNode, chain, chainNumber) => {
+  const dmlData = dmlNode.data('originalData') || dmlNode.data()
+  const operationType = dmlData?.operationType || 'Unknown'
+  const className = dmlData?.className || 'Unknown'
+  const methodName = dmlData?.methodName || 'Unknown'
+  
+  let message = `DML操作信息:\n`
+  message += `  类型: ${operationType}\n`
+  message += `  所属类: ${className}\n`
+  message += `  所属方法: ${methodName}\n\n`
+  message += `调用链路 ${chainNumber}:\n\n`
+  
+  chain.forEach((node, nodeIndex) => {
+    const indent = '  '.repeat(nodeIndex)
+    const arrow = nodeIndex > 0 ? ' → ' : ''
+    message += `${indent}${arrow}${node.name} (${node.type})\n`
+  })
+  
+  ElMessageBox.alert(message, `DML调用链路 ${chainNumber} 详情`, {
+    confirmButtonText: '高亮显示此链路',
+    cancelButtonText: '关闭',
+    showCancelButton: true,
+    type: 'info',
+    customClass: 'dml-callers-dialog'
+  }).then(() => {
+    highlightSingleCallChain(dmlNode, chain)
+  }).catch(() => {
+    // 用户点击关闭，不做任何操作
+  })
+}
+
+// 显示所有链路的详细信息（原来的功能）
+const showAllChainsDetails = (dmlNode, callChains) => {
+  const dmlData = dmlNode.data('originalData') || dmlNode.data()
+  const operationType = dmlData?.operationType || 'Unknown'
+  const className = dmlData?.className || 'Unknown'
+  const methodName = dmlData?.methodName || 'Unknown'
+  
+  let message = `DML操作信息:\n`
+  message += `  类型: ${operationType}\n`
+  message += `  所属类: ${className}\n`
+  message += `  所属方法: ${methodName}\n\n`
+  message += `所有调用链路:\n\n`
+  
+  callChains.forEach((chain, chainIndex) => {
+    message += `链路 ${chainIndex + 1}:\n`
+    chain.forEach((node, nodeIndex) => {
+      const indent = '  '.repeat(nodeIndex)
+      const arrow = nodeIndex > 0 ? ' → ' : ''
+      message += `${indent}${arrow}${node.name} (${node.type})\n`
+    })
+    message += '\n'
+  })
+  
+  ElMessageBox.alert(message, 'DML完整调用链路分析', {
+    confirmButtonText: '高亮显示所有链路',
+    cancelButtonText: '关闭',
+    showCancelButton: true,
+    type: 'info',
+    customClass: 'dml-callers-dialog'
+  }).then(() => {
+    highlightAllCallChains(dmlNode, callChains)
+  }).catch(() => {
+    // 用户点击关闭，不做任何操作
+  })
+}
+
+// 构建从DML节点开始的完整调用链路
+const buildCallChains = (startNodeId) => {
+  const chains = []
+  const visited = new Set()
+  
+  // 递归构建调用链
+  const buildChain = (nodeId, currentChain) => {
+    if (visited.has(nodeId)) {
+      // 避免循环引用
+      return
+    }
+    
+    const node = cy.getElementById(nodeId)
+    if (!node.length) return
+    
+    const nodeData = node.data('originalData') || node.data()
+    const chainNode = {
+      id: nodeId,
+      name: nodeData?.name || nodeData?.canonicalName || node.data('label') || 'Unknown',
+      type: nodeData?.type || 'Unknown',
+      node: node
+    }
+    
+    const newChain = [chainNode, ...currentChain]
+    
+    // 查找调用此节点的边
+    const incomingEdges = cy.edges().filter(edge => {
+      return edge.target().id() === nodeId
+    })
+    
+    if (incomingEdges.length === 0) {
+      // 没有更多调用者，这是链路的终点
+      chains.push(newChain)
+    } else {
+      // 继续向上追溯
+      visited.add(nodeId)
+      incomingEdges.forEach(edge => {
+        const sourceNodeId = edge.source().id()
+        buildChain(sourceNodeId, newChain)
+      })
+      visited.delete(nodeId)
+    }
+  }
+  
+  // 从DML节点开始构建
+  const dmlNode = cy.getElementById(startNodeId)
+  const dmlData = dmlNode.data('originalData') || dmlNode.data()
+  const dmlChainNode = {
+    id: startNodeId,
+    name: `${dmlData?.operationType || 'DML'} (${dmlData?.className || ''}.${dmlData?.methodName || ''})`,
+    type: 'DMLOperation',
+    node: dmlNode
+  }
+  
+  buildChain(startNodeId, [dmlChainNode])
+  
+  return chains
+}
+
+// 高亮显示单条调用链路
+const highlightSingleCallChain = (dmlNode, chain) => {
+  if (!cy) return
+  
+  // 重置所有元素样式
+  cy.elements().removeClass('highlighted caller-path chain-node')
+  
+  // 重置所有边的样式
+  cy.edges().style({
+    'line-color': '',
+    'target-arrow-color': '',
+    'source-arrow-color': '',
+    'width': ''
+  })
+  
+  const chainNodes = new Set()
+  const chainEdges = new Set()
+  const relatedEdges = new Set()
+  
+  // 收集链路中的节点和边
+  chain.forEach((chainNode, nodeIndex) => {
+    chainNodes.add(chainNode.id)
+    
+    // 添加连接到下一个节点的边
+    if (nodeIndex < chain.length - 1) {
+      const nextNode = chain[nodeIndex + 1]
+      const edge = cy.edges().filter(edge => {
+        return edge.source().id() === nextNode.id && edge.target().id() === chainNode.id
+      })
+      if (edge.length > 0) {
+        chainEdges.add(edge.id())
+      }
+    }
+  })
+  
+  // 收集链路节点之间的所有关系边（不仅仅是调用链路）
+  chainNodes.forEach(nodeId => {
+    const node = cy.getElementById(nodeId)
+    
+    // 找到该节点的所有相关边
+    const connectedEdges = node.connectedEdges()
+    connectedEdges.forEach(edge => {
+      const sourceId = edge.source().id()
+      const targetId = edge.target().id()
+      
+      // 如果边的两端都在链路节点中，则保留这条边
+      if (chainNodes.has(sourceId) && chainNodes.has(targetId)) {
+        relatedEdges.add(edge.id())
+      }
+    })
+  })
+  
+  // 合并链路边和相关边
+  const allRelevantEdges = new Set([...chainEdges, ...relatedEdges])
+  
+  // 隐藏所有不在链路中的节点
+  cy.nodes().forEach(node => {
+    if (!chainNodes.has(node.id())) {
+      node.style('display', 'none')
+    } else {
+      node.style('display', 'element')
+    }
+  })
+  
+  // 隐藏不相关的边，但保留链路节点之间的所有关系
+  cy.edges().forEach(edge => {
+    if (!allRelevantEdges.has(edge.id())) {
+      edge.style('display', 'none')
+    } else {
+      edge.style('display', 'element')
+    }
+  })
+  
+  // 高亮链路中的节点
+  chainNodes.forEach(nodeId => {
+    const node = cy.getElementById(nodeId)
+    if (nodeId === dmlNode.id()) {
+      node.addClass('highlighted') // DML节点用红色高亮
+    } else {
+      node.addClass('caller-path') // 调用者节点用橙色高亮
+    }
+  })
+  
+  // 高亮调用链路中的边并设置样式
+  chainEdges.forEach(edgeId => {
+    const edge = cy.getElementById(edgeId)
+    edge.addClass('highlighted caller-path')
+    // 动态设置边的样式
+    edge.style({
+      'line-color': '#ffa502',
+      'target-arrow-color': '#ffa502',
+      'source-arrow-color': '#ffa502',
+      'width': 5
+    })
+  })
+  
+  // 对链路中的节点进行聚焦
+  const chainCyNodes = cy.nodes().filter(node => chainNodes.has(node.id()))
+  cy.fit(chainCyNodes, 80) // 聚焦到链路节点，留80px边距
+  
+  // 设置链路查看模式
+  hasChainView.value = true
+  
+  // 显示恢复按钮提示
+  ElMessage({
+    message: '正在显示调用链路，链路节点间的所有关系都已保留。点击"恢复完整视图"可返回全图',
+    type: 'info',
+    duration: 4000
+  })
+  
+  // 15秒后自动恢复显示所有节点
+  setTimeout(() => {
+    if (hasChainView.value) {
+      restoreFullGraph()
+    }
+  }, 15000) // 延长到15秒，给用户更多时间查看
+}
+
+// 恢复完整图形显示
+const restoreFullGraph = () => {
+  if (!cy) return
+  
+  // 恢复所有节点和边的显示
+  cy.elements().style('display', 'element')
+  
+  // 移除所有高亮样式
+  cy.elements().removeClass('highlighted caller-path chain-node')
+  
+  // 重置边的样式
+  cy.edges().style({
+    'line-color': '',
+    'target-arrow-color': '',
+    'source-arrow-color': '',
+    'width': ''
+  })
+  
+  // 恢复全图视图
+  cy.fit(null, 50)
+  
+  // 清除链路查看模式
+  hasChainView.value = false
+  
+  ElMessage({
+    message: '已恢复完整图形视图',
+    type: 'success',
+    duration: 2000
+  })
+}
+
+// 高亮显示所有调用链路
+const highlightAllCallChains = (dmlNode, callChains) => {
+  if (!cy) return
+  
+  // 重置所有元素样式
+  cy.elements().removeClass('highlighted caller-path chain-node')
+  
+  const allNodes = new Set()
+  const allEdges = new Set()
+  const allRelatedEdges = new Set()
+  
+  // 收集所有链路中的节点和边
+  callChains.forEach((chain, chainIndex) => {
+    chain.forEach((chainNode, nodeIndex) => {
+      allNodes.add(chainNode.id)
+      
+      // 添加连接到下一个节点的边
+      if (nodeIndex < chain.length - 1) {
+        const nextNode = chain[nodeIndex + 1]
+        const edge = cy.edges().filter(edge => {
+          return edge.source().id() === nextNode.id && edge.target().id() === chainNode.id
+        })
+        if (edge.length > 0) {
+          allEdges.add(edge.id())
+        }
+      }
+    })
+  })
+  
+  // 收集所有链路节点之间的关系边
+  allNodes.forEach(nodeId => {
+    const node = cy.getElementById(nodeId)
+    
+    // 找到该节点的所有相关边
+    const connectedEdges = node.connectedEdges()
+    connectedEdges.forEach(edge => {
+      const sourceId = edge.source().id()
+      const targetId = edge.target().id()
+      
+      // 如果边的两端都在链路节点中，则保留这条边
+      if (allNodes.has(sourceId) && allNodes.has(targetId)) {
+        allRelatedEdges.add(edge.id())
+      }
+    })
+  })
+  
+  // 合并调用链路边和相关边
+  const allRelevantEdges = new Set([...allEdges, ...allRelatedEdges])
+  
+  // 隐藏所有不在链路中的节点
+  cy.nodes().forEach(node => {
+    if (!allNodes.has(node.id())) {
+      node.style('display', 'none')
+    } else {
+      node.style('display', 'element')
+    }
+  })
+  
+  // 隐藏不相关的边，但保留链路节点之间的所有关系
+  cy.edges().forEach(edge => {
+    if (!allRelevantEdges.has(edge.id())) {
+      edge.style('display', 'none')
+    } else {
+      edge.style('display', 'element')
+    }
+  })
+  
+  // 高亮所有相关节点
+  allNodes.forEach(nodeId => {
+    const node = cy.getElementById(nodeId)
+    if (nodeId === dmlNode.id()) {
+      node.addClass('highlighted') // DML节点用红色高亮
+    } else {
+      node.addClass('caller-path') // 调用者节点用橙色高亮
+    }
+  })
+  
+  // 高亮所有相关边并设置样式
+  allEdges.forEach(edgeId => {
+    const edge = cy.getElementById(edgeId)
+    edge.addClass('highlighted caller-path')
+    // 动态设置边的样式
+    edge.style({
+      'line-color': '#ffa502',
+      'target-arrow-color': '#ffa502',
+      'source-arrow-color': '#ffa502',
+      'width': 4
+    })
+  })
+  
+  // 设置链路查看模式
+  hasChainView.value = true
+  
+  // 聚焦到所有链路节点
+  const allCyNodes = cy.nodes().filter(node => allNodes.has(node.id()))
+  cy.fit(allCyNodes, 60)
+  
+  // 显示恢复按钮提示
+  ElMessage({
+    message: '正在显示所有调用链路，链路节点间的所有关系都已保留。点击"恢复完整视图"可返回全图',
+    type: 'info',
+    duration: 4000
+  })
+  
+  // 15秒后自动恢复显示所有节点
+  setTimeout(() => {
+    if (hasChainView.value) {
+      restoreFullGraph()
+    }
+  }, 15000)
 }
 
 // 适应视图
@@ -1194,5 +1835,38 @@ onUnmounted(() => {
   stroke: white !important;
   stroke-width: 3px !important;
   fill: none !important;
+}
+
+/* DML调用者对话框样式 */
+.dml-callers-dialog .el-message-box__message {
+  white-space: pre-line;
+  font-family: 'Consolas', 'Monaco', 'Menlo', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.dml-callers-dialog .el-message-box {
+  max-width: 600px;
+}
+</style>
+
+<style>
+/* Cytoscape图形样式 - 需要全局作用域 */
+.highlighted {
+  border-width: 4px !important;
+  border-color: #ff4757 !important;
+  border-style: solid !important;
+}
+
+.caller-path {
+  border-color: #ffa502 !important;
+  background-color: #ffa502 !important;
+  opacity: 0.9 !important;
+}
+
+.chain-node {
+  border-color: #2ed573 !important;
+  background-color: #2ed573 !important;
+  opacity: 0.8 !important;
 }
 </style>

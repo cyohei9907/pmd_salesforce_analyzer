@@ -645,39 +645,77 @@ class GitService:
                         'size': file.stat().st_size
                     })
             
-            # 如果有JavaScript文件,可以使用PMD分析
+            # 如果有JavaScript文件,使用Babel解析（支持ES6+）
             if js_file.exists():
                 try:
                     output_file = output_dir / f"{comp_name}_ast.xml"
                     
-                    cmd = [
-                        str(self.pmd_bin),
-                        'ast-dump',
-                        '--language', 'ecmascript',  # JavaScript
-                        '--format', 'xml',
-                        '--file', str(js_file),
-                    ]
+                    # 使用Babel解析器（位于项目根目录）
+                    babel_parser = self.project_dir.parent / 'js_ast_parser.js'
                     
-                    result = subprocess.run(
-                        cmd,
-                        capture_output=True,
-                        text=True,
-                        timeout=30
-                    )
-                    
-                    if result.returncode == 0:
-                        with open(output_file, 'w', encoding='utf-8') as f:
-                            f.write(result.stdout)
-                        component_info['ast_file'] = str(output_file)
-                        component_info['ast_generated'] = True
+                    if babel_parser.exists():
+                        # 使用Node.js运行Babel解析器
+                        cmd = [
+                            'node',
+                            str(babel_parser),
+                            str(js_file),
+                            str(output_file)
+                        ]
                         
-                        # 保存JavaScript源代码副本
-                        js_source_copy = output_dir / f"{comp_name}.js"
-                        if not js_source_copy.exists():
-                            shutil.copy2(js_file, js_source_copy)
-                        component_info['js_source'] = str(js_source_copy)
+                        result = subprocess.run(
+                            cmd,
+                            capture_output=True,
+                            text=True,
+                            timeout=30,
+                            cwd=str(self.project_dir.parent)
+                        )
+                        
+                        if result.returncode == 0 and output_file.exists():
+                            component_info['ast_file'] = str(output_file)
+                            component_info['ast_generated'] = True
+                            component_info['parser'] = 'babel'
+                            
+                            # 保存JavaScript源代码副本
+                            js_source_copy = output_dir / f"{comp_name}.js"
+                            if not js_source_copy.exists():
+                                shutil.copy2(js_file, js_source_copy)
+                            component_info['js_source'] = str(js_source_copy)
+                        else:
+                            component_info['ast_generated'] = False
+                            component_info['ast_error'] = result.stderr or 'AST generation failed'
+                            logger.warning(f"Babel parser failed for {comp_name}: {result.stderr}")
                     else:
-                        component_info['ast_generated'] = False
+                        # Fallback to PMD if Babel parser not found
+                        logger.warning(f"Babel parser not found at {babel_parser}, falling back to PMD")
+                        cmd = [
+                            str(self.pmd_bin),
+                            'ast-dump',
+                            '--language', 'ecmascript',
+                            '--format', 'xml',
+                            '--file', str(js_file),
+                        ]
+                        
+                        result = subprocess.run(
+                            cmd,
+                            capture_output=True,
+                            text=True,
+                            timeout=30
+                        )
+                        
+                        if result.returncode == 0:
+                            with open(output_file, 'w', encoding='utf-8') as f:
+                                f.write(result.stdout)
+                            component_info['ast_file'] = str(output_file)
+                            component_info['ast_generated'] = True
+                            component_info['parser'] = 'pmd'
+                            
+                            # 保存JavaScript源代码副本
+                            js_source_copy = output_dir / f"{comp_name}.js"
+                            if not js_source_copy.exists():
+                                shutil.copy2(js_file, js_source_copy)
+                            component_info['js_source'] = str(js_source_copy)
+                        else:
+                            component_info['ast_generated'] = False
                         component_info['ast_error'] = result.stderr
                         
                 except Exception as e:

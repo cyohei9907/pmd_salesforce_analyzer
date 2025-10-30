@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "timestamp": "2025-10-27T17:59:56.490456",
-    "total_relations": 63
+    "timestamp": "2025-10-29T14:45:28.699462",
+    "total_relations": 239
   },
   "relations": [
     {
@@ -11,7 +11,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:54.526934"
+        "created_at": "2025-10-29T14:45:21.431406"
       }
     },
     {
@@ -21,7 +21,7 @@
       "properties": {
         "query": "SELECT ContentDocumentId                 FROM ContentVersion                 WHERE Id = :contentVersion.Id                 WITH USER_MODE",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:54.547026"
+        "created_at": "2025-10-29T14:45:21.451360"
       }
     },
     {
@@ -31,7 +31,7 @@
       "properties": {
         "operationType": "INSERT",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:54.578594"
+        "created_at": "2025-10-29T14:45:21.478336"
       }
     },
     {
@@ -41,7 +41,7 @@
       "properties": {
         "operationType": "INSERT",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:54.601716"
+        "created_at": "2025-10-29T14:45:21.505341"
       }
     },
     {
@@ -51,7 +51,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:54.654458"
+        "created_at": "2025-10-29T14:45:21.561272"
       }
     },
     {
@@ -61,7 +61,7 @@
       "properties": {
         "operationType": "INSERT",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:54.682264"
+        "created_at": "2025-10-29T14:45:21.588075"
       }
     },
     {
@@ -71,7 +71,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:54.704577"
+        "created_at": "2025-10-29T14:45:21.614078"
       }
     },
     {
@@ -81,7 +81,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:54.728072"
+        "created_at": "2025-10-29T14:45:21.640593"
       }
     },
     {
@@ -91,7 +91,7 @@
       "properties": {
         "operationType": "INSERT",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:54.750202"
+        "created_at": "2025-10-29T14:45:21.668247"
       }
     },
     {
@@ -101,7 +101,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:54.772422"
+        "created_at": "2025-10-29T14:45:21.695243"
       }
     },
     {
@@ -111,7 +111,7 @@
       "properties": {
         "operationType": "INSERT",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:54.795444"
+        "created_at": "2025-10-29T14:45:21.722054"
       }
     },
     {
@@ -121,7 +121,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:54.849123"
+        "created_at": "2025-10-29T14:45:21.782427"
       }
     },
     {
@@ -131,7 +131,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:54.922417"
+        "created_at": "2025-10-29T14:45:21.865950"
       }
     },
     {
@@ -141,7 +141,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:54.945166"
+        "created_at": "2025-10-29T14:45:21.893368"
       }
     },
     {
@@ -151,7 +151,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:54.975707"
+        "created_at": "2025-10-29T14:45:21.925439"
       }
     },
     {
@@ -161,7 +161,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:55.001176"
+        "created_at": "2025-10-29T14:45:21.952723"
       }
     },
     {
@@ -171,7 +171,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:55.074902"
+        "created_at": "2025-10-29T14:45:22.039412"
       }
     },
     {
@@ -181,7 +181,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:55.125122"
+        "created_at": "2025-10-29T14:45:22.104076"
       }
     },
     {
@@ -191,7 +191,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:55.172474"
+        "created_at": "2025-10-29T14:45:22.161244"
       }
     },
     {
@@ -201,7 +201,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:55.222443"
+        "created_at": "2025-10-29T14:45:22.216346"
       }
     },
     {
@@ -211,7 +211,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:55.283508"
+        "created_at": "2025-10-29T14:45:22.276810"
       }
     },
     {
@@ -221,7 +221,7 @@
       "properties": {
         "query": "SELECT COUNT()             FROM Property__c             WHERE                 (Name LIKE :searchPattern                 OR City__c LIKE :searchPattern                 OR Tags__c LIKE :searchPattern)                 AND Price__c &lt;= :safeMaxPrice                 AND Beds__c >= :safeMinBedrooms                 AND Baths__c >= :safeMinBathrooms",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:55.309810"
+        "created_at": "2025-10-29T14:45:22.304574"
       }
     },
     {
@@ -231,7 +231,7 @@
       "properties": {
         "query": "SELECT                 Id,                 Name,                 Address__c,                 City__c,                 State__c,                 Description__c,                 Price__c,                 Baths__c,                 Beds__c,                 Thumbnail__c,                 Location__Latitude__s,                 Location__Longitude__s             FROM Property__c             WHERE                 (Name LIKE :searchPattern                 OR City__c LIKE :searchPattern                 OR Tags__c LIKE :searchPattern)                 AND Price__c &lt;= :safeMaxPrice                 AND Beds__c >= :safeMinBedrooms                 AND Baths__c >= :safeMinBathrooms             WITH USER_MODE             ORDER BY Price__c             LIMIT :safePageSize             OFFSET :offset",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:55.335875"
+        "created_at": "2025-10-29T14:45:22.331603"
       }
     },
     {
@@ -241,7 +241,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:55.360875"
+        "created_at": "2025-10-29T14:45:22.359350"
       }
     },
     {
@@ -251,7 +251,7 @@
       "properties": {
         "query": "SELECT Id, LinkedEntityId, ContentDocument.Title             FROM ContentDocumentLink             WHERE                 LinkedEntityId = :propertyId                 AND ContentDocument.FileType IN ('PNG', 'JPG', 'GIF')             WITH USER_MODE",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:55.385884"
+        "created_at": "2025-10-29T14:45:22.387119"
       }
     },
     {
@@ -261,7 +261,7 @@
       "properties": {
         "query": "SELECT Id, Title             FROM ContentVersion             WHERE ContentDocumentId IN :contentIds AND IsLatest = TRUE             WITH USER_MODE             ORDER BY CreatedDate",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:55.410700"
+        "created_at": "2025-10-29T14:45:22.415012"
       }
     },
     {
@@ -271,7 +271,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:55.466590"
+        "created_at": "2025-10-29T14:45:22.472838"
       }
     },
     {
@@ -281,7 +281,7 @@
       "properties": {
         "query": "SELECT Id FROM Case",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:55.491810"
+        "created_at": "2025-10-29T14:45:22.499639"
       }
     },
     {
@@ -291,7 +291,7 @@
       "properties": {
         "query": "SELECT Id FROM Property__c",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:55.516667"
+        "created_at": "2025-10-29T14:45:22.526363"
       }
     },
     {
@@ -301,7 +301,7 @@
       "properties": {
         "query": "SELECT Id FROM Broker__c",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:55.540040"
+        "created_at": "2025-10-29T14:45:22.552722"
       }
     },
     {
@@ -311,7 +311,7 @@
       "properties": {
         "query": "SELECT Id FROM Contact",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:55.563744"
+        "created_at": "2025-10-29T14:45:22.579718"
       }
     },
     {
@@ -321,7 +321,7 @@
       "properties": {
         "operationType": "DELETE",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:55.588205"
+        "created_at": "2025-10-29T14:45:22.605737"
       }
     },
     {
@@ -331,7 +331,7 @@
       "properties": {
         "operationType": "DELETE",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:55.612792"
+        "created_at": "2025-10-29T14:45:22.632304"
       }
     },
     {
@@ -341,7 +341,7 @@
       "properties": {
         "operationType": "DELETE",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:55.636675"
+        "created_at": "2025-10-29T14:45:22.659332"
       }
     },
     {
@@ -351,7 +351,7 @@
       "properties": {
         "operationType": "DELETE",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:55.659859"
+        "created_at": "2025-10-29T14:45:22.686207"
       }
     },
     {
@@ -361,7 +361,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:55.682712"
+        "created_at": "2025-10-29T14:45:22.713536"
       }
     },
     {
@@ -371,7 +371,7 @@
       "properties": {
         "query": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_brokers'",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:55.706852"
+        "created_at": "2025-10-29T14:45:22.740323"
       }
     },
     {
@@ -381,7 +381,7 @@
       "properties": {
         "operationType": "INSERT",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:55.730994"
+        "created_at": "2025-10-29T14:45:22.767321"
       }
     },
     {
@@ -391,7 +391,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:55.755181"
+        "created_at": "2025-10-29T14:45:22.794321"
       }
     },
     {
@@ -401,7 +401,7 @@
       "properties": {
         "query": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_properties'",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:55.780433"
+        "created_at": "2025-10-29T14:45:22.822548"
       }
     },
     {
@@ -411,7 +411,7 @@
       "properties": {
         "operationType": "INSERT",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:55.809718"
+        "created_at": "2025-10-29T14:45:22.851996"
       }
     },
     {
@@ -421,7 +421,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:55.837579"
+        "created_at": "2025-10-29T14:45:22.879872"
       }
     },
     {
@@ -431,7 +431,7 @@
       "properties": {
         "query": "SELECT Id, Body             FROM StaticResource             WHERE Name = 'sample_data_contacts'",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:55.866948"
+        "created_at": "2025-10-29T14:45:22.905922"
       }
     },
     {
@@ -441,7 +441,7 @@
       "properties": {
         "operationType": "INSERT",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:55.893536"
+        "created_at": "2025-10-29T14:45:22.933760"
       }
     },
     {
@@ -451,7 +451,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:55.918749"
+        "created_at": "2025-10-29T14:45:22.960813"
       }
     },
     {
@@ -461,7 +461,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:56.043121"
+        "created_at": "2025-10-29T14:45:23.021643"
       }
     },
     {
@@ -471,7 +471,7 @@
       "properties": {
         "operationType": "INSERT",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:56.072923"
+        "created_at": "2025-10-29T14:45:23.048151"
       }
     },
     {
@@ -481,7 +481,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:56.098168"
+        "created_at": "2025-10-29T14:45:23.075864"
       }
     },
     {
@@ -491,7 +491,7 @@
       "properties": {
         "query": "SELECT Name, Id             FROM Profile             WHERE                 UserType = 'Standard'                 AND PermissionsPrivacyDataAccess = FALSE                 AND PermissionsSubmitMacrosAllowed = TRUE                 AND PermissionsMassInlineEdit = TRUE             LIMIT 1",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:56.123985"
+        "created_at": "2025-10-29T14:45:23.104279"
       }
     },
     {
@@ -501,7 +501,7 @@
       "properties": {
         "query": "SELECT Id             FROM PermissionSet             WHERE Name = 'dreamhouse'",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:56.146963"
+        "created_at": "2025-10-29T14:45:23.131313"
       }
     },
     {
@@ -511,7 +511,7 @@
       "properties": {
         "operationType": "INSERT",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:56.171023"
+        "created_at": "2025-10-29T14:45:23.159384"
       }
     },
     {
@@ -521,7 +521,7 @@
       "properties": {
         "operationType": "INSERT",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:56.198054"
+        "created_at": "2025-10-29T14:45:23.186936"
       }
     },
     {
@@ -531,7 +531,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:56.219578"
+        "created_at": "2025-10-29T14:45:23.213600"
       }
     },
     {
@@ -541,7 +541,7 @@
       "properties": {
         "operationType": "INSERT",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:56.242828"
+        "created_at": "2025-10-29T14:45:23.240649"
       }
     },
     {
@@ -551,7 +551,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:56.267392"
+        "created_at": "2025-10-29T14:45:23.267637"
       }
     },
     {
@@ -561,7 +561,7 @@
       "properties": {
         "query": "SELECT Id, Title, LatestPublishedVersionId             FROM ContentDocument             LIMIT 1",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:56.290464"
+        "created_at": "2025-10-29T14:45:23.295651"
       }
     },
     {
@@ -571,7 +571,7 @@
       "properties": {
         "operationType": "INSERT",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:56.313318"
+        "created_at": "2025-10-29T14:45:23.321636"
       }
     },
     {
@@ -581,7 +581,7 @@
       "properties": {
         "operationType": "INSERT",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:56.336948"
+        "created_at": "2025-10-29T14:45:23.347852"
       }
     },
     {
@@ -591,7 +591,7 @@
       "properties": {
         "operationType": "INSERT",
         "type": "CONTAINS_DML",
-        "created_at": "2025-10-27T17:59:56.359486"
+        "created_at": "2025-10-29T14:45:23.375482"
       }
     },
     {
@@ -601,7 +601,7 @@
       "properties": {
         "description": "Class contains method",
         "type": "HAS_METHOD",
-        "created_at": "2025-10-27T17:59:56.407614"
+        "created_at": "2025-10-29T14:45:23.435264"
       }
     },
     {
@@ -611,7 +611,7 @@
       "properties": {
         "query": "SELECT COUNT() FROM Property__c",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:56.430726"
+        "created_at": "2025-10-29T14:45:23.463285"
       }
     },
     {
@@ -621,7 +621,7 @@
       "properties": {
         "query": "SELECT COUNT() FROM Broker__c",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:56.452693"
+        "created_at": "2025-10-29T14:45:23.489389"
       }
     },
     {
@@ -631,7 +631,1941 @@
       "properties": {
         "query": "SELECT COUNT() FROM Contact",
         "type": "CONTAINS_SOQL",
-        "created_at": "2025-10-27T17:59:56.479807"
+        "created_at": "2025-10-29T14:45:23.515912"
+      }
+    },
+    {
+      "from": "lwc:barcodeScanner",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:23.569213"
+      }
+    },
+    {
+      "from": "lwc:barcodeScanner",
+      "to": "dep:lightning/navigation",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/navigation",
+        "specifiers": "NavigationMixin",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:23.599111"
+      }
+    },
+    {
+      "from": "lwc:barcodeScanner",
+      "to": "dep:lightning/platformShowToastEvent",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/platformShowToastEvent",
+        "specifiers": "ShowToastEvent",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:23.628123"
+      }
+    },
+    {
+      "from": "lwc:barcodeScanner",
+      "to": "dep:lightning/mobileCapabilities",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/mobileCapabilities",
+        "specifiers": "getBarcodeScanner",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:23.653676"
+      }
+    },
+    {
+      "from": "lwc:barcodeScanner",
+      "to": "jsclass:barcodeScanner.BarcodeScanner",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "BarcodeScanner",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:23.680802"
+      }
+    },
+    {
+      "from": "jsclass:barcodeScanner.BarcodeScanner",
+      "to": "jsmethod:barcodeScanner.BarcodeScanner.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:23.710731"
+      }
+    },
+    {
+      "from": "jsclass:barcodeScanner.BarcodeScanner",
+      "to": "jsmethod:barcodeScanner.BarcodeScanner.handleBeginScanClick",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleBeginScanClick",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:23.737046"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api, wire",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:23.784526"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:lightning/uiRecordApi",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/uiRecordApi",
+        "specifiers": "getRecord, getFieldValue",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:23.812240"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:lightning/navigation",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/navigation",
+        "specifiers": "NavigationMixin",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:23.839498"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:@salesforce/schema/Property__c.Broker__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Broker__c",
+        "specifiers": "BROKER_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:23.866613"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:@salesforce/schema/Broker__c.Name",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Broker__c.Name",
+        "specifiers": "NAME_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:23.893640"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:@salesforce/schema/Broker__c.Phone__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Broker__c.Phone__c",
+        "specifiers": "PHONE_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:23.920738"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:@salesforce/schema/Broker__c.Mobile_Phone__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Broker__c.Mobile_Phone__c",
+        "specifiers": "MOBILE_PHONE_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:23.951288"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "dep:@salesforce/schema/Broker__c.Email__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Broker__c.Email__c",
+        "specifiers": "EMAIL_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:23.978215"
+      }
+    },
+    {
+      "from": "lwc:brokerCard",
+      "to": "jsclass:brokerCard.BrokerCard",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "BrokerCard",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:24.005894"
+      }
+    },
+    {
+      "from": "jsclass:brokerCard.BrokerCard",
+      "to": "jsmethod:brokerCard.BrokerCard.brokerId",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "brokerId",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:24.031862"
+      }
+    },
+    {
+      "from": "jsclass:brokerCard.BrokerCard",
+      "to": "jsmethod:brokerCard.BrokerCard.handleNavigateToRecord",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleNavigateToRecord",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:24.068030"
+      }
+    },
+    {
+      "from": "lwc:daysOnMarket",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api, wire",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:24.118834"
+      }
+    },
+    {
+      "from": "lwc:daysOnMarket",
+      "to": "dep:lightning/uiRecordApi",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/uiRecordApi",
+        "specifiers": "getRecord, getFieldValue",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:24.147729"
+      }
+    },
+    {
+      "from": "lwc:daysOnMarket",
+      "to": "dep:lightning/messageService",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/messageService",
+        "specifiers": "subscribe, unsubscribe, MessageContext",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:24.175729"
+      }
+    },
+    {
+      "from": "lwc:daysOnMarket",
+      "to": "dep:@salesforce/messageChannel/PropertySelected__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/PropertySelected__c",
+        "specifiers": "PROPERTYSELECTEDMC",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:24.202715"
+      }
+    },
+    {
+      "from": "lwc:daysOnMarket",
+      "to": "dep:@salesforce/schema/Property__c.Date_Listed__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Date_Listed__c",
+        "specifiers": "DATE_LISTED_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:24.230085"
+      }
+    },
+    {
+      "from": "lwc:daysOnMarket",
+      "to": "dep:@salesforce/schema/Property__c.Days_On_Market__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Days_On_Market__c",
+        "specifiers": "DAYS_ON_MARKET_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:24.265596"
+      }
+    },
+    {
+      "from": "lwc:daysOnMarket",
+      "to": "jsclass:daysOnMarket.DaysOnMarket",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "DaysOnMarket",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:24.298087"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.wiredRecord",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "wiredRecord",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:24.326269"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.recordId",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "recordId",
+        "kind": "set",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:24.381478"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.hasNoPropertyId",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "hasNoPropertyId",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:24.409183"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.badgeClass",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "badgeClass",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:24.435908"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.barClass",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "barClass",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:24.462550"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.barStyle",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "barStyle",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:24.490551"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:24.517555"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.disconnectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "disconnectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:24.544337"
+      }
+    },
+    {
+      "from": "jsclass:daysOnMarket.DaysOnMarket",
+      "to": "jsmethod:daysOnMarket.DaysOnMarket.handlePropertySelected",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handlePropertySelected",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:24.573313"
+      }
+    },
+    {
+      "from": "lwc:errorPanel",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:24.623544"
+      }
+    },
+    {
+      "from": "lwc:errorPanel",
+      "to": "dep:c/ldsUtils",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "c/ldsUtils",
+        "specifiers": "reduceErrors",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:24.650391"
+      }
+    },
+    {
+      "from": "lwc:errorPanel",
+      "to": "dep:./templates/noDataIllustration.html",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "./templates/noDataIllustration.html",
+        "specifiers": "noDataIllustration",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:24.677388"
+      }
+    },
+    {
+      "from": "lwc:errorPanel",
+      "to": "dep:./templates/inlineMessage.html",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "./templates/inlineMessage.html",
+        "specifiers": "inlineMessage",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:24.703795"
+      }
+    },
+    {
+      "from": "lwc:errorPanel",
+      "to": "jsclass:errorPanel.ErrorPanel",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "ErrorPanel",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:24.730403"
+      }
+    },
+    {
+      "from": "jsclass:errorPanel.ErrorPanel",
+      "to": "jsmethod:errorPanel.ErrorPanel.errorMessages",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "errorMessages",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:24.757556"
+      }
+    },
+    {
+      "from": "jsclass:errorPanel.ErrorPanel",
+      "to": "jsmethod:errorPanel.ErrorPanel.handleShowDetailsClick",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleShowDetailsClick",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:24.784753"
+      }
+    },
+    {
+      "from": "jsclass:errorPanel.ErrorPanel",
+      "to": "jsmethod:errorPanel.ErrorPanel.render",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "render",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:24.812042"
+      }
+    },
+    {
+      "from": "lwc:ldsUtils",
+      "to": "jsfunc:ldsUtils.reduceErrors",
+      "type": "HAS_FUNCTION",
+      "properties": {
+        "functionName": "reduceErrors",
+        "type": "HAS_FUNCTION",
+        "created_at": "2025-10-29T14:45:24.863516"
+      }
+    },
+    {
+      "from": "lwc:listContactsFromDevice",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:24.909841"
+      }
+    },
+    {
+      "from": "lwc:listContactsFromDevice",
+      "to": "dep:lightning/mobileCapabilities",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/mobileCapabilities",
+        "specifiers": "getContactsService",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:24.941825"
+      }
+    },
+    {
+      "from": "lwc:listContactsFromDevice",
+      "to": "jsclass:listContactsFromDevice.ListContactsFromDevice",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "ListContactsFromDevice",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:24.969828"
+      }
+    },
+    {
+      "from": "jsclass:listContactsFromDevice.ListContactsFromDevice",
+      "to": "jsmethod:listContactsFromDevice.ListContactsFromDevice.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:24.996824"
+      }
+    },
+    {
+      "from": "jsclass:listContactsFromDevice.ListContactsFromDevice",
+      "to": "jsmethod:listContactsFromDevice.ListContactsFromDevice.retrieveDeviceContacts",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "retrieveDeviceContacts",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:25.025831"
+      }
+    },
+    {
+      "from": "lwc:navigateToRecord",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:25.077269"
+      }
+    },
+    {
+      "from": "lwc:navigateToRecord",
+      "to": "dep:lightning/navigation",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/navigation",
+        "specifiers": "NavigationMixin",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:25.104842"
+      }
+    },
+    {
+      "from": "lwc:navigateToRecord",
+      "to": "jsclass:navigateToRecord.NavigateToRecord",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "NavigateToRecord",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:25.131889"
+      }
+    },
+    {
+      "from": "jsclass:navigateToRecord.NavigateToRecord",
+      "to": "jsmethod:navigateToRecord.NavigateToRecord.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:25.159087"
+      }
+    },
+    {
+      "from": "lwc:paginator",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:25.207949"
+      }
+    },
+    {
+      "from": "lwc:paginator",
+      "to": "jsclass:paginator.Paginator",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "Paginator",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:25.234286"
+      }
+    },
+    {
+      "from": "jsclass:paginator.Paginator",
+      "to": "jsmethod:paginator.Paginator.handlePrevious",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handlePrevious",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:25.262198"
+      }
+    },
+    {
+      "from": "jsclass:paginator.Paginator",
+      "to": "jsmethod:paginator.Paginator.handleNext",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleNext",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:25.289033"
+      }
+    },
+    {
+      "from": "jsclass:paginator.Paginator",
+      "to": "jsmethod:paginator.Paginator.currentPageNumber",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "currentPageNumber",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:25.315028"
+      }
+    },
+    {
+      "from": "jsclass:paginator.Paginator",
+      "to": "jsmethod:paginator.Paginator.isNotFirstPage",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "isNotFirstPage",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:25.341630"
+      }
+    },
+    {
+      "from": "jsclass:paginator.Paginator",
+      "to": "jsmethod:paginator.Paginator.isNotLastPage",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "isNotLastPage",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:25.369467"
+      }
+    },
+    {
+      "from": "jsclass:paginator.Paginator",
+      "to": "jsmethod:paginator.Paginator.totalPages",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "totalPages",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:25.396135"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, wire, api",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:25.447667"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:lightning/uiRecordApi",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/uiRecordApi",
+        "specifiers": "getRecord, getFieldValue",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:25.474253"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:lightning/mediaUtils",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/mediaUtils",
+        "specifiers": "processImage",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:25.501717"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:@salesforce/apex",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/apex",
+        "specifiers": "refreshApex",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:25.529696"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:@salesforce/apex/PropertyController.getPictures",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/apex/PropertyController.getPictures",
+        "specifiers": "getPictures",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T13:34:24.926073"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:@salesforce/apex/FileUtilities.createFile",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/apex/FileUtilities.createFile",
+        "specifiers": "createFile",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T13:34:24.954011"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:@salesforce/schema/Property__c.Address__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Address__c",
+        "specifiers": "ADDRESS_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:25.610297"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:@salesforce/schema/Property__c.City__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.City__c",
+        "specifiers": "CITY_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:25.637652"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "dep:@salesforce/schema/Property__c.Description__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Description__c",
+        "specifiers": "DESCRIPTION_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:25.664628"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "jsclass:propertyCarousel.PropertyCarousel",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertyCarousel",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:25.691632"
+      }
+    },
+    {
+      "from": "jsclass:propertyCarousel.PropertyCarousel",
+      "to": "jsmethod:propertyCarousel.PropertyCarousel.wiredPictures",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "wiredPictures",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:25.717629"
+      }
+    },
+    {
+      "from": "jsclass:propertyCarousel.PropertyCarousel",
+      "to": "jsmethod:propertyCarousel.PropertyCarousel.address",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "address",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:25.744194"
+      }
+    },
+    {
+      "from": "jsclass:propertyCarousel.PropertyCarousel",
+      "to": "jsmethod:propertyCarousel.PropertyCarousel.city",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "city",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:25.772193"
+      }
+    },
+    {
+      "from": "jsclass:propertyCarousel.PropertyCarousel",
+      "to": "jsmethod:propertyCarousel.PropertyCarousel.description",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "description",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:25.822682"
+      }
+    },
+    {
+      "from": "jsclass:propertyCarousel.PropertyCarousel",
+      "to": "jsmethod:propertyCarousel.PropertyCarousel.errors",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "errors",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:25.849415"
+      }
+    },
+    {
+      "from": "jsclass:propertyCarousel.PropertyCarousel",
+      "to": "jsmethod:propertyCarousel.PropertyCarousel.handleFilesSelected",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleFilesSelected",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:25.877702"
+      }
+    },
+    {
+      "from": "jsclass:propertyCarousel.PropertyCarousel",
+      "to": "jsmethod:propertyCarousel.PropertyCarousel.blobToBase64",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "blobToBase64",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:25.904696"
+      }
+    },
+    {
+      "from": "lwc:propertyFilter",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, wire",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:25.966851"
+      }
+    },
+    {
+      "from": "lwc:propertyFilter",
+      "to": "dep:lightning/messageService",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/messageService",
+        "specifiers": "publish, MessageContext",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:25.993951"
+      }
+    },
+    {
+      "from": "lwc:propertyFilter",
+      "to": "dep:@salesforce/messageChannel/FiltersChange__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/FiltersChange__c",
+        "specifiers": "FILTERSCHANGEMC",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:26.020926"
+      }
+    },
+    {
+      "from": "lwc:propertyFilter",
+      "to": "jsclass:propertyFilter.PropertyFilter",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertyFilter",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:26.048792"
+      }
+    },
+    {
+      "from": "jsclass:propertyFilter.PropertyFilter",
+      "to": "jsmethod:propertyFilter.PropertyFilter.handleReset",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleReset",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.075855"
+      }
+    },
+    {
+      "from": "jsclass:propertyFilter.PropertyFilter",
+      "to": "jsmethod:propertyFilter.PropertyFilter.handleSearchKeyChange",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleSearchKeyChange",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.104613"
+      }
+    },
+    {
+      "from": "jsclass:propertyFilter.PropertyFilter",
+      "to": "jsmethod:propertyFilter.PropertyFilter.handleMaxPriceChange",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleMaxPriceChange",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.131333"
+      }
+    },
+    {
+      "from": "jsclass:propertyFilter.PropertyFilter",
+      "to": "jsmethod:propertyFilter.PropertyFilter.handleMinBedroomsChange",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleMinBedroomsChange",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.158968"
+      }
+    },
+    {
+      "from": "jsclass:propertyFilter.PropertyFilter",
+      "to": "jsmethod:propertyFilter.PropertyFilter.handleMinBathroomsChange",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleMinBathroomsChange",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.186649"
+      }
+    },
+    {
+      "from": "jsclass:propertyFilter.PropertyFilter",
+      "to": "jsmethod:propertyFilter.PropertyFilter.fireChangeEvent",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "fireChangeEvent",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.214554"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, wire",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:26.267333"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:lightning/messageService",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/messageService",
+        "specifiers": "publish, subscribe, unsubscribe, MessageContext",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:26.294027"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:@salesforce/messageChannel/FiltersChange__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/FiltersChange__c",
+        "specifiers": "FILTERS_CHANGED",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:26.321073"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:@salesforce/messageChannel/PropertySelected__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/PropertySelected__c",
+        "specifiers": "PROPERTY_SELECTED",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:26.348090"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:lightning/platformShowToastEvent",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/platformShowToastEvent",
+        "specifiers": "ShowToastEvent",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:26.375288"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:lightning/platformResourceLoader",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/platformResourceLoader",
+        "specifiers": "loadScript, loadStyle",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:26.403190"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:@salesforce/resourceUrl/leafletjs",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/resourceUrl/leafletjs",
+        "specifiers": "LEAFLET",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:26.438157"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "dep:@salesforce/apex/PropertyController.getPagedPropertyList",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/apex/PropertyController.getPagedPropertyList",
+        "specifiers": "getPagedPropertyList",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T13:34:25.794085"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "jsclass:propertyListMap.PropertyListMap",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertyListMap",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:26.518205"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.wiredProperties",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "wiredProperties",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.543722"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.571745"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.disconnectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "disconnectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.599509"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.renderedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "renderedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.629026"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.initializeLeaflet",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "initializeLeaflet",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.656534"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.displayProperties",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "displayProperties",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.683534"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.handleFilterChange",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleFilterChange",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.710774"
+      }
+    },
+    {
+      "from": "jsclass:propertyListMap.PropertyListMap",
+      "to": "jsmethod:propertyListMap.PropertyListMap.getTooltipMarkup",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "getTooltipMarkup",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.737609"
+      }
+    },
+    {
+      "from": "lwc:propertyLocation",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, wire, api",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:26.786185"
+      }
+    },
+    {
+      "from": "lwc:propertyLocation",
+      "to": "dep:lightning/mobileCapabilities",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/mobileCapabilities",
+        "specifiers": "getLocationService",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:26.813187"
+      }
+    },
+    {
+      "from": "lwc:propertyLocation",
+      "to": "dep:lightning/uiRecordApi",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/uiRecordApi",
+        "specifiers": "getRecord, getFieldValue",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:26.840341"
+      }
+    },
+    {
+      "from": "lwc:propertyLocation",
+      "to": "jsclass:propertyLocation.PropertyLocation",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertyLocation",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:26.869508"
+      }
+    },
+    {
+      "from": "jsclass:propertyLocation.PropertyLocation",
+      "to": "jsmethod:propertyLocation.PropertyLocation.wiredProperty",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "wiredProperty",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.896521"
+      }
+    },
+    {
+      "from": "jsclass:propertyLocation.PropertyLocation",
+      "to": "jsmethod:propertyLocation.PropertyLocation.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.923523"
+      }
+    },
+    {
+      "from": "jsclass:propertyLocation.PropertyLocation",
+      "to": "jsmethod:propertyLocation.PropertyLocation.calculateLocationFromMobileDevice",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "calculateLocationFromMobileDevice",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.950673"
+      }
+    },
+    {
+      "from": "jsclass:propertyLocation.PropertyLocation",
+      "to": "jsmethod:propertyLocation.PropertyLocation.calculateLocationFromBrowser",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "calculateLocationFromBrowser",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:26.979718"
+      }
+    },
+    {
+      "from": "jsclass:propertyLocation.PropertyLocation",
+      "to": "jsmethod:propertyLocation.PropertyLocation.calculateDistance",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "calculateDistance",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:27.007602"
+      }
+    },
+    {
+      "from": "lwc:propertyMap",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api, wire",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.058908"
+      }
+    },
+    {
+      "from": "lwc:propertyMap",
+      "to": "dep:lightning/uiRecordApi",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/uiRecordApi",
+        "specifiers": "getRecord",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.085664"
+      }
+    },
+    {
+      "from": "lwc:propertyMap",
+      "to": "dep:lightning/messageService",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/messageService",
+        "specifiers": "subscribe, unsubscribe, MessageContext",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.112970"
+      }
+    },
+    {
+      "from": "lwc:propertyMap",
+      "to": "dep:@salesforce/messageChannel/PropertySelected__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/PropertySelected__c",
+        "specifiers": "PROPERTYSELECTEDMC",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.141491"
+      }
+    },
+    {
+      "from": "lwc:propertyMap",
+      "to": "jsclass:propertyMap.PropertyMap",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertyMap",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:27.168097"
+      }
+    },
+    {
+      "from": "jsclass:propertyMap.PropertyMap",
+      "to": "jsmethod:propertyMap.PropertyMap.wiredRecord",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "wiredRecord",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:27.196117"
+      }
+    },
+    {
+      "from": "jsclass:propertyMap.PropertyMap",
+      "to": "jsmethod:propertyMap.PropertyMap.recordId",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "recordId",
+        "kind": "set",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:27.254268"
+      }
+    },
+    {
+      "from": "jsclass:propertyMap.PropertyMap",
+      "to": "jsmethod:propertyMap.PropertyMap.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:27.282277"
+      }
+    },
+    {
+      "from": "jsclass:propertyMap.PropertyMap",
+      "to": "jsmethod:propertyMap.PropertyMap.disconnectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "disconnectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:27.309022"
+      }
+    },
+    {
+      "from": "jsclass:propertyMap.PropertyMap",
+      "to": "jsmethod:propertyMap.PropertyMap.handlePropertySelected",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handlePropertySelected",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:27.336004"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api, wire",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.386600"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:lightning/uiRecordApi",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/uiRecordApi",
+        "specifiers": "getRecord, getFieldValue",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.413598"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:lightning/navigation",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/navigation",
+        "specifiers": "NavigationMixin",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.440118"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:lightning/messageService",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/messageService",
+        "specifiers": "subscribe, unsubscribe, MessageContext",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.467117"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:@salesforce/messageChannel/PropertySelected__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/PropertySelected__c",
+        "specifiers": "PROPERTYSELECTEDMC",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.494140"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:@salesforce/schema/Property__c.Name",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Name",
+        "specifiers": "NAME_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.522170"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:@salesforce/schema/Property__c.Beds__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Beds__c",
+        "specifiers": "BED_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.549493"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:@salesforce/schema/Property__c.Baths__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Baths__c",
+        "specifiers": "BATH_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.576584"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:@salesforce/schema/Property__c.Price__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Price__c",
+        "specifiers": "PRICE_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.604661"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:@salesforce/schema/Property__c.Broker__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Broker__c",
+        "specifiers": "BROKER_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.632124"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "dep:@salesforce/schema/Property__c.Picture__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/schema/Property__c.Picture__c",
+        "specifiers": "PICTURE_FIELD",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.659296"
+      }
+    },
+    {
+      "from": "lwc:propertySummary",
+      "to": "jsclass:propertySummary.PropertySummary",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertySummary",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:27.687537"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.recordId",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "recordId",
+        "kind": "set",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:27.740439"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.hasNoPropertyId",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "hasNoPropertyId",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:27.767464"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.propertyName",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "propertyName",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:27.796713"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.pictureURL",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "pictureURL",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:27.823526"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:27.851078"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.disconnectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "disconnectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:27.878655"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.handlePropertySelected",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handlePropertySelected",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:27.905408"
+      }
+    },
+    {
+      "from": "jsclass:propertySummary.PropertySummary",
+      "to": "jsmethod:propertySummary.PropertySummary.handleNavigateToRecord",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleNavigateToRecord",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:27.932508"
+      }
+    },
+    {
+      "from": "lwc:propertyTile",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, api",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:27.990745"
+      }
+    },
+    {
+      "from": "lwc:propertyTile",
+      "to": "dep:@salesforce/client/formFactor",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/client/formFactor",
+        "specifiers": "FORM_FACTOR",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:28.017757"
+      }
+    },
+    {
+      "from": "lwc:propertyTile",
+      "to": "dep:lightning/navigation",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/navigation",
+        "specifiers": "NavigationMixin",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:28.045337"
+      }
+    },
+    {
+      "from": "lwc:propertyTile",
+      "to": "jsclass:propertyTile.PropertyTile",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertyTile",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:28.073338"
+      }
+    },
+    {
+      "from": "jsclass:propertyTile.PropertyTile",
+      "to": "jsmethod:propertyTile.PropertyTile.handlePropertySelected",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handlePropertySelected",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:28.099508"
+      }
+    },
+    {
+      "from": "jsclass:propertyTile.PropertyTile",
+      "to": "jsmethod:propertyTile.PropertyTile.backgroundImageStyle",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "backgroundImageStyle",
+        "kind": "get",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:28.127534"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement, wire",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:28.196973"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "dep:lightning/messageService",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/messageService",
+        "specifiers": "publish, subscribe, unsubscribe, MessageContext",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:28.232709"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "dep:@salesforce/messageChannel/FiltersChange__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/FiltersChange__c",
+        "specifiers": "FILTERSCHANGEMC",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:28.259621"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "dep:@salesforce/messageChannel/PropertySelected__c",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/messageChannel/PropertySelected__c",
+        "specifiers": "PROPERTYSELECTEDMC",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:28.287272"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "dep:@salesforce/apex/PropertyController.getPagedPropertyList",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/apex/PropertyController.getPagedPropertyList",
+        "specifiers": "getPagedPropertyList",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T13:34:27.701363"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "jsclass:propertyTileList.PropertyTileList",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "PropertyTileList",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:28.343294"
+      }
+    },
+    {
+      "from": "jsclass:propertyTileList.PropertyTileList",
+      "to": "jsmethod:propertyTileList.PropertyTileList.connectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "connectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:28.370310"
+      }
+    },
+    {
+      "from": "jsclass:propertyTileList.PropertyTileList",
+      "to": "jsmethod:propertyTileList.PropertyTileList.disconnectedCallback",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "disconnectedCallback",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:28.398286"
+      }
+    },
+    {
+      "from": "jsclass:propertyTileList.PropertyTileList",
+      "to": "jsmethod:propertyTileList.PropertyTileList.handleFilterChange",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleFilterChange",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:28.424629"
+      }
+    },
+    {
+      "from": "jsclass:propertyTileList.PropertyTileList",
+      "to": "jsmethod:propertyTileList.PropertyTileList.handlePreviousPage",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handlePreviousPage",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:28.453137"
+      }
+    },
+    {
+      "from": "jsclass:propertyTileList.PropertyTileList",
+      "to": "jsmethod:propertyTileList.PropertyTileList.handleNextPage",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleNextPage",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:28.480633"
+      }
+    },
+    {
+      "from": "jsclass:propertyTileList.PropertyTileList",
+      "to": "jsmethod:propertyTileList.PropertyTileList.handlePropertySelected",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handlePropertySelected",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:28.507635"
+      }
+    },
+    {
+      "from": "lwc:sampleDataImporter",
+      "to": "dep:lwc",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lwc",
+        "specifiers": "LightningElement",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:28.561935"
+      }
+    },
+    {
+      "from": "lwc:sampleDataImporter",
+      "to": "dep:lightning/platformShowToastEvent",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "lightning/platformShowToastEvent",
+        "specifiers": "ShowToastEvent",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T14:45:28.590938"
+      }
+    },
+    {
+      "from": "lwc:sampleDataImporter",
+      "to": "dep:@salesforce/apex/SampleDataController.importSampleData",
+      "type": "IMPORTS_FROM",
+      "properties": {
+        "module": "@salesforce/apex/SampleDataController.importSampleData",
+        "specifiers": "importSampleData",
+        "type": "IMPORTS_FROM",
+        "created_at": "2025-10-29T13:34:28.039475"
+      }
+    },
+    {
+      "from": "lwc:sampleDataImporter",
+      "to": "jsclass:sampleDataImporter.SampleDataImporter",
+      "type": "HAS_CLASS",
+      "properties": {
+        "className": "SampleDataImporter",
+        "type": "HAS_CLASS",
+        "created_at": "2025-10-29T14:45:28.657948"
+      }
+    },
+    {
+      "from": "jsclass:sampleDataImporter.SampleDataImporter",
+      "to": "jsmethod:sampleDataImporter.SampleDataImporter.handleImportSampleData",
+      "type": "HAS_METHOD",
+      "properties": {
+        "methodName": "handleImportSampleData",
+        "kind": "method",
+        "type": "HAS_METHOD",
+        "created_at": "2025-10-29T14:45:28.689240"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "class:PropertyController",
+      "type": "DEPENDS_ON_APEX_CLASS",
+      "properties": {
+        "apexClass": "PropertyController",
+        "importPath": "@salesforce/apex/PropertyController.getPictures",
+        "description": "LWC component imports from Apex class PropertyController",
+        "type": "DEPENDS_ON_APEX_CLASS",
+        "created_at": "2025-10-29T14:45:25.542661"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "method:PropertyController.getPictures",
+      "type": "CALLS_APEX_METHOD",
+      "properties": {
+        "apexClass": "PropertyController",
+        "apexMethod": "getPictures",
+        "importPath": "@salesforce/apex/PropertyController.getPictures",
+        "description": "LWC component calls Apex method PropertyController.getPictures",
+        "type": "CALLS_APEX_METHOD",
+        "created_at": "2025-10-29T14:45:25.556214"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "class:FileUtilities",
+      "type": "DEPENDS_ON_APEX_CLASS",
+      "properties": {
+        "apexClass": "FileUtilities",
+        "importPath": "@salesforce/apex/FileUtilities.createFile",
+        "description": "LWC component imports from Apex class FileUtilities",
+        "type": "DEPENDS_ON_APEX_CLASS",
+        "created_at": "2025-10-29T14:45:25.569614"
+      }
+    },
+    {
+      "from": "lwc:propertyCarousel",
+      "to": "method:FileUtilities.createFile",
+      "type": "CALLS_APEX_METHOD",
+      "properties": {
+        "apexClass": "FileUtilities",
+        "apexMethod": "createFile",
+        "importPath": "@salesforce/apex/FileUtilities.createFile",
+        "description": "LWC component calls Apex method FileUtilities.createFile",
+        "type": "CALLS_APEX_METHOD",
+        "created_at": "2025-10-29T14:45:25.582638"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "class:PropertyController",
+      "type": "DEPENDS_ON_APEX_CLASS",
+      "properties": {
+        "apexClass": "PropertyController",
+        "importPath": "@salesforce/apex/PropertyController.getPagedPropertyList",
+        "description": "LWC component imports from Apex class PropertyController",
+        "type": "DEPENDS_ON_APEX_CLASS",
+        "created_at": "2025-10-29T14:45:26.459159"
+      }
+    },
+    {
+      "from": "lwc:propertyListMap",
+      "to": "method:PropertyController.getPagedPropertyList",
+      "type": "CALLS_APEX_METHOD",
+      "properties": {
+        "apexClass": "PropertyController",
+        "apexMethod": "getPagedPropertyList",
+        "importPath": "@salesforce/apex/PropertyController.getPagedPropertyList",
+        "description": "LWC component calls Apex method PropertyController.getPagedPropertyList",
+        "type": "CALLS_APEX_METHOD",
+        "created_at": "2025-10-29T14:45:26.475398"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "class:PropertyController",
+      "type": "DEPENDS_ON_APEX_CLASS",
+      "properties": {
+        "apexClass": "PropertyController",
+        "importPath": "@salesforce/apex/PropertyController.getPagedPropertyList",
+        "description": "LWC component imports from Apex class PropertyController",
+        "type": "DEPENDS_ON_APEX_CLASS",
+        "created_at": "2025-10-29T14:45:28.300778"
+      }
+    },
+    {
+      "from": "lwc:propertyTileList",
+      "to": "method:PropertyController.getPagedPropertyList",
+      "type": "CALLS_APEX_METHOD",
+      "properties": {
+        "apexClass": "PropertyController",
+        "apexMethod": "getPagedPropertyList",
+        "importPath": "@salesforce/apex/PropertyController.getPagedPropertyList",
+        "description": "LWC component calls Apex method PropertyController.getPagedPropertyList",
+        "type": "CALLS_APEX_METHOD",
+        "created_at": "2025-10-29T14:45:28.314779"
+      }
+    },
+    {
+      "from": "lwc:sampleDataImporter",
+      "to": "class:SampleDataController",
+      "type": "DEPENDS_ON_APEX_CLASS",
+      "properties": {
+        "apexClass": "SampleDataController",
+        "importPath": "@salesforce/apex/SampleDataController.importSampleData",
+        "description": "LWC component imports from Apex class SampleDataController",
+        "type": "DEPENDS_ON_APEX_CLASS",
+        "created_at": "2025-10-29T14:45:28.605142"
+      }
+    },
+    {
+      "from": "lwc:sampleDataImporter",
+      "to": "method:SampleDataController.importSampleData",
+      "type": "CALLS_APEX_METHOD",
+      "properties": {
+        "apexClass": "SampleDataController",
+        "apexMethod": "importSampleData",
+        "importPath": "@salesforce/apex/SampleDataController.importSampleData",
+        "description": "LWC component calls Apex method SampleDataController.importSampleData",
+        "type": "CALLS_APEX_METHOD",
+        "created_at": "2025-10-29T14:45:28.620430"
       }
     }
   ]

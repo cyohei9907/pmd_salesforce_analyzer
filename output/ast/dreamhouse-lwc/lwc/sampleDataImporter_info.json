@@ -22,6 +22,7 @@
   ],
   "ast_file": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\sampleDataImporter_ast.xml",
   "ast_generated": true,
+  "parser": "babel",
   "js_source": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\sampleDataImporter.js",
   "source_dir": "D:\\workspace\\project019_pmdgithub\\pmd_salesforce_analyzer\\output\\ast\\dreamhouse-lwc\\lwc\\sampleDataImporter"
 }

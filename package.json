@@ -1,0 +1,22 @@
+{
+  "name": "pmd-salesforce-analyzer-tools",
+  "version": "1.0.0",
+  "description": "Tools for parsing JavaScript AST in Salesforce LWC components",
+  "main": "js_ast_parser.js",
+  "scripts": {
+    "parse": "node js_ast_parser.js"
+  },
+  "keywords": [
+    "salesforce",
+    "lwc",
+    "ast",
+    "babel",
+    "parser"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/parser": "^7.23.0",
+    "@babel/traverse": "^7.23.0"
+  }
+}

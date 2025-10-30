@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="propertyLocation.js">
+  <Imports>
+    <Import source="lwc">
+      <Specifier type="named" imported="LightningElement" local="LightningElement" />
+      <Specifier type="named" imported="wire" local="wire" />
+      <Specifier type="named" imported="api" local="api" />
+    </Import>
+    <Import source="lightning/mobileCapabilities">
+      <Specifier type="named" imported="getLocationService" local="getLocationService" />
+    </Import>
+    <Import source="lightning/uiRecordApi">
+      <Specifier type="named" imported="getRecord" local="getRecord" />
+      <Specifier type="named" imported="getFieldValue" local="getFieldValue" />
+    </Import>
+  </Imports>
+  <Exports>
+    <Export type="default" name="PropertyLocation" />
+  </Exports>
+  <Classes>
+    <Class name="PropertyLocation" superClass="LightningElement">
+      <Properties>
+        <Property name="error" static="false" />
+        <Property name="deviceLocationService" static="false" />
+        <Property name="distance" static="false" />
+        <Property name="location" static="false" />
+        <Property name="recordId" static="false" />
+      </Properties>
+      <Methods>
+        <Method name="wiredProperty" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="ObjectPattern" />
+          </Parameters>
+        </Method>
+        <Method name="connectedCallback" kind="method" async="true" static="false">
+        </Method>
+        <Method name="calculateLocationFromMobileDevice" kind="method" async="true" static="false">
+        </Method>
+        <Method name="calculateLocationFromBrowser" kind="method" async="false" static="false">
+        </Method>
+        <Method name="calculateDistance" kind="method" async="false" static="false">
+        </Method>
+      </Methods>
+    </Class>
+  </Classes>
+</JavaScriptFile>

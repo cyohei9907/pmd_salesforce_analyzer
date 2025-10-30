@@ -1,94 +1,25 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<AstRoot Image='' JsDoc='' NumComments='0' SideEffects='false'>
-    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
-    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
-    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
-    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
-    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
-    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
-    <ExpressionStatement Image='' JsDoc='' Result='true' SideEffects='true'>
-        <FunctionCall Arguments='true' Image='' JsDoc='' NumArguments='1' SideEffects='true'>
-            <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
-                <FunctionCall Arguments='true' Image='' JsDoc='' NumArguments='1' SideEffects='true'>
-                    <Name FunctionCallName='true' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='then' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                    <FunctionNode Closure='false' Getter='false' GetterOrSetter='false' Image='' JsDoc='' NumParams='0' Setter='false' SideEffects='true'>
-                        <Block Image='' JsDoc='' SideEffects='true'>
-                            <VariableDeclaration Const='true' Image='' JsDoc='' Let='false' SideEffects='true' Var='false'>
-                                <VariableInitializer Destructuring='false' Image='' JsDoc='' SideEffects='true'>
-                                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='evt' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='true' />
-                                    <NewExpression Arguments='true' Image='' Initializer='false' JsDoc='' NumArguments='1' SideEffects='true'>
-                                        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='ShowToastEvent' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                                        <ObjectLiteral Destructuring='false' Image='' JsDoc='' SideEffects='false' TrailingComma='false'>
-                                            <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
-                                                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='title' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                                                <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='Success' />
-                                            </ObjectProperty>
-                                            <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
-                                                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='message' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                                                <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='Sample data successfully imported' />
-                                            </ObjectProperty>
-                                            <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
-                                                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='variant' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                                                <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='success' />
-                                            </ObjectProperty>
-                                        </ObjectLiteral>
-                                    </NewExpression>
-                                </VariableInitializer>
-                            </VariableDeclaration>
-                            <ExpressionStatement Image='' JsDoc='' Result='false' SideEffects='true'>
-                                <FunctionCall Arguments='true' Image='' JsDoc='' NumArguments='1' SideEffects='true'>
-                                    <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
-                                        <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
-                                        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='dispatchEvent' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                                    </PropertyGet>
-                                    <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='evt' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                                </FunctionCall>
-                            </ExpressionStatement>
-                        </Block>
-                    </FunctionNode>
-                </FunctionCall>
-                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='catch' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-            </PropertyGet>
-            <FunctionNode Closure='false' Getter='false' GetterOrSetter='false' Image='' JsDoc='' NumParams='1' Setter='false' SideEffects='true'>
-                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='true' GlobalName='true' Identifier='e' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                <Block Image='' JsDoc='' SideEffects='true'>
-                    <VariableDeclaration Const='true' Image='' JsDoc='' Let='false' SideEffects='true' Var='false'>
-                        <VariableInitializer Destructuring='false' Image='' JsDoc='' SideEffects='true'>
-                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='evt' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='true' />
-                            <NewExpression Arguments='true' Image='' Initializer='false' JsDoc='' NumArguments='1' SideEffects='true'>
-                                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='ShowToastEvent' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                                <ObjectLiteral Destructuring='false' Image='' JsDoc='' SideEffects='false' TrailingComma='false'>
-                                    <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
-                                        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='title' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                                        <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='Error while importing data' />
-                                    </ObjectProperty>
-                                    <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
-                                        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='message' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                                        <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
-                                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='e' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='message' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                                        </PropertyGet>
-                                    </ObjectProperty>
-                                    <ObjectProperty Getter='false' Image='' JsDoc='' Operator=':' Setter='false' SideEffects='false'>
-                                        <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='variant' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                                        <StringLiteral DoubleQuoted='false' Image='' JsDoc='' QuoteCharacter='&apos;' SideEffects='false' SingleQuoted='true' Value='error' />
-                                    </ObjectProperty>
-                                </ObjectLiteral>
-                            </NewExpression>
-                        </VariableInitializer>
-                    </VariableDeclaration>
-                    <ExpressionStatement Image='' JsDoc='' Result='false' SideEffects='true'>
-                        <FunctionCall Arguments='true' Image='' JsDoc='' NumArguments='1' SideEffects='true'>
-                            <PropertyGet Image='' JsDoc='' Operator='' SideEffects='false'>
-                                <KeywordLiteral Boolean='false' Debugger='false' Image='' JsDoc='' Literal='this' Null='false' SideEffects='false' This='true' />
-                                <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='dispatchEvent' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                            </PropertyGet>
-                            <Name FunctionCallName='false' FunctionNodeName='false' FunctionNodeParameter='false' GlobalName='true' Identifier='evt' Image='' JsDoc='' LocalName='false' SideEffects='false' VariableDeclaration='false' />
-                        </FunctionCall>
-                    </ExpressionStatement>
-                </Block>
-            </FunctionNode>
-        </FunctionCall>
-    </ExpressionStatement>
-    <EmptyStatement Image='' JsDoc='' SideEffects='false' />
-</AstRoot>
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="sampleDataImporter.js">
+  <Imports>
+    <Import source="lwc">
+      <Specifier type="named" imported="LightningElement" local="LightningElement" />
+    </Import>
+    <Import source="lightning/platformShowToastEvent">
+      <Specifier type="named" imported="ShowToastEvent" local="ShowToastEvent" />
+    </Import>
+    <Import source="@salesforce/apex/SampleDataController.importSampleData">
+      <Specifier type="default" imported="importSampleData" local="importSampleData" />
+    </Import>
+  </Imports>
+  <Exports>
+    <Export type="default" name="SampleDataImporter" />
+  </Exports>
+  <Classes>
+    <Class name="SampleDataImporter" superClass="LightningElement">
+      <Methods>
+        <Method name="handleImportSampleData" kind="method" async="false" static="false">
+        </Method>
+      </Methods>
+    </Class>
+  </Classes>
+</JavaScriptFile>

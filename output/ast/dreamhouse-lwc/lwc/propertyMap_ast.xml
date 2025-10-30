@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="propertyMap.js">
+  <Imports>
+    <Import source="lwc">
+      <Specifier type="named" imported="LightningElement" local="LightningElement" />
+      <Specifier type="named" imported="api" local="api" />
+      <Specifier type="named" imported="wire" local="wire" />
+    </Import>
+    <Import source="lightning/uiRecordApi">
+      <Specifier type="named" imported="getRecord" local="getRecord" />
+    </Import>
+    <Import source="lightning/messageService">
+      <Specifier type="named" imported="subscribe" local="subscribe" />
+      <Specifier type="named" imported="unsubscribe" local="unsubscribe" />
+      <Specifier type="named" imported="MessageContext" local="MessageContext" />
+    </Import>
+    <Import source="@salesforce/messageChannel/PropertySelected__c">
+      <Specifier type="default" imported="PROPERTYSELECTEDMC" local="PROPERTYSELECTEDMC" />
+    </Import>
+  </Imports>
+  <Exports>
+    <Export type="default" name="PropertyMap" />
+  </Exports>
+  <Classes>
+    <Class name="PropertyMap" superClass="LightningElement">
+      <Properties>
+        <Property name="address" static="false" />
+        <Property name="error" static="false" />
+        <Property name="markers" static="false" />
+        <Property name="propertyId" static="false" />
+        <Property name="subscription" static="false" />
+        <Property name="zoomLevel" static="false" />
+        <Property name="messageContext" static="false" />
+      </Properties>
+      <Methods>
+        <Method name="wiredRecord" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="ObjectPattern" />
+          </Parameters>
+        </Method>
+        <Method name="recordId" kind="get" async="false" static="false">
+        </Method>
+        <Method name="recordId" kind="set" async="false" static="false">
+          <Parameters>
+            <Parameter name="propertyId" />
+          </Parameters>
+        </Method>
+        <Method name="connectedCallback" kind="method" async="false" static="false">
+        </Method>
+        <Method name="disconnectedCallback" kind="method" async="false" static="false">
+        </Method>
+        <Method name="handlePropertySelected" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="message" />
+          </Parameters>
+        </Method>
+      </Methods>
+    </Class>
+  </Classes>
+</JavaScriptFile>

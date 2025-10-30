@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JavaScriptFile name="propertySummary.js">
+  <Imports>
+    <Import source="lwc">
+      <Specifier type="named" imported="LightningElement" local="LightningElement" />
+      <Specifier type="named" imported="api" local="api" />
+      <Specifier type="named" imported="wire" local="wire" />
+    </Import>
+    <Import source="lightning/uiRecordApi">
+      <Specifier type="named" imported="getRecord" local="getRecord" />
+      <Specifier type="named" imported="getFieldValue" local="getFieldValue" />
+    </Import>
+    <Import source="lightning/navigation">
+      <Specifier type="named" imported="NavigationMixin" local="NavigationMixin" />
+    </Import>
+    <Import source="lightning/messageService">
+      <Specifier type="named" imported="subscribe" local="subscribe" />
+      <Specifier type="named" imported="unsubscribe" local="unsubscribe" />
+      <Specifier type="named" imported="MessageContext" local="MessageContext" />
+    </Import>
+    <Import source="@salesforce/messageChannel/PropertySelected__c">
+      <Specifier type="default" imported="PROPERTYSELECTEDMC" local="PROPERTYSELECTEDMC" />
+    </Import>
+    <Import source="@salesforce/schema/Property__c.Name">
+      <Specifier type="default" imported="NAME_FIELD" local="NAME_FIELD" />
+    </Import>
+    <Import source="@salesforce/schema/Property__c.Beds__c">
+      <Specifier type="default" imported="BED_FIELD" local="BED_FIELD" />
+    </Import>
+    <Import source="@salesforce/schema/Property__c.Baths__c">
+      <Specifier type="default" imported="BATH_FIELD" local="BATH_FIELD" />
+    </Import>
+    <Import source="@salesforce/schema/Property__c.Price__c">
+      <Specifier type="default" imported="PRICE_FIELD" local="PRICE_FIELD" />
+    </Import>
+    <Import source="@salesforce/schema/Property__c.Broker__c">
+      <Specifier type="default" imported="BROKER_FIELD" local="BROKER_FIELD" />
+    </Import>
+    <Import source="@salesforce/schema/Property__c.Picture__c">
+      <Specifier type="default" imported="PICTURE_FIELD" local="PICTURE_FIELD" />
+    </Import>
+  </Imports>
+  <Exports>
+    <Export type="default" name="PropertySummary" />
+  </Exports>
+  <Classes>
+    <Class name="PropertySummary">
+      <Properties>
+        <Property name="propertyId" static="false" />
+        <Property name="propertyFields" static="false" />
+        <Property name="subscription" static="false" />
+        <Property name="messageContext" static="false" />
+        <Property name="property" static="false" />
+      </Properties>
+      <Methods>
+        <Method name="recordId" kind="get" async="false" static="false">
+        </Method>
+        <Method name="recordId" kind="set" async="false" static="false">
+          <Parameters>
+            <Parameter name="propertyId" />
+          </Parameters>
+        </Method>
+        <Method name="hasNoPropertyId" kind="get" async="false" static="false">
+        </Method>
+        <Method name="propertyName" kind="get" async="false" static="false">
+        </Method>
+        <Method name="pictureURL" kind="get" async="false" static="false">
+        </Method>
+        <Method name="connectedCallback" kind="method" async="false" static="false">
+        </Method>
+        <Method name="disconnectedCallback" kind="method" async="false" static="false">
+        </Method>
+        <Method name="handlePropertySelected" kind="method" async="false" static="false">
+          <Parameters>
+            <Parameter name="message" />
+          </Parameters>
+        </Method>
+        <Method name="handleNavigateToRecord" kind="method" async="false" static="false">
+        </Method>
+      </Methods>
+    </Class>
+  </Classes>
+</JavaScriptFile>

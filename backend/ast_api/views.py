@@ -108,8 +108,23 @@ def get_graph_data(request):
                 node_obj['name'] = query[:50] + '...' if len(query) > 50 else query
             elif 'DMLOperation' in node['labels']:
                 node_obj['name'] = node['properties'].get('operationType', 'DML')
+            elif 'LWCComponent' in node['labels']:
+                node_obj['name'] = node['properties'].get('name', 'Unknown')
+            elif 'JavaScriptClass' in node['labels']:
+                node_obj['name'] = node['properties'].get('name', 'Unknown')
+            elif 'JavaScriptMethod' in node['labels']:
+                node_obj['name'] = node['properties'].get('name', 'Unknown')
+            elif 'JavaScriptFunction' in node['labels']:
+                node_obj['name'] = node['properties'].get('name', 'Unknown')
+            elif 'Dependency' in node['labels']:
+                module = node['properties'].get('module', 'Unknown')
+                # 依赖模块名称简化显示
+                if '/' in module:
+                    node_obj['name'] = module.split('/')[-1]  # 取最后一部分
+                else:
+                    node_obj['name'] = module
             else:
-                node_obj['name'] = 'Unknown'
+                node_obj['name'] = node['properties'].get('name', 'Unknown')
             
             nodes.append(node_obj)
         
@@ -457,7 +472,13 @@ def _process_clone_and_analyze(task_id, repo_url, branch, apex_dir, force, auto_
                 if analyze_result.get('apex') and analyze_result['apex'].get('success'):
                     logger.info(f"[{task_id}] Importing Apex files...")
                     for file_info in analyze_result['apex'].get('analyzed_files', []):
-                        result = import_service.import_ast_file(file_info['output_file'], repo_obj)
+                        # ソースコードパスを取得（source_fileまたはinput_file）
+                        source_path = file_info.get('source_file') or file_info.get('input_file')
+                        result = import_service.import_ast_file(
+                            file_info['output_file'], 
+                            repo_obj,
+                            source_code_path=source_path
+                        )
                         import_results.append(result)
                         if result.get('success'):
                             total_imported += 1
@@ -468,7 +489,12 @@ def _process_clone_and_analyze(task_id, repo_url, branch, apex_dir, force, auto_
                     logger.info(f"[{task_id}] Importing Visualforce files...")
                     vf_count = 0
                     for file_info in analyze_result['visualforce'].get('analyzed_files', []):
-                        result = import_service.import_ast_file(file_info['output_file'], repo_obj)
+                        source_path = file_info.get('source_file') or file_info.get('input_file')
+                        result = import_service.import_ast_file(
+                            file_info['output_file'], 
+                            repo_obj,
+                            source_code_path=source_path
+                        )
                         import_results.append(result)
                         if result.get('success'):
                             vf_count += 1
@@ -483,7 +509,13 @@ def _process_clone_and_analyze(task_id, repo_url, branch, apex_dir, force, auto_
                         # LWCはASTファイルがある場合のみインポート
                         details = comp_info.get('details', {})
                         if details.get('ast_file'):
-                            result = import_service.import_ast_file(details['ast_file'], repo_obj)
+                            # LWCのソースコードパス（JavaScriptファイル）
+                            source_path = details.get('js_source')
+                            result = import_service.import_ast_file(
+                                details['ast_file'], 
+                                repo_obj,
+                                source_code_path=source_path
+                            )
                             import_results.append(result)
                             if result.get('success'):
                                 lwc_count += 1
